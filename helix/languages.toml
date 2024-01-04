@@ -1,0 +1,106 @@
+[[language]]
+name = "python"
+indent = { tab-width = 4, unit = " "}
+
+[[language]]
+name = "vue"
+scope = "source.vue"
+language-servers = [ "vue-language-server" ]
+[language.auto-pairs]
+'`' = '`'
+"'" = "'"
+'"' = '"'
+'(' = ')'
+'{' = '}'
+'[' = ']'
+
+
+[language-server.cssmodules-language-server]
+command = "cssmodules-language-server"
+args = [ "--stdio" ]
+
+[language-server.vue-language-server]
+command = "vue-language-server"
+args = ["--stdio"]
+# config = {typescript = {tsdk = "C:\\Users\\Admin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib"}, environment = "node"}
+config = {typescript = {tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib"}, environment = "node"}
+
+
+[[language]]
+name = 'markdown'
+[language.auto-pairs]
+'*' = '*'
+'`' = '`'
+"'" = "'"
+'"' = '"'
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'<' = '>'
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "jsx"
+language-servers = [ "tailwindcss","typescript-language-server","cssmodules-language-server"]
+[language.auto-pairs]
+'`' = '`'
+"'" = "'"
+'"' = '"'
+'(' = ')'
+'{' = '}'
+'[' = ']'
+
+[[language]]
+name = "tsx"
+language-servers = [ "tailwindcss", "typescript-language-server","cssmodules-language-server"]
+[language.auto-pairs]
+'`' = '`'
+"'" = "'"
+'"' = '"'
+'(' = ')'
+'{' = '}'
+'[' = ']'
+
+[[language]]
+name = "html"
+language-servers = [ "tailwindcss", "vscode-html-language-server" ]
+[language.auto-pairs]
+'`' = '`'
+"'" = "'"
+'"' = '"'
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'<' = '>'
+
+[[language]]
+name = "css"
+language-servers = [ "tailwindcss", "vscode-css-language-server" ]
+
+[[language]]
+name = "scss"
+language-servers = ["vscode-css-language-server"]
+
+# [[language]]
+# name = "svelte"
+# language-servers = [ "tailwindcss", "svelteserver" ]
+
+[language-server.phpactor]
+command = "phpactor"
+args = [ "language-server" ]
+
+[[language]]
+name = "php"
+language-servers = ["phpactor","vscode-html-language-server"]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "rust"
+indent = { tab-width = 4, unit = " "}
+
+
