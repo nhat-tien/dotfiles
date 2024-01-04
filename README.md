@@ -4,22 +4,11 @@
 
 ### Installing
 
-### Kitty 
-
 ```shell
-  ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+  cd ~
+  git clone https://github.com/nhat-tien/dotfiles.git
+  cd dotfiles
+  chmod +x install.sh
+  ./install.sh
 ```
 
-### Helix 
-
-```shell
-  ln -s ~/dotfiles/helix ~/.config
-```
-
-### Zsh
-
-Add to `.zshrc`
-
-```shell
-  source "${HOME}/dotfiles/zsh/main.zsh"
-```

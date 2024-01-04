@@ -20,6 +20,7 @@
 "variable.other.member" = { fg = "green" }
 "variable.parameter" = { fg = "yellow", modifiers = ["italic"] }
 "constructor" = { fg = "red" }
+"attribute" = { fg = "magenta" }
 
 "diff.plus" = { fg = "green" }
 "diff.delta" = { fg = "orange" }
@@ -45,7 +46,7 @@
 "ui.statusline.normal" = { fg = "background_menu", bg = "blue" }
 "ui.statusline.insert" = { fg = "background_menu", bg = "orange" } 
 "ui.statusline.select" = { fg = "background_menu", bg = "light-cyan" }
-"ui.bufferline" = { fg = "white", bg = "background" }
+"ui.bufferline" = { fg = "comment", bg = "background" }
 "ui.bufferline.active" = { fg = "background", bg = "cyan" }
 
 "ui.text" = { fg = "foreground" }

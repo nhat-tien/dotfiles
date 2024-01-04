@@ -45,23 +45,15 @@ wrap-indicator = ""
 layout = ["diff","diagnostics", "line-numbers", "spacer"]
 
 [keys.select]
-y = [':clipboard-yank', "collapse_selection"]
+y = [':clipboard-yank', "collapse_selection", "normal_mode"]
+D = [':clipboard-yank', "delete_selection_noyank", "collapse_selection", "normal_mode"]
 
 [keys.normal]
 y = ':clipboard-yank'
 p = ':clipboard-paste-before'
+D = [':clipboard-yank', "delete_selection_noyank"]
 
-
-# Macros
-# Command On Windows
-# [keys.insert.C-m]
-# r = ":insert-output type C:\\Users\\Admin\\AppData\\Roaming\\helix\\macros\\rfc.jsx"
-# h = ":insert-output type C:\\Users\\Admin\\AppData\\Roaming\\helix\\macros\\html5.html"
-# v = ":insert-output type C:\\Users\\Admin\\AppData\\Roaming\\helix\\macros\\sfc.vue"
-
-# Macros
-# Command On Linux
-[keys.insert.C-m]
+[keys.normal.C-m]
 r = [":insert-output cat ~/dotfiles/helix/snippets/rfc.jsx", "normal_mode"]
 h = [":insert-output cat ~/dotfiles/helix/snippets/html5.html", "normal_mode"]
 v = [":insert-output cat ~/dotfiles/helix/snippets/sfc.vue", "normal_mode"]
