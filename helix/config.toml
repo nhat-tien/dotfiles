@@ -18,9 +18,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"    
+mode.normal = " " 
+mode.insert = " "
+mode.select = " "
 
 [editor.cursor-shape]
 normal = "block"
@@ -52,6 +52,8 @@ D = [':clipboard-yank', "delete_selection_noyank", "collapse_selection", "normal
 y = ':clipboard-yank'
 p = ':clipboard-paste-before'
 D = [':clipboard-yank', "delete_selection_noyank"]
+"space" = { "c" = ':buffer-close'}
+
 
 [keys.normal.C-m]
 r = [":insert-output cat ~/dotfiles/helix/snippets/rfc.jsx", "normal_mode"]

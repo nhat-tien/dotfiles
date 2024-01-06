@@ -1,0 +1,20 @@
+simplified_ui true
+
+theme "tokyonight"
+
+themes {
+	tokyonight {
+		fg "#A9B1D6" 
+		bg "#1A1B26" 
+		black "#414868"  
+		red "#F7768E" 
+		green "#73DACA" 
+		yellow "#E0AF68"
+        blue "#7AA2F7"
+        magenta "#BB9AF7"
+        cyan "#7DCFFF"
+        white "#C0CAF5"
+        orange "#FF9E64"
+	}
+}
+

@@ -22,7 +22,7 @@ alias dockerstatus="sudo systemctl status docker"
 alias dockerstop="sudo systemctl stop docker.socket"
 
 #screenfetch
-alias fetch="screenfetch -c '04,15' -a '${HOME}/asciiart/asciiart.sh'"
+alias neofetch="screenfetch -c '04,15' -a '${HOME}/asciiart/asciiart.sh'"
 
 #git tree
 alias gittree="git log --oneline --decorate --graph --all"
