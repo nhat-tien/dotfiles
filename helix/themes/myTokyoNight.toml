@@ -47,7 +47,7 @@
 "ui.statusline.insert" = { fg = "background_menu", bg = "orange" } 
 "ui.statusline.select" = { fg = "background_menu", bg = "light-cyan" }
 "ui.bufferline" = { fg = "comment", bg = "background" }
-"ui.bufferline.active" = { fg = "background", bg = "cyan" }
+"ui.bufferline.active" = { fg = "background", bg = "blue" }
 
 "ui.text" = { fg = "foreground" }
 "ui.text.focus" = { fg = "cyan" } 
@@ -105,6 +105,8 @@ black = "#414868"
 foreground = "#a9b1d6"
 foreground_highlight = "#c0caf5"
 foreground_gutter = "#363b54"
-background = "#1a1b26"
+background = "#24283b"
 background_highlight = "#30374b"
 background_menu = "#16161e"
+
+# background_menu = "#282836"
