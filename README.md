@@ -1,10 +1,17 @@
 # My dotfiles
 
 ## Setup
+
 - Window manager: `i3`
 - Status bar: `polybar`
 - Launcher: `rofi`
-- Compositer
+- Compositor: `picom` 
+- auto-lockscreen: `i3lock`, `xautolock`
+- Font: `CaskaydiaCove NFM`, `Cascadia Code`
+- Theme: `TokyoNight`
+- Brightness controller: `brightnessctl`
+- Audio: `pulseaudio`, `pavucontrol` 
+- System monitor: `htop`
 
 ## Installing
 
@@ -45,8 +52,20 @@ Chọn chế độ gõ là `6.XTestFakeKeyEvent`
 
 2. Thử tắt ibus rồi chạy ibus-daemon
 ```shell
-  ibus stop
+  ibus exit
   ibus-daemon
 ```
 
+### Từ chối không có quyền sudo khi sử dụng brightnessctl
+1. Run: 
+```shell
+  sudo usermod -aG video ${USER}
+```
 
+2. Check:
+```shell
+  cat /etc/group | grep video
+```
+expect: `video:x:44:<username>`, example `video:x:44:nhattien`
+
+3. Reboot 

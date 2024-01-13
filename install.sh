@@ -17,6 +17,9 @@ ln -s "${DOTFILES}/polybar" "${HOME}/.config/polybar"
 rm -rf "${HOME}/.config/i3"
 ln -s "${DOTFILES}/i3" "${HOME}/.config/i3"     
 
+rm -rf "${HOME}/.config/picom"
+ln -s "${DOTFILES}/picom" "${HOME}/.config/picom"     
+
 echo " source "${HOME}/dotfiles/zsh/main.zsh"" >> "${HOME}/.zshrc"
 
 echo Install Successful
