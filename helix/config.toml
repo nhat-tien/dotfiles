@@ -55,12 +55,13 @@ D = [':clipboard-yank', "delete_selection_noyank"]
 "space" = { "c" = ':buffer-close', "n" = ":new"}
 
 # Snippets
-[keys.normal.C-m]
+[keys.insert.C-m]
 r = [":insert-output cat ~/dotfiles/helix/snippets/rfc.jsx", "normal_mode"]
 h = [":insert-output cat ~/dotfiles/helix/snippets/html5.html", "normal_mode"]
 v = [":insert-output cat ~/dotfiles/helix/snippets/sfc.vue", "normal_mode"]
-d = [":insert-output ~/dotfiles/helix/commands/bin/main date", "normal_mode"]
+d = [":insert-output echo $(date +'%Y-%m-%d')", "normal_mode"]
 
 [editor.lsp]
 display-inlay-hints = true
+
 

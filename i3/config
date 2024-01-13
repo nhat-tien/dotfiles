@@ -220,7 +220,7 @@ bindsym $mod+r mode "resize"
 # |----------------------------------------|
 
 gaps inner 12
-gaps outer 10
+gaps outer 0
 default_border pixel 0
 default_floating_border pixel 0
 
