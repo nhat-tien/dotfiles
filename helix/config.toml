@@ -1,4 +1,5 @@
 theme = "myTokyoNight"
+# theme = "tokyonight-update"
 
 [editor]
 line-number = "absolute"
@@ -18,9 +19,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = "" 
-mode.insert = ""
-mode.select = ""
+mode.normal = "| NOR |" 
+mode.insert = "> INS <"
+mode.select = "* SEL *"
 
 [editor.cursor-shape]
 normal = "block"

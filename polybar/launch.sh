@@ -6,7 +6,9 @@
 # Otherwise you can use the nuclear option:
 killall -q polybar
 
-# Launch bar1 and bar2
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
 echo "---" | tee -a /tmp/polybar1.log 
 polybar bar1 2>&1 --config="~/.config/polybar/config.ini" | tee -a /tmp/polybar1.log  & disown 
 

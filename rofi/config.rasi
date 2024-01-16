@@ -14,7 +14,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-/*	icon-theme: ;*/
+/*  icon-theme: ; */
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
@@ -43,7 +43,7 @@ configuration {
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	theme: ;*/
-/*	max-history-size: 25;*/
+	max-history-size: 5;
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
@@ -95,7 +95,7 @@ configuration {
 /*	kb-row-first: "Home,KP_Home";*/
 /*	kb-row-last: "End,KP_End";*/
 /*	kb-row-select: "Control+space";*/
-/*	kb-screenshot: "Alt+S";*/
+    kb-screenshot: "Alt+S";
 /*	kb-ellipsize: "Alt+period";*/
 /*	kb-toggle-case-sensitivity: "grave,dead_grave";*/
 /*	kb-toggle-sort: "Alt+grave";*/
@@ -164,9 +164,10 @@ configuration {
 #window {
     background-color: @background-color;
     border:           3;
-    border-radius:    6;
+    border-radius:    10;
     border-color:     @bordercolor;
     padding:          15;
+    height:           370px;
 }
 #mainbox {
     border:  0;
@@ -190,7 +191,8 @@ configuration {
 }
 #element {
     border:  0;
-    padding: 3px ;
+    padding: 5px ;
+    border-radius: 5px;
 }
 #element.normal.normal {
     background-color: @background-color;
@@ -264,7 +266,7 @@ configuration {
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        ">";
+    str:        ":";
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
 }

@@ -22,8 +22,9 @@ alias dockerstatus="sudo systemctl status docker"
 alias dockerstop="sudo systemctl stop docker.socket"
 
 #screenfetch
-alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
+# alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-wmtheme' "
+alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh'"
 
 #clock
 alias clock="tty-clock -c -f "" -C 3 "
@@ -32,7 +33,10 @@ alias clock="tty-clock -c -f "" -C 3 "
 alias gittree="git log --oneline --decorate --graph --all"
 
 #notes
-alias journal="hx ~/ObsidianVaults/notes"
+alias notes="hx ~/ObsidianVaults/notes"
+
+#english
+alias eng="hx ~/ObsidianVaults/english-practice"
 
 export GOPATH=$HOME/go
 

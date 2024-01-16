@@ -6,6 +6,8 @@
 "keyword" = { fg = "cyan", modifiers = ["italic"] }
 "keyword.control" = { fg = "magenta" }
 "keyword.control.import" = { fg = "cyan" }
+"keyword.control.return" = { fg = "purple", modifiers = ["italic"] }
+"keyword.directive" = { fg = "cyan" }
 "keyword.operator" = { fg = "turquoise" }
 "keyword.function" = { fg = "magenta", modifiers = ["italic"] }
 "operator" = { fg = "turquoise" }
@@ -13,7 +15,10 @@
 "string" = { fg = "light-green" }
 "string.regexp" = { fg = "light-blue" }
 "tag" = { fg = "red" }
-"type" = { fg = "teal" }
+"type" = { fg = "aqua" }
+"type.builtin" = { fg = "aqua" }
+"type.enum.variant" = { fg = "orange" }
+label = { fg = "blue" }
 "namespace" = { fg = "blue" }
 "variable" = { fg = "white" }
 "variable.builtin" = { fg = "red" }
@@ -26,9 +31,9 @@
 "diff.delta" = { fg = "orange" }
 "diff.minus" = { fg = "red" }
 
-"ui.background" = {  fg = "foreground", bg = "background" } 
+# "ui.background" = {  fg = "foreground", bg = "background" } 
 # transparent
-# "ui.background" = {} 
+"ui.background" = {} 
 "ui.cursor" = { modifiers = ["reversed"] }
 "ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
 "ui.cursor.primary" = { modifiers = ["reversed"] }
@@ -43,9 +48,9 @@
 "ui.selection.primary" = { bg = "background_highlight" }
 "ui.statusline" = { fg = "foreground", bg = "background_menu" }
 "ui.statusline.inactive" = { fg = "foreground_gutter", bg = "background_menu" }
-"ui.statusline.normal" = { fg = "background_menu", bg = "blue" }
-"ui.statusline.insert" = { fg = "background_menu", bg = "orange" } 
-"ui.statusline.select" = { fg = "background_menu", bg = "light-cyan" }
+"ui.statusline.normal" = { fg = "blue", bg = "background_menu" ,modifiers = ["bold"]  }
+"ui.statusline.insert" = { fg = "orange", bg = "background_menu", modifiers = ["bold"]  } 
+"ui.statusline.select" = { fg = "light-cyan", bg = "background_menu", modifiers = ["bold"]  }
 "ui.bufferline" = { fg = "comment", bg = "background" }
 "ui.bufferline.active" = { fg = "background", bg = "blue" }
 
@@ -53,7 +58,7 @@
 "ui.text.focus" = { fg = "cyan" } 
 "ui.virtual.ruler" = { bg = "foreground_gutter" }
 "ui.virtual.whitespace" = { fg = "foreground_gutter" }
-"ui.virtual.inlay-hint" = { fg = "comment" }
+"ui.virtual.inlay-hint" = { bg = "background_inlay", fg = "comment", modifiers = ["italic"] }
 "ui.window" = { fg = "black" }
 
 "error" = { fg = "red" }
@@ -93,20 +98,25 @@ light-green = "#9ece6a"
 green = "#73daca"
 turquoise = "#89ddff"
 light-cyan = "#b4f9f8"
-teal = "#2ac3de"
+aqua = "#2ac3de"
+teal = "#1abc9c"
 cyan = "#7dcfff"
 blue = "#7aa2f7" 
+purple = "#9d7cd8"
 magenta = "#bb9af7"
 white = "#c0caf5"
 light-gray = "#9aa5ce"
 parameters = "#cfc9c2"
 comment = "#565f89"
 black = "#414868"
+
+
 foreground = "#a9b1d6"
 foreground_highlight = "#c0caf5"
 foreground_gutter = "#363b54"
 background = "#24283b"
 background_highlight = "#30374b"
-background_menu = "#16161e"
-
+background_menu = "#1a1b26"
+background_inlay = "#1a2b32"
 # background_menu = "#282836"
+# background_menu = "#16161e"

@@ -179,7 +179,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -219,7 +219,7 @@ bindsym $mod+r mode "resize"
 # |  MY_CUSTOM_2/2                         |
 # |----------------------------------------|
 
-gaps inner 12
+gaps inner 14
 gaps outer 0
 default_border pixel 0
 default_floating_border pixel 0
@@ -232,12 +232,28 @@ bindsym $mod+Shift+Print exec --no-startup-id gnome-screenshot -a
 bindsym $mod+m exec --no-startup-id nautilus --no-desktop
 
 # Lockscreen
-bindsym Control+$mod+l exec "i3lock -i ~/dotfiles/wallpapers/wallpaperblur.png"
+# bindsym Control+$mod+l exec "i3lock -i ~/dotfiles/wallpapers/wallpaperblur.png"
 
 # Rofi
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run --normal-window
+
+# Wezterm
 
 # Brightness
 bindsym XF86MonBrightnessDown exec brightnessctl -n set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
+set $mode_system System (l) lock, (e) logout, (s) suspend, (Shift+s) shutdown
+
+mode "$mode_system" {
+        bindsym l exec --no-startup-id ~/dotfiles/i3/i3exit.sh lock, mode "default"
+        bindsym e exec --no-startup-id ~/dotfiles/i3/i3exit.sh logout, mode "default"
+        bindsym s exec --no-startup-id ~/dotfiles/i3/i3exit.sh suspend, mode "default"
+        bindsym r exec --no-startup-id ~/dotfiles/i3/i3exit.sh reboot, mode "default"
+        bindsym Shift+s exec --no-startup-id ~/dotfiles/i3/i3exit.sh shutdown, mode "default"
+
+        bindsym Escape mode "default" 
+        bindsym Return mode "default" 
+}
+
+bindsym $mod+Pause mode "$mode_system"
