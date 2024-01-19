@@ -2,16 +2,17 @@
 
 ## Setup
 
-- Window manager: `i3`
-- Status bar: `polybar`
-- Launcher: `rofi`
-- Compositor: `picom` 
+- Window manager: [i3](https://github.com/i3/i3)
+- Status bar: [polybar](https://github.com/polybar/polybar)
+- Application launcher: [rofi](https://github.com/polybar/polybar)
+- Compositor: [picom](https://github.com/yshui/picom)
 - auto-lockscreen: `i3lock`, `xautolock`
-- Font: `CaskaydiaCove NFM`, `Cascadia Code`
+- Font: [CaskaydiaCove NF](https://www.nerdfonts.com/font-downloads)
 - Theme: `TokyoNight`
-- Brightness controller: `brightnessctl`
+- Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
+- Text editor: [helix](https://github.com/helix-editor/helix)
 
 ## Installing
 

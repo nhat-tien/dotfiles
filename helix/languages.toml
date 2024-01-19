@@ -44,7 +44,7 @@ args = ["--stdio"]
 
 [[language]]
 name = "jsx"
-language-servers = [ "tailwindcss","typescript-language-server","cssmodules-language-server"]
+language-servers = ["typescript-language-server", "tailwindcss", "vscode-html-language-server"]
 [language.auto-pairs]
 '`' = '`'
 "'" = "'"
@@ -55,7 +55,7 @@ language-servers = [ "tailwindcss","typescript-language-server","cssmodules-lang
 
 [[language]]
 name = "tsx"
-language-servers = [ "tailwindcss", "typescript-language-server","cssmodules-language-server"]
+language-servers = [ "typescript-language-server", "tailwindcss",  "vscode-html-language-server"]
 [language.auto-pairs]
 '`' = '`'
 "'" = "'"
@@ -66,7 +66,7 @@ language-servers = [ "tailwindcss", "typescript-language-server","cssmodules-lan
 
 [[language]]
 name = "html"
-language-servers = [ "tailwindcss", "vscode-html-language-server" ]
+language-servers = ["vscode-html-language-server", "tailwindcss"]
 [language.auto-pairs]
 '`' = '`'
 "'" = "'"
@@ -78,7 +78,7 @@ language-servers = [ "tailwindcss", "vscode-html-language-server" ]
 
 [[language]]
 name = "css"
-language-servers = [ "tailwindcss", "vscode-css-language-server" ]
+language-servers = ["vscode-css-language-server", "tailwindcss"]
 
 [[language]]
 name = "scss"

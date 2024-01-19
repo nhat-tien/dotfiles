@@ -46,11 +46,11 @@ label = { fg = "blue" }
 "ui.popup" = { fg = "foreground", bg = "background_menu" }
 "ui.selection" = { bg = "background_highlight" }
 "ui.selection.primary" = { bg = "background_highlight" }
-"ui.statusline" = { fg = "foreground", bg = "background_menu" }
+"ui.statusline" = { fg = "foreground", bg = "background" }
 "ui.statusline.inactive" = { fg = "foreground_gutter", bg = "background_menu" }
-"ui.statusline.normal" = { fg = "blue", bg = "background_menu" ,modifiers = ["bold"]  }
-"ui.statusline.insert" = { fg = "orange", bg = "background_menu", modifiers = ["bold"]  } 
-"ui.statusline.select" = { fg = "light-cyan", bg = "background_menu", modifiers = ["bold"]  }
+"ui.statusline.normal" = { fg = "blue", bg = "background"}
+"ui.statusline.insert" = { fg = "orange", bg = "background"} 
+"ui.statusline.select" = { fg = "light-cyan", bg = "background"}
 "ui.bufferline" = { fg = "comment", bg = "background" }
 "ui.bufferline.active" = { fg = "background", bg = "blue" }
 
@@ -83,6 +83,7 @@ label = { fg = "blue" }
 "markup.list.unchecked" = { fg = "white", bg = "comment" }
 "markup.list.checked" = { fg = "background_menu", bg = "light-green" }
 "markup.bold" = { fg = "orange", modifiers = ["bold"] }
+
 "markup.italic" = { fg = "yellow", modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
 "markup.link.url" = { fg = "green" }

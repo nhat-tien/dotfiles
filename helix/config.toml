@@ -1,13 +1,13 @@
 theme = "myTokyoNight"
-# theme = "tokyonight-update"
 
 [editor]
-line-number = "absolute"
+line-number = "relative"
 bufferline = "always"
 color-modes = true
 cursorline = true
 auto-format = false
 true-color = true
+idle-timeout = 0
 
 [editor.indent-guides]
 render = true
@@ -19,9 +19,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = "| NOR |" 
-mode.insert = "> INS <"
-mode.select = "* SEL *"
+mode.normal = " NOR " 
+mode.insert = " INS "
+mode.select = " SEL "
 
 [editor.cursor-shape]
 normal = "block"
@@ -54,6 +54,7 @@ y = ':clipboard-yank'
 p = ':clipboard-paste-before'
 D = [':clipboard-yank', "delete_selection_noyank"]
 "space" = { "c" = ':buffer-close', "n" = ":new"}
+"+" = { "o" = ":pipe-to xargs open" } 
 
 # Snippets
 [keys.insert.C-m]
@@ -62,7 +63,5 @@ h = [":insert-output cat ~/dotfiles/helix/snippets/html5.html", "normal_mode"]
 v = [":insert-output cat ~/dotfiles/helix/snippets/sfc.vue", "normal_mode"]
 d = [":insert-output echo $(date +'%Y-%m-%d')", "normal_mode"]
 
-[editor.lsp]
-display-inlay-hints = true
-
-
+# [editor.lsp]
+# display-inlay-hints = true

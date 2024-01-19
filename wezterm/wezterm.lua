@@ -1,24 +1,13 @@
 local wezterm = require "wezterm"
 
+local config = {}
 
-local config = {
-  font = wezterm.font("CaskaydiaCove NFM", {weight="Regular", stretch="Normal", style="Normal"}),
-  font_size = 14,
-  font_rules = {
-    {
-        intensity = 'Bold',
-        italic = false,
-        font = wezterm.font("CaskaydiaCove Nerd Font Mono", {weight="DemiBold", stretch="Normal", style="Normal"})
-      },
-    {
-        intensity = 'Normal',
-        italic = true,
-        font = wezterm.font("CaskaydiaCove Nerd Font Mono", {weight="DemiLight", stretch="Normal", style="Italic"})
-      },
-  },
-  color_scheme = 'Tokyo Night Storm',
-  window_background_opacity = 0.8
-}
-
+config.font_size = 14
+config.font = wezterm.font_with_fallback({
+    { family = "CaskaydiaCove Nerd Font", scale = 1},
+  });
+config.color_scheme = 'Tokyo Night Storm'
+config.window_background_opacity = 0.9
+config.enable_tab_bar = false
 
 return config;

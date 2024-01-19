@@ -20,6 +20,9 @@ ln -s "${DOTFILES}/i3" "${HOME}/.config/i3"
 rm -rf "${HOME}/.config/picom"
 ln -s "${DOTFILES}/picom" "${HOME}/.config/picom"     
 
+rm -rf "${HOME}/.config/wezterm"
+ln -s "${DOTFILES}/wezterm" "${HOME}/.config/wezterm"     
+
 echo " source "${HOME}/dotfiles/zsh/main.zsh"" >> "${HOME}/.zshrc"
 
 echo Install Successful
