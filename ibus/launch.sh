@@ -2,4 +2,4 @@
 
 ibus exit
 
-ibus-daemon
+ibus-daemon -rdx

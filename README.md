@@ -1,4 +1,4 @@
-# My dotfiles
+<h1 align="center">My dotfiles 📁</h1>
 
 ## Setup
 
@@ -12,7 +12,8 @@
 - Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
-- Text editor: [helix](https://github.com/helix-editor/helix)
+- Text editor: [Helix](https://github.com/helix-editor/helix)
+- Terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
 
 ## Installing
 
@@ -23,6 +24,10 @@
   chmod +x install.sh
   ./install.sh
 ```
+
+## Screenshoot
+
+![screenshoot](/rice.png)
 
 ## Fix
 

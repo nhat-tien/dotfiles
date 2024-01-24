@@ -19,9 +19,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = " NOR " 
-mode.insert = " INS "
-mode.select = " SEL "
+mode.normal = "NOR  " 
+mode.insert = "INS  "
+mode.select = "SEL  "
 
 [editor.cursor-shape]
 normal = "block"
@@ -55,6 +55,9 @@ p = ':clipboard-paste-before'
 D = [':clipboard-yank', "delete_selection_noyank"]
 "space" = { "c" = ':buffer-close', "n" = ":new"}
 "+" = { "o" = ":pipe-to xargs open" } 
+
+[keys.insert]
+C-s = ":write"
 
 # Snippets
 [keys.insert.C-m]
