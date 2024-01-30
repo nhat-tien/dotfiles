@@ -8,6 +8,7 @@ cursorline = true
 auto-format = false
 true-color = true
 idle-timeout = 0
+completion-replace = true
 
 [editor.indent-guides]
 render = true
@@ -19,9 +20,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = "NOR  " 
-mode.insert = "INS  "
-mode.select = "SEL  "
+mode.normal = " NORMAL" 
+mode.insert = " INSERT"
+mode.select = " SELECT"
 
 [editor.cursor-shape]
 normal = "block"
@@ -45,16 +46,42 @@ wrap-indicator = ""
 [editor.gutters]
 layout = ["diff","diagnostics", "line-numbers", "spacer"]
 
-[keys.select]
-y = [':clipboard-yank', "collapse_selection", "normal_mode"]
-D = [':clipboard-yank', "delete_selection_noyank", "collapse_selection", "normal_mode"]
-
 [keys.normal]
 y = ':clipboard-yank'
 p = ':clipboard-paste-before'
 D = [':clipboard-yank', "delete_selection_noyank"]
 "space" = { "c" = ':buffer-close', "n" = ":new"}
 "+" = { "o" = ":pipe-to xargs open" } 
+
+"{" = ["goto_prev_paragraph", "collapse_selection"]
+"}" = ["goto_next_paragraph", "collapse_selection"]
+
+"tab" = 'goto_next_buffer'
+"S-tab" = 'goto_previous_buffer'
+
+0 = "goto_line_start"
+"$" = 'goto_line_end'
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
+
+C-h = "select_prev_sibling"
+C-j = "shrink_selection"
+C-k = "expand_selection"
+C-l = "select_next_sibling"
+
+C-r = ":config-reload"
+C-o = ":config-open"
+
+# Disable
+g = { e = "no_op", l = "no_op", h = "no_op"}
+
+[keys.select]
+y = [':clipboard-yank', "collapse_selection", "normal_mode"]
+D = [':clipboard-yank', "delete_selection_noyank", "collapse_selection", "normal_mode"]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
 
 [keys.insert]
 C-s = ":write"

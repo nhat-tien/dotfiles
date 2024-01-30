@@ -1,9 +1,9 @@
 configuration {
 	modi: "window,run,ssh";
     font: "CaskaydiaCove NFM 10";
-/*	location: 0;*/
-/*	yoffset: 0;*/
-/*	xoffset: 0;*/
+	location: 3;
+	yoffset: 38;
+	xoffset: -10;
 /*	fixed-num-lines: true;*/
     show-icons: true;
 /*	terminal: "rofi-sensible-terminal";*/
@@ -150,7 +150,7 @@ configuration {
     font: "CaskaydiaCove NF Regular 12";
     foreground: #a9b1d6;
     background-color: #24283b;
-    active-background: #7aa2f7;
+    active-background: #9ece6a;
     urgent-background: #ff5555;
     urgent-foreground: #282a36;
     selected-background: @active-background;
@@ -167,7 +167,8 @@ configuration {
     border-radius:    10;
     border-color:     @bordercolor;
     padding:          15;
-    height:           370px;
+    height:           180px;
+	width:            280px;
 }
 #mainbox {
     border:  0;

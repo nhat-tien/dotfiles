@@ -11,3 +11,5 @@ config.window_background_opacity = 0.9
 config.enable_tab_bar = false
 
 return config;
+
+

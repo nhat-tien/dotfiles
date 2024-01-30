@@ -51,15 +51,8 @@ Chọn chế độ gõ là `6.XTestFakeKeyEvent`
 
 ### Ibus-daemon không tự động khởi động
 
-1. Đảm bảo có dòng sau trong `i3/config`
 ```txt
-  exec --no-startup-id ibus-daemon
-```
-
-2. Thử tắt ibus rồi chạy ibus-daemon
-```shell
-  ibus exit
-  ibus-daemon
+  exec_always --no-startup-id $HOME/dotfiles/ibus/launch.sh
 ```
 
 ### Từ chối không có quyền sudo khi sử dụng brightnessctl

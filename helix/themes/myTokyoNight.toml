@@ -48,9 +48,9 @@ label = { fg = "blue" }
 "ui.selection.primary" = { bg = "background_highlight" }
 "ui.statusline" = { fg = "foreground", bg = "background" }
 "ui.statusline.inactive" = { fg = "foreground_gutter", bg = "background_menu" }
-"ui.statusline.normal" = { fg = "blue", bg = "background" , modifiers = ["bold"] }
-"ui.statusline.insert" = { fg = "orange", bg = "background", modifiers = ["bold"]} 
-"ui.statusline.select" = { fg = "light-cyan", bg = "background", modifiers = ["bold"]}
+"ui.statusline.normal" = { fg = "background" , bg = "blue", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "background", bg = "orange", modifiers = ["bold"]} 
+"ui.statusline.select" = { fg = "background", bg = "light-cyan", modifiers = ["bold"]}
 "ui.bufferline" = { fg = "comment", bg = "background" }
 "ui.bufferline.active" = { fg = "background", bg = "blue" }
 
@@ -71,7 +71,7 @@ label = { fg = "blue" }
 "diagnostic.hint" = { underline = { style = "curl", color = "teal" } }
 "special" = { fg = "orange" }
 
-"markup.heading.marker" = { fg = "white" }
+"markup.heading.marker" = { fg = "white", modifiers = ["italic"]}
 "markup.heading.1" = { fg = "red", modifiers = ["bold"] }
 "markup.heading.2" = { fg = "yellow", modifiers = ["bold"] }
 "markup.heading.3" = { fg = "light-green", modifiers = ["bold"] }
@@ -82,12 +82,13 @@ label = { fg = "blue" }
 "markup.list.numbered" = { fg = "orange" }
 "markup.list.unchecked" = { fg = "white", bg = "comment" }
 "markup.list.checked" = { fg = "background_menu", bg = "light-green" }
-"markup.bold" = { fg = "orange", modifiers = ["bold"] }
-
-"markup.italic" = { fg = "yellow", modifiers = ["italic"] }
+"markup.bold" = { fg = "green", modifiers = ["bold"] }
+"markup.italic" = { fg = "foreground", modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
-"markup.link.url" = { fg = "green" }
-"markup.link.text" = { fg = "light-gray" }
+"markup.link" = { fg = "blue", underline = { style = "line" } }
+"markup.link.label" = { fg = "teal" }
+"markup.link.text" = { fg = "teal" }
+"markup.link.url" = { fg = "green", underline = { style = "line" } }
 "markup.quote" = { fg = "yellow", bg = "background_menu", modifiers = ["italic"] }
 "markup.raw" = { fg = "red", bg = "background_menu"}
 

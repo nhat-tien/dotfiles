@@ -48,5 +48,5 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
 
 export GOPATH=$HOME/go
 
-path+=('~/.npm-packages/bin')
+path+=('/home/nhattien/.npm-packages/bin')
 export PATH
