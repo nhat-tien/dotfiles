@@ -86,8 +86,8 @@ label = { fg = "blue" }
 "markup.italic" = { fg = "foreground", modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
 "markup.link" = { fg = "blue", underline = { style = "line" } }
-"markup.link.label" = { fg = "teal" }
-"markup.link.text" = { fg = "teal" }
+"markup.link.label" = { fg = "cyan" }
+"markup.link.text" = { fg = "cyan" }
 "markup.link.url" = { fg = "green", underline = { style = "line" } }
 "markup.quote" = { fg = "yellow", bg = "background_menu", modifiers = ["italic"] }
 "markup.raw" = { fg = "red", bg = "background_menu"}

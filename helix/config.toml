@@ -73,7 +73,7 @@ C-r = ":config-reload"
 C-o = ":config-open"
 
 # Disable
-g = { e = "no_op", l = "no_op", h = "no_op"}
+g = { e = "no_op", l = "no_op", h = "no_op", n = "no_op", p = "no_op"}
 
 [keys.select]
 y = [':clipboard-yank', "collapse_selection", "normal_mode"]
@@ -84,6 +84,8 @@ D = [':clipboard-yank', "delete_selection_noyank", "collapse_selection", "normal
 G = "goto_file_end"
 
 [keys.insert]
+C-h = "move_char_left"
+C-l = "move_char_right"
 C-s = ":write"
 
 # Snippets

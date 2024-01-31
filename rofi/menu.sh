@@ -2,7 +2,7 @@
 
 selected=$(echo "󰝰  Files Explorer
   Setting
-󰨣  Disk Usage" | rofi -dmenu  -p "󰮫 " -theme menu -i)
+󰨣  Disk Usage" | rofi -dmenu  -p ">>" -theme menu -i)
 
 case "$selected" in
   "󰝰  Files Explorer") nautilus --no-desktop;;
