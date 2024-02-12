@@ -1,8 +1,10 @@
-alias hxconfig="hx ~/.config/helix"
 alias zshrc="hx ~/.zshrc"
 alias cls="clear"
 alias dev="cd ~/DEV"
 alias dotfiles="hx ~/dotfiles"
+alias journal="hx ~/ObsidianVaults/journal" 
+alias notes="hx ~/ObsidianVaults/notes"
+alias eng="hx ~/ObsidianVaults/english-practice"
 
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"
@@ -12,7 +14,12 @@ alias mongostart="sudo systemctl start mongod"
 alias mongostatus="sudo systemctl status mongod"
 alias mongostop="sudo systemctl stop mongod"
 
-#mysql 
+# alias Nginx
+alias mysqlstart="sudo systemctl start nginx"
+alias mysqlstatus="sudo systemctl status nginx"
+alias mysqlstop="sudo systemctl stop nginx"
+ 
+# alias MySql 
 alias mysqlstart="sudo systemctl start mysql.service"
 alias mysqlstatus="sudo systemctl status mysql.service"
 alias mysqlstop="sudo systemctl stop mysql.service"
@@ -36,17 +43,19 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 #git tree
 alias gittree="git log --oneline --decorate --graph --all"
 
-alias journal="hx ~/ObsidianVaults/journal" 
+#icat
+alias icat="kitty +kitten icat"
 
-#notes
-alias notes="hx ~/ObsidianVaults/notes"
-
-#english
-alias eng="hx ~/ObsidianVaults/english-practice"
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
+#workspace-setup
+alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
 
 export GOPATH=$HOME/go
+export EDITOR=hx
+
+# NNN
+export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
+export NNN_TRASH=2
 
 path+=('/home/nhattien/.npm-packages/bin')
+path+=('/opt/apache-maven-3.6.3/bin')
 export PATH

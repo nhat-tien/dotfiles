@@ -159,6 +159,7 @@ configuration {
     separatorcolor: @active-background;
     bordercolor: @active-background;
 	black: #16161e;
+    orange: #ff9e64;
 }
 
 #window {
@@ -167,7 +168,7 @@ configuration {
     border-radius:    10;
     border-color:     @bordercolor;
     padding:          15;
-    height:           180px;
+    height:           200px;
 	width:            280px;
 }
 #mainbox {
@@ -267,9 +268,9 @@ configuration {
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        " ";
+    str:        " ";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @orange;
 }
 element-text, element-icon {
     background-color: inherit;

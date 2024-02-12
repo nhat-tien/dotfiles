@@ -8,7 +8,7 @@ cursorline = true
 auto-format = false
 true-color = true
 idle-timeout = 0
-completion-replace = true
+preview-completion-insert = false
 
 [editor.indent-guides]
 render = true
@@ -20,9 +20,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = " NORMAL" 
-mode.insert = " INSERT"
-mode.select = " SELECT"
+mode.normal = "\ue0b6  NOR \ue0b4" 
+mode.insert = "\ue0b6  INS \ue0b4" 
+mode.select = "\ue0b6  SEL \ue0b4"
 
 [editor.cursor-shape]
 normal = "block"

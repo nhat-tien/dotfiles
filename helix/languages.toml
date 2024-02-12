@@ -67,6 +67,7 @@ language-servers = [ "typescript-language-server", "tailwindcss",  "vscode-html-
 [[language]]
 name = "html"
 language-servers = ["vscode-html-language-server", "tailwindcss"]
+
 [language.auto-pairs]
 '`' = '`'
 "'" = "'"
@@ -74,7 +75,7 @@ language-servers = ["vscode-html-language-server", "tailwindcss"]
 '(' = ')'
 '{' = '}'
 '[' = ']'
-'<' = '>'
+# '<' = '>'
 
 [[language]]
 name = "css"
@@ -91,6 +92,10 @@ language-servers = ["vscode-css-language-server"]
 [language-server.phpactor]
 command = "phpactor"
 args = [ "language-server" ]
+
+# [language-server.blade-lsp]
+# command = "laravel-dev-tools"
+# args = [ "lsp" ]
 
 [[language]]
 name = "php"

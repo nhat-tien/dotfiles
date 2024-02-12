@@ -184,15 +184,15 @@ keybinds {
     }
 }
 
-theme "tokyo-night-dark"
+theme "my-tokyo-night-dark"
 
 themes {
-    tokyo-night-dark {
-        fg 169 177 214
-        bg 26 27 38
+    my-tokyo-night-dark {
+        fg 122 162 247
+        bg 36 40 59
         black 56 62 90
-        red 249 51 87
-        green 158 206 106
+        red 36 40 59
+        green 122 162 247
         yellow 224 175 104
         blue 122 162 247
         magenta 187 154 247

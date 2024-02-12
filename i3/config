@@ -43,7 +43,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/dotfiles/i3/autolock.sh 
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale $HOME/dotfiles/wallpapers/wallpaper2.png
+exec --no-startup-id feh --bg-scale $HOME/dotfiles/wallpapers/wallpaper4.png
 
 # Ibus-daemon
 exec_always --no-startup-id $HOME/dotfiles/ibus/launch.sh
@@ -74,8 +74,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-# bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -236,7 +236,7 @@ bindsym $mod+m exec --no-startup-id ~/dotfiles/rofi/menu.sh
 # bindsym Control+$mod+l exec "i3lock -i ~/dotfiles/wallpapers/wallpaperblur.png"
 
 # Rofi
-bindsym $mod+d exec --no-startup-id rofi -show run --normal-window -display-run " "
+bindsym $mod+d exec --no-startup-id rofi -show run --normal-window -display-run ""
 
 # Wezterm
 

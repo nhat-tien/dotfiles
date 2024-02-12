@@ -267,9 +267,9 @@ configuration {
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        " ";
+    str:        "  ";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @active-background;
 }
 element-text, element-icon {
     background-color: inherit;
