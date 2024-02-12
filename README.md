@@ -13,7 +13,9 @@
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
 - Text editor: [Helix](https://github.com/helix-editor/helix)
-- Terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
+- Terminal emulator: [Wezterm](https://github.com/wez/wezterm)
+- Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
+- TUI file manager: [nnn](https://github.com/jarun/nnn) 
 
 ## Installing
 
