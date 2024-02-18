@@ -50,7 +50,7 @@ label = { fg = "blue" }
 "ui.statusline.insert" = { fg = "orange", modifiers = ["bold"]} 
 "ui.statusline.select" = { fg = "light-cyan", modifiers = ["bold"]}
 "ui.bufferline" = { fg = "comment"}
-"ui.bufferline.active" = { fg = "background", bg = "blue" }
+"ui.bufferline.active" = { fg = "foreground_gutter" , bg = "blue", modifiers = ["bold", "italic"]}
 
 "ui.text" = { fg = "foreground" }
 "ui.text.focus" = { fg = "cyan" } 

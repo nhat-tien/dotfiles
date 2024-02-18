@@ -5,6 +5,9 @@ alias dotfiles="hx ~/dotfiles"
 alias journal="hx ~/ObsidianVaults/journal" 
 alias notes="hx ~/ObsidianVaults/notes"
 alias eng="hx ~/ObsidianVaults/english-practice"
+alias vault="hx ~/ObsidianVaults/mainVault"
+alias zet="hx ~/ObsidianVaults/zettel"
+alias vimdot="nvim ~/dotfiles/nvim"
 
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"
@@ -35,7 +38,7 @@ alias trash="gio trash"
 #screenfetch
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-wmtheme' "
-alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh'"
+alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' "
 
 #clock
 alias clock="tty-clock -c -f \"\" -C 3 "

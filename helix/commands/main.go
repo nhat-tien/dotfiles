@@ -2,22 +2,26 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"time"
+	"strconv"
+	"text/template"
 )
 
 func main() {
-	var arg string = os.Args[1]
+	// var arg string = os.Args[1]
 
-	switch arg {
-		case "date":
-		printDate()
-	}
+	// switch arg {
+	// 	case "date":
+	// 	printDate()
+	// }
 
 	fmt.Println("")
 }
 
-func printDate() {
+func printDate() string {
 	currentTime := time.Now()
-	fmt.Printf("%d-%02d-%02d", currentTime.Year(), currentTime.Month(), currentTime.Day())
+	var date string
+	date = strconv.Itoa(currentTime.Year()) + "-" + strconv.Itoa(int(currentTime.Month())) + "-" + strconv.Itoa(currentTime.Day())
+
+	return date  
 }

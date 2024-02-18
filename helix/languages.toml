@@ -1,3 +1,29 @@
+
+[language-server.cssmodules-language-server]
+command = "cssmodules-language-server"
+args = [ "--stdio" ]
+
+[language-server.vue-language-server]
+command = "vue-language-server"
+args = ["--stdio"]
+# config = {typescript = {tsdk = "C:\\Users\\Admin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib"}, environment = "node"}
+config = {typescript = {tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib"}, environment = "node"}
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.phpactor]
+command = "phpactor"
+args = [ "language-server" ]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.helix-snippets-ls]
+command = "helix-snippets-ls"
+args = ["--stdio"]
+
 [[language]]
 name = "python"
 indent = { tab-width = 4, unit = " "}
@@ -14,20 +40,9 @@ language-servers = [ "vue-language-server" ]
 '{' = '}'
 '[' = ']'
 
-
-[language-server.cssmodules-language-server]
-command = "cssmodules-language-server"
-args = [ "--stdio" ]
-
-[language-server.vue-language-server]
-command = "vue-language-server"
-args = ["--stdio"]
-# config = {typescript = {tsdk = "C:\\Users\\Admin\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib"}, environment = "node"}
-config = {typescript = {tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib"}, environment = "node"}
-
-
 [[language]]
 name = 'markdown'
+language-servers = ["marksman"]
 [language.auto-pairs]
 '*' = '*'
 '`' = '`'
@@ -38,9 +53,6 @@ name = 'markdown'
 '[' = ']'
 '<' = '>'
 
-[language-server.tailwindcss]
-command = "tailwindcss-language-server"
-args = ["--stdio"]
 
 [[language]]
 name = "jsx"
@@ -89,10 +101,6 @@ language-servers = ["vscode-css-language-server"]
 # name = "svelte"
 # language-servers = [ "tailwindcss", "svelteserver" ]
 
-[language-server.phpactor]
-command = "phpactor"
-args = [ "language-server" ]
-
 # [language-server.blade-lsp]
 # command = "laravel-dev-tools"
 # args = [ "lsp" ]
@@ -101,11 +109,21 @@ args = [ "language-server" ]
 name = "php"
 language-servers = ["phpactor","vscode-html-language-server"]
 
-[language-server.rust-analyzer.config.check]
-command = "clippy"
-
 [[language]]
 name = "rust"
 indent = { tab-width = 4, unit = " "}
 
 
+# [[language]]
+# name = "markdown"
+# language-servers = ["marksman",{ name = "ltex"}]
+# file-types = ["md", "txt"]
+# scope = "text.markdown"
+# roots = []
+
+# [language-server.ltex]
+# command = "/home/nhattien/lsp/ltex-ls-16.0.0-linux-x64/ltex-ls-16.0.0/bin/ltex-ls"
+
+# [language-server.ltex.config]
+# ltex.enabled = true
+# ltex.language = "en-US"

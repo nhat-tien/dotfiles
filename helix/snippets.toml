@@ -1,0 +1,26 @@
+h1 = "<h1>$0</h1>"
+h2 = "<h2>$0</h2>"
+h3 = "<h3>$0</h3>"
+h4 = "<h4>$0</h4>"
+h5 = "<h5>$0</h5>"
+
+body = "<body>$0</body>"
+main = "<main>$0</main>"
+footer = "<footer>$0</footer>"
+html = "<html>$0</html>"
+head = "<head>$0</head>"
+title = "<title>$0</title>"
+meta = "<meta name=\"\" content=\"\">"
+link = "<link rel=\"\" href=\"\">"
+
+p = "<p>$0</p>"
+a = "<a href=\"#\">$0</a>"
+ul = "<ul>$0</ul>"
+ol = "<ol>$0</ol>"
+li = "<li>$0</li>"
+div = "<div>$0</div>"
+script = "<script>$0</script>"
+style = "<style>$0</style>"
+
+img = "<img src=\"$0\" alt=\"\" />"
+

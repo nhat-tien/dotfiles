@@ -8,7 +8,6 @@ cursorline = true
 auto-format = false
 true-color = true
 idle-timeout = 0
-preview-completion-insert = false
 
 [editor.indent-guides]
 render = true
@@ -37,11 +36,11 @@ select = "underline"
 '{' = '}'
 '[' = ']'
 
-[editor.soft-wrap]
-enable = false
-max-wrap = 25 
-max-indent-retain = 0
-wrap-indicator = ""
+# [editor.soft-wrap]
+# enable = false
+# max-wrap = 25 
+# max-indent-retain = 0
+# wrap-indicator = ""
 
 [editor.gutters]
 layout = ["diff","diagnostics", "line-numbers", "spacer"]
@@ -86,10 +85,10 @@ G = "goto_file_end"
 [keys.insert]
 C-h = "move_char_left"
 C-l = "move_char_right"
-C-s = ":write"
+C-s = ":write" 
 
 # Snippets
-[keys.insert.C-m]
+[keys.insert.C-n]
 r = [":insert-output cat ~/dotfiles/helix/snippets/rfc.jsx", "normal_mode"]
 h = [":insert-output cat ~/dotfiles/helix/snippets/html5.html", "normal_mode"]
 v = [":insert-output cat ~/dotfiles/helix/snippets/sfc.vue", "normal_mode"]

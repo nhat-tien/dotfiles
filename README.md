@@ -1,4 +1,4 @@
-<h1 align="center">My dotfiles 📁</h1>
+<h1 align="center">My dotfiles 📁</h1> 
 
 ## Setup
 
@@ -12,7 +12,7 @@
 - Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
-- Text editor: [Helix](https://github.com/helix-editor/helix)
+- Code editor: [Helix](https://github.com/helix-editor/helix)
 - Terminal emulator: [Wezterm](https://github.com/wez/wezterm)
 - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
 - TUI file manager: [nnn](https://github.com/jarun/nnn) 
@@ -32,6 +32,12 @@
 ![screenshoot](/rice.png)
 
 ## Fix
+
+### Neovim Clipboard 
+
+```shell
+sudo apt install xclip
+```
 
 ### Không sử dụng được ibus-bamboo trên kitty terminal
 
