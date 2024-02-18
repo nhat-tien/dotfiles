@@ -6,5 +6,6 @@ vim.opt.mouse = "n"
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
+vim.opt.scrolloff = 5
 vim.cmd[[set clipboard+=unnamedplus]]
 

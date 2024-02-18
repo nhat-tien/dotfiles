@@ -1,6 +1,6 @@
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>') 
+vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
@@ -33,7 +33,6 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local cmp = require('cmp')
 local luasnip = require('luasnip')
-
 
 cmp.setup({
   sources = {
@@ -76,21 +75,25 @@ cmp.setup({
   },
 })
 
-require('lspconfig').lua_ls.setup({
-  capabilities = lsp_capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT'
-      },
-      diagnostics = {
-        globals = {'vim'},
-      },
-      workspace = {
-        library = {
-          vim.env.VIMRUNTIME,
-        }
-      }
-    }
-  }
-})
+local lsp_list = require("lsp.languages")
+
+for _, lsp in pairs(lsp_list) do
+	local lsp_config = {}
+
+    lsp_config.capabilities = lsp_capabilities
+
+	if lsp['settings'] ~= nil then
+		lsp_config.settings = lsp['settings']
+	end
+
+    if lsp['cmd'] ~= nil then
+		lsp_config.cmd = lsp['cmd']
+	end
+
+    if lsp['filetypes'] ~= nil then
+		lsp_config.filetypes = lsp['filetypes']
+	end
+
+
+	require('lspconfig')[lsp['name']].setup(lsp_config)
+end

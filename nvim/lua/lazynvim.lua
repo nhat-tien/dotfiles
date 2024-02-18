@@ -23,16 +23,6 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    config = function ()
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-          ensure_installed = {"lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
-    end
   },
  {
   "nvim-tree/nvim-tree.lua",
@@ -51,25 +41,59 @@ require("lazy").setup({
   dependencies = 'nvim-tree/nvim-web-devicons',
  },
  {
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
   dependencies = { 'nvim-tree/nvim-web-devicons' }
  },
  {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.5',
   dependencies = { 'nvim-lua/plenary.nvim' }
  },
+	--  ==== Lsp and Completion ====
  'neovim/nvim-lspconfig',
  {
 	"L3MON4D3/LuaSnip",
 	version = "v2.*",
+	dependencies = { "rafamadriz/friendly-snippets" },
  },
-	'saadparwaiz1/cmp_luasnip',
-	'hrsh7th/cmp-nvim-lsp',
-	'hrsh7th/nvim-cmp',
+	{ 'saadparwaiz1/cmp_luasnip' },
+	{ 'hrsh7th/cmp-nvim-lsp'  },
+	{ 'hrsh7th/nvim-cmp'  },
+	{ 'hrsh7th/cmp-path'  },
+  -- ============================== 
  {
     'numToStr/Comment.nvim',
     lazy = false,
  },
+ {
+	'echasnovski/mini.pairs',
+	version = '*'
+ },
+ {
+    'echasnovski/mini.surround',
+	version = '*'
+ },
+ {  "windwp/nvim-ts-autotag" },
+ { "JoosepAlviste/nvim-ts-context-commentstring" },
+ { "norcalli/nvim-colorizer.lua" },
+ {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+ },
+ {
+	"lukas-reineke/indent-blankline.nvim",
+	main = "ibl",
+	opts = {}
+ },
+ { "lewis6991/gitsigns.nvim" },
+ {
+	 "folke/trouble.nvim",
+	 dependencies = { "nvim-tree/nvim-web-devicons" },
+	 opts = {},
+ },
 })
-
-
