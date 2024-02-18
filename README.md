@@ -12,7 +12,7 @@
 - Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
-- Code editor: [Helix](https://github.com/helix-editor/helix)
+- Code editor: [Helix](https://github.com/helix-editor/helix) and NeoVim
 - Terminal emulator: [Wezterm](https://github.com/wez/wezterm)
 - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
 - TUI file manager: [nnn](https://github.com/jarun/nnn) 
