@@ -40,7 +40,27 @@ local lsp_list = {
 	},
 	{
 		name = "jdtls"
-	}
+	},
+   {
+      name = "gopls"
+   },
+   -- {
+   --    name = "ltex",
+   --    settings = {
+   --       ltex = {
+   --          enabled = { "markdown", "latex" },
+   --          language = "en-US",
+   --       }
+   --    }
+   -- },
+   {
+      name = "volar",
+      init_options = {
+         typescript = {
+            tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib"
+         },
+      }
+   }
 }
 
 return lsp_list

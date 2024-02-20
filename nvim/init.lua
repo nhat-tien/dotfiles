@@ -9,9 +9,11 @@ require("appearance")
 -- Keymap
 require("keys.regular")
 require("keys.telescope-keymap")
+require("keys.trouble-keymap")
 
 -- Plugin Config
 require("plugins.treesitter")
+require("plugins.neotree-config")
 require("plugins.comment")
 require("plugins.luasnip-config")
 require("plugins.mini-pairs")

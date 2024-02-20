@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- these will be buffer-local keybindings
     -- because they only work if you have an active language server
 
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+    vim.keymap.set('n', '<Leader>k', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
@@ -19,17 +19,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', '<Leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
   end
 })
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
--- local default_setup = function(server)
---   require('lspconfig')[server].setup({
---     capabilities = lsp_capabilities,
---   })
--- end
 
 local cmp = require('cmp')
 local luasnip = require('luasnip')
@@ -82,18 +76,23 @@ for _, lsp in pairs(lsp_list) do
 
     lsp_config.capabilities = lsp_capabilities
 
-	if lsp['settings'] ~= nil then
+	if lsp['settings'] then
 		lsp_config.settings = lsp['settings']
 	end
 
-    if lsp['cmd'] ~= nil then
+   if lsp['cmd'] then
 		lsp_config.cmd = lsp['cmd']
 	end
 
-    if lsp['filetypes'] ~= nil then
+   if lsp['filetypes'] then
 		lsp_config.filetypes = lsp['filetypes']
 	end
 
+   if lsp['init_options'] then
+		lsp_config.init_options  = lsp['init_options']
+	end
 
 	require('lspconfig')[lsp['name']].setup(lsp_config)
 end
+
+

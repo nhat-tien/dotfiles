@@ -7,7 +7,7 @@ alias notes="hx ~/ObsidianVaults/notes"
 alias eng="hx ~/ObsidianVaults/english-practice"
 alias vault="hx ~/ObsidianVaults/mainVault"
 alias zet="hx ~/ObsidianVaults/zettel"
-alias vimdot="nvim ~/dotfiles/nvim"
+alias vimdot="nvim ~/dotfiles"
 
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"
