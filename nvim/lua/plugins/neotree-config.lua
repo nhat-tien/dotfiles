@@ -228,7 +228,18 @@ vim.fn.sign_define("DiagnosticSignError",
             },
           },
 
-          commands = {} -- Add a custom command or override a global one using the same function name
+          commands = {
+            delete = function(state)
+               local inputs = require "neo-tree.ui.inputs"
+               local path = state.tree:get_node().path
+               local msg = "Are you sure you want to delete " .. path
+               inputs.confirm(msg, function(confirmed)
+                  if not confirmed then return end
+                  vim.fn.system({ "gio", "trash", vim.fn.fnameescape(path) })
+                  require("neo-tree.sources.manager").refresh(state.name)
+               end)
+            end,
+      } -- Add a custom command or override a global one using the same function name
         },
         buffers = {
           follow_current_file = {

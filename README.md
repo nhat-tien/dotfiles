@@ -1,4 +1,4 @@
-<h1 align="center">My dotfiles 📁</h1> 
+<h1 align="center" >My dotfiles 📁</h1> 
 
 ## Setup
 

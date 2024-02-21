@@ -8,6 +8,7 @@ require("appearance")
 
 -- Keymap
 require("keys.regular")
+require("keys.neo-tree-keymap")
 require("keys.telescope-keymap")
 require("keys.trouble-keymap")
 
@@ -24,6 +25,7 @@ require("plugins.colorizer")
 require("plugins.indent")
 require("plugins.gitsigns")
 require("plugins.telescope-config")
+require("plugins.wilder-config")
 
 -- LSP 
 require("lsp.main")

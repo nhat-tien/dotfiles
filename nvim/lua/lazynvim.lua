@@ -80,9 +80,15 @@ require("lazy").setup({
       opts = {}
    },
    { "lewis6991/gitsigns.nvim" },
+   -- Diagnostic Picker 
    {
       "folke/trouble.nvim",
       dependencies = { "nvim-tree/nvim-web-devicons" },
       opts = {},
    },
+   -- Command suggestion
+   {
+      'gelguy/wilder.nvim',
+      opts = {},
+   }
 })

@@ -60,6 +60,20 @@ local lsp_list = {
             tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib"
          },
       }
+   },
+   {
+      name = "tailwindcss",
+      filetypes = { "html", "javascriptreact","typescriptreact", "vue" }
+   },
+   {
+      name = "typst_lsp",
+      settings = {
+         exportPdf = "never" -- Choose onType, onSave or never.
+        -- serverPath = "" -- Normally, there is no need to uncomment it.
+      }
+   },
+   {
+      name = "dartls"
    }
 }
 

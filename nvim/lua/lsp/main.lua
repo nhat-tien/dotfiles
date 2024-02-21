@@ -72,25 +72,23 @@ cmp.setup({
 local lsp_list = require("lsp.languages")
 
 for _, lsp in pairs(lsp_list) do
+
 	local lsp_config = {}
 
-    lsp_config.capabilities = lsp_capabilities
+   lsp_config.capabilities = lsp_capabilities
 
-	if lsp['settings'] then
-		lsp_config.settings = lsp['settings']
-	end
+	local lsp_opts = {
+      'settings',
+      'cmd',
+      'filetypes',
+      'init_options',
+   }
 
-   if lsp['cmd'] then
-		lsp_config.cmd = lsp['cmd']
-	end
-
-   if lsp['filetypes'] then
-		lsp_config.filetypes = lsp['filetypes']
-	end
-
-   if lsp['init_options'] then
-		lsp_config.init_options  = lsp['init_options']
-	end
+   for _, opt in pairs(lsp_opts) do
+      if lsp[opt] then
+         lsp_config[opt] = lsp[opt]
+      end
+   end
 
 	require('lspconfig')[lsp['name']].setup(lsp_config)
 end
