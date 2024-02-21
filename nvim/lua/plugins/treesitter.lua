@@ -26,6 +26,7 @@ configs.setup({
 		"java",
       "yaml",
       "typst",
+      "cpp",
 	},
   sync_install = false,
   highlight = { enable = true },
