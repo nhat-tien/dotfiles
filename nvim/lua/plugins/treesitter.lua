@@ -27,6 +27,7 @@ configs.setup({
       "yaml",
       "typst",
       "cpp",
+      "regex",
 	},
   sync_install = false,
   highlight = { enable = true },

@@ -1,27 +1,22 @@
-require("regular-config")
+require("config.options")
 
 -- Lazy
-require("lazynvim")
+require("config.lazy-nvim")
 
 -- Appearance
-require("appearance")
+require("config.ui")
 
 -- Keymap
-require("keys.regular")
-require("keys.neo-tree-keymap")
-require("keys.telescope-keymap")
-require("keys.trouble-keymap")
+require("config.keymaps")
 
 -- Plugin Config
 require("plugins.treesitter")
-require("plugins.neotree-config")
+require("plugins.nvim-tree-config")
 require("plugins.comment")
 require("plugins.luasnip-config")
 require("plugins.mini-pairs")
 require("plugins.mini-surround")
-require("plugins.ts-autotag")
-require("plugins.ts-contex-commentstring")
-require("plugins.colorizer")
+require("plugins.colorizer-config")
 require("plugins.indent")
 require("plugins.gitsigns")
 require("plugins.telescope-config")

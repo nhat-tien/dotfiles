@@ -10,8 +10,8 @@ vim.opt.scrolloff = 5
 vim.cmd[[set clipboard+=unnamedplus]]
 vim.cmd[[let g:markdown_fenced_languages = ['html', 'python', 'lua', 'vim', 'typescript', 'javascript'] ]]
 vim.cmd([[
-augroup _typst
-autocmd!
-autocmd BufRead,BufEnter *.typ set filetype=typst
-augroup end
+   augroup _typst
+   autocmd!
+   autocmd BufRead,BufEnter *.typ set filetype=typst
+   augroup end
 ]])

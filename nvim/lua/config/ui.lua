@@ -11,7 +11,7 @@ require("tokyonight").setup {
       }
       hl["@markup.italic"] = {
          italic = true,
-         fg = "#ff9e64"
+         fg = "#e0af68"
       }
   end
 }
@@ -22,8 +22,15 @@ require("bufferline").setup{}
 
 require('lualine').setup{
   options = {
-    theme = 'tokyonight'
-  }
+    theme = 'tokyonight',
+    component_separators = '|',
+    section_separators = { left = '', right = '' },
+  },
+   sections = {
+    lualine_a = {
+      { 'mode', separator = { left = '' }, right_padding = 2 },
+    },
+   },
 }
 
 

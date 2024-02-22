@@ -53,7 +53,7 @@ alias icat="kitty +kitten icat"
 alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
 
 export GOPATH=$HOME/go
-export EDITOR=hx
+export EDITOR=nvim
 
 # NNN
 export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
