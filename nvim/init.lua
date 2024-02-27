@@ -16,7 +16,6 @@ require("plugins.comment")
 require("plugins.luasnip-config")
 require("plugins.mini-pairs")
 require("plugins.mini-surround")
-require("plugins.colorizer-config")
 require("plugins.indent")
 require("plugins.gitsigns")
 require("plugins.telescope-config")
@@ -24,6 +23,3 @@ require("plugins.wilder-config")
 
 -- LSP 
 require("lsp.main")
-
-
-

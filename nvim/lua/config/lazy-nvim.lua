@@ -1,14 +1,14 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+   vim.fn.system({
+      "git",
+      "clone",
+      "--filter=blob:none",
+      "https://github.com/folke/lazy.nvim.git",
+      "--branch=stable", -- latest stable release
+      lazypath,
+   })
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -85,7 +85,7 @@ require("lazy").setup({
          "markdown",
          "xml",
       },
-      opts = function ()
+      config = function ()
          require('nvim-ts-autotag').setup()
       end
    },
@@ -101,17 +101,23 @@ require("lazy").setup({
          "php",
          "vue",
       },
-      opts = function ()
+      config = function ()
          require('ts_context_commentstring').setup {}
       end
    },
    {
       "norcalli/nvim-colorizer.lua",
-      -- lazy = true,
-      -- ft = {
-      --    "css",
-      --    "toml",
-      -- },
+      lazy = true,
+      ft = {
+         "css",
+         "toml",
+      },
+      config = function ()
+         require('colorizer').setup {
+           'css';
+           'toml';
+         }
+      end
    },
    -- {
    --    "nvim-neo-tree/neo-tree.nvim",
@@ -155,28 +161,33 @@ require("lazy").setup({
        "nvim-tree/nvim-web-devicons",
       },
    },
+   -- {
+   --      "nvim-neorg/neorg",
+   --      dependencies = { "nvim-lua/plenary.nvim" },
+   --      build = ":Neorg sync-parsers",
+   --      -- tag = "*",
+   --      lazy = true, -- enable lazy load
+   --      ft = "norg", -- lazy load on file type
+   --      cmd = "Neorg", -- lazy load on command
+   --      config = function()
+   --        local setup = require("plugins.neorg-config")
+   --        require("neorg").setup(setup)
+   --      end,
+   -- },
    {
-        "nvim-neorg/neorg",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        build = ":Neorg sync-parsers",
-        -- tag = "*",
-        lazy = true, -- enable lazy load
-        ft = "norg", -- lazy load on file type
-        cmd = "Neorg", -- lazy load on command
-        config = function()
-          require("neorg").setup {
-            load = {
-              ["core.defaults"] = {}, -- Loads default behaviour
-              ["core.concealer"] = {}, -- Adds pretty icons to your documents
-              ["core.dirman"] = { -- Manages Neorg workspaces
-                config = {
-                  workspaces = {
-                    notes = "~/notes",
-                  },
-                },
-              },
-            },
-          }
-        end,
+      "epwalsh/obsidian.nvim",
+      version = "*",  -- recommended, use latest release instead of latest commit
+      lazy = true,
+      -- ft = "markdown",
+      event = {
+         "BufReadPre " .. vim.fn.expand "~" .. "/NotesVaults/notes/**.md",
+         "BufNewFile " .. vim.fn.expand "~" .. "/NotesVaults/notes/**.md",
+      },
+      dependencies = {
+         "nvim-lua/plenary.nvim",
+      },
+      config = function ()
+        require("plugins.obsidian-nvim-config")
+      end,
    },
 })

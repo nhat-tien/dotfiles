@@ -1,35 +1,56 @@
+local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
+
 vim.g.mapleader = ' '
 
 --key map for buffer
-vim.keymap.set('n','<Tab>', ":bnext<CR>")
-vim.keymap.set('n','<S-Tab>',":bprev<CR>")
-vim.keymap.set('n','<Leader>c',':bd<CR>')
-vim.keymap.set('n','<Leader>n',':enew<CR>')
-vim.keymap.set('n','<Esc>',':noh<CR><Esc>')
-vim.keymap.set('n','U','<C-r>')
+keymap.set('n','<Tab>', ":bnext<CR>", opts)
+keymap.set('n','<S-Tab>',":bprev<CR>", opts)
+keymap.set('n','<Leader>c',':bd<CR>', opts)
+keymap.set('n','<Leader>n',':enew<CR>', opts)
+keymap.set('n','<Esc>',':noh<CR><Esc>', opts)
 
--- keymap for insert mode
-vim.keymap.set('i','<C-s>','<C-o>:w<CR>')
-vim.keymap.set('i','<Tab>',' ')
+-- Redo
+keymap.set('n','U','<C-r>')
+
+-- Select all
+keymap.set('n','%','gg<S-v>G')
+
+-- Increment/Decrement
+keymap.set('n','+','<C-a>')
+keymap.set('n','-','<C-x>')
+
+-- Window 
+keymap.set('n','<C-w><left>','<C-w><')
+keymap.set('n','<C-w><right>','<C-w>>')
+keymap.set('n','<C-w><up>','<C-w>+')
+keymap.set('n','<C-w><down>','<C-w>-')
+
+-- Insert mode
+keymap.set('i','<C-s>','<C-o>:w<CR>')
+
+-- Select mode
+keymap.set('x','>','>gv')
+keymap.set('x','<','<gv')
 
 -- keymap snippets
-vim.keymap.set('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
+keymap.set('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
 
 -- NvimTree keymap
-vim.keymap.set('n','<Leader>t',':NvimTreeToggle<CR>')
+keymap.set('n','<Leader>t',':NvimTreeToggle<CR>', opts)
 
 -- Telescope keymap
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
--- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+keymap.set('n', '<leader>f', builtin.find_files, {})
+keymap.set('n', '<leader>/', builtin.live_grep, {})
+-- keymap.set('n', '<leader>fb', builtin.buffers, {})
+-- keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
 -- Trouble keymap
-vim.keymap.set("n", "<leader>d", function() require("trouble").toggle() end)
-vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
-vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
-vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
-vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
-vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+keymap.set("n", "<leader>d", function() require("trouble").toggle() end)
+keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
+keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
+keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
+keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)

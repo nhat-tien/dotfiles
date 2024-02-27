@@ -31,14 +31,15 @@ local luasnip = require('luasnip')
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
-    {name = 'luasnip'}
+    {name = 'luasnip'},
+    -- {name = 'neorg'},
   },
   mapping = cmp.mapping.preset.insert({
     -- Enter key confirms completion item
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
+   ['<CR>'] = cmp.mapping.confirm({select = false}),
 
     -- Ctrl + space triggers completion menu
-    ['<C-Space>'] = cmp.mapping.complete(),
+   ['<C-Space>'] = cmp.mapping.complete(),
 	["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -68,6 +69,11 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
+  window = {
+      completion = cmp.config.window.bordered({
+         border = {"󰙏", "─","┐", "│", "┘", "─","└", "│"}
+      }),
+   }
 })
 
 local lsp_list = require("lsp.languages")

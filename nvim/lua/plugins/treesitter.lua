@@ -29,8 +29,11 @@ configs.setup({
       "cpp",
       "regex",
 	},
-  sync_install = false,
+  sync_install = true,
   highlight = { enable = true },
+  incremental_selection = {
+   enable = true
+  },
   indent = { enable = true },
 })
 

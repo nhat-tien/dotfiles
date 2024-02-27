@@ -35,9 +35,9 @@ local lsp_list = {
 	{
 		name = "rust_analyzer"
 	},
-	{
-		name = "marksman"
-	},
+	-- {
+	-- 	name = "marksman"
+	-- },
 	{
 		name = "jdtls"
 	},

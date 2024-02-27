@@ -35,7 +35,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
         number = false,
         relativenumber = false,
         signcolumn = "yes",
-        width = 35,
+        width = 30,
         float = {
           enable = false,
           quit_on_focus_loss = true,
