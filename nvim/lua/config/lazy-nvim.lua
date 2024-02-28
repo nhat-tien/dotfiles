@@ -119,15 +119,6 @@ require("lazy").setup({
          }
       end
    },
-   -- {
-   --    "nvim-neo-tree/neo-tree.nvim",
-   --    branch = "v3.x",
-   --    dependencies = {
-   --       "nvim-lua/plenary.nvim",
-   --       "nvim-tree/nvim-web-devicons",
-   --       "MunifTanjim/nui.nvim",
-   --    }
-   -- },
    {
       "lukas-reineke/indent-blankline.nvim",
       main = "ibl",
@@ -190,4 +181,15 @@ require("lazy").setup({
         require("plugins.obsidian-nvim-config")
       end,
    },
+   -- {
+   --    'nvimdev/dashboard-nvim',
+   --    event = 'VimEnter',
+   --    config = function()
+   --
+   --    require('dashboard').setup {
+   --    -- config
+   --    }
+   --    end,
+   --    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+   -- }
 })

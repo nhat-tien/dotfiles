@@ -26,10 +26,16 @@ require("obsidian").setup({
    end,
    mappings = {
       ["gd"] = {
-      action = function()
-        return require("obsidian").util.gf_passthrough()
-      end,
-      opts = { noremap = false, expr = true, buffer = true },
-    },
+         action = function()
+           return require("obsidian").util.gf_passthrough()
+         end,
+         opts = { noremap = false, expr = true, buffer = true },
+      },
+      ["zt"] = {
+         action = function()
+           return require("obsidian").util.toggle_checkbox()
+         end,
+         opts = { buffer = true },
+      },
    },
 })

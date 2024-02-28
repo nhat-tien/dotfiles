@@ -7,13 +7,13 @@
 - Application launcher: [rofi](https://github.com/polybar/polybar)
 - Compositor: [picom](https://github.com/yshui/picom)
 - auto-lockscreen: `i3lock`, `xautolock`
-- Font: [CaskaydiaCove NF](https://www.nerdfonts.com/font-downloads)
+- Font: [CaskaydiaCove NF](https://www.nerdfonts.com/font-donloads)
 - Theme: `TokyoNight`
 - Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
-- Code editor: [Helix](https://github.com/helix-editor/helix) and NeoVim
-- Terminal emulator: [Wezterm](https://github.com/wez/wezterm)
+- Code editor: [NeoVim](https://github.com/neovim/neovim)
+- Terminal emulator: [Wezterm](https://github.com/ez/ezterm)
 - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
 - TUI file manager: [nnn](https://github.com/jarun/nnn) 
 

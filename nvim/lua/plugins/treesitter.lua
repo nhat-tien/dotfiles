@@ -28,6 +28,7 @@ configs.setup({
       "typst",
       "cpp",
       "regex",
+      "bash",
 	},
   sync_install = true,
   highlight = { enable = true },
