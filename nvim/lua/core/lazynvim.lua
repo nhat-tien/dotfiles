@@ -25,6 +25,10 @@ require("lazy").setup({
        build = ":TSUpdate",
    },
    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      dependencies = "nvim-treesitter/nvim-treesitter"
+   },
+   {
       "akinsho/bufferline.nvim",
       version = "*",
       dependencies = 'nvim-tree/nvim-web-devicons',
@@ -40,11 +44,16 @@ require("lazy").setup({
    },
    { "nvim-tree/nvim-web-devicons", lazy = true },
 	--  ==== Lsp and Completion ====
-   {  'neovim/nvim-lspconfig' },
+   {
+      'neovim/nvim-lspconfig',
+   },
    {
       "L3MON4D3/LuaSnip",
       version = "v2.*",
       dependencies = { "rafamadriz/friendly-snippets" },
+      config = function ()
+         require("luasnip.loaders.from_vscode").lazy_load()
+      end
    },
    {
       "hrsh7th/nvim-cmp",
@@ -62,14 +71,27 @@ require("lazy").setup({
    {
       'numToStr/Comment.nvim',
       lazy = false,
+      config = function ()
+         local config = require("plugins.comment")
+         require('Comment').setup(config)
+      end
    },
    {
       'echasnovski/mini.pairs',
-      version = '*'
+      version = '*',
+      event = 'InsertEnter',
+      config = function ()
+        require('mini.pairs').setup()
+      end
    },
    {
       'echasnovski/mini.surround',
-      version = '*'
+      version = '*',
+      event = 'BufEnter',
+      config = function ()
+         local config = require("plugins.mini-surround")
+         require('mini.surround').setup(config)
+      end
    },
    {
       "windwp/nvim-ts-autotag",
@@ -111,23 +133,48 @@ require("lazy").setup({
       ft = {
          "css",
          "toml",
+         "javascript",
+         "javascriptreact",
+         "typescript",
+         "typescriptreact",
+         "vue",
       },
       config = function ()
          require('colorizer').setup {
-           'css';
-           'toml';
+            "css";
+            "toml";
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
          }
       end
    },
    {
       "lukas-reineke/indent-blankline.nvim",
       main = "ibl",
-      opts = {}
+      opts = {},
+      config = function ()
+         require("ibl").setup({
+            scope = {
+               enabled = false,
+            }
+         })
+      end
    },
-   { "lewis6991/gitsigns.nvim" },
+   {
+      "lewis6991/gitsigns.nvim",
+      config = function ()
+         require('gitsigns').setup()
+      end
+   },
    -- Diagnostic Picker 
    {
       "folke/trouble.nvim",
+      keys = {
+         { "<leader>d", function() require("trouble").toggle() end}
+      },
       dependencies = { "nvim-tree/nvim-web-devicons" },
       opts = {},
    },
@@ -152,19 +199,19 @@ require("lazy").setup({
        "nvim-tree/nvim-web-devicons",
       },
    },
-   -- {
-   --      "nvim-neorg/neorg",
-   --      dependencies = { "nvim-lua/plenary.nvim" },
-   --      build = ":Neorg sync-parsers",
-   --      -- tag = "*",
-   --      lazy = true, -- enable lazy load
-   --      ft = "norg", -- lazy load on file type
-   --      cmd = "Neorg", -- lazy load on command
-   --      config = function()
-   --        local setup = require("plugins.neorg-config")
-   --        require("neorg").setup(setup)
-   --      end,
-   -- },
+   {
+        "nvim-neorg/neorg",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        build = ":Neorg sync-parsers",
+        -- tag = "*",
+        lazy = true, -- enable lazy load
+        ft = "norg", -- lazy load on file type
+        cmd = "Neorg", -- lazy load on command
+        config = function()
+          local setup = require("plugins.neorg-config")
+          require("neorg").setup(setup)
+        end,
+   },
    {
       "epwalsh/obsidian.nvim",
       version = "*",  -- recommended, use latest release instead of latest commit
@@ -173,6 +220,9 @@ require("lazy").setup({
       event = {
          "BufReadPre " .. vim.fn.expand "~" .. "/NotesVaults/notes/**.md",
          "BufNewFile " .. vim.fn.expand "~" .. "/NotesVaults/notes/**.md",
+         "BufReadPre " .. vim.fn.expand "~" .. "/NotesVaults/mainVault/**.md",
+         "BufNewFile " .. vim.fn.expand "~" .. "/NotesVaults/mainVault/**.md",
+
       },
       dependencies = {
          "nvim-lua/plenary.nvim",
@@ -191,5 +241,51 @@ require("lazy").setup({
    --    }
    --    end,
    --    dependencies = { {'nvim-tree/nvim-web-devicons'}}
-   -- }
+   -- },
+   -- Add icon to lsp completion 
+   {
+      "onsails/lspkind.nvim",
+   },
+   -- For better lsp experience 
+   {
+      'nvimdev/lspsaga.nvim',
+      event = 'LspAttach',
+      config = function()
+        local config = require("lsp.lspsaga-config")
+        require('lspsaga').setup(config)
+      end,
+      dependencies = {
+        'nvim-treesitter/nvim-treesitter',
+        'nvim-tree/nvim-web-devicons',
+      }
+   },
+   -- Code snip shot
+   {
+      "ellisonleao/carbon-now.nvim",
+      lazy = true,
+      cmd = "CarbonNow",
+      opts = {
+         theme = "night owl",
+         font_family = "Cascadia Code",
+      }
+   },
+   -- Laravel support
+   {
+      "adalessa/laravel.nvim",
+      dependencies = {
+         "nvim-telescope/telescope.nvim",
+         "tpope/vim-dotenv",
+         "MunifTanjim/nui.nvim",
+         "nvimtools/none-ls.nvim",
+      },
+      cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+      keys = {
+       { "<leader>la", ":Laravel artisan<cr>" },
+       { "<leader>lr", ":Laravel routes<cr>" },
+       { "<leader>lm", ":Laravel related<cr>" },
+      },
+      -- event = { "VeryLazy" },
+      lazy = true,
+      config = true,
+   },
 })

@@ -1,0 +1,11 @@
+layout {
+	pane
+	// pane size=1 split_direction="vertical" {
+	// 	pane borderless=true {
+	// 		plugin location="zellij:tab-bar"
+	// 	} 
+	// 	pane borderless=true {
+	// 		 plugin location="zellij:status-bar"
+	// 	}
+	// }	
+}

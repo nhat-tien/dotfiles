@@ -1,4 +1,4 @@
-require('Comment').setup({
+return {
 	 toggler = {
         ---Line-comment toggle keymap
         line = '<C-c>',
@@ -11,4 +11,4 @@ require('Comment').setup({
         ---Block-comment keymap
         block = 'gb',
     },
-})
+}

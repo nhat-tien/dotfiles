@@ -4,7 +4,12 @@ require("obsidian").setup({
         name = "personal",
         path = "~/NotesVaults/notes",
       },
+      {
+         name = "mainvault",
+         path = "~/NotesVaults/mainVault"
+      }
    },
+   disable_frontmatter = false,
    note_frontmatter_func = function(note)
     -- Add the title of the note as an alias.
     if note.title then
@@ -13,7 +18,11 @@ require("obsidian").setup({
 
     local date = os.date("%Y-%m-%d")
 
-    local out = { id = note.id, date = date, tags = note.tags }
+    local out = {
+         -- id = note.id,
+         date = date,
+         tags = note.tags
+    }
 
     -- `note.metadata` contains any manually added fields in the frontmatter.
     -- So here we just make sure those fields are kept in the frontmatter.

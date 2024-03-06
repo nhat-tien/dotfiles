@@ -46,6 +46,13 @@ config.webgpu_preferred_adapter = {
    name = "llvmpipe (LLVM 15.0.7, 256 bits)"
 }
 
+config.window_padding = {
+  left = 8,
+  right = 8,
+  top = 4,
+  bottom = 4,
+}
+
 config.keys = {
   {
     key = 'UpArrow',

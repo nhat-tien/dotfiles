@@ -3,17 +3,17 @@ local lsp_list = {
 		name = "lua_ls",
 		settings = {
 			Lua = {
-			  runtime = {
-				version = 'LuaJIT'
-			  },
-			  diagnostics = {
-				globals = {'vim'},
-			  },
-			  workspace = {
-				library = {
-				  vim.env.VIMRUNTIME,
-				}
-			  }
+            runtime = {
+               version = 'LuaJIT'
+            },
+            diagnostics = {
+               globals = {'vim'},
+            },
+            workspace = {
+               library = {
+                  vim.env.VIMRUNTIME,
+               }
+            }
 			}
 	    }
 	},
@@ -63,7 +63,12 @@ local lsp_list = {
    },
    {
       name = "tailwindcss",
-      filetypes = { "html", "javascriptreact","typescriptreact", "vue" }
+      filetypes = {
+         "html",
+         "javascriptreact",
+         "typescriptreact",
+      --   "vue"
+      }
    },
    {
       name = "typst_lsp",

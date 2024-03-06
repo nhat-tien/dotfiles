@@ -1,4 +1,4 @@
-local trouble = require("trouble.providers.telescope")
+-- local trouble = require("trouble.providers.telescope")
 
 local ignore_these = {
   'yarn%.lock',
@@ -53,10 +53,10 @@ require('telescope').setup({
        --   -- other layout configuration here
        -- },
        -- other defaults configuration here
-      mappings = {
-         i = { ["<c-t>"] = trouble.open_with_trouble },
-         n = { ["<c-t>"] = trouble.open_with_trouble },
-      },
+      -- mappings = {
+      --    i = { ["<c-t>"] = trouble.open_with_trouble },
+      --    n = { ["<c-t>"] = trouble.open_with_trouble },
+      -- },
       file_ignore_patterns = ignore_these,
       layout_config = {
          prompt_position = 'top',

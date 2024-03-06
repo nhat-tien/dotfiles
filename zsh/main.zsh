@@ -8,6 +8,7 @@ alias eng="nvim ~/NotesVaults/english-practice"
 alias vault="nvim ~/NotesVaults/mainVault"
 alias zet="nvim ~/NotesVaults/zettel"
 alias vimdot="nvim ~/dotfiles"
+alias zellij="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
 
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"

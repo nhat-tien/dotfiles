@@ -184,6 +184,16 @@ keybinds {
     }
 }
 
+layout {
+    pane split_direction="vertical" {
+        pane
+        pane split_direction="horizontal" {
+            pane
+            pane
+        }
+    }
+}
+
 theme "my-tokyo-night-dark"
 
 themes {

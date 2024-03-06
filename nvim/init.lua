@@ -1,23 +1,17 @@
-require("config.options")
+require("core.options")
 
--- Lazy
-require("config.lazy-nvim")
+require("core.keymaps")
 
--- Appearance
-require("config.ui")
+require("core.lazynvim")
 
--- Keymap
-require("config.keymaps")
+require("core.ui")
+
+-- Keymap require plugins
+require("core.keymaps-plugin")
 
 -- Plugin Config
 require("plugins.treesitter")
 require("plugins.nvim-tree-config")
-require("plugins.comment")
-require("plugins.luasnip-config")
-require("plugins.mini-pairs")
-require("plugins.mini-surround")
-require("plugins.indent")
-require("plugins.gitsigns")
 require("plugins.telescope-config")
 require("plugins.wilder-config")
 

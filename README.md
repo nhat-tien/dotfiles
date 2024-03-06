@@ -13,7 +13,8 @@
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
-- Terminal emulator: [Wezterm](https://github.com/ez/ezterm)
+- Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty)
+<!-- - Terminal emulator: [Wezterm](https://github.com/ez/wezterm) -->
 - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
 - TUI file manager: [nnn](https://github.com/jarun/nnn) 
 
@@ -45,15 +46,15 @@ sudo apt install xclip
 
 ```shell
   sudo sh -c "echo  '
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-# Dành cho những phần mềm dựa trên qt4
-export QT4_IM_MODULE=ibus
-# Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL
-export CLUTTER_IM_MODULE=ibus
-export GLFW_IM_MODULE=ibus
-' >> /etc/profile"
+    export GTK_IM_MODULE=ibus
+    export QT_IM_MODULE=ibus
+    export XMODIFIERS=@im=ibus
+    # Dành cho những phần mềm dựa trên qt4
+    export QT4_IM_MODULE=ibus
+    # Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL
+    export CLUTTER_IM_MODULE=ibus
+    export GLFW_IM_MODULE=ibus
+    ' >> /etc/profile"
 ```
 Chọn chế độ gõ là `6.XTestFakeKeyEvent`
 
@@ -64,6 +65,7 @@ Chọn chế độ gõ là `6.XTestFakeKeyEvent`
 ```
 
 ### Từ chối không có quyền sudo khi sử dụng brightnessctl
+
 1. Run: 
 ```shell
   sudo usermod -aG video ${USER}
