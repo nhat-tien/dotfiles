@@ -1,11 +1,11 @@
-alias zshrc="hx ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 alias cls="clear"
 alias dev="cd ~/DEV"
 alias dotfiles="hx ~/dotfiles"
 alias journal="nvim ~/NotesVaults/journal" 
 alias notes="nvim ~/NotesVaults/notes"
-alias eng="nvim ~/NotesVaults/english-practice"
 alias vault="nvim ~/NotesVaults/mainVault"
+alias task="nvim ~/NotesVaults/neorg"
 alias zet="nvim ~/NotesVaults/zettel"
 alias vimdot="nvim ~/dotfiles"
 alias zellij="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
@@ -51,13 +51,13 @@ alias gittree="git log --oneline --decorate --graph --all"
 alias icat="kitty +kitten icat"
 
 #workspace-setup
-alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
+# alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
 
 export GOPATH=$HOME/go
 export EDITOR=nvim
 
 # NNN
-export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
+# export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
 export NNN_TRASH=2
 
 path+=('/home/nhattien/.npm-packages/bin')

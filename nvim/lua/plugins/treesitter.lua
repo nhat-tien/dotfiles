@@ -30,7 +30,6 @@ configs.setup({
       "regex",
       "bash",
       "norg",
-      "latex",
    },
    sync_install = true,
    highlight = { enable = true },

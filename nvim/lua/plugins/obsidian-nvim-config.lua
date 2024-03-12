@@ -7,6 +7,10 @@ require("obsidian").setup({
       {
          name = "mainvault",
          path = "~/NotesVaults/mainVault"
+      },
+      {
+         name = "zettelkasten",
+         path = "~/NotesVaults/zettel"
       }
    },
    disable_frontmatter = false,

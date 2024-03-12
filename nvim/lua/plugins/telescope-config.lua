@@ -43,6 +43,7 @@ local ignore_these = {
   'graphql%.schema%.json',
   'schema%.json',
   'go%.sum',
+  'vendor/*',
 }
 
 require('telescope').setup({

@@ -222,6 +222,8 @@ require("lazy").setup({
          "BufNewFile " .. vim.fn.expand "~" .. "/NotesVaults/notes/**.md",
          "BufReadPre " .. vim.fn.expand "~" .. "/NotesVaults/mainVault/**.md",
          "BufNewFile " .. vim.fn.expand "~" .. "/NotesVaults/mainVault/**.md",
+         "BufReadPre " .. vim.fn.expand "~" .. "/NotesVaults/zettel/**.md",
+         "BufNewFile " .. vim.fn.expand "~" .. "/NotesVaults/zettel/**.md",
 
       },
       dependencies = {
@@ -231,17 +233,6 @@ require("lazy").setup({
         require("plugins.obsidian-nvim-config")
       end,
    },
-   -- {
-   --    'nvimdev/dashboard-nvim',
-   --    event = 'VimEnter',
-   --    config = function()
-   --
-   --    require('dashboard').setup {
-   --    -- config
-   --    }
-   --    end,
-   --    dependencies = { {'nvim-tree/nvim-web-devicons'}}
-   -- },
    -- Add icon to lsp completion 
    {
       "onsails/lspkind.nvim",
@@ -251,12 +242,12 @@ require("lazy").setup({
       'nvimdev/lspsaga.nvim',
       event = 'LspAttach',
       config = function()
-        local config = require("lsp.lspsaga-config")
-        require('lspsaga').setup(config)
+         local config = require("lsp.lspsaga-config")
+         require('lspsaga').setup(config)
       end,
       dependencies = {
-        'nvim-treesitter/nvim-treesitter',
-        'nvim-tree/nvim-web-devicons',
+         'nvim-treesitter/nvim-treesitter',
+         'nvim-tree/nvim-web-devicons',
       }
    },
    -- Code snip shot
@@ -280,9 +271,9 @@ require("lazy").setup({
       },
       cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
       keys = {
-       { "<leader>la", ":Laravel artisan<cr>" },
-       { "<leader>lr", ":Laravel routes<cr>" },
-       { "<leader>lm", ":Laravel related<cr>" },
+         { "<leader>la", ":Laravel artisan<cr>" },
+         { "<leader>lr", ":Laravel routes<cr>" },
+         { "<leader>lm", ":Laravel related<cr>" },
       },
       -- event = { "VeryLazy" },
       lazy = true,
