@@ -6,7 +6,7 @@ vim.g.mapleader = ' '
 --key map for buffer
 keymap.set('n','<Tab>', ":bnext<CR>", opts)
 keymap.set('n','<S-Tab>',":bprev<CR>", opts)
-keymap.set('n','<Leader>c',':bd<CR>', opts)
+-- keymap.set('n','<Leader>c',':bd<CR>', opts)
 keymap.set('n','<Leader>n',':enew<CR>', opts)
 keymap.set('n','<Esc>',':noh<CR><Esc>', opts)
 
@@ -14,7 +14,7 @@ keymap.set('n','<Esc>',':noh<CR><Esc>', opts)
 keymap.set('n','U','<C-r>')
 
 -- Select all
-keymap.set('n','%','gg<S-v>G',opts)
+keymap.set('n','sa','gg<S-v>G',opts)
 
 -- Matching bracket
 keymap.set('n','mm','%',opts)
@@ -24,10 +24,10 @@ keymap.set('n','+','<C-a>')
 keymap.set('n','-','<C-x>')
 
 -- Window 
-keymap.set('n','<C-w><left>','<C-w><')
-keymap.set('n','<C-w><right>','<C-w>>')
-keymap.set('n','<C-w><up>','<C-w>+')
-keymap.set('n','<C-w><down>','<C-w>-')
+keymap.set('n','<C-w><left>','<C-w><<C-w><')
+keymap.set('n','<C-w><right>','<C-w>><C-w>>')
+keymap.set('n','<C-w><up>','<C-w>+<C-w>+')
+keymap.set('n','<C-w><down>','<C-w>-<C-w>-')
 
 -- Insert mode
 keymap.set('i','<C-s>','<C-o>:w<CR>')

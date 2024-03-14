@@ -33,7 +33,7 @@ if theme == "night" then
 
    vim.cmd.colorscheme "tokyonight-storm"
 
-elseif theme == "day"  then
+else
    require("tokyonight").setup {
       on_highlights = function(hl)
          hl["@markup.strong"] = {

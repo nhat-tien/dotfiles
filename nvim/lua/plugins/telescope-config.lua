@@ -80,5 +80,7 @@ require('telescope').setup({
    pickers = {
       find_files = { sorting_strategy = 'ascending' },
       live_grep = { sorting_strategy = 'ascending' },
+      buffers = { sorting_strategy = 'ascending' },
+      help_tags = { sorting_strategy = 'ascending' },
    },
 })

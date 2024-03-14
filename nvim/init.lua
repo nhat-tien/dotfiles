@@ -13,7 +13,7 @@ require("core.keymaps-plugin")
 require("plugins.treesitter")
 require("plugins.nvim-tree-config")
 require("plugins.telescope-config")
-require("plugins.wilder-config")
 
--- LSP 
+-- LSP
 require("lsp.main")
+

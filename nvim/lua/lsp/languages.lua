@@ -77,9 +77,9 @@ local lsp_list = {
         -- serverPath = "" -- Normally, there is no need to uncomment it.
       }
    },
-   {
-      name = "dartls"
-   }
+   -- {
+   --    name = "dartls"
+   -- },
 }
 
 return lsp_list

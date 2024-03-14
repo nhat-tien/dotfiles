@@ -29,7 +29,6 @@ configs.setup({
       "cpp",
       "regex",
       "bash",
-      "norg",
    },
    sync_install = true,
    highlight = { enable = true },
