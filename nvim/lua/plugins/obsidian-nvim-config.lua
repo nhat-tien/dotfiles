@@ -26,7 +26,6 @@ require("obsidian").setup({
 			-- id = note.id,
 			date = date,
 			tags = note.tags,
-         title = note.title
 		}
 
 		-- `note.metadata` contains any manually added fields in the frontmatter.

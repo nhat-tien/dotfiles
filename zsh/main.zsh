@@ -19,9 +19,9 @@ alias mongostatus="sudo systemctl status mongod"
 alias mongostop="sudo systemctl stop mongod"
 
 # alias Nginx
-alias mysqlstart="sudo systemctl start nginx"
-alias mysqlstatus="sudo systemctl status nginx"
-alias mysqlstop="sudo systemctl stop nginx"
+alias nginxstart="sudo systemctl start nginx"
+alias nginxstatus="sudo systemctl status nginx"
+alias nginxstop="sudo systemctl stop nginx"
  
 # alias MySql 
 alias mysqlstart="sudo systemctl start mysql.service"

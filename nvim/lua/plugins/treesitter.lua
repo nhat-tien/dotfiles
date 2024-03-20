@@ -29,6 +29,8 @@ configs.setup({
       "cpp",
       "regex",
       "bash",
+      "sql",
+      "xml",
    },
    sync_install = true,
    highlight = { enable = true },

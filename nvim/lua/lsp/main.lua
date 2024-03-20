@@ -36,6 +36,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+      { name = 'path' },
 	},
 	mapping = cmp.mapping.preset.insert({
 		-- Enter key confirms completion item
@@ -96,12 +97,12 @@ cmp.setup({
 	},
 })
 
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    })
-})
+-- cmp.setup.cmdline(':', {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = cmp.config.sources({
+--       { name = 'path' }
+--     })
+-- })
 
 
 local lsp_list = require("lsp.languages")

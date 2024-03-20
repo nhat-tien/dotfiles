@@ -273,6 +273,11 @@ require("lazy").setup({
 		-- event = { "VeryLazy" },
 		lazy = true,
 		config = true,
+      opts = {
+          commands_options = {
+              ["make:model"] = { options = { "-m" } },
+         }
+      }
 	},
 	{
 		"akinsho/flutter-tools.nvim",
@@ -343,12 +348,15 @@ require("lazy").setup({
 	},
 	{
 		"folke/zen-mode.nvim",
-      lazy = true,
-      cmd = { "ZenMode" },
+		lazy = true,
+		cmd = { "ZenMode" },
 		opts = {
 			window = {
 				width = 0.57, -- width will be 85% of the editor width
 			},
 		},
 	},
+   {
+      "mg979/vim-visual-multi"
+   }
 })
