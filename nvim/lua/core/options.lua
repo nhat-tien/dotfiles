@@ -9,10 +9,13 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 5
 vim.opt.foldenable = false
 vim.cmd([[set clipboard+=unnamedplus]])
+
 vim.cmd([[let g:markdown_fenced_languages = ['html', 'python', 'lua', 'vim', 'typescript', 'javascript'] ]])
--- vim.cmd([[
---    augroup _typst
---    autocmd!
---    autocmd BufRead,BufEnter *.typ set filetype=typst
---    augroup end
--- ]])
+
+vim.filetype.add({
+  pattern = {
+    ['.*%.blade%.php'] = 'blade',
+  },
+})
+
+-- vim.g.codeium_enabled = false

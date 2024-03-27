@@ -14,7 +14,6 @@
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
 - Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty)
-<!-- - Terminal emulator: [Wezterm](https://github.com/ez/wezterm) -->
 - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
 - TUI file manager: [nnn](https://github.com/jarun/nnn) 
 

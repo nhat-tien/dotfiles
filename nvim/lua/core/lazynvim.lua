@@ -1,5 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
+---@diagnostic disable-next-line: undefined-field
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -267,17 +268,17 @@ require("lazy").setup({
 		cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
 		keys = {
 			{ "<leader>la", ":Laravel artisan<cr>" },
-			{ "<leader>lr", ":Laravel routes<cr>" },
-			{ "<leader>lm", ":Laravel related<cr>" },
+			-- { "<leader>lr", ":Laravel routes<cr>" },
+			-- { "<leader>lm", ":Laravel related<cr>" },
 		},
 		-- event = { "VeryLazy" },
 		lazy = true,
 		config = true,
-      opts = {
-          commands_options = {
-              ["make:model"] = { options = { "-m" } },
-         }
-      }
+		opts = {
+			commands_options = {
+				["make:model"] = { options = { "-m" } },
+			},
+		},
 	},
 	{
 		"akinsho/flutter-tools.nvim",
@@ -311,6 +312,7 @@ require("lazy").setup({
 				formatters_by_ft = {
 					php = { "php_cs_fixer" },
 					lua = { "stylua" },
+               dart = { "dart_format" },
 				},
 			})
 		end,
@@ -356,7 +358,32 @@ require("lazy").setup({
 			},
 		},
 	},
-   {
-      "mg979/vim-visual-multi"
-   }
+	{
+		"mg979/vim-visual-multi",
+	},
+	{
+		"Exafunction/codeium.vim",
+      lazy = true,
+      cmd = "CodeiumEnable",
+      -- ft = {
+      --    "python",
+      -- },
+		config = function()
+         local opts = { expr = true, silent = true }
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set("i", "<C-g>", function()
+				return vim.fn["codeium#Accept"]()
+			end, opts)
+			vim.keymap.set("i", "<c-,>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, opts)
+			-- vim.keymap.set("i", "<c-,>", function()
+			-- 	return vim.fn["codeium#CycleCompletions"](-1)
+			-- end, opts)
+			vim.keymap.set("i", "<c-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, opts)
+         print("AI bot is starting ~(> ▽ <)~")
+		end,
+	},
 })

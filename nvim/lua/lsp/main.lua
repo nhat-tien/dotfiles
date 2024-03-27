@@ -28,6 +28,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+require("luasnip").filetype_extend("dart", {"flutter"})
+require("luasnip").filetype_extend("vue", {"vue"})
+require("luasnip").filetype_extend("blade", {"blade"})
+require("luasnip").filetype_extend("php", { "phpdoc" })
+require("luasnip").filetype_extend("typescript", { "tsdoc" })
+require("luasnip").filetype_extend("javascript", { "jsdoc" })
+
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
@@ -107,17 +114,17 @@ cmp.setup({
 
 local lsp_list = require("lsp.languages")
 
-for _, lsp in pairs(lsp_list) do
-	local lsp_config = {}
-
-	lsp_config.capabilities = lsp_capabilities
-
-	local lsp_opts = {
+local lsp_opts = {
 		"settings",
 		"cmd",
 		"filetypes",
 		"init_options",
 	}
+
+for _, lsp in pairs(lsp_list) do
+	local lsp_config = {}
+
+	lsp_config.capabilities = lsp_capabilities
 
 	for _, opt in pairs(lsp_opts) do
 		if lsp[opt] then

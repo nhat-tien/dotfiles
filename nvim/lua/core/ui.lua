@@ -80,6 +80,10 @@ require("bufferline").setup{
    }
 }
 
+local function codeium_status()
+  return vim.api.nvim_call_function("codeium#GetStatusString", {})
+end
+
 require('lualine').setup{
    options = {
       theme = 'tokyonight',
@@ -91,6 +95,22 @@ require('lualine').setup{
          { 'mode', separator = { left = '' }, right_padding = 2 },
       },
       lualine_b = { 'branch', 'diagnostics' },
+      lualine_z = {
+         'location',
+         {
+            codeium_status,
+            icons_enabled = true,
+            icon = '󱚤',
+            separator = {
+               left = '',
+               right = '',
+            },
+            color = {
+              bg = '#1f2335',
+              fg = '#a2aace',
+            }
+         },
+      }
    },
    extensions = {'nvim-tree'}
 }

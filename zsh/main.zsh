@@ -60,6 +60,9 @@ export EDITOR=nvim
 # export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
 export NNN_TRASH=2
 
+
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
 path+=('/home/nhattien/.npm-packages/bin')
 path+=('/opt/apache-maven-3.6.3/bin')
 export PATH
