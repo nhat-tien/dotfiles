@@ -9,6 +9,7 @@ alias task="nvim ~/NotesVaults/neorg"
 alias zet="nvim ~/NotesVaults/zettel"
 alias vimdot="nvim ~/dotfiles"
 alias zellij="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
+alias site="nvim ~/DEV/Hugo/my-digital-garden"
 
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"

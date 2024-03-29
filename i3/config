@@ -43,7 +43,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/dotfiles/i3/autolock.sh 
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale $HOME/dotfiles/wallpapers/wallpaper.jpg
+exec --no-startup-id feh --bg-scale $HOME/dotfiles/wallpapers/wallpaper4.png
 
 # Ibus-daemon
 exec_always --no-startup-id $HOME/dotfiles/ibus/launch.sh
@@ -53,6 +53,8 @@ exec_always --no-startup-id $HOME/dotfiles/polybar/launch.sh
 
 # Picom
 exec_always --no-startup-id $HOME/dotfiles/picom/launch.sh
+
+exec pulseaudio -k
 
 # Authentication with gnome
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
@@ -222,7 +224,7 @@ bindsym $mod+r mode "resize"
 # |----------------------------------------|
 
 gaps inner 14
-gaps outer -2
+gaps outer -3
 default_border pixel 0
 default_floating_border pixel 0
 

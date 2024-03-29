@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local api = vim.api
 
 -- Telescope keymap
 local builtin = require("telescope.builtin")
@@ -31,7 +32,7 @@ end)
 keymap.set("n", "<A-t>", "<cmd>Lspsaga term_toggle")
 
 -- Formating
-vim.api.nvim_create_user_command("FormatBuf", function(args)
+api.nvim_create_user_command("FormatBuf", function(args)
 	require("conform").format({ bufnr = args.buf })
 end, {})
 
@@ -39,10 +40,22 @@ keymap.set("n", "<leader>c", function()
 	require("mini.bufremove").delete()
 end)
 
-vim.keymap.set("n", "]t", function()
+keymap.set("n", "]t", function()
 	require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
 
-vim.keymap.set("n", "[t", function()
+keymap.set("n", "[t", function()
 	require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
+
+-- Enable ltex-lsp, tools for spell/grammar checking
+api.nvim_create_user_command("LtexEnable", function ()
+	require("lspconfig").ltex.setup({
+      settings = {
+         ltex = {
+            enabled = { "markdown", "latex" },
+            language = "en-US",
+         }
+      }
+   })
+end, {})
