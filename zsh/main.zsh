@@ -21,6 +21,7 @@ alias mongostop="sudo systemctl stop mongod"
 
 # alias Nginx
 alias nginxstart="sudo systemctl start nginx"
+alias nginxrestart="sudo systemctl restart nginx"
 alias nginxstatus="sudo systemctl status nginx"
 alias nginxstop="sudo systemctl stop nginx"
  
