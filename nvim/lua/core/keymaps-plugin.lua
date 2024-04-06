@@ -29,10 +29,10 @@ keymap.set("n", "gR", function()
 end)
 
 -- Lspsaga floating terminal
-keymap.set("n", "<A-t>", "<cmd>Lspsaga term_toggle")
+keymap.set("n", "<A-t>", "<cmd>Lspsaga term_toggle<CR>")
 
 -- Formating
-api.nvim_create_user_command("FormatBuf", function(args)
+api.nvim_create_user_command("Format", function(args)
 	require("conform").format({ bufnr = args.buf })
 end, {})
 
@@ -59,3 +59,7 @@ api.nvim_create_user_command("LtexEnable", function ()
       }
    })
 end, {})
+
+keymap.set({'n', 'x', 'o'}, '<leader>s',  '<Plug>(leap-forward)')
+keymap.set({'n', 'x', 'o'}, 'gS',  '<Plug>(leap-backward)')
+-- keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')

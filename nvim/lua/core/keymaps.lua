@@ -40,7 +40,7 @@ keymap.set('x','<','<gv')
 keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
 
 -- keymap snippets
-keymap.set('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
+-- keymap.set('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
 
 -- NvimTree keymap
 keymap.set('n','<Leader>t',':NvimTreeToggle<CR>', opts)

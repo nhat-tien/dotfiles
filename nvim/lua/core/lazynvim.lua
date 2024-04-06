@@ -177,21 +177,7 @@ require("lazy").setup({
 		"gelguy/wilder.nvim",
 		opts = {},
 		config = function()
-			local wilder = require("wilder")
-
-			wilder.set_option(
-				"renderer",
-				wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
-					highlights = {
-						border = "Normal", -- highlight to use for the border
-					},
-					-- 'single', 'double', 'rounded' or 'solid'
-					-- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
-					border = "rounded",
-				}))
-			)
-
-			wilder.setup({ modes = { ":", "/", "?" } })
+			require("plugins.wilder-config")
 		end,
 	},
 	{
@@ -312,7 +298,7 @@ require("lazy").setup({
 				formatters_by_ft = {
 					php = { "php_cs_fixer" },
 					lua = { "stylua" },
-               dart = { "dart_format" },
+					dart = { "dart_format" },
 				},
 			})
 		end,
@@ -363,13 +349,13 @@ require("lazy").setup({
 	},
 	{
 		"Exafunction/codeium.vim",
-      lazy = true,
-      cmd = "CodeiumEnable",
-      -- ft = {
-      --    "python",
-      -- },
+		lazy = true,
+		cmd = "CodeiumEnable",
+		-- ft = {
+		--    "python",
+		-- },
 		config = function()
-         local opts = { expr = true, silent = true }
+			local opts = { expr = true, silent = true }
 			-- Change '<C-g>' here to any keycode you like.
 			vim.keymap.set("i", "<C-g>", function()
 				return vim.fn["codeium#Accept"]()
@@ -383,7 +369,19 @@ require("lazy").setup({
 			vim.keymap.set("i", "<c-x>", function()
 				return vim.fn["codeium#Clear"]()
 			end, opts)
-         print("AI bot is starting ~(> ▽ <)~")
+			print("AI bot is starting ~(> ▽ <)~")
 		end,
+	},
+	{
+		"jlcrochet/vim-razor",
+	},
+	{
+		"Hoffs/omnisharp-extended-lsp.nvim",
+		lazy = true,
+	},
+	{
+		"ggandor/leap.nvim",
+		version = "*",
+		opts = {},
 	},
 })

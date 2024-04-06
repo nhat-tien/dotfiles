@@ -31,6 +31,7 @@ configs.setup({
       "bash",
       "sql",
       "xml",
+      "c_sharp",
    },
    sync_install = true,
    highlight = { enable = true },

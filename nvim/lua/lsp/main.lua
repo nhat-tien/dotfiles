@@ -28,9 +28,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-require("luasnip").filetype_extend("dart", {"flutter"})
-require("luasnip").filetype_extend("vue", {"vue"})
-require("luasnip").filetype_extend("blade", {"blade"})
+require("luasnip").filetype_extend("dart", { "flutter" })
+require("luasnip").filetype_extend("vue", { "vue" })
+require("luasnip").filetype_extend("blade", { "blade" })
 require("luasnip").filetype_extend("php", { "phpdoc" })
 require("luasnip").filetype_extend("typescript", { "tsdoc" })
 require("luasnip").filetype_extend("javascript", { "jsdoc" })
@@ -43,7 +43,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-      { name = 'path' },
+		{ name = "path" },
 	},
 	mapping = cmp.mapping.preset.insert({
 		-- Enter key confirms completion item
@@ -88,7 +88,7 @@ cmp.setup({
 	},
 	formatting = {
 		format = lspkind.cmp_format({
-			mode = "symbol", -- show only symbol annotations
+			mode = "text_symbol", -- show only symbol annotations
 			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 			-- can also be a function to dynamically calculate max width such as
 			-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
@@ -111,15 +111,14 @@ cmp.setup({
 --     })
 -- })
 
-
 local lsp_list = require("lsp.languages")
 
 local lsp_opts = {
-		"settings",
-		"cmd",
-		"filetypes",
-		"init_options",
-	}
+	"settings",
+	"cmd",
+	"filetypes",
+	"init_options",
+}
 
 for _, lsp in pairs(lsp_list) do
 	local lsp_config = {}
@@ -134,3 +133,16 @@ for _, lsp in pairs(lsp_list) do
 
 	require("lspconfig")[lsp["name"]].setup(lsp_config)
 end
+
+require("lspconfig").omnisharp.setup({
+	cmd = { "dotnet", "/home/nhattien/lsp/omnisharp/OmniSharp.dll" },
+	handlers = {
+		["textDocument/definition"] = require("omnisharp_extended").definition_handler,
+		["textDocument/typeDefinition"] = require("omnisharp_extended").type_definition_handler,
+		["textDocument/references"] = require("omnisharp_extended").references_handler,
+		["textDocument/implementation"] = require("omnisharp_extended").implementation_handler,
+	},
+	enable_roslyn_analyzers = true,
+	organize_imports_on_format = true,
+	enable_import_completion = true,
+})
