@@ -9,12 +9,6 @@ require("core.ui")
 -- Keymap require plugins
 require("core.keymaps-plugin")
 
--- Plugin Config
-require("plugins.treesitter")
-require("plugins.nvim-tree-config")
-require("plugins.telescope-config")
-require("plugins.leap-config")
-
 -- LSP
 require("lsp.main")
 

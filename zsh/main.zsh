@@ -9,6 +9,7 @@ alias task="nvim ~/NotesVaults/neorg"
 alias zet="nvim ~/NotesVaults/zettel"
 alias vimdot="nvim ~/dotfiles"
 alias zellij="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
+alias lg="lazygit"
 alias site="nvim ~/DEV/Hugo/my-digital-garden"
 
 # alias Xampp
@@ -48,9 +49,6 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 
 #git tree
 alias gittree="git log --oneline --decorate --graph --all"
-
-#icat
-alias icat="kitty +kitten icat"
 
 #workspace-setup
 # alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
