@@ -78,8 +78,8 @@ return {
 					flex = {
 						flip_columns = 128,
 					},
-					height = 0.94,
-					width = 0.86,
+					height = 0.95,
+					width = 0.95,
 				},
 			},
 			pickers = {

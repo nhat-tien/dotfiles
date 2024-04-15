@@ -29,7 +29,7 @@ return {
 				"dart",
 				"java",
 				"yaml",
-				"typst",
+				-- "typst",
 				"cpp",
 				"regex",
 				"bash",

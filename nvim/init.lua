@@ -1,3 +1,3 @@
 require("core")
-require("lsp")
+require("lsp.main")
 

@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"time"
 	"strconv"
-	"text/template"
 )
 
 func main() {

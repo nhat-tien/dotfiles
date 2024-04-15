@@ -60,6 +60,3 @@ api.nvim_create_user_command("LtexEnable", function ()
    })
 end, {})
 
-keymap.set({'n', 'x', 'o'}, '<leader>s',  '<Plug>(leap-forward)')
-keymap.set({'n', 'x', 'o'}, 'gS',  '<Plug>(leap-backward)')
--- keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
