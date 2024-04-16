@@ -50,7 +50,7 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 #git tree
 alias gittree="git log --oneline --decorate --graph --all"
 
-#workspace-setup
+# workspace-setup
 # alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
 
 export GOPATH=$HOME/go
@@ -60,6 +60,11 @@ export EDITOR=nvim
 # export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
 export NNN_TRASH=2
 
+# Helpful script 
+mkdircd ()
+{
+  mkdir -p "$@" && eval cd "\"\$$#\""; 
+}
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
