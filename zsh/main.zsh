@@ -68,6 +68,8 @@ mkdircd ()
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
+export JDTLS_JVM_ARGS="-javaagent:$HOME/lsp/jdtls/lombok.jar"
+
 path+=('/home/nhattien/.npm-packages/bin')
 path+=('/opt/apache-maven-3.6.3/bin')
 export PATH
