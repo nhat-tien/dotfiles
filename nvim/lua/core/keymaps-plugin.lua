@@ -5,6 +5,7 @@ local api = vim.api
 local builtin = require("telescope.builtin")
 keymap.set("n", "<leader>f", builtin.find_files, {})
 keymap.set("n", "<leader>/", builtin.live_grep, {})
+keymap.set("n", "<leader>{", builtin.lsp_document_symbols, {})
 -- keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
@@ -28,6 +29,9 @@ keymap.set("n", "gR", function()
 	require("trouble").toggle("lsp_references")
 end)
 
+keymap.set("n", "<leader>c", function()
+   require("mini.bufremove").delete()
+end)
 -- Lspsaga floating terminal
 keymap.set("n", "<A-t>", "<cmd>Lspsaga term_toggle<CR>")
 
@@ -35,10 +39,6 @@ keymap.set("n", "<A-t>", "<cmd>Lspsaga term_toggle<CR>")
 api.nvim_create_user_command("Format", function(args)
 	require("conform").format({ bufnr = args.buf })
 end, {})
-
-keymap.set("n", "<leader>c", function()
-	require("mini.bufremove").delete()
-end)
 
 keymap.set("n", "]t", function()
 	require("todo-comments").jump_next()

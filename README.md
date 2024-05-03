@@ -77,8 +77,3 @@ Chọn chế độ gõ là `6.XTestFakeKeyEvent`
 expect: `video:x:44:<username>`, example `video:x:44:nhattien`
 
 3. Reboot 
-
-hello 
-my changge
-
-

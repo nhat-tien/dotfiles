@@ -87,6 +87,7 @@ return {
 				live_grep = { sorting_strategy = "ascending" },
 				buffers = { sorting_strategy = "ascending" },
 				help_tags = { sorting_strategy = "ascending" },
+            lsp_document_symbols = { sorting_strategy = "ascending" },
 			},
 		})
 	end,

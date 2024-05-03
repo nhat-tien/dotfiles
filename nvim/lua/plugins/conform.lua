@@ -9,6 +9,8 @@ return {
 				php = { "php_cs_fixer" },
 				lua = { "stylua" },
 				dart = { "dart_format" },
+            rust = { "rustfmt" },
+            java = { "google-java-format" },
 			},
 		})
 	end,
