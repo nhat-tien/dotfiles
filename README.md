@@ -14,8 +14,9 @@
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
 - Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty)
-- Terminal workspace: [Zellij](https://github.com/zellij-org/zellij)
+- Shell: `zsh` 
 - TUI file manager: [nnn](https://github.com/jarun/nnn) 
+<!-- - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij) -->
 
 ## Installing
 
@@ -23,15 +24,15 @@
   cd ~
   git clone https://github.com/nhat-tien/dotfiles.git
   cd dotfiles
-  chmod +x install.sh
-  ./install.sh
+  chmod +x setup.sh
+  ./setup.sh
 ```
 
 ## Screenshoot
 
 ![screenshoot](/rice.png)
 
-## Fix
+## Troubleshooting 
 
 ### Neovim Clipboard 
 
