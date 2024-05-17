@@ -1,83 +1,9 @@
-alias zshrc="nvim ~/.zshrc"
-alias cls="clear"
-alias dev="cd ~/DEV"
-alias dotfiles="hx ~/dotfiles"
-alias journal="nvim ~/NotesVaults/journal" 
-alias notes="nvim ~/NotesVaults/notes"
-alias vault="nvim ~/NotesVaults/mainVault"
-alias zet="nvim ~/NotesVaults/zettel"
-alias nvdot="nvim ~/dotfiles"
-alias zellij="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
-alias site="nvim ~/DEV/Hugo/my-digital-garden"
-alias lg="lazygit"
-alias nvi="nvim"
+# ----- Alias ------
+source $HOME/dotfiles/zsh/alias.zsh
 
-# alias Xampp
-alias apachestop="sudo /etc/init.d/apache2 stop"
+# ------ HELPFUL SCRIPTS -----
+source $HOME/dotfiles/zsh/scripts.zsh
 
-# alias Mongodb
-alias mongostart="sudo systemctl start mongod"
-alias mongostatus="sudo systemctl status mongod"
-alias mongostop="sudo systemctl stop mongod"
+# ------ Export, Env Variable ----
+source $HOME/dotfiles/zsh/export.zsh
 
-# alias Nginx
-alias nginxstart="sudo systemctl start nginx"
-alias nginxrestart="sudo systemctl restart nginx"
-alias nginxstatus="sudo systemctl status nginx"
-alias nginxstop="sudo systemctl stop nginx"
- 
-# alias MySql 
-alias mysqlstart="sudo systemctl start mysql.service"
-alias mysqlstatus="sudo systemctl status mysql.service"
-alias mysqlstop="sudo systemctl stop mysql.service"
-
-# alias Docker
-alias dockerstart="sudo systemctl start docker"
-alias dockerstatus="sudo systemctl status docker"
-alias dockerstop="sudo systemctl stop docker.socket"
-
-# Gio trash
-alias trash="gio trash"
-alias sutrash="sudo gio trash"
-
-#screenfetch
-# alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
-# alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-wmtheme' "
-alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' "
-
-#clock
-alias clock="tty-clock -c -f \"\" -C 3 "
-
-#git tree
-alias gittree="git log --oneline --decorate --graph --all"
-
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
-
-#python virtual environment
-alias pyenvinit='python3 -m venv ./env'
-alias pyactivate='source ./env/bin/activate'
-
-# workspace-setup
-# alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
-
-# ------ SMALL SCRIPT -----
-# Helpful script 
-mkdircd ()
-{
-  mkdir -p "$@" && eval cd "\"\$$#\""; 
-}
-# /------------------------/
-
-# Java lombok extension
-export JDTLS_JVM_ARGS="-javaagent:$HOME/lsp/jdtls/lombok.jar"
-# Golang
-export GOPATH=$HOME/go
-# Nvim
-export EDITOR=nvim
-# NNN
-# export NNN_OPENER=$HOME/dotfiles/scripts/nnn-open.sh
-export NNN_TRASH=2
-# PATH
-path+=('/home/nhattien/.npm-packages/bin')
-path+=('/opt/apache-maven-3.6.3/bin')
-export PATH

@@ -11,6 +11,12 @@ return {
 				dart = { "dart_format" },
             rust = { "rustfmt" },
             java = { "google-java-format" },
+            javascript = { "prettierd"},
+            javascriptreact = { "prettierd"},
+            typescrip = { "prettierd"},
+            typescriptreact = { "prettierd"},
+            html = { "prettierd"},
+            css = { "prettierd"},
 			},
 		})
 	end,

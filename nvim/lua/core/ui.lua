@@ -81,6 +81,14 @@ local function codeium_status()
 	return vim.api.nvim_call_function("codeium#GetStatusString", {})
 end
 
+local function get_word_count()
+   return tostring(vim.fn.wordcount().words) .. "w"
+end
+
+local function is_markdown()
+  return vim.bo.filetype == "markdown"
+end
+
 require("lualine").setup({
 	options = {
 		theme = "tokyonight",
@@ -94,6 +102,10 @@ require("lualine").setup({
 		lualine_b = { "branch", "diagnostics" },
 		lualine_z = {
 			"location",
+         {
+            get_word_count,
+            cond = is_markdown
+         },
 			{
 				codeium_status,
 				icons_enabled = true,
