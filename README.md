@@ -19,7 +19,7 @@
 <!-- - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij) -->
 
 ## Installing
-
+***Be careful**: This script will remove your existing configurations, please ensure you have a backup stored in somewhere outside of ~/.config/...*
 ```shell
   cd ~
   git clone https://github.com/nhat-tien/dotfiles.git
