@@ -29,6 +29,7 @@ local lsp_opts = {
 	"filetypes",
 	"init_options",
    "handlers",
+   "on_attach",
 }
 
 for _, lsp in pairs(lsp_list) do

@@ -4,7 +4,7 @@ return {
 		{
 			"<leader>d",
 			function()
-				require("trouble").toggle()
+				require("trouble").toggle("diagnostics")
 			end,
 		},
 	},

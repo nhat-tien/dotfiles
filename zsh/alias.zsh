@@ -10,6 +10,8 @@ alias zellij="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
 alias site="nvim ~/DEV/Hugo/my-blog"
 alias lg="lazygit"
 alias nvi="nvim"
+alias dl="cd ~/Downloads/"
+alias lbin="cd /usr/local/bin"
 
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"

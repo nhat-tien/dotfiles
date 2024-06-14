@@ -27,6 +27,9 @@ local lsp_list = {
 		name = "tsserver",
 	},
 	{
+		name = "eslint",
+	},
+	{
 		name = "phpactor",
 	},
 	{
@@ -77,6 +80,9 @@ local lsp_list = {
 			"typescriptreact",
 			--   "vue"
 		},
+		on_attach = function(client, bufnr)
+			require("tailwindcss-colors").buf_attach(bufnr)
+		end,
 	},
 	{
 		name = "typst_lsp",

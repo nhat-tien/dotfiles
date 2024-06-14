@@ -19,9 +19,9 @@ hidden = false
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator"]
 right = ["diagnostics","position", "file-encoding"] 
-mode.normal = "\ue0b6  NOR \ue0b4" 
-mode.insert = "\ue0b6  INS \ue0b4" 
-mode.select = "\ue0b6  SEL \ue0b4"
+mode.normal = " NOR" 
+mode.insert = " INS" 
+mode.select = " SEL"
 
 [editor.cursor-shape]
 normal = "block"

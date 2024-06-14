@@ -57,6 +57,7 @@ label = { fg = "blue" }
 "ui.virtual.ruler" = { bg = "foreground_gutter" }
 "ui.virtual.whitespace" = { fg = "foreground_gutter" }
 "ui.virtual.inlay-hint" = { bg = "background_inlay", fg = "comment", modifiers = ["italic"] }
+"ui.virtual.jump-label" = { fg = "red", bg = "comment" ,modifiers = ["bold"] }
 "ui.window" = { fg = "black" }
 
 "error" = { fg = "red" }
