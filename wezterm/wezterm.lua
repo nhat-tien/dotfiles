@@ -2,7 +2,7 @@ local wezterm = require "wezterm"
 
 local config = {}
 
-config.font_size = 8
+config.font_size = 9
 config.font = wezterm.font_with_fallback({
     { family = "CaskaydiaCove Nerd Font", scale = 1.5},
   });
@@ -49,8 +49,8 @@ config.webgpu_preferred_adapter = {
 config.window_padding = {
   left = 8,
   right = 8,
-  top = 4,
-  bottom = 4,
+  top = 8,
+  bottom = 8,
 }
 
 config.keys = {

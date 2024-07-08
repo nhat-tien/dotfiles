@@ -41,17 +41,22 @@ local lsp_list = {
 	{
 		name = "marksman",
 	},
-	{
-		name = "jdtls",
-		handlers = {
-			["language/status"] = function(_, result)
-				-- Print or whatever.
-			end,
-			["$/progress"] = function(_, result, ctx)
-				-- disable progress updates.
-			end,
-		},
-	},
+	-- {
+	-- 	name = "jdtls",
+	-- 	handlers = {
+	-- 		["language/status"] = function(_, result)
+	-- 			-- Print or whatever.
+	-- 		end,
+	-- 		["$/progress"] = function(_, result, ctx)
+	-- 			-- disable progress updates.
+	-- 		end,
+	-- 	},
+	-- 	init_options = {
+	-- 		bundles = {
+	-- 			"/home/nhattien/lsp/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-<version>.jar",
+	-- 		},
+	-- 	},
+	-- },
 	{
 		name = "gopls",
 	},
@@ -84,13 +89,13 @@ local lsp_list = {
 			require("tailwindcss-colors").buf_attach(bufnr)
 		end,
 	},
-	{
-		name = "typst_lsp",
-		settings = {
-			exportPdf = "never", -- Choose onType, onSave or never.
-			-- serverPath = "" -- Normally, there is no need to uncomment it.
-		},
-	},
+	-- {
+	-- 	name = "typst_lsp",
+	-- 	settings = {
+	-- 		exportPdf = "never", -- Choose onType, onSave or never.
+	-- 		-- serverPath = "" -- Normally, there is no need to uncomment it.
+	-- 	},
+	-- },
 	-- {
 	--    name = "dartls"
 	-- },

@@ -15,6 +15,12 @@ return {
 				cterm_color = "74",
 				name = "TypeScript",
 			},
+			[".eslintrc.json"] = {
+				icon = "",
+				color = "#4b32c3",
+				cterm_color = "56",
+				name = "Eslintrc",
+			},
 		})
 	end,
 }

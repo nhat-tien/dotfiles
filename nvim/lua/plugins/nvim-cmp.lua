@@ -9,12 +9,12 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
-		"rcarriga/cmp-dap",
+		-- "rcarriga/cmp-dap",
 	},
 
 	config = function()
 		local cmp = require("cmp")
-		local cmp_dap = require("cmp_dap")
+		-- local cmp_dap = require("cmp_dap")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
@@ -98,10 +98,10 @@ return {
 			}),
 		})
 
-		cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-			sources = {
-				{ name = "dap" },
-			},
-		})
+		-- cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+		-- 	sources = {
+		-- 		{ name = "dap" },
+		-- 	},
+		-- })
 	end,
 }

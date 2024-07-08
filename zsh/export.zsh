@@ -2,7 +2,7 @@ export JAVA_HOME="/usr/lib/jvm/java-1.21.0-openjdk-amd64"
 export CATALINA_BASE="/home/nhattien/App/tomcat"
 export CATALINA_HOME="/home/nhattien/App/tomcat"
 # Java lombok extension
-export JDTLS_JVM_ARGS="-javaagent:$HOME/lsp/jdtls/lombok.jar"
+# export JDTLS_JVM_ARGS="-javaagent:$HOME/lsp/jdtls/lombok.jar"
 # Golang
 export GOPATH=$HOME/go
 # Nvim

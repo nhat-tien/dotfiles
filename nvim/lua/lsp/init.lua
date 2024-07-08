@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local lsp_list = require("lsp.languages")
+local lsp_list = require("lsp.servers")
 
 local lsp_opts = {
 	"settings",
@@ -45,3 +45,4 @@ for _, lsp in pairs(lsp_list) do
 
 	require("lspconfig")[lsp["name"]].setup(lsp_config)
 end
+

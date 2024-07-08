@@ -55,6 +55,3 @@ api.nvim_create_user_command("LtexEnable", function ()
    })
 end, {})
 
-k.set("n","<leader>w", function ()
-  require("dapui").toggle()
-end)
