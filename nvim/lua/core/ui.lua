@@ -30,11 +30,11 @@ local function codeium_status()
 end
 
 local function get_word_count()
-   return tostring(vim.fn.wordcount().words) .. "w"
+	return tostring(vim.fn.wordcount().words) .. "w"
 end
 
 local function is_markdown()
-  return vim.bo.filetype == "markdown"
+	return vim.bo.filetype == "markdown"
 end
 
 require("lualine").setup({
@@ -50,10 +50,10 @@ require("lualine").setup({
 		lualine_b = { "branch", "diagnostics" },
 		lualine_z = {
 			"location",
-         {
-            get_word_count,
-            cond = is_markdown
-         },
+			{
+				get_word_count,
+				cond = is_markdown,
+			},
 			{
 				codeium_status,
 				icons_enabled = true,

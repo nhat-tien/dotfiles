@@ -7,7 +7,8 @@ return {
 	},
 	-- lazy = true,
 	config = function()
-		local dap, dapui = require("dap"), require("dapui")
+		local dap = require("dap")
+      local dapui = require("dapui")
 
       dapui.setup()
 
@@ -23,24 +24,8 @@ return {
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
---       dap.adapters.gdb = {
---         type = "executable",
---         command = "gdb",
---         args = { "-i", "dap" }
---       }
---       dap.configurations.rust = {
---   {
---     name = "Launch",
---     type = "gdb",
---     request = "launch",
---     program = function()
---       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/src/', 'file')
---     end,
---     cwd = "${workspaceFolder}",
---     stopAtBeginningOfMainSubprogram = false,
---   },
--- }
-		vim.keymap.set("n", "<leader>gt", dap.toggle_breakpoint, {})
-		vim.keymap.set("n", "<leader>gc", dap.continue, {})
+		vim.keymap.set("n", "<leader>gt", dap.toggle_breakpoint, {desc = "DAP: toggle_breakpoint"})
+		vim.keymap.set("n", "<leader>gs", dap.continue, { desc = "DAP: continue"})
+		vim.keymap.set("n", "<leader>gc", dap.close, {})
 	end,
 }

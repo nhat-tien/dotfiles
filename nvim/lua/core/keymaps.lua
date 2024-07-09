@@ -1,4 +1,5 @@
 local k = vim.keymap
+local utils = require("utils")
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '
@@ -7,7 +8,7 @@ vim.g.mapleader = ' '
 k.set('n','<Tab>', ":bnext<CR>", opts)
 k.set('n','<S-Tab>',":bprev<CR>", opts)
 -- keymap.set('n','<Leader>c',':bd<CR>', opts)
-k.set('n','<Leader>n',':enew<CR>', opts)
+k.set('n','<Leader>n',':enew<CR>',utils.merge({desc = "New Buffer"}, opts))
 k.set('n','<Esc>',':noh<CR><Esc>', opts)
 
 -- Redo
