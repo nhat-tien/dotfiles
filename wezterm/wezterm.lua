@@ -2,10 +2,11 @@ local wezterm = require "wezterm"
 
 local config = {}
 
-config.font_size = 9
+config.font_size = 8.5
 config.font = wezterm.font_with_fallback({
     { family = "CaskaydiaCove Nerd Font", scale = 1.5},
   });
+
 config.font_rules = {
   {
     intensity = 'Bold',
@@ -32,9 +33,10 @@ config.font_rules = {
 }
 
 config.allow_square_glyphs_to_overflow_width = "Never"
+config.line_height = 1.15
 config.custom_block_glyphs = true
 config.color_scheme = 'Tokyo Night Storm'
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 config.enable_tab_bar = false
 config.xim_im_name = 'ibus'
 config.disable_default_key_bindings = false
@@ -104,6 +106,10 @@ config.keys = {
     mods = 'CTRL|SHIFT',
     action = wezterm.action.PasteFrom 'Clipboard',
   },
-
+  {
+    key = 'n',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.SpawnWindow ,
+  },
 }
 return config;

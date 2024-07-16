@@ -20,7 +20,7 @@
 
 ## Installing
 ***Be careful**: This script will remove your existing configurations, please ensure you have a backup stored in somewhere outside of ~/.config/...*
-```shell
+```bash
   cd ~
   git clone https://github.com/nhat-tien/dotfiles.git
   cd dotfiles
@@ -36,7 +36,7 @@
 
 ### Neovim Clipboard 
 
-```shell
+```bash
 sudo apt install xclip
 ```
 
@@ -44,7 +44,7 @@ sudo apt install xclip
 
 [https://github.com/BambooEngine/ibus-bamboo/issues/196](https://github.com/BambooEngine/ibus-bamboo/issues/196)
 
-```shell
+```bash
   sudo sh -c "echo  '
     export GTK_IM_MODULE=ibus
     export QT_IM_MODULE=ibus
@@ -67,12 +67,12 @@ Chọn chế độ gõ là `6.XTestFakeKeyEvent`
 ### Từ chối không có quyền sudo khi sử dụng brightnessctl
 
 1. Run: 
-```shell
+```bash
   sudo usermod -aG video ${USER}
 ```
 
 2. Check:
-```shell
+```bash
   cat /etc/group | grep video
 ```
 expect: `video:x:44:<username>`, example `video:x:44:nhattien`

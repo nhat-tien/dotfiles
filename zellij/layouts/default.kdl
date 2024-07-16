@@ -1,0 +1,38 @@
+layout {
+	pane 
+		pane size=1 borderless=true {
+			plugin location="file:/home/nhattien/dotfiles/zellij/plugins/zjstatus.wasm" {
+				format_left   "{mode}  {tabs}"
+				format_space  ""
+
+				border_enabled  "false"
+
+				hide_frame_for_single_pane "false"
+
+				mode_normal  "#[fg=#7aa2f7] 󰄛 Normal"
+				mode_tmux    "#[fg=#ff9e64]  Tmux "
+				mode_pane "#[fg=#ff9e64] Pane"
+				mode_rename_pane "#[fg=#ff9e64] RenamePane"
+				mode_tab "#[fg=#ff9e64] Tab"
+				mode_rename_tab "#[fg=#ff9e64] RenameTab"
+				mode_scroll "#[fg=#ff9e64] Scroll"
+				mode_resize "#[fg=#ff9e64] Resize"
+				mode_search "#[fg=#ff9e64] Search"
+				mode_enter_search "#[fg=#ff9e64] EnterSearch"
+				mode_move "#[fg=#ff9e64] Move"
+				mode_session "#[fg=#ff9e64] Session"
+				mode_prompt "#[fg=#ff9e64] Prompt"
+
+				tab_normal   "#[fg=#6C7086] {name} "
+				tab_active   "#[fg=#9399B2,bold,italic] {name} "
+			}
+		} 
+	 // pane size=1 borderless=true {
+	 // 	plugin location="zellij:status-bar"
+	 // } 
+	// pane size=1 split_direction="vertical" {
+	 	// pane borderless=true {
+	 	// 	 plugin location="zellij:status-bar"
+	 	// }
+	// }	
+}

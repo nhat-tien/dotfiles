@@ -11,6 +11,7 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 5
 vim.opt.foldenable = false
+vim.opt.clipboard = "unnamedplus"
 
 -- [[ -------------------------------------
 --             DIAGNOSTIC SIGN
@@ -23,10 +24,8 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSi
 -- [[ -------------------------------------
 --            UTILS
 -- ]] -------------------------------------
--- use system clipboard
-vim.cmd([[set clipboard+=unnamedplus]])
 -- highlight codeblock in markdown
-vim.cmd([[let g:markdown_fenced_languages = ['html', 'python', 'lua', 'vim', 'typescript', 'javascript'] ]])
+vim.g.markdown_fenced_languages = {'html', 'python', 'lua', 'vim', 'typescript', 'javascript'}
 
 -- [[ -------------------------------------
 --             FILETYPE

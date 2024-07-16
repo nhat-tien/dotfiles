@@ -123,7 +123,7 @@ keybinds {
         }
     }
     tmux {
-        bind "[" { SwitchToMode "Scroll"; }
+        bind "s" { SwitchToMode "Scroll"; }
         bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
@@ -184,15 +184,15 @@ keybinds {
     }
 }
 
-layout {
-    pane split_direction="vertical" {
-        pane
-        pane split_direction="horizontal" {
-            pane
-            pane
-        }
+
+pane_frames false 
+
+ui {
+    pane_frames {
+        hide_session_name true
     }
 }
+
 
 theme "my-tokyo-night-dark"
 
