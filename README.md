@@ -6,7 +6,7 @@
 - Status bar: [polybar](https://github.com/polybar/polybar)
 - Application launcher: [rofi](https://github.com/polybar/polybar)
 - Compositor: [picom](https://github.com/yshui/picom)
-- auto-lockscreen: `i3lock`, `xautolock`
+- Auto-lockscreen: `i3lock`, `xautolock`
 - Font: [CaskaydiaCove NF](https://www.nerdfonts.com/font-donloads)
 - Theme: `TokyoNight`
 - Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
@@ -15,7 +15,8 @@
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
 - Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty)
 - Shell: `zsh` 
-- TUI file manager: [nnn](https://github.com/jarun/nnn) 
+- TUI file manager: [yazi](https://github.com/sxyazi/yazi)
+- Prompt: [starship](https://github.com/starship/starship) 
 <!-- - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij) -->
 
 ## Installing

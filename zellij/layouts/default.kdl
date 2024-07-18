@@ -22,6 +22,7 @@ layout {
 				mode_move "#[fg=#ff9e64] Move"
 				mode_session "#[fg=#ff9e64] Session"
 				mode_prompt "#[fg=#ff9e64] Prompt"
+				mode_locked "#[fg=#ff9e64] Locked"
 
 				tab_normal   "#[fg=#6C7086] {name} "
 				tab_active   "#[fg=#9399B2,bold,italic] {name} "

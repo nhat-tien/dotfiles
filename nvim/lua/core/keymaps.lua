@@ -26,6 +26,9 @@ normal_mode("<S-Tab>", ":bprev<CR>")
 -- keymap.set('n','<Leader>c',':bd<CR>', opts)
 normal_mode("<Leader>n", ":enew<CR>", "New Buffer")
 normal_mode("<Esc>", ":noh<CR><Esc>")
+normal_mode("<Leader>o", function ()
+   require("utils").handleURL()
+end, "Open URL")
 
 -- Redo
 normal_mode("U", "<C-r>")
