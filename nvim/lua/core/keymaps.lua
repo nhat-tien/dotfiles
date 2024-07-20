@@ -63,7 +63,7 @@ terminal_mode("<esc>", [[<C-\><C-n>]])
 -- keymap.set('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
 
 -- NvimTree keymap
-normal_mode("<Leader>t", ":NvimTreeToggle<CR>")
+normal_mode("<Leader>t", ":NvimTreeToggle<CR>", "Folder Tree Toggle")
 
 normal_mode("<leader>c", function()
 	require("mini.bufremove").delete()

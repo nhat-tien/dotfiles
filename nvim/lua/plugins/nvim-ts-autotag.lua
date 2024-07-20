@@ -11,8 +11,14 @@ return {
 		"vue",
 		"markdown",
 		"xml",
+      "rust",
+      "svelte"
 	},
 	config = function()
-		require("nvim-ts-autotag").setup()
+		require("nvim-ts-autotag").setup({
+         aliases = {
+            ["rust"] = "html",
+         }
+      })
 	end,
 }

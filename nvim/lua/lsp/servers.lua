@@ -19,6 +19,10 @@ local lsp_list = {
 	},
 	{
 		name = "html",
+		filetypes = {
+			"html",
+			"rust",
+		},
 	},
 	{
 		name = "cssls",
@@ -35,9 +39,23 @@ local lsp_list = {
 	{
 		name = "pylsp",
 	},
-	{
-		name = "rust_analyzer",
-	},
+	-- {
+	-- 	name = "rust_analyzer",
+	-- 	settings = {
+	-- 		["rust-analyzer"] = {
+	-- 			-- Other Settings ...
+	-- 			procMacro = {
+	-- 				ignored = {
+	-- 					leptos_macro = {
+	-- 						-- optional: --
+	-- 						-- "component",
+	-- 						"server",
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	{
 		name = "marksman",
 	},
@@ -99,6 +117,12 @@ local lsp_list = {
 	-- {
 	--    name = "dartls"
 	-- },
+	{
+		name = "svelte",
+	},
+	{
+		name = "yamlls",
+	},
 }
 
 return lsp_list
