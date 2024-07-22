@@ -2,9 +2,9 @@ local wezterm = require "wezterm"
 
 local config = {}
 
-config.font_size = 8.5
+config.font_size = 11
 config.font = wezterm.font_with_fallback({
-    { family = "CaskaydiaCove Nerd Font", scale = 1.5},
+    { family = "CaskaydiaCove Nerd Font", scale = 1, weight = "DemiBold"},
   });
 
 config.font_rules = {
@@ -12,21 +12,21 @@ config.font_rules = {
     intensity = 'Bold',
     italic = false,
     font = wezterm.font_with_fallback({
-      { family = "CaskaydiaCove Nerd Font", weight = "Bold", scale = 1.5}
+      { family = "CaskaydiaCove Nerd Font", weight = "Bold", scale = 1}
     }),
   },
   {
     intensity = 'Bold',
     italic = true,
     font = wezterm.font_with_fallback({
-      { family = 'CaskaydiaCove Nerd Font', weight = "Bold", style = "Italic", scale = 1.5}
+      { family = 'CaskaydiaCove Nerd Font', weight = "Bold", style = "Italic", scale = 1}
     }),
   },
   {
     intensity = 'Normal',
     italic = true,
     font = wezterm.font_with_fallback({
-      { family = 'CaskaydiaCove Nerd Font', weight = "Regular", style = "Italic", scale = 1.5}
+      { family = 'CaskaydiaCove Nerd Font', weight = "Regular", style = "Italic", scale = 1}
     }),
    },
 
@@ -35,11 +35,12 @@ config.font_rules = {
 config.allow_square_glyphs_to_overflow_width = "Never"
 config.line_height = 1.15
 config.custom_block_glyphs = true
-config.color_scheme = 'Tokyo Night Storm'
+config.color_scheme = 'Tokyo Night Moon'
 config.window_background_opacity = 0.8
 config.enable_tab_bar = false
 config.xim_im_name = 'ibus'
 config.disable_default_key_bindings = false
+config.underline_thickness = 2
 
 -- config.front_end = "WebGpu"
 config.webgpu_preferred_adapter = {

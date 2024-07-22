@@ -103,7 +103,7 @@ local lsp_list = {
 			"typescriptreact",
 			--   "vue"
 		},
-		on_attach = function(client, bufnr)
+		on_attach = function(_, bufnr)
 			require("tailwindcss-colors").buf_attach(bufnr)
 		end,
 	},
@@ -119,9 +119,6 @@ local lsp_list = {
 	-- },
 	{
 		name = "svelte",
-	},
-	{
-		name = "yamlls",
 	},
 }
 

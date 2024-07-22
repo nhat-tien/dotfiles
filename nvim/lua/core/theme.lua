@@ -10,15 +10,16 @@ local function autoChangeTheme()
 	end
 end
 
-theme = auto_theme and autoChangeTheme() or theme
-
-if theme == "night" then
+local function dark_tokyonight_setup()
 	require("tokyonight").setup({
 		transparent = true,
 		styles = {
 			sidebars = "transparent",
-			-- floats = "transparent",
+			floats = "transparent",
 		},
+		on_colors = function(colors)
+			colors.bg_statusline = colors.none
+		end,
 		on_highlights = function(hl)
 			hl["@markup.strong"] = {
 				bold = true,
@@ -32,8 +33,14 @@ if theme == "night" then
 	})
 
 	vim.cmd.colorscheme("tokyonight-moon")
-else
+end
+
+local function light_tokyonight_setup()
 	require("tokyonight").setup({
+		on_colors = function(colors)
+			colors.bg_statusline = colors.none
+			colors.bg = "#c2c2c2"
+		end,
 		on_highlights = function(hl)
 			hl["@markup.strong"] = {
 				bold = true,
@@ -43,12 +50,24 @@ else
 				italic = true,
 				fg = "#e0af68",
 			}
-			hl.CursorLine = {
-				bg = "000000",
-			}
 		end,
 	})
 
 	vim.cmd.colorscheme("tokyonight-day")
 end
 
+theme = auto_theme and autoChangeTheme() or theme
+
+if theme == "night" then
+   dark_tokyonight_setup()
+else
+   light_tokyonight_setup()
+end
+
+vim.api.nvim_create_user_command("ToggleMode", function (_)
+   if vim.g.colors_name == "tokyonight-moon" then
+      light_tokyonight_setup()
+   else
+      dark_tokyonight_setup()
+   end
+end, {})

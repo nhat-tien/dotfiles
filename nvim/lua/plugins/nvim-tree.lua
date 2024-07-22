@@ -49,11 +49,19 @@ return {
 			},
 			renderer = {
 				add_trailing = false,
-				group_empty = false,
+				group_empty = true,
 				full_name = false,
 				root_folder_label = ":~:s?$?/..?",
 				indent_width = 2,
-				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+				special_files = {
+               "Cargo.toml",
+               "Makefile",
+               "README.md",
+               "readme.md",
+               "pom.xml",
+               "package.json",
+               "composer.json"
+            },
 				symlink_destination = true,
 				highlight_git = "none",
 				highlight_diagnostics = "none",
@@ -173,8 +181,8 @@ return {
 				git_clean = false,
 				no_buffer = false,
 				no_bookmark = false,
-				custom = {},
-				exclude = {},
+				custom = { ".git" },
+				exclude = { ".gitignore", "gitattributes"},
 			},
 			live_filter = {
 				prefix = "[FILTER]: ",

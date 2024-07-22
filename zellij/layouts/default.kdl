@@ -3,29 +3,34 @@ layout {
 		pane size=1 borderless=true {
 			plugin location="file:/home/nhattien/dotfiles/zellij/plugins/zjstatus.wasm" {
 				format_left   "{mode}  {tabs}"
+				format_right "{datetime}"
 				format_space  ""
 
 				border_enabled  "false"
 
 				hide_frame_for_single_pane "false"
 
-				mode_normal  "#[fg=#7aa2f7] 󰄛 Normal"
-				mode_tmux    "#[fg=#ff9e64]  Tmux "
-				mode_pane "#[fg=#ff9e64] Pane"
-				mode_rename_pane "#[fg=#ff9e64] RenamePane"
-				mode_tab "#[fg=#ff9e64] Tab"
-				mode_rename_tab "#[fg=#ff9e64] RenameTab"
-				mode_scroll "#[fg=#ff9e64] Scroll"
-				mode_resize "#[fg=#ff9e64] Resize"
-				mode_search "#[fg=#ff9e64] Search"
-				mode_enter_search "#[fg=#ff9e64] EnterSearch"
-				mode_move "#[fg=#ff9e64] Move"
-				mode_session "#[fg=#ff9e64] Session"
-				mode_prompt "#[fg=#ff9e64] Prompt"
-				mode_locked "#[fg=#ff9e64] Locked"
+				mode_normal  "#[bg=#7aa2f7,fg=#16161e,bold] 󰄛 Normal#[fg=#7aa2f7]"
+				mode_tmux    "#[bg=#ff9e64,fg=#16161e,bold]  Tmux#[fg=#ff9e64]"
+				mode_pane "#[bg=#ff9e64,fg=#16161e,bold] 󰶜 Pane#[fg=#ff9e64]"
+				mode_rename_pane "#[bg=#ff9e64,fg=#16161e,bold] 󰑙 RenamePane#[fg=#ff9e64]"
+				mode_tab "#[bg=#ff9e64,fg=#16161e,bold] 󰓩 Tab#[fg=#ff9e64]"
+				mode_rename_tab "#[bg=#ff9e64,fg=#16161e,bold] 󰑙 RenameTab#[fg=#ff9e64]"
+				mode_scroll "#[bg=#ff9e64,fg=#16161e,bold]  Scroll#[fg=#ff9e64]"
+				mode_resize "#[bg=#ff9e64,fg=#16161e,bold] 󰩨 Resize#[fg=#ff9e64]"
+				mode_search "#[bg=#ff9e64,fg=#16161e,bold]  Search#[fg=#ff9e64]"
+				mode_enter_search "#[bg=#ff9e64,fg=#16161e,bold] 󱁴 EnterSearch#[fg=#ff9e64]"
+				mode_move "#[bg=#ff9e64,fg=#16161e,bold] 󰆾 Move#[fg=#ff9e64]"
+				mode_session "#[bg=#ff9e64,fg=#16161e,bold] 󰻋 Session#[fg=#ff9e64]"
+				mode_prompt "#[bg=#ff9e64,fg=#16161e,bold] Prompt#[fg=#ff9e64]"
+				mode_locked "#[bg=#ff9e64,fg=#16161e,bold] Locked#[fg=#ff9e64]"
 
 				tab_normal   "#[fg=#6C7086] {name} "
-				tab_active   "#[fg=#9399B2,bold,italic] {name} "
+				tab_active   "#[fg=#c0caf5,bold,italic] {name} "
+
+				datetime        "#[fg=#c0caf5,bold] {format} "
+				datetime_format "%H:%M"
+				datetime_timezone "Asia/Ho_Chi_Minh"
 			}
 		} 
 	 // pane size=1 borderless=true {

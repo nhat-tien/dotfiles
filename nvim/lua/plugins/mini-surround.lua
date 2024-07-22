@@ -3,7 +3,6 @@ return {
 	version = "*",
 	event = "BufEnter",
 	config = function()
-		local config = require("plugins.mini-surround")
 		require("mini.surround").setup({
 			mappings = {
 				add = "ms", -- Add surrounding in Normal and Visual modes

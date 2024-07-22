@@ -12,7 +12,7 @@ local function insert_mode(key, func, desc)
 	vim.keymap.set("i", key, func, merge(opts, { desc = desc }))
 end
 
-local function select_mode(key, func, desc)
+local function visual_mode(key, func, desc)
 	vim.keymap.set("x", key, func, merge(opts, { desc = desc }))
 end
 
@@ -30,6 +30,7 @@ normal_mode("<Leader>o", function ()
    require("utils").handleURL()
 end, "Open URL")
 
+
 -- Redo
 normal_mode("U", "<C-r>")
 
@@ -44,17 +45,18 @@ normal_mode("+", "<C-a>")
 normal_mode("-", "<C-x>")
 
 -- Window
-normal_mode("<C-w><left>", "<C-w><<C-w><")
-normal_mode("<C-w><right>", "<C-w>><C-w>>")
-normal_mode("<C-w><up>", "<C-w>+<C-w>+")
-normal_mode("<C-w><down>", "<C-w>-<C-w>-")
+normal_mode("<Leader>w<left>", "<C-w><<C-w><", "Resize Window")
+normal_mode("<Leader>w<right>", "<C-w>><C-w>>", "Resize Window")
+normal_mode("<Leader>w<up>", "<C-w>+<C-w>+", "Resize Window")
+normal_mode("<Leader>w<down>", "<C-w>-<C-w>-", "Resize Window")
+normal_mode("<Leader>ww", "<C-w>w", "Change Window")
 
 -- Insert mode
 insert_mode("<C-s>", "<C-o>:w<CR>")
 
 -- Select mode
-select_mode(">", ">gv")
-select_mode("<", "<gv")
+visual_mode(">", ">gv")
+visual_mode("<", "<gv")
 
 -- Terminal mode
 terminal_mode("<esc>", [[<C-\><C-n>]])
@@ -145,19 +147,19 @@ normal_mode("<leader>Jv", function()
 	require("jdtls").extract_variable()
 end, "[J]ava Extract [V]ariable")
 -- Set a Vim motion to <Space> + <Shift>J + v to extract the code selected in visual mode to a variable
-select_mode("<leader>Jv", "<Esc><Cmd> lua require('jdtls').extract_variable(true)<CR>", "[J]ava Extract [V]ariable")
+visual_mode("<leader>Jv", "<Esc><Cmd> lua require('jdtls').extract_variable(true)<CR>", "[J]ava Extract [V]ariable")
 -- Set a Vim motion to <Space> + <Shift>J + <Shift>C to extract the code under the cursor to a static variable
 normal_mode("<leader>JC", function()
 	require("jdtls").extract_constant()
 end, "[J]ava Extract [C]onstant")
 -- Set a Vim motion to <Space> + <Shift>J + <Shift>C to extract the code selected in visual mode to a static variable
-select_mode("<leader>JC", "<Esc><Cmd> lua require('jdtls').extract_constant(true)<CR>", "[J]ava Extract [C]onstant")
+visual_mode("<leader>JC", "<Esc><Cmd> lua require('jdtls').extract_constant(true)<CR>", "[J]ava Extract [C]onstant")
 -- Set a Vim motion to <Space> + <Shift>J + t to run the test method currently under the cursor
 normal_mode("<leader>Jt", function()
 	require("jdtls").test_nearest_method()
 end, "[J]ava [T]est Method")
 -- Set a Vim motion to <Space> + <Shift>J + t to run the test method that is currently selected in visual mode
-select_mode("<leader>Jt", "<Esc><Cmd> lua require('jdtls').test_nearest_method(true)<CR>", "[J]ava [T]est Method")
+visual_mode("<leader>Jt", "<Esc><Cmd> lua require('jdtls').test_nearest_method(true)<CR>", "[J]ava [T]est Method")
 -- Set a Vim motion to <Space> + <Shift>J + <Shift>T to run an entire test suite (class)
 normal_mode("<leader>JT", function()
 	require("jdtls").test_class()
