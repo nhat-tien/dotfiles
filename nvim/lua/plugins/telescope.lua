@@ -1,7 +1,10 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.5",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
 	config = function()
 		-- local trouble = require("trouble.providers.telescope")
 
@@ -52,6 +55,13 @@ return {
 		}
 
 		require("telescope").setup({
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({
+						-- even more opts
+					}),
+				},
+			},
 			defaults = {
 				layout_strategy = "horizontal",
 				-- layout_config = {
@@ -87,8 +97,10 @@ return {
 				live_grep = { sorting_strategy = "ascending" },
 				buffers = { sorting_strategy = "ascending" },
 				help_tags = { sorting_strategy = "ascending" },
-            lsp_document_symbols = { sorting_strategy = "ascending" },
+				lsp_document_symbols = { sorting_strategy = "ascending" },
 			},
 		})
+
+		require("telescope").load_extension("ui-select")
 	end,
 }

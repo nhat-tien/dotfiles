@@ -1,4 +1,2 @@
 require("core")
 require("lsp")
-
-

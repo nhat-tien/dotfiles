@@ -1,7 +1,7 @@
 return {
 	"echasnovski/mini.ai",
 	version = "*",
-	event = "BufEnter",
+	event = "VeryLazy",
 	config = function()
 		require("mini.ai").setup()
 	end,

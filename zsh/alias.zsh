@@ -7,11 +7,11 @@ alias vault="nvim ~/NotesVaults/mainVault"
 alias dotfiles="nvim ~/dotfiles"
 alias nvcf="nvim ~/dotfiles/nvim"
 alias z="zellij --layout ~/dotfiles/zellij/layouts/default.kdl"
-alias site="nvim ~/DEV/Hugo/my-blog"
+alias blog="nvim ~/DEV/Hugo/my-blog"
 alias lg="lazygit"
 alias v="nvim"
 alias dl="cd ~/Downloads/"
-alias lbin="cd /usr/local/bin"
+alias cdbin="cd /usr/local/bin"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -59,8 +59,8 @@ alias gittree="git log --oneline --decorate --graph --all"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 #python virtual environment
-alias pyenvinit='python3 -m venv ./env'
-alias pyactivate='source ./env/bin/activate'
+alias pyenv-init='python3 -m venv ./env'
+alias pyenv-act='source ./env/bin/activate'
 
 # workspace-setup
 # alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"

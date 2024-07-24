@@ -1,7 +1,7 @@
 return {
 	"echasnovski/mini.surround",
 	version = "*",
-	event = "BufEnter",
+	event = "VeryLazy",
 	config = function()
 		require("mini.surround").setup({
 			mappings = {
