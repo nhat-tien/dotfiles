@@ -17,7 +17,7 @@ prompt() {
 }
 
 multiselect() {
-	  # I copy this function from a handsome guy on unix.stackexchange, I want to express my deepest gratitude to him
+	  # I copy this function from a handsome guy on unix.stackexchange, I really want to express my deepest gratitude to him
 	  # Credit: https://unix.stackexchange.com/questions/146570/arrow-key-enter-menu/673436#673436 
     # little helpers for terminal print control and key input
     ESC=$( printf "\033")
@@ -244,25 +244,25 @@ start_install() {
 
 print_banner() {
 	echo
-	echo "██╗    ██╗ █████╗ ██╗████████╗███████╗██████╗"
-	echo "██║    ██║██╔══██╗██║╚══██╔══╝██╔════╝██╔══██╗"
-	echo "██║ █╗ ██║███████║██║   ██║   █████╗  ██████╔╝"
-	echo "██║███╗██║██╔══██║██║   ██║   ██╔══╝  ██╔══██╗"
-	echo "╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║"
-	echo " ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"
+	echo "     ██╗    ██╗ █████╗ ██╗████████╗███████╗██████╗"
+	echo "     ██║    ██║██╔══██╗██║╚══██╔══╝██╔════╝██╔══██╗"
+	echo "     ██║ █╗ ██║███████║██║   ██║   █████╗  ██████╔╝"
+	echo "     ██║███╗██║██╔══██║██║   ██║   ██╔══╝  ██╔══██╗"
+	echo "     ╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║"
+	echo "      ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"
 	echo
-	echo "Good $(check_time) Sir! Please feel free to take a look at our menu"
-	echo "and let me know whenever you're ready to place your order."
+	echo " Good $(check_time) Sir! Please feel free to take a look at our menu"
+	echo " and let me know whenever you're ready to place your order."
 	echo 
-	echo "╭─ Hint ─────────────────────────╮"
-	echo "│ Using j or ↓ to move down      │"
-	echo "│ Using k or ↑ to move up        │"
-	echo "│ Press <Space> to toggle select │"
-	echo "│ Press <Enter> to start install │"
-	echo "│ Press <Ctrl-c> to cancel       │"
-	echo "╰────────────────────────────────╯" 
+	echo " ╭─ Hint ─────────────────────────╮"
+	echo " │ Using j or ↓ to move down      │"
+	echo " │ Using k or ↑ to move up        │"
+	echo " │ Press <Space> to toggle select │"
+	echo " │ Press <Enter> to start install │"
+	echo " │ Press <Ctrl-c> to cancel       │"
+	echo " ╰────────────────────────────────╯" 
 	echo 
-	echo "────────────── MENU ──────────────"
+	echo " ────────────── MENU ──────────────"
 }
 
 main() {

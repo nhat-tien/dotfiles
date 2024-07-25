@@ -36,4 +36,10 @@ vim.filetype.add({
 	},
 })
 
+vim.filetype.add({
+  pattern = {
+    ['.*%.norg'] = 'norg',
+  },
+})
+
 -- vim.g.codeium_enabled = false
