@@ -4,7 +4,5 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	config = function()
-		require("renamer").setup()
-	end,
+   opts = {},
 }

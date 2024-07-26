@@ -11,3 +11,4 @@ source $HOME/dotfiles/zsh/export.zsh
 eval "$(starship init zsh)"
 
 
+

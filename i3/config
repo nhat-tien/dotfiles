@@ -222,8 +222,8 @@ bindsym $mod+r mode "resize"
 # |  MY_CUSTOM_2/2                         |
 # |----------------------------------------|
 
-gaps inner 12
-gaps outer -11
+gaps inner 8 
+gaps outer -9
 default_border pixel 0
 default_floating_border pixel 0
 

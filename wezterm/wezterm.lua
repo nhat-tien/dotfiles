@@ -113,4 +113,5 @@ config.keys = {
     action = wezterm.action.SpawnWindow ,
   },
 }
+config.warn_about_missing_glyphs = false
 return config;

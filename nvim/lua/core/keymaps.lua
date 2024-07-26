@@ -185,7 +185,3 @@ create_keymap("n", "<leader>Ju", "<Cmd> JdtUpdateConfig<CR>", "[J]ava [U]pdate C
 -- vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
 -- -- Allow yourself/register to run JdtShell as a Vim command
 -- vim.cmd("command! -buffer JdtJshell lua require('jdtls').jshell()")
-
-create_cmd("DB", function()
-	vim.cmd("lua print('Dbee ready!')")
-end)

@@ -20,6 +20,4 @@ return {
 	opts = {
 		open_for_directories = false,
 	},
-	config = function()
-	end,
 }

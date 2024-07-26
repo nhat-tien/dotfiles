@@ -10,7 +10,5 @@ return {
 		"php",
 		"vue",
 	},
-	config = function()
-		require("ts_context_commentstring").setup({})
-	end,
+   opts = {},
 }
