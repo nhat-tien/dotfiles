@@ -23,6 +23,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+				{ name = "neorg" },
 			},
 			mapping = cmp.mapping.preset.insert({
 				-- Enter key confirms completion item

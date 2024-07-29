@@ -4,7 +4,10 @@ return {
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 		"tpope/vim-dotenv",
-		"MunifTanjim/nui.nvim",
+		{
+         "MunifTanjim/nui.nvim",
+         lazy = true
+      },
 		"nvimtools/none-ls.nvim",
 	},
 	-- cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },

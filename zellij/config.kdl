@@ -22,7 +22,7 @@ keybinds {
         bind "-" { Resize "Decrease"; }
     }
     pane {
-        bind "Ctrl p" { SwitchToMode "Normal"; }
+        bind "Ctrl a" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
@@ -30,7 +30,7 @@ keybinds {
         bind "p" { SwitchFocus; }
         bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "r" { NewPane "Left"; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
@@ -147,7 +147,7 @@ keybinds {
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Quit; }
+        // bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
@@ -157,12 +157,17 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+		    bind "Ctrl q" {
+						LaunchOrFocusPlugin "zj-quit" {
+							floating true
+			      }
+        }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
+        bind "Ctrl a" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
         bind "Ctrl n" { SwitchToMode "Resize"; }
@@ -193,48 +198,28 @@ ui {
     }
 }
 
+plugins {
+  zj-quit location="file:$HOME/dotfiles/zellij/plugins/zj-quit.wasm" {
+    confirm_key "y"
+    cancel_key "Esc"
+  }
+}
 
-theme "my-tokyo-night-dark"
+theme "tokyonight_moon"
 
 themes {
-    my-tokyo-night-dark {
-        fg 122 162 247
-        bg 36 40 59
-        black 56 62 90
-        red 36 40 59
-        green 122 162 247
-        yellow 224 175 104
-        blue 122 162 247
-        magenta 187 154 247
-        cyan 42 195 222
-        white 192 202 245
-        orange 255 158 100
-    }
-    tokyo-night-storm {
-        fg 169 177 214
-        bg 36 40 59
-        black 56 62 90
-        red 249 51 87
-        green 158 206 106
-        yellow 224 175 104
-        blue 122 162 247
-        magenta 187 154 247
-        cyan 42 195 222
-        white 192 202 245
-        orange 255 158 100
-    }
-    tokyo-night {
-        fg 169 177 214
-        bg 26 27 38
-        black 56 62 90
-        red 249 51 87
-        green 158 206 106
-        yellow 224 175 104
-        blue 122 162 247
-        magenta 187 154 247
-        cyan 42 195 222
-        white 192 202 245
-        orange 255 158 100
+    tokyonight_moon {
+        fg "#c8d3f5"
+        bg "#2f334d"
+        black "#222436"
+        red "#ff757f"
+        green "#c3e88d"
+        yellow "#ffc777"
+        blue "#82aaff"
+        magenta "#c099ff"
+        cyan "#86e1fc"
+        white "#828bb8"
+        orange "#ff966c"
     }
 }
 

@@ -1,10 +1,9 @@
-local merge = require("utils").merge
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 
 local function create_keymap(mode, key, func, desc)
-	vim.keymap.set(mode, key, func, merge(opts, { desc = desc }))
+	vim.keymap.set(mode, key, func, vim.tbl_deep_extend('keep', opts, { desc = desc }))
 end
 
 local function create_cmd(command, func, desc)

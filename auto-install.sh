@@ -223,10 +223,10 @@ check_tar_exist() {
 
 check_time() {
 	currenttime=$(date +%H:%M)
-  if [[ "$currenttime" > "06:00" ]] || [[ "$currenttime" < "12:00" ]];
+  if [[ "$currenttime" > "06:00" ]] && [[ "$currenttime" < "12:00" ]];
 	then
 		echo "morning"
-	elif [[ "$currenttime" > "11:59" ]] || [[ "$currenttime" < "18:00" ]];
+	elif [[ "$currenttime" > "11:59" ]] && [[ "$currenttime" < "18:00" ]];
 	then
 		echo "afternoon"
 	else
@@ -251,8 +251,8 @@ print_banner() {
 	echo "     ╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║"
 	echo "      ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"
 	echo
-	echo " Good $(check_time) Sir! Please feel free to take a look at our menu"
-	echo " and let me know whenever you're ready to place your order."
+	echo -e " \e[3mGood $(check_time) Sir! Please feel free to take a look at our menu\e[0m"
+	echo -e " \e[3mand let me know whenever you're ready to place your order.\e[0m"
 	echo 
 	echo " ╭─ Hint ─────────────────────────╮"
 	echo " │ Using j or ↓ to move down      │"
@@ -285,11 +285,10 @@ main() {
 		"false"
 		"false"
 	)
-
-	multiselect result my_options preselection
+		multiselect result my_options preselection
 
 	# start_install result my_options
-
+  
 	idx=0
 	for option in "${my_options[@]}"; do
 			echo -e "$option\t=> ${result[idx]}"

@@ -1,7 +1,7 @@
 layout {
 	pane 
 		pane size=1 borderless=true {
-			plugin location="file:/home/nhattien/dotfiles/zellij/plugins/zjstatus.wasm" {
+			plugin location="file:$HOME/dotfiles/zellij/plugins/zjstatus.wasm" {
 				format_left   "{mode}  {tabs}"
 				format_right "{datetime}"
 				format_space  ""
@@ -23,7 +23,7 @@ layout {
 				mode_move "#[bg=#ff9e64,fg=#16161e,bold] 󰆾 Move#[fg=#ff9e64]"
 				mode_session "#[bg=#ff9e64,fg=#16161e,bold] 󰻋 Session#[fg=#ff9e64]"
 				mode_prompt "#[bg=#ff9e64,fg=#16161e,bold] Prompt#[fg=#ff9e64]"
-				mode_locked "#[bg=#ff9e64,fg=#16161e,bold] Locked#[fg=#ff9e64]"
+				mode_locked "#[bg=#ff9e64,fg=#16161e,bold] 󰌾 Locked#[fg=#ff9e64]"
 
 				tab_normal   "#[fg=#6C7086] {name} "
 				tab_active   "#[fg=#c0caf5,bold,italic] {name} "

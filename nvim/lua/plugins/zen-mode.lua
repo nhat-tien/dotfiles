@@ -4,7 +4,7 @@ return {
 	cmd = { "ZenMode" },
 	opts = {
 		window = {
-			width = 0.57, -- width will be 85% of the editor width
+			width = 0.85,
 		},
 	},
 }

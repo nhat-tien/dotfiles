@@ -13,3 +13,7 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+function restore() {
+  gio trash --restore "trash:/$1"
+}
+
