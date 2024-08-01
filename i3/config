@@ -238,7 +238,7 @@ bindsym $mod+m exec --no-startup-id ~/dotfiles/rofi/menu.sh
 # bindsym Control+$mod+l exec "i3lock -i ~/dotfiles/wallpapers/wallpaperblur.png"
 
 # Rofi
-bindsym $mod+d exec --no-startup-id rofi -show run --normal-window -display-run ""
+bindsym $mod+d exec --no-startup-id rofi -matching fuzzy -show run --normal-window -display-run ""
 
 # Wezterm
 

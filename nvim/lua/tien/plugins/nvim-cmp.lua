@@ -24,6 +24,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "neorg" },
+            { name = 'orgmode' },
 			},
 			mapping = cmp.mapping.preset.insert({
 				-- Enter key confirms completion item

@@ -1,4 +1,4 @@
-require("core.theme")
+require("tien.core.theme")
 
 require("bufferline").setup({
 	options = {

@@ -87,14 +87,14 @@ local lsp_list = {
 	--       }
 	--    }
 	-- },
-	{
-		name = "volar",
-		init_options = {
-			typescript = {
-				tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib",
-			},
-		},
-	},
+	-- {
+	-- 	name = "volar",
+	-- 	init_options = {
+	-- 		typescript = {
+	-- 			tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib",
+	-- 		},
+	-- 	},
+	-- },
 	{
 		name = "tailwindcss",
 		filetypes = {

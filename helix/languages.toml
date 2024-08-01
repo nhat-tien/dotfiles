@@ -3,6 +3,7 @@
 command = "cssmodules-language-server"
 args = [ "--stdio" ]
 
+
 [language-server.vue-language-server]
 command = "vue-language-server"
 args = ["--stdio"]

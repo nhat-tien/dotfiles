@@ -3,37 +3,30 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
 local function create_keymap(mode, key, func, desc)
-	vim.keymap.set(mode, key, func, vim.tbl_deep_extend('keep', opts, { desc = desc }))
+	vim.keymap.set(mode, key, func, vim.tbl_deep_extend("keep", opts, { desc = desc }))
 end
 
 local function create_cmd(command, func, desc)
 	vim.api.nvim_create_user_command(command, func, { desc = desc })
 end
 
--- Key map for buffer
+-- [[ -------------------------------------
+--             BUFFER
+-- ]] -------------------------------------
+
 create_keymap("n", "<Tab>", ":bnext<CR>")
 create_keymap("n", "<S-Tab>", ":bprev<CR>")
--- keymap.set('n','<Leader>c',':bd<CR>', opts)
+-- create_keymap('n','<Leader>c',':bd<CR>', opts)
 create_keymap("n", "<Leader>n", ":enew<CR>", "New Buffer")
-create_keymap("n", "<Esc>", ":noh<CR><Esc>")
-create_keymap("n", "<Leader>o", function()
-	require("utils").handleURL()
-end, "Open URL")
+-- Delete buffer
+create_keymap("n", "<leader>c", function()
+	require("mini.bufremove").delete()
+end, "Buffer Remove")
 
--- Redo
-create_keymap("n", "U", "<C-r>")
+-- [[ -------------------------------------
+--             WINDOW 
+-- ]] -------------------------------------
 
--- Select all
-create_keymap("n", "sa", "gg<S-v>G", "Select All")
-
--- Matching bracket
-create_keymap("n", "mm", "%")
-
--- Increment/Decrement
-create_keymap("n", "+", "<C-a>")
-create_keymap("n", "-", "<C-x>")
-
--- Window
 create_keymap("n", "<Leader>w<left>", "<C-w><<C-w><", "Resize Window")
 create_keymap("n", "<Leader>w<right>", "<C-w>><C-w>>", "Resize Window")
 create_keymap("n", "<Leader>w<up>", "<C-w>+<C-w>+", "Resize Window")
@@ -44,25 +37,34 @@ create_keymap("n", "<Leader>wl", "<C-w>l", "Foxus Right Window")
 create_keymap("n", "<Leader>wj", "<C-w>j", "Foxus Top Window")
 create_keymap("n", "<Leader>wk", "<C-w>k", "Foxus Bottom Window")
 
--- Insert mode
-create_keymap("i", "<C-s>", "<C-o>:w<CR>")
+-- [[ -------------------------------------
+--             UTILS
+-- ]] -------------------------------------
 
--- Select mode
+-- Hide highlight after use search
+create_keymap("n", "<Esc>", ":noh<CR><Esc>")
+-- Open url link at cursor line
+create_keymap("n", "<Leader>b", require("tien.utils").handleURL, "Open URL")
+-- Redo
+create_keymap("n", "U", "<C-r>")
+-- Select all
+create_keymap("n", "sa", "gg<S-v>G", "Select All")
+-- Go to matching bracket
+create_keymap("n", "mm", "%")
+-- Increment/Decrement
+create_keymap("n", "+", "<C-a>")
+create_keymap("n", "-", "<C-x>")
+-- Save shortcut in insert mode
+create_keymap("i", "<C-s>", "<C-o>:w<CR>")
+-- Adjust indent in visual mode
 create_keymap("x", ">", ">gv")
 create_keymap("x", "<", "<gv")
-
--- Terminal mode
+-- Escape terminal mode
 create_keymap("t", "<esc>", [[<C-\><C-n>]])
-
--- keymap snippets
--- keymap.set('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
-
--- NvimTree keymap
+-- Insert current date 
+-- create_keymap('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
+-- Toggle NvimTree 
 create_keymap("n", "<Leader>t", ":NvimTreeToggle<CR>", "Folder Tree Toggle")
-
-create_keymap("n", "<leader>c", function()
-	require("mini.bufremove").delete()
-end, "Buffer Remove")
 
 -- Telescope keymap
 create_keymap("n", "<leader>f", function()
@@ -99,6 +101,7 @@ create_cmd("Format", function(args)
 	require("conform").format({ bufnr = args.buf })
 end, "Format")
 
+-- Todo comment
 create_keymap("n", "]t", function()
 	require("todo-comments").jump_next()
 end, "Next todo comment")
@@ -119,6 +122,7 @@ create_cmd("LtexEnable", function()
 	})
 end, {})
 
+-- Debug
 create_keymap("n", "<leader>gt", function()
 	require("dap").toggle_breakpoint()
 end, "DAP: toggle_breakpoint")
@@ -175,7 +179,6 @@ end, "[J]ava [T]est Class")
 -- Set a Vim motion to <Space> + <Shift>J + u to update the project configuration
 create_keymap("n", "<leader>Ju", "<Cmd> JdtUpdateConfig<CR>", "[J]ava [U]pdate Config")
 
--- SPRING BOOT --
 -- -- Allow yourself to run JdtCompile as a Vim command
 -- vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
 -- -- Allow yourself/register to run JdtUpdateConfig as a Vim command

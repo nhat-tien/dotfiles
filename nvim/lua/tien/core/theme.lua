@@ -1,5 +1,8 @@
-local auto_theme = false
-local theme = "night" -- "night" | "day"
+-- Change theme here
+local config = {
+   auto_theme = false,
+   theme = "night" -- "night" | "day"
+}
 
 local function autoChangeTheme()
 	local hour = tonumber(os.date("%H"))
@@ -56,7 +59,7 @@ local function light_tokyonight_setup()
 	vim.cmd.colorscheme("tokyonight-day")
 end
 
-theme = auto_theme and autoChangeTheme() or theme
+local theme = config.auto_theme and autoChangeTheme() or config.theme
 
 if theme == "night" then
    dark_tokyonight_setup()

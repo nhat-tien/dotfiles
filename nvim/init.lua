@@ -1,2 +1,2 @@
-require("core")
-require("lsp")
+require("tien.core")
+require("tien.lsp")

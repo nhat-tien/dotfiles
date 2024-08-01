@@ -17,8 +17,8 @@ prompt() {
 }
 
 multiselect() {
-	  # I copy this function from a handsome guy on unix.stackexchange, I really want to express my deepest gratitude to him
-	  # Credit: https://unix.stackexchange.com/questions/146570/arrow-key-enter-menu/673436#673436 
+    # I copy this function from a handsome guy on unix.stackexchange, I really want to express my deepest gratitude to him
+    # Credit: https://unix.stackexchange.com/questions/146570/arrow-key-enter-menu/673436#673436 
     # little helpers for terminal print control and key input
     ESC=$( printf "\033")
     cursor_blink_on()   { printf "$ESC[?25h"; }
@@ -197,72 +197,72 @@ install_wget() {
     sudo apt install wget
 }
 
-check_curl_exist() {	
-		if ! command -v curl &> /dev/null
-		then
-				echo "It seem that you not have curl, try to install curl"
-				exit 1
-		fi
+check_curl_exist() {  
+    if ! command -v curl &> /dev/null
+    then
+        echo "It seem that you not have curl, try to install curl"
+        exit 1
+    fi
 }
 
 check_wget_exist() {
-		if ! command -v wget &> /dev/null
-		then
-				echo "It seem that you not have wget, try to install wget"
-				exit 1
-		fi
+    if ! command -v wget &> /dev/null
+    then
+        echo "It seem that you not have wget, try to install wget"
+        exit 1
+    fi
 }
 
 check_tar_exist() {
-		if ! command -v tar &> /dev/null
-		then
-				echo "It seem that you not have tar, try to install tar"
-				exit 1
-		fi
+    if ! command -v tar &> /dev/null
+    then
+        echo "It seem that you not have tar, try to install tar"
+        exit 1
+    fi
 }
 
 check_time() {
-	currenttime=$(date +%H:%M)
+  currenttime=$(date +%H:%M)
   if [[ "$currenttime" > "06:00" ]] && [[ "$currenttime" < "12:00" ]];
-	then
-		echo "morning"
-	elif [[ "$currenttime" > "11:59" ]] && [[ "$currenttime" < "18:00" ]];
-	then
-		echo "afternoon"
-	else
-		echo "evening"
-	fi
+  then
+    echo "morning"
+  elif [[ "$currenttime" > "11:59" ]] && [[ "$currenttime" < "18:00" ]];
+  then
+    echo "afternoon"
+  else
+    echo "evening"
+  fi
 }
 
 start_install() {
-	idx=0
-	for option in "${my_options[@]}"; do
-			echo -e "$option\t=> ${result[idx]}"
-			((idx++))
-	done
+  idx=0
+  for option in "${my_options[@]}"; do
+      echo -e "$option\t=> ${result[idx]}"
+      ((idx++))
+  done
 }
 
 print_banner() {
-	echo
-	echo "     ██╗    ██╗ █████╗ ██╗████████╗███████╗██████╗"
-	echo "     ██║    ██║██╔══██╗██║╚══██╔══╝██╔════╝██╔══██╗"
-	echo "     ██║ █╗ ██║███████║██║   ██║   █████╗  ██████╔╝"
-	echo "     ██║███╗██║██╔══██║██║   ██║   ██╔══╝  ██╔══██╗"
-	echo "     ╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║"
-	echo "      ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"
-	echo
-	echo -e " \e[3mGood $(check_time) Sir! Please feel free to take a look at our menu\e[0m"
-	echo -e " \e[3mand let me know whenever you're ready to place your order.\e[0m"
-	echo 
-	echo " ╭─ Hint ─────────────────────────╮"
-	echo " │ Using j or ↓ to move down      │"
-	echo " │ Using k or ↑ to move up        │"
-	echo " │ Press <Space> to toggle select │"
-	echo " │ Press <Enter> to start install │"
-	echo " │ Press <Ctrl-c> to cancel       │"
-	echo " ╰────────────────────────────────╯" 
-	echo 
-	echo " ────────────── MENU ──────────────"
+  echo
+  echo "     ██╗    ██╗ █████╗ ██╗████████╗███████╗██████╗"
+  echo "     ██║    ██║██╔══██╗██║╚══██╔══╝██╔════╝██╔══██╗"
+  echo "     ██║ █╗ ██║███████║██║   ██║   █████╗  ██████╔╝"
+  echo "     ██║███╗██║██╔══██║██║   ██║   ██╔══╝  ██╔══██╗"
+  echo "     ╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║"
+  echo "      ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"
+  echo
+  echo -e " \e[3mGood $(check_time) Sir! Please feel free to take a look at our menu\e[0m"
+  echo -e " \e[3mand let me know whenever you're ready to place your order.\e[0m"
+  echo 
+  echo " ╭─ Hint ─────────────────────────╮"
+  echo " │ Using j or ↓ to move down      │"
+  echo " │ Using k or ↑ to move up        │"
+  echo " │ Press <Space> to toggle select │"
+  echo " │ Press <Enter> to start install │"
+  echo " │ Press <Ctrl-c> to cancel       │"
+  echo " ╰────────────────────────────────╯" 
+  echo 
+  echo " ────────────── MENU ──────────────"
 }
 
 main() {
@@ -270,30 +270,30 @@ main() {
   print_banner
 
   my_options=(
-		"Kitty Terminal 😺"
-		"Neovim  "
-		"Helix 󰚄 "
-		"Zellij 󰋙 "
-		"Hugo"
-		"Lazysql"
-	)
-	preselection=(
-		"false"
-		"false"
-		"false"
-		"false"
-		"false"
-		"false"
-	)
-		multiselect result my_options preselection
+    "Kitty Terminal 😺"
+    "Neovim  "
+    "Helix 󰚄 "
+    "Zellij 󰋙 "
+    "Hugo"
+    "Lazysql"
+  )
+  preselection=(
+    "false"
+    "false"
+    "false"
+    "false"
+    "false"
+    "false"
+  )
+    multiselect result my_options preselection
 
-	# start_install result my_options
+  # start_install result my_options
   
-	idx=0
-	for option in "${my_options[@]}"; do
-			echo -e "$option\t=> ${result[idx]}"
-			((idx++))
-	done
+  idx=0
+  for option in "${my_options[@]}"; do
+      echo -e "$option\t=> ${result[idx]}"
+      ((idx++))
+  done
 
 }
 

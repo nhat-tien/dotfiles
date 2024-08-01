@@ -14,7 +14,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
+require("lazy").setup("tien.plugins", {
 	change_detection = {
 		notify = false,
 		enabled = false,
