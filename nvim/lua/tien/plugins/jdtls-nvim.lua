@@ -1,6 +1,6 @@
--- return {}
-return {
-	"mfussenegger/nvim-jdtls",
-	ft = "java",
-   opts = {}
-}
+return {}
+-- return {
+-- 	"mfussenegger/nvim-jdtls",
+-- 	ft = "java",
+--    opts = {}
+-- }

@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ";"
 
 local function create_keymap(mode, key, func, desc)
 	vim.keymap.set(mode, key, func, vim.tbl_deep_extend("keep", opts, { desc = desc }))
@@ -56,6 +57,7 @@ create_keymap("n", "+", "<C-a>")
 create_keymap("n", "-", "<C-x>")
 -- Save shortcut in insert mode
 create_keymap("i", "<C-s>", "<C-o>:w<CR>")
+create_keymap("i", "qq", "<Esc>")
 -- Adjust indent in visual mode
 create_keymap("x", ">", ">gv")
 create_keymap("x", "<", "<gv")

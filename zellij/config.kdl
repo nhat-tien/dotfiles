@@ -127,7 +127,7 @@ keybinds {
         bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "c" { NewTab; SwitchToMode "Normal"; }
         bind "," { SwitchToMode "RenameTab"; }
         bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
@@ -142,7 +142,7 @@ keybinds {
         bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
         bind "o" { FocusNextPane; }
         bind "d" { Detach; }
-        bind "Space" { NextSwapLayout; }
+        bind "[" { NextSwapLayout; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {

@@ -38,7 +38,9 @@ return {
 				-- "c_sharp",
 			},
 			sync_install = true,
-			highlight = { enable = true },
+			highlight = {
+            enable = true,
+         },
 			incremental_selection = { enable = true },
 			indent = { enable = true },
 			textobjects = {

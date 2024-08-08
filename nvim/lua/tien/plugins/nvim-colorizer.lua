@@ -9,6 +9,7 @@ return {
 		"typescript",
 		"typescriptreact",
 		"vue",
+      "kdl",
 	},
 	config = function()
 		require("colorizer").setup({
@@ -19,6 +20,7 @@ return {
 			"typescript",
 			"typescriptreact",
 			"vue",
+         "kdl",
 		})
 	end,
 }
