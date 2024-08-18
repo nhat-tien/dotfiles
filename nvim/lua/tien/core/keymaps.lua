@@ -45,7 +45,7 @@ create_keymap("n", "<Leader>wk", "<C-w>k", "Foxus Bottom Window")
 -- Hide highlight after use search
 create_keymap("n", "<Esc>", ":noh<CR><Esc>")
 -- Open url link at cursor line
-create_keymap("n", "<Leader>b", require("tien.utils").handleURL, "Open URL")
+create_keymap("n", "<Leader>uo", require("tien.utils").handleURL, "Open URL")
 -- Redo
 create_keymap("n", "U", "<C-r>")
 -- Select all
@@ -124,6 +124,30 @@ create_cmd("LtexEnable", function()
 	})
 end, {})
 
+create_cmd("HarperEnable", function ()
+   require("lspconfig").harper_ls.setup {
+     -- settings = {
+     --   ["harper-ls"] = {
+     --     linters = {
+     --       spell_check = true,
+     --       spelled_numbers = false,
+     --       an_a = true,
+     --       sentence_capitalization = true,
+     --       unclosed_quotes = true,
+     --       wrong_quotes = false,
+     --       long_sentences = true,
+     --       repeated_words = true,
+     --       spaces = true,
+     --       matcher = true,
+     --       correct_number_suffix = true,
+     --       number_suffix_capitalization = true,
+     --       multiple_sequential_pronouns = true
+     --     }
+     --   }
+     -- },
+}
+end, {})
+
 -- Debug
 create_keymap("n", "<leader>gt", function()
 	require("dap").toggle_breakpoint()
@@ -138,48 +162,48 @@ create_keymap("n", "<leader>gc", function()
 end, "DAP: close")
 
 -- Set a Vim motion to <Space> + <Shift>J + o to organize imports in normal mode
-create_keymap("n", "<leader>Jo", function()
-	require("jdtls").organize_imports()
-end, "[J]ava [O]rganize Imports")
--- Set a Vim motion to <Space> + <Shift>J + v to extract the code under the cursor to a variable
-create_keymap("n", "<leader>Jv", function()
-	require("jdtls").extract_variable()
-end, "[J]ava Extract [V]ariable")
--- Set a Vim motion to <Space> + <Shift>J + v to extract the code selected in visual mode to a variable
-create_keymap(
-	"x",
-	"<leader>Jv",
-	"<Esc><Cmd> lua require('jdtls').extract_variable(true)<CR>",
-	"[J]ava Extract [V]ariable"
-)
--- Set a Vim motion to <Space> + <Shift>J + <Shift>C to extract the code under the cursor to a static variable
-create_keymap("n", "<leader>JC", function()
-	require("jdtls").extract_constant()
-end, "[J]ava Extract [C]onstant")
--- Set a Vim motion to <Space> + <Shift>J + <Shift>C to extract the code selected in visual mode to a static variable
-create_keymap(
-	"x",
-	"<leader>JC",
-	"<Esc><Cmd> lua require('jdtls').extract_constant(true)<CR>",
-	"[J]ava Extract [C]onstant"
-)
--- Set a Vim motion to <Space> + <Shift>J + t to run the test method currently under the cursor
-create_keymap("n", "<leader>Jt", function()
-	require("jdtls").test_nearest_method()
-end, "[J]ava [T]est Method")
--- Set a Vim motion to <Space> + <Shift>J + t to run the test method that is currently selected in visual mode
-create_keymap(
-	"x",
-	"<leader>Jt",
-	"<Esc><Cmd> lua require('jdtls').test_nearest_method(true)<CR>",
-	"[J]ava [T]est Method"
-)
--- Set a Vim motion to <Space> + <Shift>J + <Shift>T to run an entire test suite (class)
-create_keymap("n", "<leader>JT", function()
-	require("jdtls").test_class()
-end, "[J]ava [T]est Class")
--- Set a Vim motion to <Space> + <Shift>J + u to update the project configuration
-create_keymap("n", "<leader>Ju", "<Cmd> JdtUpdateConfig<CR>", "[J]ava [U]pdate Config")
+-- create_keymap("n", "<leader>Jo", function()
+-- 	require("jdtls").organize_imports()
+-- end, "[J]ava [O]rganize Imports")
+-- -- Set a Vim motion to <Space> + <Shift>J + v to extract the code under the cursor to a variable
+-- create_keymap("n", "<leader>Jv", function()
+-- 	require("jdtls").extract_variable()
+-- end, "[J]ava Extract [V]ariable")
+-- -- Set a Vim motion to <Space> + <Shift>J + v to extract the code selected in visual mode to a variable
+-- create_keymap(
+-- 	"x",
+-- 	"<leader>Jv",
+-- 	"<Esc><Cmd> lua require('jdtls').extract_variable(true)<CR>",
+-- 	"[J]ava Extract [V]ariable"
+-- )
+-- -- Set a Vim motion to <Space> + <Shift>J + <Shift>C to extract the code under the cursor to a static variable
+-- create_keymap("n", "<leader>JC", function()
+-- 	require("jdtls").extract_constant()
+-- end, "[J]ava Extract [C]onstant")
+-- -- Set a Vim motion to <Space> + <Shift>J + <Shift>C to extract the code selected in visual mode to a static variable
+-- create_keymap(
+-- 	"x",
+-- 	"<leader>JC",
+-- 	"<Esc><Cmd> lua require('jdtls').extract_constant(true)<CR>",
+-- 	"[J]ava Extract [C]onstant"
+-- )
+-- -- Set a Vim motion to <Space> + <Shift>J + t to run the test method currently under the cursor
+-- create_keymap("n", "<leader>Jt", function()
+-- 	require("jdtls").test_nearest_method()
+-- end, "[J]ava [T]est Method")
+-- -- Set a Vim motion to <Space> + <Shift>J + t to run the test method that is currently selected in visual mode
+-- create_keymap(
+-- 	"x",
+-- 	"<leader>Jt",
+-- 	"<Esc><Cmd> lua require('jdtls').test_nearest_method(true)<CR>",
+-- 	"[J]ava [T]est Method"
+-- )
+-- -- Set a Vim motion to <Space> + <Shift>J + <Shift>T to run an entire test suite (class)
+-- create_keymap("n", "<leader>JT", function()
+-- 	require("jdtls").test_class()
+-- end, "[J]ava [T]est Class")
+-- -- Set a Vim motion to <Space> + <Shift>J + u to update the project configuration
+-- create_keymap("n", "<leader>Ju", "<Cmd> JdtUpdateConfig<CR>", "[J]ava [U]pdate Config")
 
 -- -- Allow yourself to run JdtCompile as a Vim command
 -- vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")

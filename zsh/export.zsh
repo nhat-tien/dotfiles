@@ -17,7 +17,8 @@ export VISUAL=vi
 export NNN_TRASH=2
 
 export GREP_COLORS='ms=01;31'
+
 # PATH
 path+=("$HOME/.npm-packages/bin")
 path+=('/opt/apache-maven-3.6.3/bin')
-export PATH
+path+=("$GOPATH/bin")

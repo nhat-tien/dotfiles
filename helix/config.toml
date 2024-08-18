@@ -1,4 +1,4 @@
-theme = "myTokyoNight"
+theme = "tokyonight_moon"
 
 [editor]
 line-number = "relative"
@@ -46,7 +46,6 @@ select = "underline"
 layout = ["diff","diagnostics", "line-numbers", "spacer"]
 
 [keys.normal]
-y = ':clipboard-yank'
 p = ':clipboard-paste-before'
 D = [':clipboard-yank', "delete_selection_noyank"]
 "space" = { "c" = ':buffer-close', "n" = ":new"}
@@ -73,6 +72,27 @@ C-o = ":config-open"
 
 # Disable
 g = { e = "no_op", l = "no_op", h = "no_op", n = "no_op", p = "no_op"}
+
+[keys.normal.d]
+d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
+t = ["extend_till_char"]
+s = ["surround_delete"]
+i = ["select_textobject_inner"]
+a = ["select_textobject_around"]
+j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"] }
+
+[keys.normal.y]
+y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection"]
+j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
 
 [keys.select]
 y = [':clipboard-yank', "collapse_selection", "normal_mode"]

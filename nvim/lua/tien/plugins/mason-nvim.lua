@@ -7,6 +7,7 @@ return {
 	config = function()
       local exclude_list = {
          "jdtls",
+         "harper_ls"
       }
 		require("mason").setup()
 		require("mason-lspconfig").setup()

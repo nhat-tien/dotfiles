@@ -9,6 +9,3 @@ source $HOME/dotfiles/zsh/scripts.zsh
 
 # ------ Starship.rs promt ------
 eval "$(starship init zsh)"
-
-
-

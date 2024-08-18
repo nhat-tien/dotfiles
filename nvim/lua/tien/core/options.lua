@@ -1,6 +1,7 @@
 -- [[ -------------------------------------
 --              PRIMARY OPTIONS
 -- ]] -------------------------------------
+--
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
@@ -17,6 +18,7 @@ vim.opt.clipboard = "unnamedplus"
 -- [[ -------------------------------------
 --             DIAGNOSTIC SIGN
 -- ]] -------------------------------------
+--
 vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
@@ -25,6 +27,7 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSi
 -- [[ -------------------------------------
 --            UTILS
 -- ]] -------------------------------------
+--
 -- highlight codeblock in markdown
 vim.g.markdown_fenced_languages = {
    "html",

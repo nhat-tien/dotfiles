@@ -117,9 +117,6 @@ local lsp_list = {
 	-- {
 	--    name = "dartls"
 	-- },
-	{
-		name = "svelte",
-	},
 }
 
 return lsp_list

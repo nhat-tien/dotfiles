@@ -41,11 +41,17 @@ require("lualine").setup({
 	options = {
 		theme = "auto",
 		component_separators = "|",
-		section_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 	},
 	sections = {
 		lualine_a = {
-			{ "mode", separator = { left = "" }, right_padding = 2 },
+			{
+            "mode",
+            -- separator = { left = "" },
+            separator = { left = "" },
+            right_padding = 2,
+         },
 		},
 		lualine_b = { "branch", "diagnostics" },
 		lualine_z = {
