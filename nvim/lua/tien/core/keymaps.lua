@@ -45,7 +45,12 @@ create_keymap("n", "<Leader>wk", "<C-w>k", "Foxus Bottom Window")
 -- Hide highlight after use search
 create_keymap("n", "<Esc>", ":noh<CR><Esc>")
 -- Open url link at cursor line
-create_keymap("n", "<Leader>uo", require("tien.utils").handleURL, "Open URL")
+create_keymap("n", "<Leader>uo", function ()
+   require("tien.utils").handleURL()
+end, "Open URL")
+create_keymap("x", "<Leader>ut", function ()
+   require("tien.utils").openGoogleTranslate()
+end, "Open Google Translate")
 -- Redo
 create_keymap("n", "U", "<C-r>")
 -- Select all

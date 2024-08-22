@@ -6,8 +6,22 @@ if [ -z "$1" ]; then
 fi
 
 file_name=$(echo "$1" | tr ' ' '-')
-formatted_file_name=$(date "+%Y-%m-%d")_${file_name}.md
+now=$(date "+%Y-%m-%d")
+formatted_file_name=${now}-${file_name}.md
 
 cd "${HOME}/Documents/Notes/mainVault/"
+
 touch "inbox/${formatted_file_name}"
+
+cat << EOF > ./inbox/${formatted_file_name}
+---
+date: "${now}"
+tags:
+  - 
+hub: "" 
+---
+
+## 
+EOF
+
 nvim "inbox/${formatted_file_name}"
