@@ -16,3 +16,7 @@ function yy() {
 function restore() {
   gio trash --restore "trash:/$1"
 }
+
+function s() {  
+  sudo systemctl "$2" "$1" 
+}

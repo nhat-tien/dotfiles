@@ -1,9 +1,9 @@
 alias zshrc="nvim ~/.zshrc"
 alias cls="clear"
 alias dev="yy ~/DEV"
-alias notes="nvim ${MYNOTES}/mainVault/Neorg-note"
 alias jn="nvim ${MYNOTES}/journal"
 alias oo="cd ${MYNOTES}/mainVault/ && nvim index.md"
+alias oi="cd ${MYNOTES}/mainVault/inbox && nvim *"
 alias on="${DOTFILES}/scripts/new-notes.sh"
 alias dot="nvim ${DOTFILES}"
 alias nvcf="nvim ${DOTFILES}/nvim"
@@ -44,6 +44,7 @@ alias dockerstop="sudo systemctl stop docker.socket"
 
 # Gio trash
 alias trash="gio trash"
+alias open-trash="cd ~/.local/share/Trash/files/"
 alias sutrash="sudo gio trash"
 
 #screenfetch

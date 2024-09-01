@@ -5,6 +5,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+parameter=$1
 file_name=$(echo "$1" | tr ' ' '-')
 now=$(date "+%Y-%m-%d")
 formatted_file_name=${now}-${file_name}.md
@@ -21,7 +22,7 @@ tags:
 hub: "" 
 ---
 
-## 
+## ${parameter}
 EOF
 
 nvim "inbox/${formatted_file_name}"
