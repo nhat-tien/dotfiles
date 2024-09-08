@@ -51,7 +51,7 @@ return {
 			"graphql%.schema%.json",
 			"schema%.json",
 			"go%.sum",
-			"vendor/*",
+			"vendor/.*",
 		}
 
 		require("telescope").setup({

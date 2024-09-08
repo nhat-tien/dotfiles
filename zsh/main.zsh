@@ -8,4 +8,7 @@ source $HOME/dotfiles/zsh/alias.zsh
 source $HOME/dotfiles/zsh/scripts.zsh
 
 # ------ Starship.rs promt ------
-eval "$(starship init zsh)"
+if command -v starship  &> /dev/null
+then
+  eval "$(starship init zsh)" 
+fi

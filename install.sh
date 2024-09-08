@@ -1,0 +1,287 @@
+#!/bin/bash
+
+. /etc/os-release
+
+if [[ "$ID" != "ubuntu" ]];
+then
+    echo "Sorry, I am still not sure if this will work on an OS other than Ubuntu"
+    exit 1
+fi
+
+prompt() {
+    read -p "$1 (Y)es (N)o (Q)uit: " -r input
+    case "$input" in
+        y|Y) $2 ;;
+        q|Q) exit 0
+    esac
+}
+
+
+install_kitty_terminal() {
+    echo "-------->> INSTALL Kitty <<----------"
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+}
+
+
+install_nvim() {
+    echo "-------->> INSTALL Neovim <<----------"
+    curl -s https://api.github.com/repos/neovim/neovim/releases/latest \
+        | grep "browser_download_url.*nvim.appimage\"" \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | xargs wget 
+    chmod +x nvim.appimage
+    mv nvim.appimage $HOME/.local/bin/nvim
+    echo "Install Successfully"
+};
+
+install_helix() {
+    echo "-------->> INSTALL Helix <<----------"
+    curl -s https://api.github.com/repos/helix-editor/helix/releases/latest \
+        | grep "browser_download_url.*AppImage\"" \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | xargs wget 
+    find -name 'helix*.AppImage' -exec mv {} ./hx \;
+    chmod +x ./hx
+    mv ./hx $HOME/.local/bin
+    echo "Install Successfully"
+}
+
+install_zellij() {
+    echo "-------->> INSTALL Zellij <<----------"
+    curl -s https://api.github.com/repos/zellij-org/zellij/releases/latest \
+        | grep "browser_download_url.*zellij-x86_64-unknown-linux-musl.tar.gz\"" \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | xargs wget 
+    tar -xvf zellij-x86_64-unknown-linux-musl.tar.gz
+    rm -f zellij-x86_64-unknown-linux-musl.tar.gz
+    chmod +x zellij
+    mv zellij $HOME/.local/bin
+    echo "Install Successfully"
+}
+
+install_hugo() {
+    echo "-------->> INSTALL Hugo <<----------"
+    curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
+        | grep "browser_download_url.*hugo_extended_.*Linux-64bit.tar.gz" \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | xargs wget
+    find -name 'hugo_extended_*.tar.gz' -exec mv {} ./hugo.tar.gz \;
+    tar -xvf hugo.tar.gz hugo
+    chmod +x hugo
+    mv hugo $HOME/.local/bin
+    rm -f hugo.tar.gz
+    echo "Install Successfully"
+}
+
+install_lazysql() {
+    echo "-------->> INSTALL Lazysql <<----------"
+    curl -s https://api.github.com/repos/jorgerojas26/lazysql/releases/latest \
+        | grep "browser_download_url.*lazysql_Linux_x86_64.tar.gz" \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | xargs wget
+    tar -xvf lazysql_Linux_x86_64.tar.gz lazysql
+    chmod +x lazysql
+    mv lazysql $HOME/.local/bin
+    rm -f lazysql_Linux_x86_64.tar.gz
+    echo "Install Successfully"
+}
+
+install_starship() {
+    echo "-------->> INSTALL STARSHIP <<----------"
+    curl -s https://api.github.com/repos/starship/starship/releases/latest \
+        | grep "browser_download_url.*starship-x86_64-unknown-linux-gnu.tar.gz" \
+        | cut -d : -f 2,3 \
+        | tr -d \" \
+        | xargs wget
+    tar -xvf starship-x86_64-unknown-linux-gnu.tar.gz -C $HOME/.local/bin/
+    chmod +x $HOME/.local/bin/starship
+    rm -f starship-x86_64-unknown-linux-gnu.tar.gz
+    rm -f starship-x86_64-unknown-linux-gnu.tar.gz.sha256
+    echo "Install Successfully"
+}
+
+install_curl() {
+    sudo apt install curl
+}
+
+install_wget() {
+    sudo apt install wget
+}
+
+check_curl_exist() {
+    if ! command -v curl &> /dev/null
+    then
+        echo "It seem that you not have curl, try to install curl"
+        exit 1
+    fi
+}
+
+check_wget_exist() {
+    if ! command -v wget &> /dev/null
+    then
+        echo "It seem that you not have wget, try to install wget"
+        exit 1
+    fi
+}
+
+check_tar_exist() {
+    if ! command -v tar &> /dev/null
+    then
+        echo "It seem that you not have tar, try to install tar"
+        exit 1
+    fi
+}
+
+check_package_exist() {
+   if command -v  "$1" &> /dev/null
+   then 
+       echo "You already have $1 in PATH"
+       echo "Check it by:"
+       echo ""
+       echo "which $1"
+       echo ""
+       exit 1
+  fi
+
+  if [ -f "$HOME/.local/bin/$1"]; then
+       echo "You already have $1 in ~/.local/bin"
+       echo "Check it by:"
+       echo ""
+       echo "which $1"
+       echo ""
+       exit 1
+  fi
+}
+
+check_time() {
+    currenttime=$(date +%H:%M)
+    if [[ "$currenttime" > "06:00" ]] && [[ "$currenttime" < "12:00" ]];
+    then
+        echo "morning"
+    elif [[ "$currenttime" > "11:59" ]] && [[ "$currenttime" < "18:00" ]];
+    then
+        echo "afternoon"
+    else
+        echo "evening"
+    fi
+}
+
+start_install() {
+    idx=0
+    for option in "${my_options[@]}"; do
+        echo -e "$option\t=> ${result[idx]}"
+        ((idx++))
+    done
+}
+
+print_list_of_package() {
+    echo "── Available packages ────────"
+    echo "kitty"
+    echo "nvim"
+    echo "hx"
+    echo "zellij"
+    echo "hugo"
+    echo "starship"
+    echo "lazysql"
+}
+
+print_help() {
+    echo "This is a small bash script to install some packages on Ubuntu"
+    echo "COMMAND:"
+    echo ""
+    echo "install --install <package-name>"
+    echo ""
+    echo "OPTIONS:"
+    echo ""
+    echo "-h     --help        show help"
+    echo "-i     --install     install package"
+    echo "-l     --list        show list of available packages"
+}
+
+main() {
+    # multiselect result my_options preselection
+
+    # start_install result my_options
+
+    # idx=0
+    # for option in "${my_options[@]}"; do
+    #     echo -e "$option\t=> ${result[idx]}"
+    #     ((idx++))
+    # done
+    while [[ "$#" -gt 0 ]]; do
+        case "$1" in
+            -h|--help)
+                print_help
+                print_list_of_package
+                exit 0
+                ;;
+            -l|--list)
+                print_list_of_package
+                exit 0
+                ;;
+            -i|--install)
+                shift
+                if [[ $# == 0 ]]; then
+                    echo "Please"
+                fi
+                while [[ "$#" -gt 0 ]]; do
+                    case "$1" in
+                        "kitty")
+                            check_package_exist "kitty"
+                            install_kitty_terminal
+                            shift
+                            ;;
+                        "neovim")
+                            check_package_exist "nvim"
+                            install_nvim
+                            shift
+                            ;;
+                        "helix")
+                            check_package_exist "hx"
+                            install_helix
+                            shift
+                            ;;
+                        "zellij")
+                            check_package_exist "zellij"
+                            install_zellij
+                            shift
+                            ;;
+                        "hugo")
+                            check_package_exist "hugo"
+                            install_hugo
+                            shift
+                            ;;
+                        "lazysql")
+                            check_package_exist "lazysql"
+                            install_lazysql
+                            shift
+                            ;;
+                        "starship")
+                            check_package_exist "starship"
+                            install_starship
+                            shift
+                            ;;
+                        *)
+                            echo "$1 :Cannot found this package"
+                            print_list_of_package
+                            exit 0
+                            ;;
+                    esac
+                done
+                exit 0
+                ;;
+            *)
+                echo "Command not found"
+                print_help
+                exit 0
+                ;;
+        esac
+    done
+}
+
+main "$@"
