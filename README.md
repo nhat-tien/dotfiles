@@ -13,11 +13,12 @@
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
-- Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty)
+<!-- - Terminal emulator: Kitty  -->
+- Terminal emulator: [Wezterm](https://github.com/wez/wezterm)
 - Shell: `zsh` 
 - TUI file manager: [yazi](https://github.com/sxyazi/yazi)
 - Prompt: [starship](https://github.com/starship/starship) 
-<!-- - Terminal workspace: [Zellij](https://github.com/zellij-org/zellij) -->
+- Terminal multiplexer: [Zellij](https://github.com/zellij-org/zellij)
 
 ## Installing
 ***Be careful**: This script will remove your existing configurations, please ensure you have a backup stored in somewhere outside of ~/.config/...*
@@ -26,8 +27,7 @@
   cd ~
   git clone https://github.com/nhat-tien/dotfiles.git
   cd dotfiles
-  chmod +x setup.sh
-  ./setup.sh
+  chmod +x setup.sh && ./setup.sh -f -a
 ```
 
 ## Screenshoot

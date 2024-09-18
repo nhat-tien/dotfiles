@@ -28,7 +28,7 @@ local lsp_list = {
 		name = "cssls",
 	},
 	{
-		name = "tsserver",
+		name = "ts_ls",
 	},
 	{
 		name = "eslint",

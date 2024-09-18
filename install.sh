@@ -29,7 +29,7 @@ install_nvim() {
         | grep "browser_download_url.*nvim.appimage\"" \
         | cut -d : -f 2,3 \
         | tr -d \" \
-        | xargs wget 
+        | xargs wget
     chmod +x nvim.appimage
     mv nvim.appimage $HOME/.local/bin/nvim
     echo "Install Successfully"
@@ -41,7 +41,7 @@ install_helix() {
         | grep "browser_download_url.*AppImage\"" \
         | cut -d : -f 2,3 \
         | tr -d \" \
-        | xargs wget 
+        | xargs wget
     find -name 'helix*.AppImage' -exec mv {} ./hx \;
     chmod +x ./hx
     mv ./hx $HOME/.local/bin
@@ -54,7 +54,7 @@ install_zellij() {
         | grep "browser_download_url.*zellij-x86_64-unknown-linux-musl.tar.gz\"" \
         | cut -d : -f 2,3 \
         | tr -d \" \
-        | xargs wget 
+        | xargs wget
     tar -xvf zellij-x86_64-unknown-linux-musl.tar.gz
     rm -f zellij-x86_64-unknown-linux-musl.tar.gz
     chmod +x zellij
@@ -92,7 +92,7 @@ install_lazysql() {
 }
 
 install_starship() {
-    echo "-------->> INSTALL STARSHIP <<----------"
+    echo "-------->> INSTALL Starship <<----------"
     curl -s https://api.github.com/repos/starship/starship/releases/latest \
         | grep "browser_download_url.*starship-x86_64-unknown-linux-gnu.tar.gz" \
         | cut -d : -f 2,3 \
@@ -138,24 +138,25 @@ check_tar_exist() {
 }
 
 check_package_exist() {
-   if command -v  "$1" &> /dev/null
-   then 
-       echo "You already have $1 in PATH"
-       echo "Check it by:"
-       echo ""
-       echo "which $1"
-       echo ""
-       exit 1
-  fi
+    if [ -f "$HOME/.local/bin/$1"]; then
+        echo "You already have $1 in ~/.local/bin"
+        echo "Check it by:"
+        echo ""
+        echo "which $1"
+        echo ""
+        exit 1
+    fi
 
-  if [ -f "$HOME/.local/bin/$1"]; then
-       echo "You already have $1 in ~/.local/bin"
-       echo "Check it by:"
-       echo ""
-       echo "which $1"
-       echo ""
-       exit 1
-  fi
+    if command -v  "$1" &> /dev/null
+    then
+        echo "You already have $1 in PATH"
+        echo "Check it by:"
+        echo ""
+        echo "which $1"
+        echo ""
+        exit 1
+    fi
+
 }
 
 check_time() {
@@ -227,7 +228,7 @@ main() {
             -i|--install)
                 shift
                 if [[ $# == 0 ]]; then
-                    echo "Please"
+                    echo "Please give package name"
                 fi
                 while [[ "$#" -gt 0 ]]; do
                     case "$1" in
