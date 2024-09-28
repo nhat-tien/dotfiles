@@ -16,11 +16,11 @@ return {
 			modes = { "n", "no", "c" }, -- Change these modes
 			-- to what you need
 
-			-- hybrid_modes = { "n" }, -- Uses this feature on
+			hybrid_modes = { "n" }, -- Uses this feature on
 			-- normal mode
 			tables = {
-				enable = false,
-				use_virt_lines = false,
+				enable = true,
+				use_virt_lines = true,
 			},
 
 			-- This is nice to have

@@ -27,7 +27,7 @@
   cd ~
   git clone https://github.com/nhat-tien/dotfiles.git
   cd dotfiles
-  chmod +x setup.sh && ./setup.sh -f -a
+  chmod +x setup && setup -f -a
 ```
 
 ## Screenshoot

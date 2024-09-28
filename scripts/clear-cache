@@ -1,0 +1,12 @@
+#!/bin/bash
+
+phpactor() {
+   echo "phpactor cache:clear"
+}
+
+
+main() {
+
+}
+
+main "$@"

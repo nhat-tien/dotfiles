@@ -3,7 +3,7 @@ local act = wezterm.action
 
 local config = {}
 
-config.font_size = 11
+config.font_size = 10.5
 config.font = wezterm.font_with_fallback({
 	{ family = "CaskaydiaCove Nerd Font", scale = 1, weight = "DemiBold" },
 })

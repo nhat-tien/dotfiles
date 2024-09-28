@@ -182,7 +182,7 @@ return {
 				no_buffer = false,
 				no_bookmark = false,
 				custom = { ".git" },
-				exclude = { ".gitignore", "gitattributes"},
+				exclude = { ".gitignore", "gitattributes", ".github"},
 			},
 			live_filter = {
 				prefix = "[FILTER]: ",
