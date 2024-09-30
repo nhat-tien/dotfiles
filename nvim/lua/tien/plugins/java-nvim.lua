@@ -17,7 +17,7 @@ return {
 			},
 
 			spring_boot_tools = {
-				enable = false,
+				enable = true,
 			},
 			jdk = {
 				-- install jdk using mason.nvim

@@ -51,18 +51,18 @@ setup() {
     else
         if [[ -d "$HOME/.config/$1" ]]; then
             echo "You already have $1 in ~/.config"
-            echo "Do you want to replace it ?"
-            read -p "$1 (Y)es (N)o: " -r input
+            read -p "Do you want to replace it ? (Y)es (N)o: " -r input
             case "$input" in
                 y|Y)
                     rm -rf "${HOME}/.config/$1"
+                    ln -s "${DOTFILES}/$1" "${HOME}/.config/$1"
                     ;;
                 *)
-                    exit 0
                     ;;
             esac
+        else 
+          ln -s "${DOTFILES}/$1" "${HOME}/.config/$1"
         fi
-        ln -s "${DOTFILES}/$1" "${HOME}/.config/$1"
     fi
 }
 
