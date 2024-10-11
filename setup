@@ -14,6 +14,7 @@ packages=(
     "nvim"
     "eww"
     "yazi"
+    "btop"
     "zsh"
 )
 

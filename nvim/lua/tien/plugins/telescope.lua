@@ -7,7 +7,6 @@ return {
 	},
 	config = function()
 		-- local trouble = require("trouble.providers.telescope")
-
 		local ignore_these = {
 			"yarn%.lock",
 			"package%-lock%.json",

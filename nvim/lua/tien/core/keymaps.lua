@@ -11,25 +11,75 @@ local function create_cmd(command, func, desc)
 	vim.api.nvim_create_user_command(command, func, { desc = desc })
 end
 
+local function create_keymap_new(keymap_table)
+	local list_of_mode = {
+		normal = "n",
+		insert = "i",
+		visual = "x",
+	}
+	for mode, mode_char in pairs(list_of_mode) do
+		local list_of_keymap = keymap_table[mode]
+		if list_of_keymap ~= nil then
+			for _, keymap in pairs(list_of_keymap) do
+				vim.keymap.set(
+					mode_char,
+					keymap.key,
+					keymap.func,
+					vim.tbl_deep_extend("keep", opts, { desc = keymap.desc })
+				)
+			end
+		end
+	end
+end
+
+local keymap_table = {
+
+	normal = {
+		-- [[ -------------------------------------
+		--             BUFFER
+		-- ]] -------------------------------------
+		{
+			key = "<Tab>",
+			func = ":bnext<CR>",
+		},
+		{
+			key = "<S-Tab>",
+			func = ":bprev<CR>",
+		},
+		{
+			key = "<leader>n",
+			func = ":enew<CR>",
+			desc = "New Buffer",
+		},
+		{
+			key = "<leader>c",
+			func = function()
+				require("mini.bufremove").delete()
+			end,
+			desc = "Buffer Remove",
+		},
+		-- [[ -------------------------------------
+		--             WINDOW
+		-- ]] -------------------------------------
+		{
+			key = "<Leader>w<left>",
+			func = "<C-w><<C-w><",
+			desc = "Resize Window",
+		},
+		{
+			key = "<Leader>w<right>",
+			func = "<C-w>><C-w>>",
+			desc = "Resize Window",
+		},
+	}, -- /Normal
+}
+
+create_keymap_new(keymap_table)
+
 -- [[ -------------------------------------
---             BUFFER
+--             WINDOW
 -- ]] -------------------------------------
 
-create_keymap("n", "<Tab>", ":bnext<CR>")
-create_keymap("n", "<S-Tab>", ":bprev<CR>")
--- create_keymap('n','<Leader>c',':bd<CR>', opts)
-create_keymap("n", "<Leader>n", ":enew<CR>", "New Buffer")
--- Delete buffer
-create_keymap("n", "<leader>c", function()
-	require("mini.bufremove").delete()
-end, "Buffer Remove")
-
--- [[ -------------------------------------
---             WINDOW 
--- ]] -------------------------------------
-
-create_keymap("n", "<Leader>w<left>", "<C-w><<C-w><", "Resize Window")
-create_keymap("n", "<Leader>w<right>", "<C-w>><C-w>>", "Resize Window")
 create_keymap("n", "<Leader>w<up>", "<C-w>+<C-w>+", "Resize Window")
 create_keymap("n", "<Leader>w<down>", "<C-w>-<C-w>-", "Resize Window")
 create_keymap("n", "<Leader>ww", "<C-w>w", "Change Window")
@@ -64,9 +114,9 @@ create_keymap("x", ">", ">gv")
 create_keymap("x", "<", "<gv")
 -- Escape terminal mode
 create_keymap("t", "<esc>", [[<C-\><C-n>]])
--- Insert current date 
+-- Insert current date
 -- create_keymap('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
--- Toggle NvimTree 
+-- Toggle NvimTree
 create_keymap("n", "<Leader>t", ":NvimTreeToggle<CR>", "Folder Tree Toggle")
 
 -- Telescope keymap
@@ -125,28 +175,28 @@ create_cmd("LtexEnable", function()
 	})
 end, {})
 
-create_cmd("HarperEnable", function ()
-   require("lspconfig").harper_ls.setup {
-     -- settings = {
-     --   ["harper-ls"] = {
-     --     linters = {
-     --       spell_check = true,
-     --       spelled_numbers = false,
-     --       an_a = true,
-     --       sentence_capitalization = true,
-     --       unclosed_quotes = true,
-     --       wrong_quotes = false,
-     --       long_sentences = true,
-     --       repeated_words = true,
-     --       spaces = true,
-     --       matcher = true,
-     --       correct_number_suffix = true,
-     --       number_suffix_capitalization = true,
-     --       multiple_sequential_pronouns = true
-     --     }
-     --   }
-     -- },
-}
+create_cmd("HarperEnable", function()
+	require("lspconfig").harper_ls.setup({
+		-- settings = {
+		--   ["harper-ls"] = {
+		--     linters = {
+		--       spell_check = true,
+		--       spelled_numbers = false,
+		--       an_a = true,
+		--       sentence_capitalization = true,
+		--       unclosed_quotes = true,
+		--       wrong_quotes = false,
+		--       long_sentences = true,
+		--       repeated_words = true,
+		--       spaces = true,
+		--       matcher = true,
+		--       correct_number_suffix = true,
+		--       number_suffix_capitalization = true,
+		--       multiple_sequential_pronouns = true
+		--     }
+		--   }
+		-- },
+	})
 end, {})
 
 -- Debug

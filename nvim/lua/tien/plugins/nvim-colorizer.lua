@@ -3,6 +3,7 @@ return {
 	lazy = true,
 	ft = {
 		"css",
+      "scss",
 		"toml",
 		"javascript",
 		"javascriptreact",
@@ -14,6 +15,7 @@ return {
 	config = function()
 		require("colorizer").setup({
 			"css",
+         "scss",
 			"toml",
 			"javascript",
 			"javascriptreact",
@@ -21,6 +23,6 @@ return {
 			"typescriptreact",
 			"vue",
          "kdl",
-		})
+		}, { css = true })
 	end,
 }

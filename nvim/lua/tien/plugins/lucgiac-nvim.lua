@@ -8,15 +8,16 @@ return {
       end
 
       create_keymap("n", "Zr", function ()
-         require("lucgiac").new_pane("right")
+         -- require("lucgiac").new_pane("right"
       end, "[Z]ellij new pane [r]ight")
 
       create_keymap("n", "Zd", function ()
-         require("lucgiac").new_pane("down")
+         require("lucgiac").new_pane_down()
+         require("lucgiac").invoke({cmd = "npm run tauri dev"})
       end,"[Z]ellij new pane [d]own")
 
       create_keymap("n", "Zf", function ()
-         require("lucgiac").new_pane("float")
+         -- require("lucgiac").new_pane("float")
       end, "[Z]ellij new pane [f]loat")
    end
 }
