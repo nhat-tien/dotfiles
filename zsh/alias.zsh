@@ -1,5 +1,5 @@
 alias zshrc="nvim ~/.zshrc"
-alias cls="clear"
+alias c="clear"
 alias dev="yy ~/DEV"
 alias jn="nvim ${MYNOTES}/journal"
 alias oo="cd ${MYNOTES}/mainVault/ && nvim index.md"
@@ -59,10 +59,6 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 alias gittree="git log --oneline --decorate --graph --all"
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
-
-#python virtual environment
-alias pyenv-init='python3 -m venv ./env'
-alias pyenv-act='source ./env/bin/activate'
 
 # workspace-setup
 # alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"

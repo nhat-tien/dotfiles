@@ -1,12 +1,12 @@
 #!/bin/bash
 
-selected=$(echo "󰝰  Files Explorer
+selected=$(echo "󰝰  Files Manager
   Setting
   Disk Usage
 󰃢  Cleaner" | rofi -dmenu  -p "  " -theme menu -i)
 
 case "$selected" in
-  "󰝰  Files Explorer") nautilus --no-desktop;;
+  "󰝰  Files Manager") nautilus --no-desktop;;
   "  Setting") gnome-control-center ;;
   "  Disk Usage") baobab;;
   "󰃢  Cleaner") ubuntu-cleaner;;

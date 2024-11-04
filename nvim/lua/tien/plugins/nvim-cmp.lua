@@ -10,8 +10,7 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
 		-- "rcarriga/cmp-dap",
-	},
-
+   },
 	config = function()
 		local cmp = require("cmp")
 		-- local cmp_dap = require("cmp_dap")

@@ -31,7 +31,7 @@ print_help() {
     echo "This is a small bash script to setup dotfiles Ubuntu"
     echo "COMMAND:"
     echo ""
-    echo "setup.sh --setup <package-name>"
+    echo "setup --setup <package-name>"
     echo ""
     echo "OPTIONS:"
     echo ""
