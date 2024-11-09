@@ -138,7 +138,7 @@ check_tar_exist() {
 }
 
 check_package_exist() {
-    if [ -f "$HOME/.local/bin/$1"]; then
+    if [ -f "$HOME/.local/bin/$1" ]; then
         echo "You already have $1 in ~/.local/bin"
         echo "Check it by:"
         echo ""

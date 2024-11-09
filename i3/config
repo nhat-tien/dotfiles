@@ -43,7 +43,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/dotfiles/i3/autolock.sh 
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale $HOME/dotfiles/wallpapers/wallpaper-bubble.png
+exec --no-startup-id feh --bg-fill $HOME/dotfiles/wallpapers/wall.png
 
 # Ibus-daemon
 exec_always --no-startup-id $HOME/dotfiles/ibus/launch.sh

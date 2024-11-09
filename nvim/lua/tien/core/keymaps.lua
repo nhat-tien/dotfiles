@@ -71,22 +71,46 @@ local keymap_table = {
 			func = "<C-w>><C-w>>",
 			desc = "Resize Window",
 		},
+      {
+         key = "<Leader>w<up>",
+         func = "<C-w>+<C-w>+",
+         desc = "Resize Window",
+      },
+      {
+         key = "<Leader>w<down>",
+         func = "<C-w>-<C-w>-",
+         desc = "Resize Window",
+      },
+      {
+         key = "<Leader>ww",
+         func = "<C-w>w",
+         desc = "Change Window",
+      },
+      {
+         key = "<Leader>wh",
+         func = "<C-w>h",
+         desc = "Focus Left Window",
+      },
+      {
+         key = "<Leader>wl",
+         func = "<C-w>l",
+         desc = "Foxus Right Window",
+      },
+      {
+         key = "<Leader>wj",
+         func = "<C-w>j",
+         desc = "Foxus Top Window",
+      },
+      {
+         key = "<Leader>wk",
+         func = "<C-w>k",
+         desc = "Foxus Bottom Window",
+      }
 	}, -- /Normal
 }
 
 create_keymap_new(keymap_table)
 
--- [[ -------------------------------------
---             WINDOW
--- ]] -------------------------------------
-
-create_keymap("n", "<Leader>w<up>", "<C-w>+<C-w>+", "Resize Window")
-create_keymap("n", "<Leader>w<down>", "<C-w>-<C-w>-", "Resize Window")
-create_keymap("n", "<Leader>ww", "<C-w>w", "Change Window")
-create_keymap("n", "<Leader>wh", "<C-w>h", "Focus Left Window")
-create_keymap("n", "<Leader>wl", "<C-w>l", "Foxus Right Window")
-create_keymap("n", "<Leader>wj", "<C-w>j", "Foxus Top Window")
-create_keymap("n", "<Leader>wk", "<C-w>k", "Foxus Bottom Window")
 
 -- [[ -------------------------------------
 --             UTILS
