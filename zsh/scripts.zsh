@@ -32,3 +32,8 @@ pyenv() {
     deactivate
   fi
 }
+
+cw() {
+  file_path="$(yazi --chooser-file=/dev/stdout "$DOTFILES/wallpapers" | while read -r; do printf "%q" "$REPLY"; done)"
+  feh --bg-fill "$file_path"
+}
