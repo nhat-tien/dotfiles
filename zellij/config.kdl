@@ -157,11 +157,11 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
-		    bind "Ctrl q" {
-						LaunchOrFocusPlugin "zj-quit" {
-							floating true
-			      }
-        }
+		    // bind "Ctrl q" {
+						// LaunchOrFocusPlugin "zj-quit" {
+						// 	floating true
+			   //    }
+      //   }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -199,10 +199,10 @@ ui {
 }
 
 plugins {
-  zj-quit location="file:$HOME/dotfiles/zellij/plugins/zj-quit.wasm" {
-    confirm_key "y"
-    cancel_key "Esc"
-  }
+  // zj-quit location="file:$HOME/dotfiles/zellij/plugins/zj-quit.wasm" {
+  //   confirm_key "y"
+  //   cancel_key "Esc"
+  // }
 }
 
 theme "tokyonight_moon"

@@ -35,5 +35,7 @@ pyenv() {
 
 cw() {
   file_path="$(yazi --chooser-file=/dev/stdout "$DOTFILES/wallpapers" | while read -r; do printf "%q" "$REPLY"; done)"
-  feh --bg-fill "$file_path"
+  if [[ "$file_path" != "" ]]; then 
+    feh --bg-fill "$file_path"
+  fi
 }

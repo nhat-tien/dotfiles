@@ -13,7 +13,6 @@
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
-<!-- - Terminal emulator: Kitty  -->
 - Terminal emulator: [Wezterm](https://github.com/wez/wezterm)
 - Shell: `zsh` 
 - TUI file manager: [yazi](https://github.com/sxyazi/yazi)

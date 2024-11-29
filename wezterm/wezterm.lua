@@ -45,11 +45,11 @@ config.disable_default_key_bindings = false
 config.underline_thickness = 2
 
 -- config.front_end = "WebGpu"
-config.webgpu_preferred_adapter = {
-	backend = "Vulkan",
-	device_type = "Cpu",
-	name = "llvmpipe (LLVM 15.0.7, 256 bits)",
-}
+-- config.webgpu_preferred_adapter = {
+-- 	backend = "Vulkan",
+-- 	device_type = "Cpu",
+-- 	name = "llvmpipe (LLVM 15.0.7, 256 bits)",
+-- }
 
 config.window_padding = {
 	left = 8,
