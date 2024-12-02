@@ -71,64 +71,91 @@ local keymap_table = {
 			func = "<C-w>><C-w>>",
 			desc = "Resize Window",
 		},
-      {
-         key = "<Leader>w<up>",
-         func = "<C-w>+<C-w>+",
-         desc = "Resize Window",
-      },
-      {
-         key = "<Leader>w<down>",
-         func = "<C-w>-<C-w>-",
-         desc = "Resize Window",
-      },
-      {
-         key = "<Leader>ww",
-         func = "<C-w>w",
-         desc = "Change Window",
-      },
-      {
-         key = "<Leader>wh",
-         func = "<C-w>h",
-         desc = "Focus Left Window",
-      },
-      {
-         key = "<Leader>wl",
-         func = "<C-w>l",
-         desc = "Foxus Right Window",
-      },
-      {
-         key = "<Leader>wj",
-         func = "<C-w>j",
-         desc = "Foxus Top Window",
-      },
-      {
-         key = "<Leader>wk",
-         func = "<C-w>k",
-         desc = "Foxus Bottom Window",
-      }
+		{
+			key = "<Leader>w<up>",
+			func = "<C-w>+<C-w>+",
+			desc = "Resize Window",
+		},
+		{
+			key = "<Leader>w<down>",
+			func = "<C-w>-<C-w>-",
+			desc = "Resize Window",
+		},
+		{
+			key = "<Leader>ww",
+			func = "<C-w>w",
+			desc = "Change Window",
+		},
+		{
+			key = "<Leader>wh",
+			func = "<C-w>h",
+			desc = "Focus Left Window",
+		},
+		{
+			key = "<Leader>wl",
+			func = "<C-w>l",
+			desc = "Focus Right Window",
+		},
+		{
+			key = "<Leader>wj",
+			func = "<C-w>j",
+			desc = "Focus Top Window",
+		},
+		{
+			key = "<Leader>wk",
+			func = "<C-w>k",
+			desc = "Focus Bottom Window",
+		},
+      -- [[ -------------------------------------
+      --             UTILS
+      -- ]] -------------------------------------
+		{
+			key = "<Esc>",
+			func = ":noh<CR><Esc>",
+			desc = "Hide highlight after use search",
+		},
+		{
+			key = "U",
+			func = "<C-r>",
+			desc = "Redo",
+		},
+		{
+			key = "sa",
+			func = "gg<S-v>G",
+			desc = "Select All",
+		},
+		{
+			key = "mm",
+			func = "%",
+			desc = "Go to matching bracket",
+		},
+		{
+			key = "+",
+			func = "<C-a>",
+			desc = "Increment",
+		},
 	}, -- /Normal
 }
 
 create_keymap_new(keymap_table)
-
 
 -- [[ -------------------------------------
 --             UTILS
 -- ]] -------------------------------------
 
 -- Hide highlight after use search
-create_keymap("n", "<Esc>", ":noh<CR><Esc>")
+-- create_keymap("n", "<Esc>", ":noh<CR><Esc>")
 -- Open url link at cursor line
 create_keymap("n", "<Leader>uo", require("tien.utils.init").handleuRL, "Open URL")
 create_keymap("x", "<Leader>ut", require("tien.utils.init").openGoogleTranslate, "Open Google Translate")
 -- Redo
-create_keymap("n", "U", "<C-r>")
+-- create_keymap("n", "U", "<C-r>")
 -- Select all
-create_keymap("n", "sa", "gg<S-v>G", "Select All")
+-- create_keymap("n", "sa", "gg<S-v>G", "Select All")
 -- Go to matching bracket
-create_keymap("n", "mm", "%")
+-- create_keymap("n", "mm", "%")
 -- Increment/Decrement
-create_keymap("n", "+", "<C-a>")
+-- create_keymap("n", "+", "<C-a>")
 create_keymap("n", "-", "<C-x>")
 -- Save shortcut in insert mode
 create_keymap("i", "<C-s>", "<C-o>:w<CR>")
