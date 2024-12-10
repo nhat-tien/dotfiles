@@ -3,7 +3,7 @@ layout {
   pane size=1 borderless=true {
     plugin location="file:$HOME/dotfiles/zellij/plugins/zjstatus.wasm" {
       format_left   "{mode}  {tabs}"
-      format_right "#[fg=#ff966c]#[fg=#16161e,bg=#ff966c] #[bg=#16161e,fg=#ff966c,bold] {command_user} #[fg=#ff966c]#[fg=#16161e,bg=#ff966c]󰃭 #[bg=#16161e,fg=#ff966c] {datetime}"
+      // format_right "#[fg=#ff966c]#[fg=#16161e,bg=#ff966c] #[bg=#16161e,fg=#ff966c,bold] {command_user} #[fg=#ff966c]#[fg=#16161e,bg=#ff966c]󰃭 #[bg=#16161e,fg=#ff966c] {datetime}"
       format_space  ""
 
       border_enabled  "false"

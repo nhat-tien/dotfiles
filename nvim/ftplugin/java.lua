@@ -59,13 +59,13 @@ local config = {
 	},
 	on_attach = function()
 		-- Setup the java debug adapter of the JDTLS server
-		require("jdtls.dap").setup_dap()
+		-- require("jdtls.dap").setup_dap()
 
 		-- Find the main method(s) of the application so the debug adapter can successfully start up the application
 		-- Sometimes this will randomly fail if language server takes to long to startup for the project, if a ClassDefNotFoundException occurs when running
 		-- the debug tool, attempt to run the debug tool while in the main class of the application, or restart the neovim instance
 		-- Unfortunately I have not found an elegant way to ensure this works 100%
-		require("jdtls.dap").setup_dap_main_class_configs()
+		-- require("jdtls.dap").setup_dap_main_class_configs()
 
 		-- Enable jdtls commands to be used in Neovim
 		require("jdtls.setup").add_commands()

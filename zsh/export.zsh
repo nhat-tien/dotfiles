@@ -24,5 +24,6 @@ export STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
 
 # PATH
 path+=("$HOME/.npm-packages/bin")
+path+=("$HOME/.local/bin")
 path+=('/opt/apache-maven-3.6.3/bin')
 path+=("$GOPATH/bin")

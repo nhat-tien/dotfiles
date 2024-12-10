@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
 	},
 	config = function()
 		-- local trouble = require("trouble.providers.telescope")
@@ -74,7 +75,8 @@ return {
 				-- },
 				file_ignore_patterns = ignore_these,
 				layout_config = {
-					prompt_position = "top",
+					-- prompt_position = "top",
+					prompt_position = "bottom",
 					horizontal = {
 						mirror = false,
 						preview_cutoff = 100,
@@ -92,14 +94,20 @@ return {
 				},
 			},
 			pickers = {
-				find_files = { sorting_strategy = "ascending" },
-				live_grep = { sorting_strategy = "ascending" },
-				buffers = { sorting_strategy = "ascending" },
-				help_tags = { sorting_strategy = "ascending" },
-				lsp_document_symbols = { sorting_strategy = "ascending" },
+				-- find_files = { sorting_strategy = "ascending" },
+				-- live_grep = { sorting_strategy = "ascending" },
+				-- buffers = { sorting_strategy = "ascending" },
+				-- help_tags = { sorting_strategy = "ascending" },
+				-- lsp_document_symbols = { sorting_strategy = "ascending" },
+				find_files = { sorting_strategy = "descending" },
+				live_grep = { sorting_strategy = "descending" },
+				buffers = { sorting_strategy = "descending" },
+				help_tags = { sorting_strategy = "descending" },
+				lsp_document_symbols = { sorting_strategy = "descending" },
 			},
 		})
 
+      require('telescope').load_extension('fzf')
 		require("telescope").load_extension("ui-select")
 	end,
 }
