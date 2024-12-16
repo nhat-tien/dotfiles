@@ -32,6 +32,12 @@ local function create_keymap_new(keymap_table)
 	end
 end
 
+local function create_user_cmd(keymap_table)
+	for _, value in pairs(keymap_table) do
+		vim.api.nvim_create_user_command(value.command, value.func, { desc = value.desc })
+	end
+end
+
 local keymap_table = {
 
 	normal = {
@@ -106,13 +112,13 @@ local keymap_table = {
 			func = "<C-w>k",
 			desc = "Focus Bottom Window",
 		},
-      -- [[ -------------------------------------
-      --             UTILS
-      -- ]] -------------------------------------
+		-- [[ -------------------------------------
+		--             MISC
+		-- ]] -------------------------------------
 		{
 			key = "<Esc>",
 			func = ":noh<CR><Esc>",
-			desc = "Hide highlight after use search",
+			desc = "Hide highlight after using search",
 		},
 		{
 			key = "U",
@@ -134,28 +140,114 @@ local keymap_table = {
 			func = "<C-a>",
 			desc = "Increment",
 		},
+		{
+			key = "<leader>ub",
+			func = function()
+				require("tien.utils.toogle-checkbox").toggle()
+			end,
+			desc = "Toggle checkbox",
+		},
+		{
+			key = "<leader>uo",
+			func = function()
+				require("tien.utils.init").handleURL()
+			end,
+			desc = "Open URL",
+		},
+		-- [[ -------------------------------------
+		--             UTILS
+		-- ]] -------------------------------------
+		{
+			key = "<leader>f",
+			func = function()
+				require("telescope.builtin").find_files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			key = "<leader>/",
+			func = function()
+				require("telescope.builtin").live_grep()
+			end,
+			desc = "Live Grep",
+		},
+		{
+			key = "<leader>{",
+			func = function()
+				require("telescope.builtin").lsp_document_symbols()
+			end,
+			desc = "LSP doc symbols",
+		},
+		{
+			key = "<leader>F",
+			func = function()
+				require("telescope.builtin").quickfix()
+			end,
+			desc = "Quickfix",
+		},
 	}, -- /Normal
 }
 
-create_keymap_new(keymap_table)
+local user_cmd = {
+	{
+		command = "Format",
+		func = function(args)
+			require("conform").format({ bufnr = args.buf })
+		end,
+		desc = "Format",
+	},
+	{
+		command = "LtexEnable",
+		func = function()
+			require("lspconfig").ltex.setup({
+				settings = {
+					ltex = {
+						enabled = { "markdown", "latex" },
+						language = "en-US",
+					},
+				},
+			})
+		end,
+		desc = "LtexEnable",
+	},
+	{
+		command = "HarperEnable",
+		func = function()
+			require("lspconfig").harper_ls.setup({
+				-- settings = {
+				--   ["harper-ls"] = {
+				--     linters = {
+				--       spell_check = true,
+				--       spelled_numbers = false,
+				--       an_a = true,
+				--       sentence_capitalization = true,
+				--       unclosed_quotes = true,
+				--       wrong_quotes = false,
+				--       long_sentences = true,
+				--       repeated_words = true,
+				--       spaces = true,
+				--       matcher = true,
+				--       correct_number_suffix = true,
+				--       number_suffix_capitalization = true,
+				--       multiple_sequential_pronouns = true
+				--     }
+				--   }
+				-- },
+			})
+		end,
+		desc = "LtexEnable",
+	},
+}
 
+create_keymap_new(keymap_table)
+create_user_cmd(user_cmd)
 -- [[ -------------------------------------
 --             UTILS
 -- ]] -------------------------------------
 
--- Hide highlight after use search
--- create_keymap("n", "<Esc>", ":noh<CR><Esc>")
 -- Open url link at cursor line
-create_keymap("n", "<Leader>uo", require("tien.utils.init").handleuRL, "Open URL")
 create_keymap("x", "<Leader>ut", require("tien.utils.init").openGoogleTranslate, "Open Google Translate")
--- Redo
--- create_keymap("n", "U", "<C-r>")
--- Select all
--- create_keymap("n", "sa", "gg<S-v>G", "Select All")
--- Go to matching bracket
--- create_keymap("n", "mm", "%")
--- Increment/Decrement
--- create_keymap("n", "+", "<C-a>")
+
 create_keymap("n", "-", "<C-x>")
 -- Save shortcut in insert mode
 create_keymap("i", "<C-s>", "<C-o>:w<CR>")
@@ -171,17 +263,6 @@ create_keymap("t", "<esc>", [[<C-\><C-n>]])
 create_keymap("n", "<Leader>t", ":NvimTreeToggle<CR>", "Folder Tree Toggle")
 
 -- Telescope keymap
-create_keymap("n", "<leader>f", function()
-	require("telescope.builtin").find_files()
-end, "Find Files")
-
-create_keymap("n", "<leader>/", function()
-	require("telescope.builtin").live_grep()
-end, "Live Grep")
-
-create_keymap("n", "<leader>{", function()
-	require("telescope.builtin").lsp_document_symbols()
-end, "LSP doc symbols")
 
 -- keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- keymap.set('n', '<leader>fh', builtin.help_tags, {})
@@ -201,9 +282,6 @@ end, "Toggle Loclist")
 create_keymap("n", "<A-t>", "<cmd>Lspsaga term_toggle<CR>")
 
 -- Formating
-create_cmd("Format", function(args)
-	require("conform").format({ bufnr = args.buf })
-end, "Format")
 
 -- Todo comment
 create_keymap("n", "]t", function()
@@ -215,40 +293,6 @@ create_keymap("n", "[t", function()
 end, "Previous todo comment")
 
 -- Enable ltex-lsp, tools for spell/grammar checking
-create_cmd("LtexEnable", function()
-	require("lspconfig").ltex.setup({
-		settings = {
-			ltex = {
-				enabled = { "markdown", "latex" },
-				language = "en-US",
-			},
-		},
-	})
-end, {})
-
-create_cmd("HarperEnable", function()
-	require("lspconfig").harper_ls.setup({
-		-- settings = {
-		--   ["harper-ls"] = {
-		--     linters = {
-		--       spell_check = true,
-		--       spelled_numbers = false,
-		--       an_a = true,
-		--       sentence_capitalization = true,
-		--       unclosed_quotes = true,
-		--       wrong_quotes = false,
-		--       long_sentences = true,
-		--       repeated_words = true,
-		--       spaces = true,
-		--       matcher = true,
-		--       correct_number_suffix = true,
-		--       number_suffix_capitalization = true,
-		--       multiple_sequential_pronouns = true
-		--     }
-		--   }
-		-- },
-	})
-end, {})
 
 -- Debug
 create_keymap("n", "<leader>gt", function()

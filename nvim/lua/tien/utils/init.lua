@@ -1,6 +1,6 @@
 local M = {}
 
-M.handleuRL = function()
+M.handleURL = function()
 	-- "%" is escape charater in lua :)))
 	local url = string.match(vim.fn.getline("."), 'https*://[^ >,;)%]"]*')
 	if url ~= "" then
@@ -21,5 +21,6 @@ M.openGoogleTranslate = function()
 	-- or use api.nvim_buf_get_lines
 	local lines = vim.fn.getline(line_start, line_end)
 end
+
 
 return M
