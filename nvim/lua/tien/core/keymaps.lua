@@ -7,10 +7,6 @@ local function create_keymap(mode, key, func, desc)
 	vim.keymap.set(mode, key, func, vim.tbl_deep_extend("keep", opts, { desc = desc }))
 end
 
-local function create_cmd(command, func, desc)
-	vim.api.nvim_create_user_command(command, func, { desc = desc })
-end
-
 local function create_keymap_new(keymap_table)
 	local list_of_mode = {
 		normal = "n",

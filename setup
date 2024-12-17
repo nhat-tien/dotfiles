@@ -28,7 +28,7 @@ print_list_of_config() {
 }
 
 print_help() {
-    echo "This is a small bash script to setup dotfiles Ubuntu"
+    echo "This is a small bash script to setup dotfiles"
     echo "COMMAND:"
     echo ""
     echo "setup --setup <package-name>"
@@ -40,6 +40,9 @@ print_help() {
     echo "-l     --list        show list of available config"
     echo "-f     --force       replace if config folder exist"
     echo "-a     --all         setup all available config"
+    echo ""
+    echo "EXAMPLE:"
+    echo "setup --setup nvim i3 kitty"
 }
 
 setup_zsh() {
@@ -52,10 +55,15 @@ setup() {
     else
         if [[ -d "$HOME/.config/$1" ]]; then
             echo "You already have $1 in ~/.config"
-            read -p "Do you want to replace it ? (Y)es (N)o: " -r input
+            echo "Do you want to replace it? or rename it to $1.bk"
+            read -p "(Y)es (N)o (R)ename: " -r input
             case "$input" in
                 y|Y)
                     rm -rf "${HOME}/.config/$1"
+                    ln -s "${DOTFILES}/$1" "${HOME}/.config/$1"
+                    ;;
+                r|R)
+                    mv "${HOME}/.config/$1" "${HOME}/.config/$1.bk"
                     ln -s "${DOTFILES}/$1" "${HOME}/.config/$1"
                     ;;
                 *)
@@ -92,6 +100,9 @@ setup_all() {
 
 
 main() {
+    if [[ "$#" == 0 ]]; then
+      print_help
+    fi
     while [[ "$#" -gt 0 ]]; do
         case "$1" in
             -h|--help)
