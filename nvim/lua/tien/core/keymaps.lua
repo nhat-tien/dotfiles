@@ -1,307 +1,331 @@
-local opts = { noremap = true, silent = true }
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
-
-local function create_keymap(mode, key, func, desc)
-	vim.keymap.set(mode, key, func, vim.tbl_deep_extend("keep", opts, { desc = desc }))
-end
-
-local function create_keymap_new(keymap_table)
-	local list_of_mode = {
-		normal = "n",
-		insert = "i",
-		visual = "x",
-	}
-	for mode, mode_char in pairs(list_of_mode) do
-		local list_of_keymap = keymap_table[mode]
-		if list_of_keymap ~= nil then
-			for _, keymap in pairs(list_of_keymap) do
-				vim.keymap.set(
-					mode_char,
-					keymap.key,
-					keymap.func,
-					vim.tbl_deep_extend("keep", opts, { desc = keymap.desc })
-				)
-			end
-		end
-	end
-end
-
-local function create_user_cmd(keymap_table)
-	for _, value in pairs(keymap_table) do
-		vim.api.nvim_create_user_command(value.command, value.func, { desc = value.desc })
-	end
-end
-
-local keymap_table = {
-
-	normal = {
-		-- [[ -------------------------------------
-		--             BUFFER
-		-- ]] -------------------------------------
-		{
-			key = "<Tab>",
-			func = ":bnext<CR>",
-		},
-		{
-			key = "<S-Tab>",
-			func = ":bprev<CR>",
-		},
-		{
-			key = "<leader>n",
-			func = ":enew<CR>",
-			desc = "New Buffer",
-		},
-		{
-			key = "<leader>c",
-			func = function()
-				require("mini.bufremove").delete()
-			end,
-			desc = "Buffer Remove",
-		},
-		-- [[ -------------------------------------
-		--             WINDOW
-		-- ]] -------------------------------------
-		{
-			key = "<Leader>w<left>",
-			func = "<C-w><<C-w><",
-			desc = "Resize Window",
-		},
-		{
-			key = "<Leader>w<right>",
-			func = "<C-w>><C-w>>",
-			desc = "Resize Window",
-		},
-		{
-			key = "<Leader>w<up>",
-			func = "<C-w>+<C-w>+",
-			desc = "Resize Window",
-		},
-		{
-			key = "<Leader>w<down>",
-			func = "<C-w>-<C-w>-",
-			desc = "Resize Window",
-		},
-		{
-			key = "<Leader>ww",
-			func = "<C-w>w",
-			desc = "Change Window",
-		},
-		{
-			key = "<Leader>wh",
-			func = "<C-w>h",
-			desc = "Focus Left Window",
-		},
-		{
-			key = "<Leader>wl",
-			func = "<C-w>l",
-			desc = "Focus Right Window",
-		},
-		{
-			key = "<Leader>wj",
-			func = "<C-w>j",
-			desc = "Focus Top Window",
-		},
-		{
-			key = "<Leader>wk",
-			func = "<C-w>k",
-			desc = "Focus Bottom Window",
-		},
-		-- [[ -------------------------------------
-		--             MISC
-		-- ]] -------------------------------------
-		{
-			key = "<Esc>",
-			func = ":noh<CR><Esc>",
-			desc = "Hide highlight after using search",
-		},
-		{
-			key = "U",
-			func = "<C-r>",
-			desc = "Redo",
-		},
-		{
-			key = "sa",
-			func = "gg<S-v>G",
-			desc = "Select All",
-		},
-		{
-			key = "mm",
-			func = "%",
-			desc = "Go to matching bracket",
-		},
-		{
-			key = "+",
-			func = "<C-a>",
-			desc = "Increment",
-		},
-		{
-			key = "<leader>ub",
-			func = function()
-				require("tien.utils.toogle-checkbox").toggle()
-			end,
-			desc = "Toggle checkbox",
-		},
-		{
-			key = "<leader>uo",
-			func = function()
-				require("tien.utils.init").handleURL()
-			end,
-			desc = "Open URL",
-		},
-		-- [[ -------------------------------------
-		--             UTILS
-		-- ]] -------------------------------------
-		{
-			key = "<leader>f",
-			func = function()
-				require("telescope.builtin").find_files()
-			end,
-			desc = "Find Files",
-		},
-		{
-			key = "<leader>/",
-			func = function()
-				require("telescope.builtin").live_grep()
-			end,
-			desc = "Live Grep",
-		},
-		{
-			key = "<leader>{",
-			func = function()
-				require("telescope.builtin").lsp_document_symbols()
-			end,
-			desc = "LSP doc symbols",
-		},
-		{
-			key = "<leader>F",
-			func = function()
-				require("telescope.builtin").quickfix()
-			end,
-			desc = "Quickfix",
-		},
-	}, -- /Normal
-}
-
-local user_cmd = {
-	{
-		command = "Format",
-		func = function(args)
-			require("conform").format({ bufnr = args.buf })
-		end,
-		desc = "Format",
+return {
+	opts = { noremap = true, silent = true },
+	mapleader = " ",
+	maplocalleader = ";",
+	keymaps = {
+		normal = {
+			-- [[ -------------------------------------
+			--             BUFFER
+			-- ]] -------------------------------------
+			{
+				key = "<Tab>",
+				func = ":bnext<CR>",
+			},
+			{
+				key = "<S-Tab>",
+				func = ":bprev<CR>",
+			},
+			{
+				key = "<leader>n",
+				func = ":enew<CR>",
+				desc = "New Buffer",
+			},
+			{
+				key = "<leader>c",
+				func = function()
+					require("mini.bufremove").delete()
+				end,
+				desc = "Buffer Remove",
+			},
+			-- [[ -------------------------------------
+			--             WINDOW
+			-- ]] -------------------------------------
+			{
+				key = "<Leader>w<left>",
+				func = "<C-w><<C-w><",
+				desc = "Resize Window",
+			},
+			{
+				key = "<Leader>w<right>",
+				func = "<C-w>><C-w>>",
+				desc = "Resize Window",
+			},
+			{
+				key = "<Leader>w<up>",
+				func = "<C-w>+<C-w>+",
+				desc = "Resize Window",
+			},
+			{
+				key = "<Leader>w<down>",
+				func = "<C-w>-<C-w>-",
+				desc = "Resize Window",
+			},
+			{
+				key = "<Leader>ww",
+				func = "<C-w>w",
+				desc = "Change Window",
+			},
+			{
+				key = "<Leader>wh",
+				func = "<C-w>h",
+				desc = "Focus Left Window",
+			},
+			{
+				key = "<Leader>wl",
+				func = "<C-w>l",
+				desc = "Focus Right Window",
+			},
+			{
+				key = "<Leader>wj",
+				func = "<C-w>j",
+				desc = "Focus Top Window",
+			},
+			{
+				key = "<Leader>wk",
+				func = "<C-w>k",
+				desc = "Focus Bottom Window",
+			},
+			-- [[ -------------------------------------
+			--             MISC
+			-- ]] -------------------------------------
+			{
+				key = "<Esc>",
+				func = ":noh<CR><Esc>",
+				desc = "Hide highlight after using search",
+			},
+			{
+				key = "U",
+				func = "<C-r>",
+				desc = "Redo",
+			},
+			{
+				key = "sa",
+				func = "gg<S-v>G",
+				desc = "Select All",
+			},
+			{
+				key = "mm",
+				func = "%",
+				desc = "Go to matching bracket",
+			},
+			{
+				key = "+",
+				func = "<C-a>",
+				desc = "Increment",
+			},
+			{
+				key = "-",
+				func = "<C-x>",
+				desc = "Decrement",
+			},
+			{
+				key = "<leader>ub",
+				func = function()
+					require("tien.utils.toogle-checkbox").toggle()
+				end,
+				desc = "Toggle checkbox",
+			},
+			{
+				key = "<leader>uo",
+				func = function()
+					require("tien.utils.init").handleURL()
+				end,
+				desc = "Open URL",
+			},
+			-- [[ -------------------------------------
+			--             UTILS
+			-- ]] -------------------------------------
+			{
+				key = "<leader>f",
+				func = function()
+					require("telescope.builtin").find_files()
+				end,
+				desc = "Find Files",
+			},
+			{
+				key = "<leader>/",
+				func = function()
+					require("telescope.builtin").live_grep()
+				end,
+				desc = "Live Grep",
+			},
+			{
+				key = "<leader>{",
+				func = function()
+					require("telescope.builtin").lsp_document_symbols()
+				end,
+				desc = "LSP doc symbols",
+			},
+			{
+				key = "<leader>F",
+				func = function()
+					require("telescope.builtin").quickfix()
+				end,
+				desc = "Quickfix",
+			},
+			{
+				key = "<leader>|",
+				func = ":vsplit<CR>",
+				desc = "Vertical Split",
+			},
+			{
+				key = "<leader>-",
+				func = ":split<CR>",
+				desc = "Horizontal Split",
+			},
+			{
+				key = "<leader>t",
+				func = ":NvimTreeToggle<CR>",
+				desc = "Folder Tree Toggle",
+			},
+			{
+				key = "<leader>d",
+				func = function()
+					require("trouble").toggle("diagnostics")
+				end,
+				desc = "Diagnostics",
+			},
+			{
+				key = "<leader>xq",
+				func = function()
+					require("trouble").toggle("quickfix")
+				end,
+				desc = "Toggle Quickfix",
+			},
+			{
+				key = "<leader>xl",
+				func = function()
+					require("trouble").toggle("loclist")
+				end,
+				desc = "Toggle Loclist",
+			},
+			{
+				key = "]t",
+				func = function()
+					require("todo-comments").jump_next()
+				end,
+				desc = "Next todo comment",
+			},
+			{
+				key = "[t",
+				func = function()
+					require("todo-comments").jump_prev()
+				end,
+				desc = "Previous todo comment",
+			},
+			{
+				key = "<leader>gt",
+				func = function()
+					require("dap").toggle_breakpoint()
+				end,
+				desc = "DAP: toggle_breakpoint",
+			},
+			{
+				key = "<leader>gs",
+				func = function()
+					require("dap").continue()
+				end,
+				desc = "DAP: continue",
+			},
+			{
+				key = "<leader>gc",
+				func = function()
+					require("dap").close()
+				end,
+				desc = "DAP: close",
+			},
+		}, -- \Normal mode
+		insert = {
+			{
+				key = "<C-s>",
+				func = "<C-o>:w<CR>",
+				desc = "Save shortcut in insert mode",
+			},
+			{
+				key = "qq",
+				func = "<Esc>",
+				desc = "Another way to escape insert mode",
+			},
+		}, -- \Insert mode
+		visual = {
+			{
+				key = ">",
+				func = ">gv",
+				desc = "Adjust indent in visual mode",
+			},
+			{
+				key = "<",
+				func = "<gv",
+				desc = "Adjust indent in visual mode",
+			},
+		}, -- \Visual mode
+		terminal = {
+			{
+				key = "<esc>",
+				func = [[<C-\><C-n>]],
+				desc = "Escape terminal mode",
+			},
+		}, -- \Terminal mode
 	},
-	{
-		command = "LtexEnable",
-		func = function()
-			require("lspconfig").ltex.setup({
-				settings = {
-					ltex = {
-						enabled = { "markdown", "latex" },
-						language = "en-US",
+	user_command = {
+		{
+			command = "Format",
+			func = function(args)
+				require("conform").format({ bufnr = args.buf })
+			end,
+			desc = "Format",
+		},
+		{
+			command = "LtexEnable",
+			func = function()
+				require("lspconfig").ltex.setup({
+					settings = {
+						ltex = {
+							enabled = { "markdown", "latex" },
+							language = "en-US",
+						},
 					},
-				},
-			})
-		end,
-		desc = "LtexEnable",
-	},
-	{
-		command = "HarperEnable",
-		func = function()
-			require("lspconfig").harper_ls.setup({
-				-- settings = {
-				--   ["harper-ls"] = {
-				--     linters = {
-				--       spell_check = true,
-				--       spelled_numbers = false,
-				--       an_a = true,
-				--       sentence_capitalization = true,
-				--       unclosed_quotes = true,
-				--       wrong_quotes = false,
-				--       long_sentences = true,
-				--       repeated_words = true,
-				--       spaces = true,
-				--       matcher = true,
-				--       correct_number_suffix = true,
-				--       number_suffix_capitalization = true,
-				--       multiple_sequential_pronouns = true
-				--     }
-				--   }
-				-- },
-			})
-		end,
-		desc = "LtexEnable",
+				})
+			end,
+			desc = "LtexEnable",
+		},
+		{
+			command = "HarperEnable",
+			func = function()
+				require("lspconfig").harper_ls.setup({
+					-- settings = {
+					--   ["harper-ls"] = {
+					--     linters = {
+					--       spell_check = true,
+					--       spelled_numbers = false,
+					--       an_a = true,
+					--       sentence_capitalization = true,
+					--       unclosed_quotes = true,
+					--       wrong_quotes = false,
+					--       long_sentences = true,
+					--       repeated_words = true,
+					--       spaces = true,
+					--       matcher = true,
+					--       correct_number_suffix = true,
+					--       number_suffix_capitalization = true,
+					--       multiple_sequential_pronouns = true
+					--     }
+					--   }
+					-- },
+				})
+			end,
+			desc = "LtexEnable",
+		},
 	},
 }
 
-create_keymap_new(keymap_table)
-create_user_cmd(user_cmd)
 -- [[ -------------------------------------
 --             UTILS
 -- ]] -------------------------------------
 
 -- Open url link at cursor line
-create_keymap("x", "<Leader>ut", require("tien.utils.init").openGoogleTranslate, "Open Google Translate")
 
-create_keymap("n", "-", "<C-x>")
 -- Save shortcut in insert mode
-create_keymap("i", "<C-s>", "<C-o>:w<CR>")
-create_keymap("i", "qq", "<Esc>")
+--
 -- Adjust indent in visual mode
-create_keymap("x", ">", ">gv")
-create_keymap("x", "<", "<gv")
--- Escape terminal mode
-create_keymap("t", "<esc>", [[<C-\><C-n>]])
 -- Insert current date
 -- create_keymap('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
 -- Toggle NvimTree
-create_keymap("n", "<Leader>t", ":NvimTreeToggle<CR>", "Folder Tree Toggle")
 
 -- Telescope keymap
 
 -- keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
--- Trouble keymap
-create_keymap("n", "<leader>d", function()
-	require("trouble").toggle("diagnostics")
-end, "Diagnostics")
-create_keymap("n", "<leader>xq", function()
-	require("trouble").toggle("quickfix")
-end, "Toggle Quickfix")
-create_keymap("n", "<leader>xl", function()
-	require("trouble").toggle("loclist")
-end, "Toggle Loclist")
-
--- Lspsaga floating terminal
-create_keymap("n", "<A-t>", "<cmd>Lspsaga term_toggle<CR>")
-
--- Formating
-
--- Todo comment
-create_keymap("n", "]t", function()
-	require("todo-comments").jump_next()
-end, "Next todo comment")
-
-create_keymap("n", "[t", function()
-	require("todo-comments").jump_prev()
-end, "Previous todo comment")
-
--- Enable ltex-lsp, tools for spell/grammar checking
-
--- Debug
-create_keymap("n", "<leader>gt", function()
-	require("dap").toggle_breakpoint()
-end, "DAP: toggle_breakpoint")
-
-create_keymap("n", "<leader>gs", function()
-	require("dap").continue()
-end, "DAP: continue")
-
-create_keymap("n", "<leader>gc", function()
-	require("dap").close()
-end, "DAP: close")
 
 -- Set a Vim motion to <Space> + <Shift>J + o to organize imports in normal mode
 -- create_keymap("n", "<leader>Jo", function()

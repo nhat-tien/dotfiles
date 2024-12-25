@@ -1,5 +1,8 @@
 return {
   "ray-x/go.nvim",
+   enabled = function ()
+      return require("tien.core.setuplang").isNeed("go")
+   end,
   dependencies = {  -- optional packages
     "ray-x/guihua.lua",
     "neovim/nvim-lspconfig",

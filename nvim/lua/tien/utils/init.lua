@@ -10,17 +10,17 @@ M.handleURL = function()
 	end
 end
 
-M.openGoogleTranslate = function()
-	local vstart = vim.fn.getpos("'<")
-
-	local vend = vim.fn.getpos("'>")
-
-	local line_start = vstart[2]
-	local line_end = vend[2]
-
-	-- or use api.nvim_buf_get_lines
-	local lines = vim.fn.getline(line_start, line_end)
-end
+-- M.openGoogleTranslate = function()
+-- 	local vstart = vim.fn.getpos("'<")
+--
+-- 	local vend = vim.fn.getpos("'>")
+--
+-- 	local line_start = vstart[2]
+-- 	local line_end = vend[2]
+--
+-- 	-- or use api.nvim_buf_get_lines
+-- 	local lines = vim.fn.getline(line_start, line_end)
+-- end
 
 
 return M

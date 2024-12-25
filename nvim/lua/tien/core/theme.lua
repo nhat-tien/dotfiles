@@ -1,8 +1,4 @@
--- Change theme here
-local config = {
-   auto_theme = false,
-   theme = "night" -- "night" | "day"
-}
+local config = require("tien.core.config").theme
 
 local function autoChangeTheme()
 	local hour = tonumber(os.date("%H"))
@@ -59,7 +55,7 @@ local function light_tokyonight_setup()
 	vim.cmd.colorscheme("tokyonight-day")
 end
 
-local theme = config.auto_theme and autoChangeTheme() or config.theme
+local theme = config.auto_mode and autoChangeTheme() or config.mode
 
 if theme == "night" then
    dark_tokyonight_setup()

@@ -50,15 +50,10 @@ vim.g.markdown_fenced_languages = {
 vim.filetype.add({
    pattern = {
       [".*%.blade%.php"] = "blade",
-   },
-})
-
-vim.filetype.add({
-   pattern = {
       [".*%.norg"] = "norg",
+      [".*%.http"] = "http",
    },
 })
-
 --
 -- [[ -------------------------------------
 --             TABLE-MODE

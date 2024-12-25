@@ -14,7 +14,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("tien.plugins", {
+require("lazy").setup({
+   spec = {
+      { import = "tien.plugins" },
+   },
+   install = { colorscheme = { "tokyonight" } },
 	change_detection = {
 		notify = false,
 		enabled = false,

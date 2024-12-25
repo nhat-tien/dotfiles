@@ -17,11 +17,16 @@ return {
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
+      if require("tien.core.setuplang").isNeed("csharp") then
+         cmp.register_source("easy-dotnet", require("easy-dotnet").package_completion_source)
+      end
+
 		cmp.setup({
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+				{ name = "easy-dotnet" },
 			},
 			mapping = cmp.mapping.preset.insert({
 				-- Enter key confirms completion item

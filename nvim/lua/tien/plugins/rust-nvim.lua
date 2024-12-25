@@ -1,6 +1,9 @@
 return {
 	"mrcjkb/rustaceanvim",
 	version = "^4",
+   enabled = function ()
+      return require("tien.core.setuplang").isNeed("rust")
+   end,
 	ft = "rust",
 	config = function()
 		vim.g.rustaceanvim = {
