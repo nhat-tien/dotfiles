@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 		-- vim.keymap.set("n", "<Leader>r", ":Lspsaga rename<cr>", merge(opts, { desc = "Rename" }))
 		vim.keymap.set("n", "<Leader>r", "<cmd>lua require('renamer').rename()<cr>", vim.tbl_deep_extend("keep", opts, { desc = "Rename" }))
-		-- vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+		vim.keymap.set({ "n", "x" }, "<leader>uf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
 		-- vim.keymap.set('n', '<Leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 		-- vim.keymap.set("n", "<Leader>a", "<cmd>Lspsaga code_action<cr>", merge(opts, {desc = "Code Action"}))
 		vim.keymap.set(

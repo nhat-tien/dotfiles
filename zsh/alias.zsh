@@ -61,5 +61,6 @@ alias gittree="git log --oneline --decorate --graph --all"
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
+alias run="dmenu_path | fzf | xargs -r -I {} sh -c '{} > /dev/null 2>&1 &'"
 # workspace-setup
 # alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"

@@ -18,6 +18,7 @@ return {
 				yaml = { "prettierd" },
 				vue = { "prettierd" },
 				html = { "prettierd" },
+				svelte = { "prettierd" },
 				css = { "prettierd" },
 				sh = { "beautysh" },
             markdown = { "prettierd"},

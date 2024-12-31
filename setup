@@ -10,12 +10,13 @@ packages=(
     "i3"
     "picom"
     "rofi"
-    "wezterm"
+    # "wezterm"
     "nvim"
     "eww"
     "yazi"
     "btop"
     "zsh"
+    "ghostty"
 )
 
 flag_force=0

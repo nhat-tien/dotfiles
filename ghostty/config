@@ -1,14 +1,24 @@
 window-decoration = false
-window-padding-x = 2
-window-padding-y = 2
+window-padding-x = 5
+window-padding-y = 5
 window-theme = dark
-background-opacity = 0.95
+background-opacity = 0.9
 font-size = 11
-
+adjust-underline-thickness = 1
+adjust-cursor-thickness = 1
+adjust-box-thickness = 1
 font-family = "CaskaydiaCove Nerd Font"
+font-family-bold = "CaskaydiaCove Nerd Font"
+font-thicken = 1
+font-synthetic-style = bold
 adjust-cell-height = 10%
 
 keybind = ctrl+shift+r=reload_config
+keybind = ctrl+shift+q=quit
+keybind = ctrl+shift+up=scroll_page_up
+keybind = ctrl+shift+down=scroll_page_down
+keybind = ctrl+shift+i=increase_font_size:1
+keybind = ctrl+shift+d=decrease_font_size:1
 
 palette = 0=#1b1d2b
 palette = 1=#ff757f

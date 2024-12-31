@@ -12,3 +12,8 @@ if command -v starship  &> /dev/null
 then
   eval "$(starship init zsh)" 
 fi
+
+# ------ Ghostty integration ------
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/zsh/ghostty-integration
+fi

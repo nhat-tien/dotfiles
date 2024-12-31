@@ -22,6 +22,8 @@ export GREP_COLORS='ms=01;31'
 
 export STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
 
+export GHOSTTY_RESOURCES_DIR="$DOTFILES/ghostty"
+
 # PATH
 path+=("$HOME/.npm-packages/bin")
 path+=("$HOME/.local/bin")
