@@ -1,25 +1,35 @@
+# ------ Options ---------
 window-decoration = false
 window-padding-x = 5
 window-padding-y = 5
 window-theme = dark
+
 background-opacity = 0.9
-font-size = 11
+
 adjust-underline-thickness = 1
 adjust-cursor-thickness = 1
 adjust-box-thickness = 1
+
+font-size = 11
 font-family = "CaskaydiaCove Nerd Font"
 font-family-bold = "CaskaydiaCove Nerd Font"
 font-thicken = 1
 font-synthetic-style = bold
+
 adjust-cell-height = 10%
 
+# ------- Keymap ------------
 keybind = ctrl+shift+r=reload_config
 keybind = ctrl+shift+q=quit
-keybind = ctrl+shift+up=scroll_page_up
-keybind = ctrl+shift+down=scroll_page_down
+keybind = ctrl+shift+up=scroll_page_lines:-1
+keybind = ctrl+shift+k=scroll_page_lines:-1
+keybind = ctrl+shift+down=scroll_page_lines:1
+keybind = ctrl+shift+j=scroll_page_lines:1
 keybind = ctrl+shift+i=increase_font_size:1
 keybind = ctrl+shift+d=decrease_font_size:1
 
+
+# -------- Tokyonight-moon theme ----------
 palette = 0=#1b1d2b
 palette = 1=#ff757f
 palette = 2=#c3e88d
@@ -36,7 +46,6 @@ palette = 12=#9ab8ff
 palette = 13=#caabff
 palette = 14=#b2ebff
 palette = 15=#c8d3f5
-
 background = #222436
 foreground = #c8d3f5
 cursor-color = #c8d3f5

@@ -1,7 +1,6 @@
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
-  opts = {},
   -- stylua: ignore
   keys = {
     { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
@@ -18,5 +17,6 @@ return {
             }
          }
       })
+      vim.api.nvim_set_hl(0, 'FlashLabel', { bg = "#000000", fg = "#ffde20" })
    end
 }
