@@ -1,12 +1,18 @@
 #!/bin/bash
 
 phpactor() {
-   echo "phpactor cache:clear"
+    echo "phpactor cache:clear"
 }
 
+go() {
+    go clean -cache
+}
+
+docker_build_cache() {
+    docker builder prune
+}
 
 main() {
-
 }
 
 main "$@"

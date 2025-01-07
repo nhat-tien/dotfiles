@@ -5,7 +5,7 @@ alias todo="nvim ${MYNOTES}/plan"
 # alias jn="nvim ${MYNOTES}/journal"
 alias oo="nvim ${MYNOTES}/noteVault"
 # alias oi="cd ${MYNOTES}/mainVault/inbox && nvim *"
-# alias on="${DOTFILES}/scripts/new-notes"
+alias on="${DOTFILES}/scripts/new-notes"
 alias dot="nvim ${DOTFILES}"
 alias nv="nvim ${DOTFILES}/nvim"
 alias z="zellij --layout ${DOTFILES}/zellij/layouts/default.kdl"
@@ -63,5 +63,4 @@ alias gittree="git log --oneline --decorate --graph --all"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 alias run="dmenu_path | fzf | xargs -r -I {} sh -c '{} > /dev/null 2>&1 &'"
-# workspace-setup
-# alias ws="$HOME/dotfiles/scripts/workspace-setup.sh"
+

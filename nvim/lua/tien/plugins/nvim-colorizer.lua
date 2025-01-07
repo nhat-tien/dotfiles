@@ -11,6 +11,7 @@ return {
 		"typescriptreact",
 		"vue",
       "kdl",
+      "svelte",
 	},
 	config = function()
 		require("colorizer").setup({
@@ -23,6 +24,7 @@ return {
 			"typescriptreact",
 			"vue",
          "kdl",
+         "svelte",
 		}, { css = true })
 	end,
 }

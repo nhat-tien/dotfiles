@@ -20,16 +20,6 @@ return {
                require("lspconfig")[server_name].setup({})
             end
 			end,
-		-- 	["volar"] = function()
-		-- 		local lspconfig = require("lspconfig")
-		-- 		lspconfig.volar.setup({
-		-- 			init_options = {
-		-- 				typescript = {
-		-- 					tsdk = "/home/nhattien/.npm-packages/lib/node_modules/typescript/lib",
-		-- 				},
-		-- 			},
-		-- 		})
-		-- 	end,
 		})
 	end,
 }

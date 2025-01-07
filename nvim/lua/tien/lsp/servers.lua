@@ -81,13 +81,14 @@ local lsp_list = {
 	-- {
 	--    name = "ltex",
 	--    settings = {
-	--       ltex = {
+	--       ltex = {serv
 	--          enabled = { "markdown", "latex" },
 	--          language = "en-US",
 	--       }
 	--    }
 	-- },
 	{
+      -- volar@1.8.27
 		name = "volar",
 		init_options = {
 			typescript = {
@@ -117,6 +118,9 @@ local lsp_list = {
 	-- {
 	--    name = "dartls"
 	-- },
+   {
+      name = "csharp_ls"
+   },
 }
 
 return lsp_list

@@ -10,7 +10,7 @@ file_name=$(echo "$1" | tr ' ' '-')
 now=$(date "+%Y-%m-%d")
 formatted_file_name=${now}-${file_name}.md
 
-cd "${HOME}/Documents/Notes/mainVault/"
+cd "${MYNOTES}/noteVault"
 
 touch "inbox/${formatted_file_name}"
 
@@ -19,7 +19,6 @@ cat << EOF > ./inbox/${formatted_file_name}
 date: "${now}"
 tags:
   - 
-hub: "" 
 ---
 
 ## ${parameter}
