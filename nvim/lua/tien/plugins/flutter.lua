@@ -1,7 +1,7 @@
 return {
 	"akinsho/flutter-tools.nvim",
    enabled = function ()
-      return require("tien.core.setuplang").isNeed("flutter")
+      return require("tien.core.setup_lang").isNeed("flutter")
    end,
 	lazy = true,
 	dependencies = {

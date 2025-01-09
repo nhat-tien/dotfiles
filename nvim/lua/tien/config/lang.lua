@@ -1,5 +1,4 @@
 return {
-   setupLang = {
       "csharp",
       "html",
       "css",
@@ -8,9 +7,4 @@ return {
       -- "go",
       -- "laravel",
       "rust",
-   },
-   theme = {
-      auto_mode = false,
-      mode = "night"
-   }
 }

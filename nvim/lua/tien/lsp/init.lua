@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp_capabilities = require('blink.cmp').get_lsp_capabilities()
 
-local lsp_list = require("tien.lsp.servers")
+local lsp_list = require("tien.config.language_servers")
 
 local lsp_opts = {
 	"settings",

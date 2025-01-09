@@ -18,7 +18,7 @@ return {
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
-      if require("tien.core.setuplang").isNeed("csharp") then
+      if require("tien.core.setup_lang").isNeed("csharp") then
          cmp.register_source("easy-dotnet", require("easy-dotnet").package_completion_source)
       end
 

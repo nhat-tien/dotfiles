@@ -1,4 +1,4 @@
-require("tien.core.options")
+require("tien.core.setup_options")
 require("tien.core.setup_keymap")
-require("tien.core.lazynvim")
-require("tien.core.ui")
+require("tien.core.setup_lazynvim")
+require("tien.core.setup_ui")

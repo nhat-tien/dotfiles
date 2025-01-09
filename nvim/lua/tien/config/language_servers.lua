@@ -1,4 +1,4 @@
-local lsp_list = {
+return {
 	{
 		name = "lua_ls",
 		settings = {
@@ -122,5 +122,3 @@ local lsp_list = {
       name = "csharp_ls"
    },
 }
-
-return lsp_list
