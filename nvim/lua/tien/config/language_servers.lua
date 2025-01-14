@@ -33,9 +33,9 @@ return {
 	{
 		name = "eslint",
 	},
-	{
-		name = "phpactor",
-	},
+	-- {
+	-- 	name = "phpactor",
+	-- },
 	{
 		name = "pylsp",
 	},

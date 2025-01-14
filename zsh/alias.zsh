@@ -64,3 +64,5 @@ alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 alias run="dmenu_path | fzf | xargs -r -I {} sh -c '{} > /dev/null 2>&1 &'"
 
+alias icat="kitty icat"
+
