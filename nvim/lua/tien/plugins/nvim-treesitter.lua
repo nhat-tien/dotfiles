@@ -39,8 +39,8 @@ return {
 			},
 			sync_install = true,
 			highlight = {
-            enable = true,
-         },
+				enable = true,
+			},
 			incremental_selection = { enable = true },
 			indent = { enable = true },
 			textobjects = {
@@ -112,5 +112,16 @@ return {
 			},
 			filetype = "blade",
 		}
+
+		vim.api.nvim_create_autocmd({ "FileType" }, {
+			callback = function()
+				if require("nvim-treesitter.parsers").has_parser() then
+					vim.opt.foldmethod = "expr"
+					vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+				else
+					vim.opt.foldmethod = "syntax"
+				end
+			end,
+		})
 	end,
 }

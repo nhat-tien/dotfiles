@@ -118,7 +118,7 @@ return {
 	-- {
 	--    name = "dartls"
 	-- },
-   {
-      name = "csharp_ls"
-   },
+   -- {
+   --    name = "csharp_ls"
+   -- },
 }

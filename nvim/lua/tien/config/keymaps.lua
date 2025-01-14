@@ -1,7 +1,7 @@
 return {
 	opts = { noremap = true, silent = true },
 	mapleader = " ",
-	maplocalleader = ";",
+	maplocalleader = "",
 	keymaps = {
 		normal = {
 			-- [[ -------------------------------------

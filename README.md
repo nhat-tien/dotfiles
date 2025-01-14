@@ -13,7 +13,7 @@
 - Audio: `pulseaudio`, `pavucontrol` 
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
-- Terminal emulator: [Ghostty](https://github.com/ghostty-org/ghostty)
+- Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty)
 - Shell: `zsh` 
 - TUI file manager: [yazi](https://github.com/sxyazi/yazi)
 - Prompt: [starship](https://github.com/starship/starship) 
