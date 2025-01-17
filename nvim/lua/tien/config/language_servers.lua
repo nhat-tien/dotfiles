@@ -121,4 +121,7 @@ return {
    -- {
    --    name = "csharp_ls"
    -- },
+   {
+      name = "zls"
+   }
 }
