@@ -1,4 +1,5 @@
 return {
-   auto_mode = false,
-   mode = "night"
+   theme = "tokyonight-moon",
+   mode = "night",
+   auto_mode = false
 }

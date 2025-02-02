@@ -22,5 +22,12 @@ end
 -- 	local lines = vim.fn.getline(line_start, line_end)
 -- end
 
+M.switch = function (val, case)
+   if case[val] then
+      case[val]()
+   else
+      case["default"]()
+   end
+end
 
 return M
