@@ -3,7 +3,7 @@ local act = wezterm.action
 
 local config = {}
 
-config.font_size = 10.5
+config.font_size = 11
 config.font = wezterm.font_with_fallback({
 	{ family = "CaskaydiaCove Nerd Font", scale = 1, weight = "DemiBold" },
 })
@@ -36,7 +36,7 @@ config.allow_square_glyphs_to_overflow_width = "Never"
 config.line_height = 1.15
 config.custom_block_glyphs = true
 config.color_scheme = "Tokyo Night Moon"
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.9
 config.enable_tab_bar = true
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
@@ -70,7 +70,7 @@ config.keys = {
 		action = act.ScrollByLine(1),
 	},
 	{
-		key = "_",
+		key = "-",
 		mods = "CTRL|SHIFT",
 		action = act.DecreaseFontSize,
 	},

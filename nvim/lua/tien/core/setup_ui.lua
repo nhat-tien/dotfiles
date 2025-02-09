@@ -4,9 +4,9 @@ local switch = require("tien.utils.init").switch
 local function autoChangeTheme()
 	local hour = tonumber(os.date("%H"))
 	if hour >= 6 and hour <= 18 then
-		return "day"
+		return "light"
 	else
-		return "night"
+		return "dark"
 	end
 end
 
@@ -26,7 +26,7 @@ switch(config.theme, {
 
 local theme = config.auto_mode and autoChangeTheme() or config.mode
 
-if theme == "night" then
+if theme == "dark" then
    dark_theme()
 else
    light_theme()
