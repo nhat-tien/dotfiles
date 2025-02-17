@@ -1,5 +1,5 @@
 return {
-	opts = { noremap = true, silent = true },
+	opts = { noremap = true, silent = false },
 	mapleader = " ",
 	maplocalleader = "",
 	keymaps = {
