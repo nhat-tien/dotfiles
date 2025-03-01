@@ -1,7 +1,9 @@
 return {
 	"mg979/vim-visual-multi",
+   keys = {
+      "<C-n>"
+   },
 	config = function()
-
 		-- select words with Ctrl-N (like Ctrl-d in Sublime Text/VS Code)
 		-- create cursors vertically with Ctrl-Down/Ctrl-Up
 		-- select one character at a time with Shift-Arrows

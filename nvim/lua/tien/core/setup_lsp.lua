@@ -64,3 +64,4 @@ for _, lsp in pairs(lsp_list) do
 
 	require("lspconfig")[lsp["name"]].setup(lsp_config)
 end
+

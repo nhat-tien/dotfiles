@@ -1,6 +1,6 @@
 return {
 	opts = { noremap = true, silent = false },
-	mapleader = " ",
+   mapleader = " ",
 	maplocalleader = "",
 	keymaps = {
 		normal = {
@@ -32,12 +32,12 @@ return {
 			-- ]] -------------------------------------
 			{
 				key = "<Leader>w<left>",
-				func = "<C-w><<C-w><",
+				func = "<C-w><<C-w><<C-w><<C-w><",
 				desc = "Resize Window",
 			},
 			{
 				key = "<Leader>w<right>",
-				func = "<C-w>><C-w>>",
+				func = "<C-w>><C-w>><C-w>><C-w>>",
 				desc = "Resize Window",
 			},
 			{
@@ -111,14 +111,14 @@ return {
 			{
 				key = "<leader>ub",
 				func = function()
-					require("tien.utils.toogle-checkbox").toggle()
+               require("tien.utils").toggle_checkbox()
 				end,
 				desc = "Toggle checkbox",
 			},
 			{
 				key = "<leader>uo",
 				func = function()
-					require("tien.utils.init").handleURL()
+					require("tien.utils").handleURL()
 				end,
 				desc = "Open URL",
 			},
@@ -231,11 +231,11 @@ return {
 				func = "<C-o>:w<CR>",
 				desc = "Save shortcut in insert mode",
 			},
-			{
-				key = "qq",
-				func = "<Esc>",
-				desc = "Another way to escape insert mode",
-			},
+			-- {
+			-- 	key = "qq",
+			-- 	func = "<Esc>",
+			-- 	desc = "Another way to escape insert mode",
+			-- },
 		}, -- \Insert mode
 		visual = {
 			{
@@ -304,7 +304,7 @@ return {
 					-- },
 				})
 			end,
-			desc = "LtexEnable",
+			desc = "HarperEnable",
 		},
 	},
 }
@@ -313,19 +313,7 @@ return {
 --             UTILS
 -- ]] -------------------------------------
 
--- Open url link at cursor line
 
--- Save shortcut in insert mode
---
--- Adjust indent in visual mode
--- Insert current date
--- create_keymap('n','<Leader>sd',":pu=strftime('%Y-%m-%d')<CR>")
--- Toggle NvimTree
-
--- Telescope keymap
-
--- keymap.set('n', '<leader>fb', builtin.buffers, {})
--- keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- Set a Vim motion to <Space> + <Shift>J + o to organize imports in normal mode
 -- create_keymap("n", "<leader>Jo", function()

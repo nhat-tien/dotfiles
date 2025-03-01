@@ -107,8 +107,8 @@ require("lualine").setup({
          --       },
          {
             "mode",
-            color = function ()
-               return { fg = mode_color[vim.fn.mode()], bg = ""}
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
             end,
             padding = { left = 0 }, -- We don't need space before this
 
@@ -116,31 +116,39 @@ require("lualine").setup({
       },
       lualine_b = {
          {
+            function()
+               return "󰄛 "
+            end,
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
+            end,
+         },
+         {
             "branch",
-            color = function ()
-               return { fg = mode_color[vim.fn.mode()], bg = ""}
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
             end,
          },
          {
             "diagnostics",
-            color = function ()
-               return { fg = mode_color[vim.fn.mode()], bg = ""}
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
             end,
          },
       },
       lualine_y = {
          {
             "progress",
-            color = function ()
-               return { fg = mode_color[vim.fn.mode()], bg = ""}
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
             end,
          }
       },
       lualine_z = {
          {
             "location",
-            color = function ()
-               return { fg = mode_color[vim.fn.mode()], bg = ""}
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
             end,
          },
          {
@@ -155,14 +163,11 @@ require("lualine").setup({
                left = "",
                right = "",
             },
-            color = function ()
-               return { fg = mode_color[vim.fn.mode()], bg = ""}
+            color = function()
+               return { fg = mode_color[vim.fn.mode()], bg = "" }
             end,
          },
       },
    },
    extensions = { "nvim-tree" },
 })
-
-
-

@@ -207,10 +207,10 @@ family = "CaskaydiaCove Nerd Font"
 # [fonts]
 size = 13
 #
-# [fonts.regular]
-# family = "cascadiamono"
-# style = "Normal"
-# weight = 400
+[fonts.regular]
+family = "CaskaydiaCove Nerd Font"
+style = "Normal"
+weight = 500
 #
 # [fonts.bold]
 # family = "cascadiamono"
