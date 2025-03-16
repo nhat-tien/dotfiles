@@ -62,3 +62,6 @@ vim.g.table_mode_disable_mappings = 1
 vim.g.table_mode_disable_tableize_mappings = 1
 
 -- vim.g.codeium_enabled = false
+
+-- Disable zig auto format
+vim.g.zig_fmt_autosave = 0

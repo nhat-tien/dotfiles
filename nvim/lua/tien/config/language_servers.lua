@@ -122,6 +122,11 @@ return {
    --    name = "csharp_ls"
    -- },
    {
-      name = "zls"
+      name = "zls",
+      settings = {
+         zls = {
+            enable_build_on_save = false,
+         }
+      }
    }
 }

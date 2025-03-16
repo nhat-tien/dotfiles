@@ -20,6 +20,6 @@ return {
                require("lspconfig")[server_name].setup({})
             end
 			end,
-		})
+		});
 	end,
 }

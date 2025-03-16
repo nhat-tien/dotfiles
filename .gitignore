@@ -1,3 +1,4 @@
 .luarc.json
 lazy-lock.json
 *.log
+.obsidian

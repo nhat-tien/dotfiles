@@ -21,7 +21,8 @@ return {
             ["<S-Tab>"] = { "select_prev", "fallback" },
             ["<Tab>"] = { "select_next", "fallback" },
             --   ["<CR>"] = { "accept", "fallback" },
-         }
+         },
+         completion = { menu = { auto_show = true } },
       },
       keymap = {
          preset = "default",

@@ -1,7 +1,7 @@
 return {
 	"mg979/vim-visual-multi",
    keys = {
-      "<C-n>"
+      { "<C-n>", mode = { "n", "x", "o"} },
    },
 	config = function()
 		-- select words with Ctrl-N (like Ctrl-d in Sublime Text/VS Code)
