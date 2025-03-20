@@ -28,4 +28,5 @@ export GHOSTTY_RESOURCES_DIR="$DOTFILES/ghostty"
 path+=("$HOME/.npm-packages/bin")
 path+=("$HOME/.local/bin")
 path+=('/opt/apache-maven-3.6.3/bin')
+path+=("$HOME/App/flutter/bin")
 path+=("$GOPATH/bin")

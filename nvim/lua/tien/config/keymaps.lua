@@ -224,6 +224,21 @@ return {
 				end,
 				desc = "DAP: close",
 			},
+			-- [[ -------------------------------------
+			--            MACROS 
+			-- ]] -------------------------------------
+         {
+            key = "<leader>mm",
+            func = "vi\"ms`md\"",
+            remap = true,
+            desc = "MACROS: \" -> `"
+         },
+         {
+            key = "<leader>mn",
+            func = "vi'ms`md'",
+            remap = true,
+            desc = "MACROS: ' -> `"
+         }
 		}, -- \Normal mode
 		insert = {
 			{

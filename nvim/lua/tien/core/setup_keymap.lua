@@ -22,7 +22,10 @@ local function create_keymap(keymap_table)
 					mode_char,
 					keymap.key,
 					keymap.func,
-					vim.tbl_deep_extend("keep", opts, { desc = keymap.desc })
+					vim.tbl_deep_extend("force", opts, {
+                  desc = keymap.desc,
+                  remap = keymap.remap,
+               })
 				)
 			end
 		end
