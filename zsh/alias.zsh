@@ -43,10 +43,13 @@ alias mysqlstop="sudo systemctl stop mysql.service"
 alias dockerstart="sudo systemctl start docker"
 alias dockerstatus="sudo systemctl status docker"
 alias dockerstop="sudo systemctl stop docker.socket"
+alias dkcmpup="docker compose up -d"
+alias dkcmpdown="docker compose down"
 
 # Gio trash
 alias trash="gio trash"
-alias open-trash="cd ~/.local/share/Trash/files/"
+alias opentrash="cd ~/.local/share/Trash/files/ && yy"
+alias emptytrash="rm -rf ~/.local/share/Trash/files/*"
 alias sutrash="sudo gio trash"
 
 #screenfetch
@@ -59,10 +62,7 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 
 #git tree
 alias gittree="git log --oneline --decorate --graph --all"
-
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
-
 alias run="dmenu_path | fzf | xargs -r -I {} sh -c '{} > /dev/null 2>&1 &'"
-
 alias icat="kitty icat"
 
