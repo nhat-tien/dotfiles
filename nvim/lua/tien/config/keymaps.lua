@@ -224,6 +224,10 @@ return {
 				end,
 				desc = "DAP: close",
 			},
+         {
+            key = "<leader>uf",
+            func = "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
+         },
 			-- [[ -------------------------------------
 			--            MACROS 
 			-- ]] -------------------------------------
@@ -321,6 +325,12 @@ return {
 			end,
 			desc = "HarperEnable",
 		},
+      {
+         command = "LspInfo",
+         func = function()
+            vim.cmd("checkhealth vim.lsp")
+         end
+      }
 	},
 }
 

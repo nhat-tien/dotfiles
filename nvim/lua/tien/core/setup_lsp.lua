@@ -43,29 +43,37 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
+-- local lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
+--
+--
+-- local lsp_opts = {
+-- 	"settings",
+-- 	"cmd",
+-- 	"filetypes",
+-- 	"init_options",
+-- 	"handlers",
+-- 	"on_attach",
+-- }
+--
+-- for _, lsp in pairs(lsp_list) do
+-- 	local lsp_config = {}
+--
+-- 	lsp_config.capabilities = lsp_capabilities
+--
+-- 	for _, opt in pairs(lsp_opts) do
+-- 		if lsp[opt] then
+-- 			lsp_config[opt] = lsp[opt]
+-- 		end
+-- 	end
+--
+-- 	require("lspconfig")[lsp["name"]].setup(lsp_config)
+-- end
 
 local lsp_list = require("tien.config.language_servers")
+vim.lsp.enable(lsp_list)
 
-local lsp_opts = {
-	"settings",
-	"cmd",
-	"filetypes",
-	"init_options",
-	"handlers",
-	"on_attach",
-}
+-- for _, lsp in pairs(lsp_list) do
+--    print(lsp)
+-- 	vim.lsp.enable(lsp)
+-- end
 
-for _, lsp in pairs(lsp_list) do
-	local lsp_config = {}
-
-	lsp_config.capabilities = lsp_capabilities
-
-	for _, opt in pairs(lsp_opts) do
-		if lsp[opt] then
-			lsp_config[opt] = lsp[opt]
-		end
-	end
-
-	require("lspconfig")[lsp["name"]].setup(lsp_config)
-end

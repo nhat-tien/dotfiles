@@ -2,7 +2,7 @@ return {
 	plugins = {
       "csharp",
 		-- "java",
-		"flutter",
+		-- "flutter",
 		"go",
 		-- "laravel",
 		"rust",

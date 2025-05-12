@@ -3,6 +3,7 @@ local M = {}
 M.dark_theme_setup = function ()
 	require("tokyonight").setup({
 		transparent = true,
+      terminal_color = true,
 		styles = {
 			sidebars = "transparent",
 			floats = "transparent",
@@ -10,7 +11,7 @@ M.dark_theme_setup = function ()
 		on_colors = function(colors)
 			colors.bg_statusline = colors.none
 		end,
-		on_highlights = function(hl)
+		on_highlights = function(hl, c)
 			hl["@markup.strong"] = {
 				bold = true,
 				fg = "#ff9e64",
@@ -19,6 +20,9 @@ M.dark_theme_setup = function ()
 				italic = true,
 				fg = "#e0af68",
 			}
+         hl.TabLineFill = {
+            bg = c.none
+         }
 		end,
 	})
 
