@@ -9,20 +9,20 @@ return {
 			-- ]] -------------------------------------
 			{
 				key = "<Tab>",
-				func = ":bnext<CR>",
+				fn = ":bnext<CR>",
 			},
 			{
 				key = "<S-Tab>",
-				func = ":bprev<CR>",
+				fn = ":bprev<CR>",
 			},
 			{
 				key = "<leader>n",
-				func = ":enew<CR>",
+				fn = ":enew<CR>",
 				desc = "New Buffer",
 			},
 			{
 				key = "<leader>c",
-				func = function()
+				fn = function()
 					require("mini.bufremove").delete()
 				end,
 				desc = "Buffer Remove",
@@ -32,47 +32,47 @@ return {
 			-- ]] -------------------------------------
 			{
 				key = "<Leader>w<left>",
-				func = "<C-w><<C-w><<C-w><<C-w><",
+				fn = "<C-w><<C-w><<C-w><<C-w><",
 				desc = "Resize Window",
 			},
 			{
 				key = "<Leader>w<right>",
-				func = "<C-w>><C-w>><C-w>><C-w>>",
+				fn = "<C-w>><C-w>><C-w>><C-w>>",
 				desc = "Resize Window",
 			},
 			{
 				key = "<Leader>w<up>",
-				func = "<C-w>+<C-w>+",
+				fn = "<C-w>+<C-w>+",
 				desc = "Resize Window",
 			},
 			{
 				key = "<Leader>w<down>",
-				func = "<C-w>-<C-w>-",
+				fn = "<C-w>-<C-w>-",
 				desc = "Resize Window",
 			},
 			{
 				key = "<Leader>ww",
-				func = "<C-w>w",
+				fn = "<C-w>w",
 				desc = "Change Window",
 			},
 			{
 				key = "<Leader>wh",
-				func = "<C-w>h",
+				fn = "<C-w>h",
 				desc = "Focus Left Window",
 			},
 			{
 				key = "<Leader>wl",
-				func = "<C-w>l",
+				fn = "<C-w>l",
 				desc = "Focus Right Window",
 			},
 			{
 				key = "<Leader>wj",
-				func = "<C-w>j",
+				fn = "<C-w>j",
 				desc = "Focus Top Window",
 			},
 			{
 				key = "<Leader>wk",
-				func = "<C-w>k",
+				fn = "<C-w>k",
 				desc = "Focus Bottom Window",
 			},
 			-- [[ -------------------------------------
@@ -80,44 +80,44 @@ return {
 			-- ]] -------------------------------------
 			{
 				key = "<Esc>",
-				func = ":noh<CR><Esc>",
+				fn = ":noh<CR><Esc>",
 				desc = "Hide highlight after using search",
 			},
 			{
 				key = "U",
-				func = "<C-r>",
+				fn = "<C-r>",
 				desc = "Redo",
 			},
 			{
 				key = "sa",
-				func = "gg<S-v>G",
+				fn = "gg<S-v>G",
 				desc = "Select All",
 			},
 			{
 				key = "mm",
-				func = "%",
+				fn = "%",
 				desc = "Go to matching bracket",
 			},
 			{
 				key = "+",
-				func = "<C-a>",
+				fn = "<C-a>",
 				desc = "Increment",
 			},
 			{
 				key = "-",
-				func = "<C-x>",
+				fn = "<C-x>",
 				desc = "Decrement",
 			},
 			{
 				key = "<leader>ub",
-				func = function()
+				fn = function()
                require("tien.utils").toggle_checkbox()
 				end,
 				desc = "Toggle checkbox",
 			},
 			{
 				key = "<leader>uo",
-				func = function()
+				fn = function()
 					require("tien.utils").handleURL()
 				end,
 				desc = "Open URL",
@@ -127,119 +127,119 @@ return {
 			-- ]] -------------------------------------
 			{
 				key = "<leader>f",
-				func = function()
+				fn = function()
 					require("telescope.builtin").find_files()
 				end,
 				desc = "Find Files",
 			},
 			{
 				key = "<leader>/",
-				func = function()
+				fn = function()
 					require("telescope.builtin").live_grep()
 				end,
 				desc = "Live Grep",
 			},
 			{
 				key = "<leader>{",
-				func = function()
+				fn = function()
 					require("telescope.builtin").lsp_document_symbols()
 				end,
 				desc = "LSP doc symbols",
 			},
 			{
 				key = "<leader>F",
-				func = function()
+				fn = function()
 					require("telescope.builtin").quickfix()
 				end,
 				desc = "Quickfix",
 			},
 			{
 				key = "<leader>|",
-				func = ":vsplit<CR>",
+				fn = ":vsplit<CR>",
 				desc = "Vertical Split",
 			},
 			{
 				key = "<leader>-",
-				func = ":split<CR>",
+				fn = ":split<CR>",
 				desc = "Horizontal Split",
 			},
 			{
 				key = "<leader>t",
-				func = ":NvimTreeToggle<CR>",
+				fn = ":NvimTreeToggle<CR>",
 				desc = "Folder Tree Toggle",
 			},
 			{
 				key = "<leader>d",
-				func = function()
+				fn = function()
 					require("trouble").toggle("diagnostics")
 				end,
 				desc = "Diagnostics",
 			},
 			{
 				key = "<leader>xq",
-				func = function()
+				fn = function()
 					require("trouble").toggle("quickfix")
 				end,
 				desc = "Toggle Quickfix",
 			},
 			{
 				key = "<leader>xl",
-				func = function()
+				fn = function()
 					require("trouble").toggle("loclist")
 				end,
 				desc = "Toggle Loclist",
 			},
 			{
 				key = "]t",
-				func = function()
+				fn = function()
 					require("todo-comments").jump_next()
 				end,
 				desc = "Next todo comment",
 			},
 			{
 				key = "[t",
-				func = function()
+				fn = function()
 					require("todo-comments").jump_prev()
 				end,
 				desc = "Previous todo comment",
 			},
 			{
 				key = "<leader>gt",
-				func = function()
+				fn = function()
 					require("dap").toggle_breakpoint()
 				end,
 				desc = "DAP: toggle_breakpoint",
 			},
 			{
 				key = "<leader>gs",
-				func = function()
+				fn = function()
 					require("dap").continue()
 				end,
 				desc = "DAP: continue",
 			},
 			{
 				key = "<leader>gc",
-				func = function()
+				fn = function()
 					require("dap").close()
 				end,
 				desc = "DAP: close",
 			},
          {
             key = "<leader>uf",
-            func = "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
+            fn = "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
          },
 			-- [[ -------------------------------------
 			--            MACROS 
 			-- ]] -------------------------------------
          {
             key = "<leader>mm",
-            func = "vi\"ms`md\"",
+            fn = "vi\"ms`md\"",
             remap = true,
             desc = "MACROS: \" -> `"
          },
          {
             key = "<leader>mn",
-            func = "vi'ms`md'",
+            fn = "vi'ms`md'",
             remap = true,
             desc = "MACROS: ' -> `"
          }
@@ -247,31 +247,31 @@ return {
 		insert = {
 			{
 				key = "<C-s>",
-				func = "<C-o>:w<CR>",
+				fn = "<C-o>:w<CR>",
 				desc = "Save shortcut in insert mode",
 			},
 			-- {
 			-- 	key = "qq",
-			-- 	func = "<Esc>",
+			-- 	fn = "<Esc>",
 			-- 	desc = "Another way to escape insert mode",
 			-- },
 		}, -- \Insert mode
 		visual = {
 			{
 				key = ">",
-				func = ">gv",
+				fn = ">gv",
 				desc = "Adjust indent in visual mode",
 			},
 			{
 				key = "<",
-				func = "<gv",
+				fn = "<gv",
 				desc = "Adjust indent in visual mode",
 			},
 		}, -- \Visual mode
 		terminal = {
 			{
 				key = "<esc>",
-				func = [[<C-\><C-n>]],
+				fn = [[<C-\><C-n>]],
 				desc = "Escape terminal mode",
 			},
 		}, -- \Terminal mode
@@ -279,14 +279,14 @@ return {
 	user_command = {
 		{
 			command = "Format",
-			func = function(args)
+			fn = function(args)
 				require("conform").format({ bufnr = args.buf })
 			end,
 			desc = "Format",
 		},
 		{
 			command = "LtexEnable",
-			func = function()
+			fn = function()
 				require("lspconfig").ltex.setup({
 					settings = {
 						ltex = {
@@ -300,34 +300,14 @@ return {
 		},
 		{
 			command = "HarperEnable",
-			func = function()
-				require("lspconfig").harper_ls.setup({
-					-- settings = {
-					--   ["harper-ls"] = {
-					--     linters = {
-					--       spell_check = true,
-					--       spelled_numbers = false,
-					--       an_a = true,
-					--       sentence_capitalization = true,
-					--       unclosed_quotes = true,
-					--       wrong_quotes = false,
-					--       long_sentences = true,
-					--       repeated_words = true,
-					--       spaces = true,
-					--       matcher = true,
-					--       correct_number_suffix = true,
-					--       number_suffix_capitalization = true,
-					--       multiple_sequential_pronouns = true
-					--     }
-					--   }
-					-- },
-				})
+			fn = function()
+            vim.lsp.enable("harper_ls")
 			end,
 			desc = "HarperEnable",
 		},
       {
          command = "LspInfo",
-         func = function()
+         fn = function()
             vim.cmd("checkhealth vim.lsp")
          end
       }

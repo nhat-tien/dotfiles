@@ -21,7 +21,7 @@ local function create_keymap(keymap_table)
 				vim.keymap.set(
 					mode_char,
 					keymap.key,
-					keymap.func,
+					keymap.fn,
 					vim.tbl_deep_extend("force", opts, {
                   desc = keymap.desc,
                   remap = keymap.remap,
@@ -34,7 +34,7 @@ end
 
 local function create_user_cmd(keymap_table)
 	for _, value in pairs(keymap_table) do
-		vim.api.nvim_create_user_command(value.command, value.func, { desc = value.desc })
+		vim.api.nvim_create_user_command(value.command, value.fn, { desc = value.desc })
 	end
 end
 

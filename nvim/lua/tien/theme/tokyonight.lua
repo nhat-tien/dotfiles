@@ -6,7 +6,7 @@ M.dark_theme_setup = function ()
       terminal_color = true,
 		styles = {
 			sidebars = "transparent",
-			floats = "transparent",
+			-- floats = "transparent",
 		},
 		on_colors = function(colors)
 			colors.bg_statusline = colors.none

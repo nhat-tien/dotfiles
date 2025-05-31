@@ -130,7 +130,7 @@ confirm-before-quit = false
 # width = 600
 # height = 400
 mode = "windowed"
-opacity = 0.8
+opacity = 0.85
 blur = true
 decorations = "enabled"
 
@@ -187,6 +187,7 @@ use-kitty-keyboard-protocol = true
 # You can also set family on root to overwrite all fonts.
 [fonts]
 family = "CaskaydiaCove Nerd Font"
+use-drawable-chars = false
 #
 # You can also specify extra fonts to load
 # [fonts]
@@ -205,7 +206,7 @@ family = "CaskaydiaCove Nerd Font"
 #
 # Example:
 # [fonts]
-size = 13
+size = 12
 #
 [fonts.regular]
 family = "CaskaydiaCove Nerd Font"
@@ -330,7 +331,9 @@ weight = 600
 # ]
 [bindings]
 keys = [
-  { key = "n", with = "super", action = "SelectPrevTab" }
+  { key = "n", with = "super", action = "SelectPrevTab" },
+  { key = "up", with = "control | shift", action = "Scroll(2)" },
+  { key = "down", with = "control | shift", action = "Scroll(-2)" }
 ]
 
 # Platform
