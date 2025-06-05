@@ -1,7 +1,5 @@
-require("tien.core.setup_options")
-require("tien.core.setup_keymap")
-require("tien.core.setup_lazynvim")
-require("tien.core.setup_ui")
-require("tien.core.setup_lsp")
-
-
+require("core.setup_options")
+require("core.setup_keymap")
+require("core.setup_lazynvim")
+require("core.setup_ui")
+require("core.setup_lsp")

@@ -1,0 +1,25 @@
+{
+    "SvelteBasicComponentWithChildren": {
+        "prefix": "s-b",
+        "body": [
+            "<script lang=\"ts\">",
+            "  import type { Snippet } from \"svelte\";",
+            "",
+            "  type Props = {",
+            "    children: Snippet;",
+            "  };",
+            "",
+            "  const { children }: Props = \\$props();",
+            "</script>",
+            "",
+            "<div>",
+            "  {@render children()}",
+            "</div>",
+            "",
+            "<style lang=\"scss\">",
+            "</style>"
+        ],
+        "description": "Svelte 5 basic component with children"
+    }
+}
+

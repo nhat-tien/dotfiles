@@ -1,4 +1,4 @@
-if require("tien.core.setup_lang").isNeed("java") then
+if require("core.setup_lang").isNeed("java") then
 	local config = {
 		cmd = { "/home/nhattien/lsp/jdtls/bin/jdtls" },
 		root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),

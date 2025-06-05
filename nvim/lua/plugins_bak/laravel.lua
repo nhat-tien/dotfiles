@@ -2,7 +2,7 @@
 return {
 	"adalessa/laravel.nvim",
    enabled = function ()
-      return require("tien.core.setup_lang").isNeed("laravel")
+      return require("core.setup_lang").isNeed("laravel")
    end,
 	dependencies = {
 		"nvim-telescope/telescope.nvim",

@@ -1,1 +1,0 @@
-require("tien.config.options")

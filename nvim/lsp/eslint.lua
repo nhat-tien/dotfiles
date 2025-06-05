@@ -1,4 +1,4 @@
-local util = require("tien.utils.lsp")
+local util = require("utils.lsp")
 
 return {
    cmd = { 'vscode-eslint-language-server', '--stdio' },

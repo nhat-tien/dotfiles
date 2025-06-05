@@ -30,6 +30,6 @@ M.switch = function (val, case)
    end
 end
 
-M.toggle_checkbox = require("tien.utils.toogle-checkbox").toggle
+M.toggle_checkbox = require("utils.toogle-checkbox").toggle
 
 return M

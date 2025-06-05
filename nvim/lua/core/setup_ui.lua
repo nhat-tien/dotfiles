@@ -1,15 +1,15 @@
-local config = require("tien.config.theme")
+local config = require("config.theme")
 local colors = require("tokyonight.colors").setup({ style = "moon" })
-local dark_theme = require("tien.theme.tokyonight").dark_theme_setup
-local light_theme = require("tien.theme.tokyonight").light_theme_setup
+local dark_theme = require("theme.tokyonight").dark_theme_setup
+local light_theme = require("theme.tokyonight").light_theme_setup
 
 local mode_color = {
    n = colors.blue,
    i = colors.green,
    v = colors.magenta,
    [''] = colors.magenta,
-   V = colors.blue,
-   c = colors.magenta,
+   V = colors.magenta,
+   c = colors.cyan,
    no = colors.red,
    s = colors.orange,
    S = colors.orange,
@@ -24,6 +24,29 @@ local mode_color = {
    ['r?'] = colors.cyan,
    ['!'] = colors.red,
    t = colors.red,
+}
+
+local icons = {
+   n = "󰄛 ",
+   i = "󰏫 ",
+   v = "󰒉 ",
+   [''] = "󰒉 ",
+   V = "󰒉 ",
+   c = " ",
+   no = "",
+   s = "",
+   S = "",
+   [''] = "",
+   ic = "",
+   R = "",
+   Rv = "",
+   cv = "",
+   ce = "",
+   r = "",
+   rm = "",
+   ['r?'] = "",
+   ['!'] = "",
+   t = " ",
 }
 
 local function autoChangeTheme()
@@ -117,7 +140,7 @@ require("lualine").setup({
       lualine_b = {
          {
             function()
-               return "󰄛 "
+               return icons[vim.fn.mode()]
             end,
             color = function()
                return { fg = mode_color[vim.fn.mode()], bg = "" }

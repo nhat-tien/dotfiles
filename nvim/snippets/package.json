@@ -2,7 +2,8 @@
   "name": "personal-snippets",
   "contributes": {
     "snippets": [
-      { "language": "typescriptreact", "path": "./react.json" }
+      { "language": "typescriptreact", "path": "./react.json" },
+      { "language": "svelte", "path": "./svelte.json" }
     ]
   }
 }

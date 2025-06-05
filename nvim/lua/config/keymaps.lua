@@ -111,14 +111,14 @@ return {
 			{
 				key = "<leader>ub",
 				fn = function()
-               require("tien.utils").toggle_checkbox()
+               require("utils").toggle_checkbox()
 				end,
 				desc = "Toggle checkbox",
 			},
 			{
 				key = "<leader>uo",
 				fn = function()
-					require("tien.utils").handleURL()
+					require("utils").handleURL()
 				end,
 				desc = "Open URL",
 			},

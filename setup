@@ -12,7 +12,7 @@ packages=(
     "rofi"
     # "wezterm"
     "nvim"
-    "eww"
+    # "eww"
     "yazi"
     "btop"
     "zsh"
@@ -108,7 +108,7 @@ main() {
         case "$1" in
             -h|--help)
                 print_help
-                print_list_of_config
+                # print_list_of_config
                 exit 0
                 ;;
             -l|--list)

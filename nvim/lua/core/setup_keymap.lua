@@ -1,8 +1,8 @@
-local keymaps = require("tien.config.keymaps").keymaps
-local user_command = require("tien.config.keymaps").user_command
-local opts = require("tien.config.keymaps").opts
-local leader = require("tien.config.keymaps").mapleader
-local localleader = require("tien.config.keymaps").maplocalleader
+local keymaps = require("config.keymaps").keymaps
+local user_command = require("config.keymaps").user_command
+local opts = require("config.keymaps").opts
+local leader = require("config.keymaps").mapleader
+local localleader = require("config.keymaps").maplocalleader
 
 vim.g.mapleader = leader
 vim.g.maplocalleader = localleader

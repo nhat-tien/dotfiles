@@ -1,7 +1,7 @@
 return {
 	"GustavEikaas/easy-dotnet.nvim",
    enabled = function ()
-      return require("tien.core.setup_lang").isNeed("csharp")
+      return require("core.setup_lang").isNeed("csharp")
    end,
    ft = "cs",
 	dependencies = {
