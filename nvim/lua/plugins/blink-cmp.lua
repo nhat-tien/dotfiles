@@ -4,6 +4,7 @@ return {
    --
    dependencies = {
       "rafamadriz/friendly-snippets",
+      'Kaiser-Yang/blink-cmp-avante',
       -- {
       --    'L3MON4D3/LuaSnip',
       --    version = 'v2.*',
@@ -61,7 +62,7 @@ return {
             draw = {
                columns = {
                   { "kind_icon" },
-                  { "label", "label_description", gap = 1 },
+                  { "label",    "label_description", gap = 1 },
                },
             },
          },
@@ -85,7 +86,16 @@ return {
    snippets = { preset = 'luasnip' },
 
    sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "avante", "lsp", "path", "snippets", "buffer" },
+      providers = {
+         avante = {
+            module = 'blink-cmp-avante',
+            name = 'Avante',
+            opts = {
+               -- options for blink-cmp-avante
+            }
+         }
+      }
    },
    opts_extend = { "sources.default" },
 }

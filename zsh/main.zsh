@@ -7,6 +7,9 @@ source $HOME/dotfiles/zsh/alias.zsh
 # ------ HELPFUL SCRIPTS -----
 source $HOME/dotfiles/zsh/scripts.zsh
 
+# ------ Export Env Key -----
+source $HOME/env_key.zsh
+
 # ------ Starship.rs promt ------
 if command -v starship  &> /dev/null
 then
