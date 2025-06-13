@@ -4,7 +4,6 @@ return {
    --
    dependencies = {
       "rafamadriz/friendly-snippets",
-      'Kaiser-Yang/blink-cmp-avante',
       -- {
       --    'L3MON4D3/LuaSnip',
       --    version = 'v2.*',

@@ -1,8 +1,11 @@
 return {
    "yetone/avante.nvim",
-   event = "VeryLazy",
+   -- event = "VeryLazy",
    enabled = true,
    version = false, -- Never set this value to "*"! Never!
+   keys = {
+      "<leader>aa"
+   },
    opts = {
       -- add any opts here
       -- for example
@@ -32,10 +35,11 @@ return {
       "ibhagwan/fzf-lua",            -- for file_selector provider fzf
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       -- "zbirenbaum/copilot.lua", -- for providers='copilot'
+      'Kaiser-Yang/blink-cmp-avante',
       {
          -- support for image pasting
          "HakonHarnes/img-clip.nvim",
-         event = "VeryLazy",
+         -- event = "VeryLazy",
          opts = {
             -- recommended settings
             default = {

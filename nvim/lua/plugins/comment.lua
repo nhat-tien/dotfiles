@@ -1,25 +1,26 @@
-return {
-	"numToStr/Comment.nvim",
-   keys = {
-      { "<C-c>", mode = { "n", "x", "o"} },
-   },
-	dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-   },
-	config = function()
-		require("Comment").setup({
-			toggler = {
-				---Line-comment toggle keymap
-				line = "<C-c>",
-				---Block-comment toggle keymap
-				block = "gbc",
-			},
-			opleader = {
-				---Line-comment keymap
-				line = "<C-c>",
-				---Block-comment keymap
-				block = "gb",
-			},
-		})
-	end,
-}
+return {}
+-- return {
+-- 	"numToStr/Comment.nvim",
+--    keys = {
+--       { "<C-c>", mode = { "n", "x", "o"} },
+--    },
+-- 	dependencies = {
+--       "JoosepAlviste/nvim-ts-context-commentstring",
+--    },
+-- 	config = function()
+-- 		require("Comment").setup({
+-- 			toggler = {
+-- 				---Line-comment toggle keymap
+-- 				line = "<C-c>",
+-- 				---Block-comment toggle keymap
+-- 				block = "gbc",
+-- 			},
+-- 			opleader = {
+-- 				---Line-comment keymap
+-- 				line = "<C-c>",
+-- 				---Block-comment keymap
+-- 				block = "gb",
+-- 			},
+-- 		})
+-- 	end,
+-- }

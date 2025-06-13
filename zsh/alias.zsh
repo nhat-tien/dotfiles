@@ -1,6 +1,8 @@
 alias zshrc="nvim ~/.zshrc"
 alias c="clear"
-alias dev="yy ~/DEV"
+alias cdf=". ${DOTFILES}/scripts/cdf.sh"
+# alias dev="yy ~/DEV"
+alias dev="cdf ~/DEV"
 alias todo="nvim ${MYNOTES}/plan"
 # alias jn="nvim ${MYNOTES}/journal"
 alias oo="nvim ${MYNOTES}/noteVault"
@@ -55,7 +57,7 @@ alias sutrash="sudo gio trash"
 #screenfetch
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-wmtheme' "
-alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' "
+alias neofetch="screenfetch -c '04,15' -a '${DOTFILES}/asciiart/asciiart.sh' "
 
 #clock
 alias clock="tty-clock -c -f \"\" -C 3 "
@@ -64,5 +66,6 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 alias gittree="git log --oneline --decorate --graph --all"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 alias run="dmenu_path | fzf | xargs -r -I {} sh -c '{} > /dev/null 2>&1 &'"
+alias mcd="find . -type"
 alias icat="kitty icat"
 

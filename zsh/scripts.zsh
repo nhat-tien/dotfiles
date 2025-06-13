@@ -39,3 +39,4 @@ cw() {
     feh --bg-fill "$file_path"
   fi
 }
+
