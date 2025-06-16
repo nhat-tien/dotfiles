@@ -16,10 +16,9 @@ then
   eval "$(starship init zsh)" 
 fi
 
+source $HOME/dotfiles/scripts/print_image.sh
+
 # ------ Ghostty integration ------
 # if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
 #   source "$GHOSTTY_RESOURCES_DIR"/zsh/ghostty-integration
 # fi
-
-
-source $HOME/dotfiles/scripts/print_image.sh

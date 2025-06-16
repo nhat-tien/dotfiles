@@ -14,7 +14,17 @@ wezterm_ter() {
 
 if [ "$status_code" -eq 0 ]; then
     if [[ -f  $HOME/dotfiles/bluemouse.png ]]; then
-      kitty_ter 
+
+      term=$(ps -p $(ps -o ppid= -p $$) -o comm=)
+
+      case "$term" in
+        "kitty")
+          kitty_ter 
+          ;;
+        "wezterm-gui")
+          wezterm_ter
+          ;;
+      esac
     fi
 fi
 

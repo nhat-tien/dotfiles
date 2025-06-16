@@ -262,6 +262,31 @@ mode "$mode_system" {
 
 bindsym $mod+Insert mode "$mode_system"
 
+mode "$mode_volume" {
+        bindsym k exec --no-startup-id pactl set-sink-volume 0 +1%
+        bindsym j exec --no-startup-id pactl set-sink-volume 0 -1%
+        bindsym Up exec --no-startup-id pactl set-sink-volume 0 +1%
+        bindsym Down exec --no-startup-id pactl set-sink-volume 0 -1%
+        bindsym m exec --no-startup-id pactl set-sink-mute 0 toggle
+
+        bindsym Escape mode "default" 
+        bindsym Return mode "default" 
+}
+
+bindsym $mod+F2 mode "$mode_volume"
+
+mode "$mode_screenbrightness" {
+        bindsym k exec brightnessctl set +5%
+        bindsym j exec brightnessctl -n set 5%-
+        bindsym Up exec brightnessctl set +5%
+        bindsym Down exec brightnessctl -n set 5%-
+
+        bindsym Escape mode "default" 
+        bindsym Return mode "default" 
+}
+
+bindsym $mod+F3 mode "$mode_screenbrightness"
+
 client.focused          #4c7899 #285577 #ffffff #2e9ef4 #7aa2f7
 client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e #222222
