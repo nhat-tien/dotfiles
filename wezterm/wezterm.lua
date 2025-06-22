@@ -34,7 +34,7 @@ config.font_rules = {
 
 config.allow_square_glyphs_to_overflow_width = "Never"
 config.line_height = 1.15
-config.custom_block_glyphs = true
+config.custom_block_glyphs = false
 config.color_scheme = "Tokyo Night Moon"
 config.window_background_opacity = 0.9
 config.enable_tab_bar = true

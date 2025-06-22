@@ -64,8 +64,11 @@ alias clock="tty-clock -c -f \"\" -C 3 "
 
 #git tree
 alias gittree="git log --oneline --decorate --graph --all"
+
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 alias run="dmenu_path | fzf | xargs -r -I {} sh -c '{} > /dev/null 2>&1 &'"
-alias mcd="find . -type"
 alias icat="kitty icat"
+
+alias theme:light="gsettings set org.gnome.desktop.interface color-scheme prefer-light"
+alias theme:dark="gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 

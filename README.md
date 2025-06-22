@@ -29,7 +29,7 @@
   chmod +x setup && setup -f -a
 ```
 
-## Screenshoot
+## Screenshot
 
 ![screenshoot](/rice.png)
 

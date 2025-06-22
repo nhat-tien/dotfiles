@@ -33,7 +33,7 @@ done
 prune_expr=$(echo "${prune_expr}" | sed "s/ -o$//")
 
 
-dir=$(eval "find \"${1:-.}\" \( $prune_expr \) -prune -o -type d -print" 2>/dev/null | fzf )
+dir=$(eval "find \"${1:-.}\" \( $prune_expr \) -prune -o -type d -print" 2>/dev/null | fzf --preview="ls {}")
 
 if [[ -n "$dir" ]]; then
   cd "$dir" || echo "Failed to cd into $dir"
