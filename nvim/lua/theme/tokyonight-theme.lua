@@ -50,4 +50,6 @@ M.light_theme_setup = function ()
 	vim.cmd.colorscheme("tokyonight-day")
 end
 
+M.colors = require("tokyonight.colors").setup({ style = "moon" })
+
 return M

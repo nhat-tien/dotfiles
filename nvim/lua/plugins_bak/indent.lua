@@ -4,4 +4,5 @@ return {
    opts = {
         scope = { enabled = false },
    },
+   enabled = false
 }
