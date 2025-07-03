@@ -3,7 +3,7 @@ return {
    tag = 'v4.1.0',
    config = true,
    keys = {
-      "<leader>uc"
+      { "<leader>uc", mode = { "n", "x", "o"} }
    },
    opts = {
       default_mode_keymap_prefixes = {

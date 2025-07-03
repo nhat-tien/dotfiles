@@ -30,6 +30,15 @@ M.switch = function (val, case)
    end
 end
 
+M.match = function (val, case)
+   if case[val] then
+      return case[val]
+   else
+      return case["default"]
+   end
+end
+
+
 M.toggle_checkbox = require("utils.toogle-checkbox").toggle
 
 return M

@@ -1,6 +1,7 @@
 export APP_FOLDER="$HOME/App"
 export MYNOTES="$HOME/Documents/Notes" 
 export DOTFILES="$HOME/dotfiles"
+export DOTFILES_ASSETS="$DOTFILES/assets"
 
 export JAVA_HOME="/usr/lib/jvm/java-1.21.0-openjdk-amd64"
 export CATALINA_BASE="$APP_FOLDER/tomcat"

@@ -163,9 +163,14 @@ return {
 				fn = ":split<CR>",
 				desc = "Horizontal Split",
 			},
+			-- {
+			-- 	key = "<leader>t",
+			-- 	fn = ":NvimTreeToggle<CR>",
+			-- 	desc = "Folder Tree Toggle",
+			-- },
 			{
 				key = "<leader>t",
-				fn = ":NvimTreeToggle<CR>",
+				fn = ":Neotree toggle<CR>",
 				desc = "Folder Tree Toggle",
 			},
 			{

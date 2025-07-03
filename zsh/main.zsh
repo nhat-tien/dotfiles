@@ -1,5 +1,5 @@
 # ------ Export, Env Variable ----
-source $HOME/dotfiles/zsh/export.zsh
+source $HOME/dotfiles/zsh/variables.zsh
 
 # ----- Alias ------
 source $HOME/dotfiles/zsh/alias.zsh

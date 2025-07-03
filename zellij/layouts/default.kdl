@@ -26,13 +26,14 @@ layout {
       mode_locked "#[bg=#ff9e64,fg=#16161e,bold] #[fg=#ff9e64,bg=#16161e,bold] 󰌾 LOCKED#[fg=#16161e]"
 
 
-      tab_normal              "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name}{floating_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_normal_fullscreen   "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name}{fullscreen_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_normal_sync         "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name}{sync_indicator}#[bg=#181926,fg=#16161e,bold]"
 
-      tab_active              "#[fg=#ff757f]#[bg=#ff757f,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff757f,bold] {name}{floating_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_active_fullscreen   "#[fg=#ff757f]#[bg=#ff757f,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff757f,bold] {name}{fullscreen_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_active_sync         "#[fg=#ff757f]#[bg=#ff757f,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff757f,bold] {name}{sync_indicator}#[bg=#181926,fg=#16161e,bold]"     
+      tab_normal              "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_normal_fullscreen   "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_normal_sync         "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+
+      tab_active              "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {floating_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_active_fullscreen   "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {fullscreen_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_active_sync         "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]" 
 
       command_user_command    "whoami"
       command_user_format     "{stdout}"
