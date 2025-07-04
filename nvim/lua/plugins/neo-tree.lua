@@ -13,6 +13,33 @@ return {
       vim.g.loaded_netrwPlugin = 1
 
       require('neo-tree').setup({
+         filesystem = {
+            commands = {
+               delete = function(state)
+                  local inputs = require "neo-tree.ui.inputs"
+                  local path = state.tree:get_node().path
+                  local msg = "Are you sure you want to trash " .. path
+                  inputs.confirm(msg, function(confirmed)
+                     if not confirmed then return end
+                     vim.fn.system({ "gio", "trash", vim.fn.fnameescape(path) })
+                     require("neo-tree.sources.manager").refresh(state.name)
+                  end)
+               end,
+               delete_visual = function(state, selected_nodes)
+                  local inputs = require("neo-tree.ui.inputs")
+                  local count = vim.tbl_count(selected_nodes)
+                  local msg = "Are you sure you want to trash " .. count .. " files ?"
+
+                  inputs.confirm(msg, function(confirmed)
+                     if not confirmed then return end
+                     for _, node in ipairs(selected_nodes) do
+                        vim.fn.system {"gio", "trash", vim.fn.fnameescape(node.path) }
+                     end
+                     require("neo-tree.sources.manager").refresh(state.name)
+                  end)
+               end,
+            },
+         },
          window = {
             mappings = {
                ['Y'] = function(state)

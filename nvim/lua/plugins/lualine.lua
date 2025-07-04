@@ -143,7 +143,10 @@ return {
                },
             },
          },
-         extensions = { "nvim-tree" },
+         extensions = {
+            -- "nvim-tree",
+            "neo-tree"
+         },
       })
    end,
 }
