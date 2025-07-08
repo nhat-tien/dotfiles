@@ -8,9 +8,9 @@ return {
       local mode_color = {
          n = colors.blue,
          i = colors.green,
-         v = colors.magenta,
-         [''] = colors.magenta,
-         V = colors.magenta,
+         v = colors.magenta or colors.orange,
+         [''] = colors.magenta or colors.orange,
+         V = colors.magenta or colors.orange,
          c = colors.cyan or colors.aqua,
          no = colors.red,
          s = colors.orange,

@@ -31,10 +31,12 @@
 
 ## Screenshot
 
-![screenshoot](/assets/rice.png)
+![screenshoot 1](/assets/rice.png)
+![screenshoot 2](/assets/screenshot-from-2025-06-16-21-04-13.png)
+![screenshoot 3](/assets/screenshot-from-2025-06-16-21-10-28.png)
 
 ## Neovim
-**Start-up Time**: ~100.ms
+**Start-up Time**: ~100ms
 ![startup-time](/assets/screenshot-from-2025-07-03-14-25-58.png) 
 
 ## Troubleshooting 
@@ -45,7 +47,7 @@
 sudo apt install xclip
 ```
 
-### Không sử dụng được ibus-bamboo trên kitty terminal
+### Can't use ibus-bamboo in kitty terminal
 
 [https://github.com/BambooEngine/ibus-bamboo/issues/196](https://github.com/BambooEngine/ibus-bamboo/issues/196)
 
@@ -61,15 +63,15 @@ sudo apt install xclip
     export GLFW_IM_MODULE=ibus
     ' >> /etc/profile"
 ```
-Chọn chế độ gõ là `6.XTestFakeKeyEvent`
+Choose mode `6.XTestFakeKeyEvent`
 
-### Ibus-daemon không tự động khởi động
+### Ibus-daemon does not auto-load
 
 ```txt
   exec_always --no-startup-id $HOME/dotfiles/ibus/launch.sh
 ```
 
-### Từ chối không có quyền sudo khi sử dụng brightnessctl
+### Permission denied: no sudo privileges when using brightnessctl
 
 1. Run: 
 ```bash
