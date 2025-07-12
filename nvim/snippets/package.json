@@ -3,7 +3,8 @@
   "contributes": {
     "snippets": [
       { "language": "typescriptreact", "path": "./react.json" },
-      { "language": "svelte", "path": "./svelte.json" }
+      { "language": "svelte", "path": "./svelte.json" },
+      { "language": "all", "path": "./datetime.json" }
     ]
   }
 }

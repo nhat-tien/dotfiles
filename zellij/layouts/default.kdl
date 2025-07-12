@@ -11,7 +11,7 @@ layout {
       hide_frame_for_single_pane "false"
 
       mode_normal  "#[bg=#7aa2f7,fg=#16161e] #[fg=#7aa2f7,bg=#16161e,bold] 󰄛 #[fg=#16161e]"
-      mode_tmux    "#[bg=#ff9e64,fg=#16161e,bold] #[fg=#ff9e64,bg=#16161e,bold]  TMUX#[fg=#16161e]"
+      mode_tmux    "#[bg=#9ece6a,fg=#16161e,bold] #[fg=#9ece6a,bg=#16161e,bold]  TMUX#[fg=#16161e]"
       mode_pane "#[bg=#ff9e64,fg=#16161e,bold] #[fg=#ff9e64,bg=#16161e,bold] 󰶜 PANE#[fg=#16161e]"
       mode_rename_pane "#[bg=#ff9e64,fg=#16161e,bold] #[fg=#ff9e64,bg=#16161e,bold] 󰑙 RENAMEPANE#[fg=#16161e]"
       mode_tab "#[bg=#ff9e64,fg=#16161e,bold] #[fg=#ff9e64,bg=#16161e,bold] 󰓩 TAB#[fg=#16161e]"

@@ -273,7 +273,7 @@ mode "$mode_volume" {
         bindsym Return mode "default" 
 }
 
-bindsym $mod+F2 mode "$mode_volume"
+bindsym $mod+Shift+v mode "$mode_volume"
 
 mode "$mode_screenbrightness" {
         bindsym k exec brightnessctl set +5%
@@ -285,7 +285,7 @@ mode "$mode_screenbrightness" {
         bindsym Return mode "default" 
 }
 
-bindsym $mod+F3 mode "$mode_screenbrightness"
+bindsym $mod+Shift+b mode "$mode_screenbrightness"
 
 client.focused          #4c7899 #285577 #ffffff #2e9ef4 #7aa2f7
 client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
