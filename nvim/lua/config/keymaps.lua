@@ -122,6 +122,11 @@ return {
 				end,
 				desc = "Open URL",
 			},
+         {
+				key = "<C-d>",
+				fn = '"_d',
+				desc = "Delete not cut",
+         },
 			-- [[ -------------------------------------
 			--             UTILS
 			-- ]] -------------------------------------
@@ -272,6 +277,11 @@ return {
 				fn = "<gv",
 				desc = "Adjust indent in visual mode",
 			},
+         {
+				key = "<C-d>",
+				fn = '"_d',
+				desc = "Delete not cut",
+         },
 		}, -- \Visual mode
 		terminal = {
 			{
