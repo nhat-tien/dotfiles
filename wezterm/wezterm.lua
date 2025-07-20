@@ -58,8 +58,8 @@ config.underline_thickness = 2
 config.window_padding = {
 	left = 8,
 	right = 8,
-	top = 10,
-	bottom = 8,
+	top = 8,
+	bottom = 0,
 }
 
 config.keys = {

@@ -4,6 +4,7 @@ layout {
     plugin location="file:$HOME/dotfiles/zellij/plugins/zjstatus.wasm" {
       format_left   "{mode}  {tabs}"
       // format_right "#[fg=#ff966c]#[fg=#16161e,bg=#ff966c] #[bg=#16161e,fg=#ff966c,bold] {command_user} #[fg=#ff966c]#[fg=#16161e,bg=#ff966c]󰃭 #[bg=#16161e,fg=#ff966c] {datetime}"
+      // format_right  "#[bg=#16161e,fg=#7aa2f7]#[bg=#7aa2f7,fg=#16161e,bold] #[bg=#16161e,fg=#c8d3f5,bold] bluemouse "
       format_space  ""
 
       border_enabled  "false"
@@ -27,13 +28,19 @@ layout {
 
 
 
-      tab_normal              "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_normal_fullscreen   "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_normal_sync         "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      // tab_normal              "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      // tab_normal_fullscreen   "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      // tab_normal_sync         "#[fg=#c8d3f5]#[bg=#c8d3f5,fg=#1e2030]{index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_normal              "#[bg=#c8d3f5,fg=#1e2030] {index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_normal_fullscreen   "#[bg=#c8d3f5,fg=#1e2030] {index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_normal_sync         "#[bg=#c8d3f5,fg=#1e2030] {index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]"
 
-      tab_active              "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {floating_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_active_fullscreen   "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {fullscreen_indicator}#[bg=#181926,fg=#16161e,bold]"
-      tab_active_sync         "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]" 
+      // tab_active              "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {floating_indicator}#[bg=#181926,fg=#16161e,bold]"
+      // tab_active_fullscreen   "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {fullscreen_indicator}#[bg=#181926,fg=#16161e,bold]"
+      // tab_active_sync         "#[fg=#ff9e64]#[bg=#ff9e64,fg=#1e2030,bold]{index} #[bg=#16161e,fg=#ff9e64,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]" 
+      tab_active              "#[bg=#ff9e64,fg=#1e2030,bold] {index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {floating_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_active_fullscreen   "#[bg=#ff9e64,fg=#1e2030,bold] {index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {fullscreen_indicator}#[bg=#181926,fg=#16161e,bold]"
+      tab_active_sync         "#[bg=#ff9e64,fg=#1e2030,bold] {index} #[bg=#16161e,fg=#c8d3f5,bold] {name} {sync_indicator}#[bg=#181926,fg=#16161e,bold]" 
 
       command_user_command    "whoami"
       command_user_format     "{stdout}"

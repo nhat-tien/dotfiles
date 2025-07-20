@@ -1,5 +1,5 @@
-require("core.setup_options")
-require("core.setup_keymap")
+require("config.options")
+require("core.setup_keymap").init()
 require("core.setup_lazynvim")
 require("core.setup_ui")
 require("core.setup_lsp")

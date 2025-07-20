@@ -40,3 +40,17 @@ cw() {
   fi
 }
 
+dkcmp() {
+  case "$1" in
+    "up")
+        docker compose up -d
+      ;;
+    "down")
+        docker compose down 
+      ;;
+    *)
+      echo "Command not found"
+      ;;
+  esac
+}
+

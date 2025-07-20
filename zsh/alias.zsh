@@ -46,8 +46,6 @@ alias mysqlstop="sudo systemctl stop mysql.service"
 alias dockerstart="sudo systemctl start docker"
 alias dockerstatus="sudo systemctl status docker"
 alias dockerstop="sudo systemctl stop docker.socket"
-alias dkcmpup="docker compose up -d"
-alias dkcmpdown="docker compose down"
 
 # Gio trash
 alias trash="gio trash"
