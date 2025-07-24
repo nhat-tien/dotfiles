@@ -39,12 +39,12 @@ return {
                   vim.keymap.del('n', '<Up>')
                   vim.keymap.del('n', '<Down>')
                   vim.keymap.del('n', '<Esc>')
-                  require("core.setup_keymap")
+                  require("core.setup_keymap").init()
                end
-               vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Up>", ":resize +1<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Down>", ":resize -1<CR>", { silent = true, buffer = false })
+               vim.keymap.set("n", "<Left>", ":vertical resize +2<CR>", { silent = true, buffer = false })
+               vim.keymap.set("n", "<Right>", ":vertical resize -2<CR>", { silent = true, buffer = false })
+               vim.keymap.set("n", "<Up>", ":resize -2<CR>", { silent = true, buffer = false })
+               vim.keymap.set("n", "<Down>", ":resize +2<CR>", { silent = true, buffer = false })
                vim.keymap.set("n", "<Esc>", function() exit_resize_mode() end, { silent = true, buffer = false })
             end,
          },
@@ -162,7 +162,7 @@ return {
             desc = "Vertical Split",
          },
          {
-            key = "<leader>-",
+            key = "<leader>_",
             fn = ":split<CR>",
             desc = "Horizontal Split",
          },
@@ -324,6 +324,10 @@ return {
             vim.cmd("checkhealth vim.lsp")
          end,
       },
+      {
+         command = "QfOpenAll",
+         fn = ":silent cfdo edit %<CR>"
+      }
    },
 }
 -- [[ -------------------------------------

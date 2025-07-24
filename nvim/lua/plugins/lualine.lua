@@ -108,6 +108,12 @@ return {
                   color = function()
                      return { fg = mode_color[vim.fn.mode()], bg = "" }
                   end,
+                  symbols = {
+                     error = " ",
+                     warn = " ",
+                     info = " ",
+                     hint = "󰌵 ",
+                  },
                },
             },
             lualine_y = {

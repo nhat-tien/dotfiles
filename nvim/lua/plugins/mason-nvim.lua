@@ -12,6 +12,7 @@ return {
 				exclude = {
 					"jdtls",
 					"harper_ls",
+               "ts_ls"
 				},
 			},
 		})
