@@ -31,13 +31,8 @@
 
 ## Screenshot
 
-![screenshoot 1](/assets/rice.png)
-![screenshoot 2](/assets/screenshot-from-2025-06-16-21-04-13.png)
-![screenshoot 3](/assets/screenshot-from-2025-06-16-21-10-28.png)
-
 ## Neovim
 **Start-up Time**: ~100ms
-![startup-time](/assets/screenshot-from-2025-07-03-14-25-58.png) 
 
 ## Troubleshooting 
 
