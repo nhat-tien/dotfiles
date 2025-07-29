@@ -30,9 +30,13 @@
 ```
 
 ## Screenshot
+<img width="1366" height="768" alt="rice" src="https://github.com/user-attachments/assets/39b76fa5-76f9-4380-8b6a-9d124c7639af" />
+<img width="1366" height="768" alt="screenshot-from-2025-06-16-21-04-13" src="https://github.com/user-attachments/assets/05f37653-a7eb-4804-9662-b7f494b633ad" />
+<img width="1366" height="768" alt="screenshot-from-2025-06-16-21-10-28" src="https://github.com/user-attachments/assets/f3f3c290-3a87-460d-a7a1-33c6205cf69c" />
 
 ## Neovim
 **Start-up Time**: ~100ms
+<img width="1351" height="729" alt="screenshot-from-2025-07-03-14-25-58" src="https://github.com/user-attachments/assets/7c4b02b1-099e-48ea-8dab-f7b2c3ed789c" />
 
 ## Troubleshooting 
 
