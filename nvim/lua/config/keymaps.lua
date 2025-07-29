@@ -42,28 +42,28 @@ return {
                keymaps = {
                   {
                      mode = "n",
-                     key = "<Left>",
+                     key = { "<Left>", "h" },
                      fn = ":vertical resize +2<CR>",
                      opts = { silent = true, buffer = false }
                   },
                   {
                      mode = "n",
-                     key = "<Right>",
+                     key = { "<Right>", "l"},
                      fn = ":vertical resize -2<CR>",
                      opts = { silent = true, buffer = false }
                   },
                   {
                      mode = "n",
-                     key = "<Up>",
+                     key = { "<Up>", "k"},
                      fn = ":resize -2<CR>",
                      opts = { silent = true, buffer = false }
                   },
                   {
                      mode = "n",
-                     key = "<Down>",
+                     key = { "<Down>", "j"},
                      fn = ":resize +2<CR>",
                      opts = { silent = true, buffer = false }
-                  }
+                  },
                },
             })
          end,

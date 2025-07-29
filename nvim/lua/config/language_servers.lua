@@ -3,7 +3,7 @@ return {
       "html",
       "cssls",
       "ts_ls",
-      "eslint",
+      -- "eslint",
    -- 	"phpactor",
       "pylsp",
    -- 	"rust_analyzer",

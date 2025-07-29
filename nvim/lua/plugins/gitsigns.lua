@@ -1,6 +1,9 @@
 return {
 	"lewis6991/gitsigns.nvim",
    event = "BufReadPre",
+   cond = function ()
+      return vim.fn.isdirectory(vim.fn.finddir(".git", vim.fn.getcwd() .. ";")) ~= 0
+   end,
 	config = function()
 		require("gitsigns").setup({
 			signs = {
