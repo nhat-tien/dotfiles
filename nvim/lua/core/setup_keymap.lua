@@ -1,36 +1,46 @@
 local M = {}
 
 function M.create_keymap(keymap_table, opts)
-	local list_of_mode = {
-		normal = "n",
-		insert = "i",
-		visual = "x",
-		terminal = "t",
-	}
-	for mode, mode_char in pairs(list_of_mode) do
-		local list_of_keymap = keymap_table[mode]
-		if list_of_keymap ~= nil then
-			for _, keymap in pairs(list_of_keymap) do
-				vim.keymap.set(
-					mode_char,
-					keymap.key,
-					keymap.fn,
-					vim.tbl_deep_extend("force", opts, {
-                  desc = keymap.desc,
-                  remap = keymap.remap,
-               })
-				)
-			end
-		end
-	end
+   for _, keymap in pairs(keymap_table) do
+      local key_opts = opts
+      if keymap.opts ~= nil then
+         key_opts = vim.tbl_deep_extend("force", opts, keymap.opts)
+      end
+      vim.keymap.set(
+         keymap.mode,
+         keymap.key,
+         keymap.fn,
+         vim.tbl_deep_extend("force", key_opts, {
+            desc = keymap.desc,
+            remap = keymap.remap,
+         })
+      )
+   end
 end
 
 function M.create_user_cmd(keymap_table)
-	for _, value in pairs(keymap_table) do
-		vim.api.nvim_create_user_command(value.command, value.fn, { desc = value.desc })
-	end
+   for _, keymap in pairs(keymap_table) do
+      local key_opts = { desc = keymap.desc }
+      if keymap.opts ~= nil then
+         key_opts = vim.tbl_deep_extend("force", key_opts, keymap.opts)
+      end
+      vim.api.nvim_create_user_command(keymap.command, keymap.fn, key_opts)
+   end
 end
 
+function M.create_keymap_with_mode(args)
+   local keymap_table = args.keymap
+   local escape_key = args.escape_key
+   local exit_resize_mode = function()
+      for _, keymap in pairs(keymap_table) do
+         vim.keymap.del(keymap.mode,keymap.key)
+      end
+      vim.keymap.del(escape_key.mode, escape_key.key)
+      require("core.setup_keymap").init()
+   end
+   M.create_keymap(keymap_table, {})
+   vim.keymap.set(escape_key.mode, escape_key.key, function() exit_resize_mode() end, escape_key.opts)
+end
 
 function M.init()
    local keymaps = require("config.keymaps").keymaps

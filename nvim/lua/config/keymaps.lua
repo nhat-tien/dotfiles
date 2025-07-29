@@ -3,293 +3,361 @@ return {
    mapleader = " ",
    maplocalleader = "",
    keymaps = {
-      normal = {
-         -- [[ -------------------------------------
-         --             BUFFER
-         -- ]] -------------------------------------
-         {
-            key = "<Tab>",
-            fn = ":bnext<CR>",
-         },
-         {
-            key = "<S-Tab>",
-            fn = ":bprev<CR>",
-         },
-         {
-            key = "<leader>n",
-            fn = ":enew<CR>",
-            desc = "New Buffer",
-         },
-         {
-            key = "<leader>c",
-            fn = function()
-               require("mini.bufremove").delete()
-            end,
-            desc = "Buffer Remove",
-         },
-         -- [[ -------------------------------------
-         --             WINDOW
-         -- ]] -------------------------------------
-         {
-            key = "<leader>wr",
-            fn = function()
-               local exit_resize_mode = function()
-                  vim.keymap.del('n', '<Left>')
-                  vim.keymap.del('n', '<Right>')
-                  vim.keymap.del('n', '<Up>')
-                  vim.keymap.del('n', '<Down>')
-                  vim.keymap.del('n', '<Esc>')
-                  require("core.setup_keymap").init()
-               end
-               vim.keymap.set("n", "<Left>", ":vertical resize +2<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Right>", ":vertical resize -2<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Up>", ":resize -2<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Down>", ":resize +2<CR>", { silent = true, buffer = false })
-               vim.keymap.set("n", "<Esc>", function() exit_resize_mode() end, { silent = true, buffer = false })
-            end,
-         },
-         {
-            key = "<Leader>ww",
-            fn = "<C-w>w",
-            desc = "Change Window",
-         },
-         {
-            key = "<Leader>wh",
-            fn = "<C-w>h",
-            desc = "Focus Left Window",
-         },
-         {
-            key = "<Leader>wl",
-            fn = "<C-w>l",
-            desc = "Focus Right Window",
-         },
-         {
-            key = "<Leader>wj",
-            fn = "<C-w>j",
-            desc = "Focus Top Window",
-         },
-         {
-            key = "<Leader>wk",
-            fn = "<C-w>k",
-            desc = "Focus Bottom Window",
-         },
-         -- [[ -------------------------------------
-         --             MISC
-         -- ]] -------------------------------------
-         {
-            key = "<Esc>",
-            fn = ":noh<CR><Esc>",
-            desc = "Hide highlight after using search",
-         },
-         {
-            key = "U",
-            fn = "<C-r>",
-            desc = "Redo",
-         },
-         {
-            key = "sa",
-            fn = "gg<S-v>G",
-            desc = "Select All",
-         },
-         {
-            key = "mm",
-            fn = "%",
-            desc = "Go to matching bracket",
-         },
-         {
-            key = "+",
-            fn = "<C-a>",
-            desc = "Increment",
-         },
-         {
-            key = "-",
-            fn = "<C-x>",
-            desc = "Decrement",
-         },
-         {
-            key = "<leader>ub",
-            fn = function()
-               require("utils").toggle_checkbox()
-            end,
-            desc = "Toggle checkbox",
-         },
-         {
-            key = "<leader>uo",
-            fn = function()
-               require("utils").handleURL()
-            end,
-            desc = "Open URL",
-         },
-         {
-            key = "<C-d>",
-            fn = '"_d',
-            desc = "Delete not cut",
-         },
-         -- [[ -------------------------------------
-         --             UTILS
-         -- ]] -------------------------------------
-         {
-            key = "<leader>f",
-            fn = function()
-               require("telescope.builtin").find_files()
-            end,
-            desc = "Find Files",
-         },
-         {
-            key = "<leader>/",
-            fn = function()
-               require("telescope.builtin").live_grep()
-            end,
-            desc = "Live Grep",
-         },
-         {
-            key = "<leader>{",
-            fn = function()
-               require("telescope.builtin").lsp_document_symbols()
-            end,
-            desc = "LSP doc symbols",
-         },
-         {
-            key = "<leader>F",
-            fn = function()
-               require("telescope.builtin").quickfix()
-            end,
-            desc = "Quickfix",
-         },
-         {
-            key = "<leader>|",
-            fn = ":vsplit<CR>",
-            desc = "Vertical Split",
-         },
-         {
-            key = "<leader>_",
-            fn = ":split<CR>",
-            desc = "Horizontal Split",
-         },
-         -- {
-         -- 	key = "<leader>t",
-         -- 	fn = ":NvimTreeToggle<CR>",
-         -- 	desc = "Folder Tree Toggle",
-         -- },
-         {
-            key = "<leader>t",
-            fn = ":Neotree toggle<CR>",
-            desc = "Folder Tree Toggle",
-         },
-         {
-            key = "<leader>d",
-            fn = function()
-               require("trouble").toggle("diagnostics")
-            end,
-            desc = "Diagnostics",
-         },
-         {
-            key = "<leader>xq",
-            fn = function()
-               require("trouble").toggle("quickfix")
-            end,
-            desc = "Toggle Quickfix",
-         },
-         {
-            key = "<leader>xl",
-            fn = function()
-               require("trouble").toggle("loclist")
-            end,
-            desc = "Toggle Loclist",
-         },
-         {
-            key = "]t",
-            fn = function()
-               require("todo-comments").jump_next()
-            end,
-            desc = "Next todo comment",
-         },
-         {
-            key = "[t",
-            fn = function()
-               require("todo-comments").jump_prev()
-            end,
-            desc = "Previous todo comment",
-         },
-         {
-            key = "<leader>gt",
-            fn = function()
-               require("dap").toggle_breakpoint()
-            end,
-            desc = "DAP: toggle_breakpoint",
-         },
-         {
-            key = "<leader>gs",
-            fn = function()
-               require("dap").continue()
-            end,
-            desc = "DAP: continue",
-         },
-         {
-            key = "<leader>gc",
-            fn = function()
-               require("dap").close()
-            end,
-            desc = "DAP: close",
-         },
-         {
-            key = "<leader>uf",
-            fn = "<cmd>lua vim.lsp.buf.format({async = true})<cr>",
-         },
-         -- [[ -------------------------------------
-         --            MACROS
-         -- ]] -------------------------------------
-         {
-            key = "<leader>mm",
-            fn = 'vi"ms`md"',
-            remap = true,
-            desc = 'MACROS: " -> `',
-         },
-         {
-            key = "<leader>mn",
-            fn = "vi'ms`md'",
-            remap = true,
-            desc = "MACROS: ' -> `",
-         },
-      }, -- \Normal mode
-      insert = {
-         {
-            key = "<C-s>",
-            fn = "<C-o>:w<CR>",
-            desc = "Save shortcut in insert mode",
-         },
-         -- {
-         -- 	key = "qq",
-         -- 	fn = "<Esc>",
-         -- 	desc = "Another way to escape insert mode",
-         -- },
-      }, -- \Insert mode
-      visual = {
-         {
-            key = ">",
-            fn = ">gv",
-            desc = "Adjust indent in visual mode",
-         },
-         {
-            key = "<",
-            fn = "<gv",
-            desc = "Adjust indent in visual mode",
-         },
-         {
-            key = "<C-d>",
-            fn = '"_d',
-            desc = "Delete not cut",
-         },
-      }, -- \Visual mode
-      terminal = {
-         {
-            key = "<esc>",
-            fn = [[<C-\><C-n>]],
-            desc = "Escape terminal mode",
-         },
-      }, -- \Terminal mode
+      -- [[ -------------------------------------
+      --             BUFFER
+      -- ]] -------------------------------------
+      {
+         mode = "n",
+         key = "<Tab>",
+         fn = ":bnext<CR>",
+      },
+      {
+         mode = "n",
+         key = "<S-Tab>",
+         fn = ":bprev<CR>",
+      },
+      {
+         mode = "n",
+         key = "<leader>n",
+         fn = ":enew<CR>",
+         desc = "New Buffer",
+      },
+      {
+         mode = "n",
+         key = "<leader>c",
+         fn = function()
+            require("mini.bufremove").delete()
+         end,
+         desc = "Buffer Remove",
+      },
+      -- [[ -------------------------------------
+      --             WINDOW
+      -- ]] -------------------------------------
+      {
+         mode = "n",
+         key = "<leader>wr",
+         fn = function()
+            require("core.setup_keymap").create_keymap_with_mode({
+               escape_key = { mode = "n", key = "<Esc>" },
+               keymaps = {
+                  {
+                     mode = "n",
+                     key = "<Left>",
+                     fn = ":vertical resize +2<CR>",
+                     opts = { silent = true, buffer = false }
+                  },
+                  {
+                     mode = "n",
+                     key = "<Right>",
+                     fn = ":vertical resize -2<CR>",
+                     opts = { silent = true, buffer = false }
+                  },
+                  {
+                     mode = "n",
+                     key = "<Up>",
+                     fn = ":resize -2<CR>",
+                     opts = { silent = true, buffer = false }
+                  },
+                  {
+                     mode = "n",
+                     key = "<Down>",
+                     fn = ":resize +2<CR>",
+                     opts = { silent = true, buffer = false }
+                  }
+               },
+            })
+         end,
+         desc = "Resize Window Mode"
+      },
+      {
+         mode = "n",
+         key = "<Leader>ww",
+         fn = "<C-w>w",
+         desc = "Change Window",
+      },
+      {
+         mode = "n",
+         key = "<Leader>wh",
+         fn = "<C-w>h",
+         desc = "Focus Left Window",
+      },
+      {
+         mode = "n",
+         key = "<Leader>wl",
+         fn = "<C-w>l",
+         desc = "Focus Right Window",
+      },
+      {
+         mode = "n",
+         key = "<Leader>wj",
+         fn = "<C-w>j",
+         desc = "Focus Top Window",
+      },
+      {
+         mode = "n",
+         key = "<Leader>wk",
+         fn = "<C-w>k",
+         desc = "Focus Bottom Window",
+      },
+      -- [[ -------------------------------------
+      --             MISC
+      -- ]] -------------------------------------
+      {
+         mode = "n",
+         key = "<Esc>",
+         fn = ":noh<CR><Esc>",
+         desc = "Hide highlight after using search",
+      },
+      {
+         mode = "n",
+         key = "U",
+         fn = "<C-r>",
+         desc = "Redo",
+      },
+      {
+         mode = "n",
+         key = "sa",
+         fn = "gg<S-v>G",
+         desc = "Select All",
+      },
+      {
+         mode = "n",
+         key = "mm",
+         fn = "%",
+         desc = "Go to matching bracket",
+      },
+      {
+         mode = "n",
+         key = "+",
+         fn = "<C-a>",
+         desc = "Increment",
+      },
+      {
+         mode = "n",
+         key = "-",
+         fn = "<C-x>",
+         desc = "Decrement",
+      },
+      {
+         mode = "n",
+         key = "<leader>ub",
+         fn = function()
+            require("utils").toggle_checkbox()
+         end,
+         desc = "Toggle checkbox",
+      },
+      {
+         mode = "n",
+         key = "<leader>uo",
+         fn = function()
+            require("utils").handleURL()
+         end,
+         desc = "Open URL",
+      },
+      {
+         mode = "n",
+         key = "D",
+         fn = '"_d',
+         desc = "Delete not cut",
+      },
+      -- [[ -------------------------------------
+      --             UTILS
+      -- ]] -------------------------------------
+      {
+         mode = "n",
+         key = "<leader>f",
+         fn = function()
+            require("telescope.builtin").find_files()
+         end,
+         desc = "Find Files",
+      },
+      {
+         mode = "n",
+         key = "<leader>/",
+         fn = function()
+            require("telescope.builtin").live_grep()
+         end,
+         desc = "Live Grep",
+      },
+      {
+         mode = "n",
+         key = "<leader>{",
+         fn = function()
+            require("telescope.builtin").lsp_document_symbols()
+         end,
+         desc = "LSP doc symbols",
+      },
+      {
+         mode = "n",
+         key = "<leader>F",
+         fn = function()
+            require("telescope.builtin").quickfix()
+         end,
+         desc = "Quickfix",
+      },
+      {
+         mode = "n",
+         key = "<leader>|",
+         fn = ":vsplit<CR>",
+         desc = "Vertical Split",
+      },
+      {
+         mode = "n",
+         key = "<leader>_",
+         fn = ":split<CR>",
+         desc = "Horizontal Split",
+      },
+      -- { mode = "n",
+      -- 	key = "<leader>t",
+      -- 	fn = ":NvimTreeToggle<CR>",
+      -- 	desc = "Folder Tree Toggle",
+      -- },
+      {
+         mode = "n",
+         key = "<leader>t",
+         fn = ":Neotree toggle<CR>",
+         desc = "Folder Tree Toggle",
+      },
+      {
+         mode = "n",
+         key = "<leader>d",
+         fn = function()
+            require("trouble").toggle("diagnostics")
+         end,
+         desc = "Diagnostics",
+      },
+      {
+         mode = "n",
+         key = "<leader>xq",
+         fn = function()
+            require("trouble").toggle("quickfix")
+         end,
+         desc = "Toggle Quickfix",
+      },
+      {
+         mode = "n",
+         key = "<leader>xl",
+         fn = function()
+            require("trouble").toggle("loclist")
+         end,
+         desc = "Toggle Loclist",
+      },
+      {
+         mode = "n",
+         key = "]t",
+         fn = function()
+            require("todo-comments").jump_next()
+         end,
+         desc = "Next todo comment",
+      },
+      {
+         mode = "n",
+         key = "[t",
+         fn = function()
+            require("todo-comments").jump_prev()
+         end,
+         desc = "Previous todo comment",
+      },
+      {
+         mode = "n",
+         key = "<leader>gt",
+         fn = function()
+            require("dap").toggle_breakpoint()
+         end,
+         desc = "DAP: toggle_breakpoint",
+      },
+      {
+         mode = "n",
+         key = "<leader>gs",
+         fn = function()
+            require("dap").continue()
+         end,
+         desc = "DAP: continue",
+      },
+      {
+         mode = "n",
+         key = "<leader>gc",
+         fn = function()
+            require("dap").close()
+         end,
+         desc = "DAP: close",
+      },
+      {
+         mode = "n",
+         key = "<leader>uf",
+         fn = "<cmd>lua vim.lsp.buf.format({ async = true})<cr>",
+      },
+      -- [[ -------------------------------------
+      --            MACROS
+      -- ]] -------------------------------------
+      {
+         mode = "n",
+         key = "<leader>mm",
+         fn = 'vi"ms`md"',
+         remap = true,
+         desc = 'MACROS: " -> `',
+      },
+      {
+         mode = "n",
+         key = "<leader>mn",
+         fn = "vi'ms`md'",
+         remap = true,
+         desc = "MACROS: ' -> `",
+      },
+      {
+         mode = "i",
+         key = "<C-s>",
+         fn = "<C-o>:w<CR>",
+         desc = "Save shortcut in insert mode",
+      },
+      -- {
+      -- 	key = "qq",
+      -- 	fn = "<Esc>",
+      -- 	desc = "Another way to escape insert mode",
+      -- },
+      {
+         mode = "x",
+         key = ">",
+         fn = ">gv",
+         desc = "Adjust indent in visual mode",
+      },
+      {
+         mode = "x",
+         key = "<",
+         fn = "<gv",
+         desc = "Adjust indent in visual mode",
+      },
+      {
+         mode = "x",
+         key = "<C-d>",
+         fn = '"_d',
+         desc = "Delete not cut",
+      },
+      {
+         mode = "t",
+         key = "<esc>",
+         fn = [[<C-\><C-n>]],
+         desc = "Escape terminal mode",
+      },
    },
    user_command = {
+      {
+         command = "PrintInBuff",
+         fn = function (opts)
+            vim.cmd("set nomore")
+            vim.cmd("redir @a")
+            vim.cmd(opts.args)
+            vim.cmd("redir END")
+            vim.cmd("set more")
+            vim.cmd("new")
+            vim.cmd("put a")
+         end,
+         desc = "Print the result of command to ne buffer",
+         opts ={
+            nargs = "?",
+            complete = "command"
+         }
+      },
       {
          command = "Format",
          fn = function(args)

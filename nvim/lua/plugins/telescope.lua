@@ -61,7 +61,7 @@ return {
       require("telescope").setup({
          extensions = {
             fzf = {
-               fuzzy = false,          -- false will only do exact matching
+               fuzzy = true,          -- false will only do exact matching
                override_generic_sorter = true, -- override the generic sorter
                override_file_sorter = true, -- override the file sorter
                case_mode = "smart_case", -- or "ignore_case" or "respect_case"
@@ -70,6 +70,7 @@ return {
             ["ui-select"] = {
                require("telescope.themes").get_dropdown({
                   -- even more opts
+                  border = false
                }),
             },
          },
@@ -103,6 +104,7 @@ return {
                height = 0.95,
                width = 0.95,
             },
+            border = false
          },
          pickers = {
             -- find_files = { sorting_strategy = "ascending" },

@@ -5,12 +5,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- vim.keymap.set('n', '<Leader>k', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 		-- vim.keymap.set("n", "<Leader>k", ":Lspsaga hover_doc<cr>", merge(opts, { desc = "Hover Doc" }))
-		vim.keymap.set(
-			"n",
-			"<Leader>k",
-			"<cmd>lua vim.lsp.buf.hover()<cr>",
-			vim.tbl_deep_extend("keep", opts, { desc = "Hover Doc" })
-		)
+		vim.keymap.set("n", "<Leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", vim.tbl_deep_extend("keep", opts, { desc = "Hover Doc" }))
 		vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
 		vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
 		vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)

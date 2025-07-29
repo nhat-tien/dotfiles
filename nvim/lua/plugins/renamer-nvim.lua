@@ -5,5 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 
-   opts = {},
+   opts = {
+      border = false,
+   },
 }

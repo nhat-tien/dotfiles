@@ -15,6 +15,7 @@ vim.opt.scrolloff = 5
 vim.opt.foldenable = false
 vim.opt.clipboard = "unnamedplus"
 vim.wo.signcolumn = "yes"
+vim.opt.winborder = "rounded"
 
 -- [[ -------------------------------------
 --             DIAGNOSTIC SIGN
