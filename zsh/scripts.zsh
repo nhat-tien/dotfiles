@@ -23,12 +23,12 @@ s() {
 
 pyenv() {
   if [[ "$1" == "init" ]]; then
-    python3 -m venv ./.env
+    python3 -m venv ./.venv
   fi
-  if [[ "$1" == "dev" ]]; then
-    source ./.env/bin/activate
+  if [[ "$1" == "on" ]]; then
+    source ./.venv/bin/activate
   fi
-  if [[ "$1" == "stop" ]]; then
+  if [[ "$1" == "off" ]]; then
     deactivate
   fi
 }

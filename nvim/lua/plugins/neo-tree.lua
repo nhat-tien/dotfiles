@@ -34,11 +34,44 @@ return {
                   inputs.confirm(msg, function(confirmed)
                      if not confirmed then return end
                      for _, node in ipairs(selected_nodes) do
-                        vim.fn.system {"gio", "trash", vim.fn.fnameescape(node.path) }
+                        vim.fn.system { "gio", "trash", vim.fn.fnameescape(node.path) }
                      end
                      require("neo-tree.sources.manager").refresh(state.name)
                   end)
                end,
+            },
+            filtered_items = {
+               visible = false,                    -- when true, they will just be displayed differently than normal items
+               force_visible_in_empty_folder = false, -- when true, hidden files will be shown if the root folder is otherwise empty
+               children_inherit_highlights = true, -- whether children of filtered parents should inherit their parent's highlight group
+               show_hidden_count = true,           -- when true, the number of hidden items in each folder will be shown as the last entry
+               hide_dotfiles = true,
+               hide_gitignored = false,
+               hide_hidden = true, -- only works on Windows for hidden files/directories
+               hide_by_name = {
+                  ".DS_Store",
+                  "thumbs.db",
+                  --"node_modules",
+               },
+               hide_by_pattern = { -- uses glob style patterns
+                  --"*.meta",
+                  --"*/src/*/tsconfig.json"
+                  "*lock*"
+               },
+               always_show = { -- remains visible even if other settings would normally hide it
+                  ".gitignore",
+                  ".github"
+               },
+               always_show_by_pattern = { -- uses glob style patterns
+                  ".env*",
+               },
+               never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+                  --".DS_Store",
+                  --"thumbs.db"
+               },
+               never_show_by_pattern = { -- uses glob style patterns
+                  --".null-ls_*",
+               },
             },
          },
          window = {
@@ -86,9 +119,8 @@ return {
                      end
                   )
                end
-            }
-         }
-
+            },
+         },
       })
    end
 }

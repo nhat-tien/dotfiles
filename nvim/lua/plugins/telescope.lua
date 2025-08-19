@@ -104,7 +104,7 @@ return {
                height = 0.95,
                width = 0.95,
             },
-            border = false
+            -- border = false
          },
          pickers = {
             -- find_files = { sorting_strategy = "ascending" },

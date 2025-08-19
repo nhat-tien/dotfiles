@@ -1,18 +1,78 @@
 #!/bin/bash
 
-phpactor() {
-    echo "phpactor cache:clear"
+success() {
+    echo "Clear cache $1 successfully"
 }
 
-go() {
-    go clean -cache
+# chrome_cc() {
+# Try to go to chrome://settings/clearBrowserData 
+# and then select "All time" and unselect everything 
+# but "Cached images and files".
+# }
+
+cargo_cc() {
+  cargo cache --autoclean
 }
 
-docker_build_cache() {
-    docker builder prune
+phpactor_cc() {
+
+    if command -v php >/dev/null 2>&1; then
+        has_php=1
+    else
+        echo "php not exist"
+    fi
+
+    if command -v phpactor >/dev/null 2>&1; then
+        has_phpactor=1
+    else
+        echo "phpactor not exist"
+    fi
+
+    if [[ $has_php && $has_phpactor ]]; then
+        phpactor cache:clear && \
+            success "phpactor"
+    fi
+}
+
+go_cc() {
+    go clean -cache && \
+        go clean -modcache && \
+        go clean -testcache && \
+        go clean -fuzzcache && \
+        success "go"
+}
+
+docker_cc() {
+    docker builder prune && \
+        success "docker"
+}
+
+nvim_cc() {
+    rm -rf ~/.cache/nvim/luac/ && \
+        success "nvim"
+}
+
+uv_cc() {
+    uv cache clean && \
+        success "uv"
+}
+
+npm_cc() {
+  npm cache clean --force
+}
+
+all_cc() {
+    cargo_cc 
+    phpactor_cc
+    go_cc
+    docker_cc
+    nvim_cc
+    uv_cc
 }
 
 main() {
+    program="${1}_cc"
+    $program
 }
 
 main "$@"

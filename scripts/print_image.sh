@@ -13,6 +13,7 @@ kitty_ter() {
       printf '\n\n\n\n\n\n\n\n'
     fi
 }
+
 wezterm_ter() {
     wezterm imgcat --resize 220x220 "$image_path"
 }
