@@ -1,7 +1,10 @@
 return {
    "yetone/avante.nvim",
    -- event = "VeryLazy",
-   enabled = true,
+   enabled = function ()
+      local os_name = vim.loop.os_uname().sysname
+      return os_name == "Linux"
+   end,
    version = false, -- Never set this value to "*"! Never!
    keys = {
       "<leader>aa"

@@ -8,7 +8,6 @@ return {
    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
    },
    config = function()
       -- local trouble = require("trouble.providers.telescope")
@@ -119,8 +118,12 @@ return {
             lsp_document_symbols = { sorting_strategy = "descending" },
          },
       })
+      local os_name = vim.loop.os_uname().sysname
 
-      require('telescope').load_extension('fzf')
+      if os_name == "Linux" then
+         require('telescope').load_extension('fzf')
+      end
+
       require("telescope").load_extension("ui-select")
    end,
 }
