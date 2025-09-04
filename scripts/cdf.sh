@@ -14,6 +14,7 @@ if true; then # Change true to false to disable
 
   dot_exclude=(
     .local
+    .config
   )
 
   prune_expr+=" -path \"*/.*\""

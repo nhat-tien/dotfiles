@@ -1,6 +1,6 @@
 return {
 	"mrcjkb/rustaceanvim",
-	version = "^4",
+	version = "^6",
    enabled = function ()
       return require("core.setup_lang").isNeed("rust")
    end,

@@ -38,6 +38,32 @@ M.match = function (val, case)
    end
 end
 
+M.break_line_to_multiline = function (bufnr, linenr, words_per_line)
+   words_per_line = words_per_line or 15
+  local line = vim.api.nvim_buf_get_lines(bufnr, linenr, linenr + 1, false)[1]
+  if not line then return end
+
+  local words = {}
+  for word in line:gmatch("%S+") do
+    table.insert(words, word)
+  end
+
+  local new_lines = {}
+  local current_line = {}
+  for _, word in ipairs(words) do
+    table.insert(current_line, word)
+    if #current_line == words_per_line then
+      table.insert(new_lines, table.concat(current_line, " "))
+      current_line = {}
+    end
+  end
+  if #current_line > 0 then
+    table.insert(new_lines, table.concat(current_line, " "))
+  end
+
+  vim.api.nvim_buf_set_lines(bufnr, linenr, linenr + 1, false, new_lines)
+end
+
 
 M.toggle_checkbox = require("utils.toogle-checkbox").toggle
 
