@@ -159,10 +159,10 @@ return {
          key = "D",
          fn = '"_d',
          desc = "Delete not cut",
-      },
-      -- [[ -------------------------------------
-      --             UTILS
-      -- ]] -------------------------------------
+       },
+       -- [[ -------------------------------------
+       --             UTILS
+       -- ]] -------------------------------------
       {
          mode = "n",
          key = "<leader>f",
@@ -186,6 +186,14 @@ return {
             require("telescope.builtin").lsp_document_symbols()
          end,
          desc = "LSP doc symbols",
+      },
+      {
+         mode = "n",
+         key = "<leader>}",
+         fn = function()
+            require("telescope.builtin").lsp_document_symbols({ symbols='function' })
+         end,
+         desc = "Quickfix",
       },
       {
          mode = "n",
@@ -258,6 +266,17 @@ return {
          end,
          desc = "Previous todo comment",
       },
+      -- *******************************
+      -- *             DAP             *
+      -- *******************************
+      {
+         mode = "n",
+         key = "<leader>gu",
+         fn = function()
+            require("dapui").toggle()
+         end,
+         desc = "DAP-UI: toggle",
+      },
       {
          mode = "n",
          key = "<leader>gt",
@@ -268,7 +287,31 @@ return {
       },
       {
          mode = "n",
-         key = "<leader>gs",
+         key = "<leader>gso",
+         fn = function()
+            require("dap").step_over()
+         end,
+         desc = "DAP: step_over",
+      },
+      {
+         mode = "n",
+         key = "<leader>gsi",
+         fn = function()
+            require("dap").step_into()
+         end,
+         desc = "DAP: step_in",
+      },
+      {
+         mode = "n",
+         key = "<leader>gsu",
+         fn = function()
+            require("dap").step_out()
+         end,
+         desc = "DAP: step_out",
+      },
+      {
+         mode = "n",
+         key = "<leader>ga",
          fn = function()
             require("dap").continue()
          end,
@@ -278,14 +321,9 @@ return {
          mode = "n",
          key = "<leader>gc",
          fn = function()
-            require("dap").close()
+            require("dap").terminate()
          end,
-         desc = "DAP: close",
-      },
-      {
-         mode = "n",
-         key = "<leader>uf",
-         fn = "<cmd>lua vim.lsp.buf.format({ async = true})<cr>",
+         desc = "DAP: terminate",
       },
       -- [[ -------------------------------------
       --            MACROS
@@ -395,6 +433,18 @@ return {
       {
          command = "QfOpenAll",
          fn = ":silent cfdo edit %<CR>"
+      },
+      {
+         command = "Breakline",
+         fn = function (opts)
+              local util = require("utils")
+              local bufnr = vim.api.nvim_get_current_buf()
+              local linenr = vim.api.nvim_win_get_cursor(0)[1] - 1 -- 0-based index
+              util.break_line_to_multiline(bufnr, linenr, tonumber(opts.args))
+         end,
+         opts = {
+            nargs = "?"
+         }
       }
    },
 }

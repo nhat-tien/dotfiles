@@ -54,3 +54,7 @@ dkcmp() {
   esac
 }
 
+checksum() {
+  printf '%s %s\n' "$1" "$2" | sha256sum --check
+}
+
