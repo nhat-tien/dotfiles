@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DOTFILES=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
@@ -10,7 +10,7 @@ packages=(
     "i3"
     "picom"
     "rofi"
-    # "wezterm"
+    "wezterm"
     "nvim"
     # "eww"
     "yazi"
