@@ -1,10 +1,10 @@
 return {
 	plugins = {
       "csharp",
+      "go",
+      "rust",
 		-- "java",
 		-- "flutter",
-		"go",
 		-- "laravel",
-		"rust",
 	},
 }

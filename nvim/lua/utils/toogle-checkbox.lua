@@ -1,4 +1,4 @@
-local checked_character = "x"
+local checked_character = "X"
 
 local checked_checkbox = "%[" .. checked_character .. "%]"
 local unchecked_checkbox = "%[ %]"

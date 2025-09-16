@@ -12,7 +12,8 @@ return {
    "svelte",
    "csharp_ls",
    "bashls",
-   "tinymist"
+   "tinymist",
+   "rnix",
    -- "eslint",
    --	"phpactor",
    -- "pylsp",
