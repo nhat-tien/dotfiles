@@ -1,3 +1,4 @@
 add_newline = false
+command_timeout = 700
 [cmd_duration]
 disabled = true

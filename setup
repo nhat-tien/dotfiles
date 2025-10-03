@@ -16,6 +16,7 @@ packages=(
     "yazi"
     "btop"
     "zsh"
+    "fastfetch"
     # "ghostty"
 )
 

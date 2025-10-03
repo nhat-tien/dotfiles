@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 success() {
     echo "Clear cache $1 successfully"
+}
+
+begin_clear() {
+    echo "---> Cleaning $1 <----"
 }
 
 # chrome_cc() {
@@ -11,10 +15,13 @@ success() {
 # }
 
 cargo_cc() {
-  cargo cache --autoclean
+  begin_clear "cargo"
+  cargo cache --autoclean && \
+    success "cargo"
 }
 
 phpactor_cc() {
+    begin_clear "phpactor"
 
     if command -v php >/dev/null 2>&1; then
         has_php=1
@@ -35,6 +42,7 @@ phpactor_cc() {
 }
 
 go_cc() {
+    begin_clear "go"
     go clean -cache && \
         go clean -modcache && \
         go clean -testcache && \
@@ -43,22 +51,27 @@ go_cc() {
 }
 
 docker_cc() {
+    begin_clear "docker"
     docker builder prune && \
         success "docker"
 }
 
 nvim_cc() {
+    begin_clear "nvim"
     rm -rf ~/.cache/nvim/luac/ && \
         success "nvim"
 }
 
 uv_cc() {
+    begin_clear "uv"
     uv cache clean && \
         success "uv"
 }
 
 npm_cc() {
-  npm cache clean --force
+  begin_clear "npm"
+  npm cache clean --force && \
+    success "npm"
 }
 
 all_cc() {
@@ -68,6 +81,7 @@ all_cc() {
     docker_cc
     nvim_cc
     uv_cc
+    npm_cc
 }
 
 main() {

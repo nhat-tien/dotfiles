@@ -53,7 +53,7 @@ alias opentrash="cd ~/.local/share/Trash/files/ && yy"
 alias emptytrash="rm -rf ~/.local/share/Trash/files/*"
 alias sutrash="sudo gio trash"
 
-#screenfetch
+# screenfetch
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-wmtheme' "
 alias neofetch="screenfetch -c '04,15' -a '${DOTFILES}/asciiart/asciiart.sh' "
