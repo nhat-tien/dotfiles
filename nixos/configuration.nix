@@ -44,7 +44,7 @@
   # services.xserver.enable = true;
 
   services.openssh.enable = true;
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = [ "/libexec" "/share/zsh" ];
 
   services.xserver = {
     enable = true;

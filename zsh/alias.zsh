@@ -46,11 +46,13 @@ alias mysqlstop="sudo systemctl stop mysql.service"
 alias dockerstart="sudo systemctl start docker"
 alias dockerstatus="sudo systemctl status docker"
 alias dockerstop="sudo systemctl stop docker.socket"
+alias dk="docker"
+alias dkcp="docker compose"
 
 # Gio trash
 alias trash="gio trash"
-alias opentrash="cd ~/.local/share/Trash/files/ && yy"
-alias emptytrash="rm -rf ~/.local/share/Trash/files/*"
+alias opentrash="cd ~/.local/share/Trash/files/ && y"
+# alias emptytrash="rm -rf ~/.local/share/Trash/files/*"
 alias sutrash="sudo gio trash"
 
 # screenfetch

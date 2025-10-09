@@ -4,7 +4,7 @@ mkdircd()
   mkdir -p "$@" && eval "cd \"\$$#\""; 
 }
 
-yy() {
+y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -38,20 +38,6 @@ cw() {
   if [[ "$file_path" != "" ]]; then 
     feh --bg-fill "$file_path"
   fi
-}
-
-dkcmp() {
-  case "$1" in
-    "up")
-        docker compose up -d
-      ;;
-    "down")
-        docker compose down 
-      ;;
-    *)
-      echo "Command not found"
-      ;;
-  esac
 }
 
 checksum() {

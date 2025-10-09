@@ -1,4 +1,4 @@
-<h1 align="center" >My dotfiles 📁</h1> 
+<h1 align="center">My dotfiles 📁</h1> 
 
 ## Setup
 
@@ -20,6 +20,7 @@
 - Terminal multiplexer: [Zellij](https://github.com/zellij-org/zellij)
 
 ## Installing
+
 ***Be careful**: This script will remove your existing configurations, please ensure you have a backup stored in somewhere outside of ~/.config/...*
 
 ```bash
