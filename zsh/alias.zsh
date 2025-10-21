@@ -73,3 +73,5 @@ alias icat="kitty icat"
 alias theme:light="gsettings set org.gnome.desktop.interface color-scheme prefer-light"
 alias theme:dark="gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 
+alias dj="uv run manage.py"
+

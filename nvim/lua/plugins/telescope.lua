@@ -111,7 +111,10 @@ return {
             -- buffers = { sorting_strategy = "ascending" },
             -- help_tags = { sorting_strategy = "ascending" },
             -- lsp_document_symbols = { sorting_strategy = "ascending" },
-            find_files = { sorting_strategy = "descending" },
+            find_files = {
+               sorting_strategy = "descending",
+               hidden = true
+            },
             live_grep = { sorting_strategy = "descending" },
             buffers = { sorting_strategy = "descending" },
             help_tags = { sorting_strategy = "descending" },
