@@ -377,6 +377,15 @@ return {
          fn = [[<C-\><C-n>]],
          desc = "Escape terminal mode",
       },
+      {
+         mode = "x",
+         key = "<leader>j",
+         fn = function ()
+              local util = require("utils")
+              util.join_selected_lines()
+         end,
+         desc = "join line"
+      }
    },
    user_command = {
       {
@@ -445,7 +454,7 @@ return {
          opts = {
             nargs = "?"
          }
-      }
+      },
    },
 }
 -- [[ -------------------------------------

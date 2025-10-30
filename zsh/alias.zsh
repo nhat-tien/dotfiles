@@ -1,13 +1,10 @@
 alias zshrc="nvim ~/.zshrc"
 alias c="clear"
 alias cf=". ${DOTFILES}/scripts/cdf.sh"
-# alias dev="yy ~/DEV"
 alias dev="cf ~/DEV"
 alias td="nvim ${MYNOTES}/plan"
-# alias jn="nvim ${MYNOTES}/journal"
 alias nt="cf ~/Documents/Notes"
 alias oo="nvim ${MYNOTES}/noteVault"
-# alias oi="cd ${MYNOTES}/mainVault/inbox && nvim *"
 alias on="${DOTFILES}/scripts/new-notes"
 alias dot="nvim ${DOTFILES}"
 alias nv="nvim ${DOTFILES}/nvim"
@@ -52,7 +49,6 @@ alias dkcp="docker compose"
 # Gio trash
 alias trash="gio trash"
 alias opentrash="cd ~/.local/share/Trash/files/ && y"
-# alias emptytrash="rm -rf ~/.local/share/Trash/files/*"
 alias sutrash="sudo gio trash"
 
 # screenfetch

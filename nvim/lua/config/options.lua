@@ -20,8 +20,8 @@ vim.opt.winborder = "rounded"
 -- [[ -------------------------------------
 --             DIAGNOSTIC SIGN
 -- ]] -------------------------------------
--- 
---  
+--
+-- 
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
@@ -55,6 +55,10 @@ vim.filetype.add({
       [".*%.norg"] = "norg",
       [".*%.http"] = "http",
    },
+   extension = {
+      razor = "razor",
+      cshtml = "razor",
+   }
 })
 --
 -- [[ -------------------------------------

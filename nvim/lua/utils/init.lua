@@ -65,6 +65,24 @@ M.break_line_to_multiline = function (bufnr, linenr, words_per_line)
 end
 
 
+M.join_selected_lines = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos = vim.fn.getpos("'>")
+
+  local start_line = start_pos[2] - 1
+  local end_line = end_pos[2] - 1
+
+  local lines = vim.api.nvim_buf_get_lines(bufnr, start_line, end_line + 1, false)
+  if not lines or #lines == 0 then return end
+
+  local joined = table.concat(lines, " "):gsub("%s+", " ")
+
+  vim.api.nvim_buf_set_lines(bufnr, start_line, end_line + 1, false, { joined })
+end
+
+
 M.toggle_checkbox = require("utils.toogle-checkbox").toggle
 
 return M

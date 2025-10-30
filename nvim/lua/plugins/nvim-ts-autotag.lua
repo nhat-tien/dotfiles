@@ -12,12 +12,14 @@ return {
 		"markdown",
 		"xml",
       "rust",
-      "svelte"
+      "svelte",
+      "razor"
 	},
 	config = function()
 		require("nvim-ts-autotag").setup({
          aliases = {
             ["rust"] = "html",
+            ["razor"] = "html",
          }
       })
 	end,

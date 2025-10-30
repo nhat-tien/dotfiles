@@ -4,7 +4,8 @@ return {
       'html',
       'templ',
       "rust",
-      'htmldjango'
+      'htmldjango',
+      'cshtml'
    },
    root_markers = { 'package.json', '.git' },
    settings = {},

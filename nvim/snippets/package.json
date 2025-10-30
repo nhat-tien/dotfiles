@@ -3,6 +3,7 @@
   "contributes": {
     "snippets": [
       { "language": "typescriptreact", "path": "./react.json" },
+      { "language": "razor", "path": "./razor.json" },
       { "language": "svelte", "path": "./svelte.json" },
       { "language": "all", "path": "./datetime.json" }
     ]

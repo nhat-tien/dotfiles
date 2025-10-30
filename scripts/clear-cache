@@ -74,6 +74,12 @@ npm_cc() {
     success "npm"
 }
 
+apt_cc() {
+  begin_clear "apt cache"
+  sudo apt clean && \
+    success "apt cache"
+}
+
 all_cc() {
     cargo_cc 
     phpactor_cc
@@ -82,6 +88,7 @@ all_cc() {
     nvim_cc
     uv_cc
     npm_cc
+    apt_cc 
 }
 
 main() {
