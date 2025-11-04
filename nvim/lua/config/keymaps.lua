@@ -148,6 +148,12 @@ return {
       },
       {
          mode = "n",
+         key = "<leader>ut",
+         fn = "<cmd>Checkmate toggle<CR>",
+         desc = "Toggle checkbox",
+      },
+      {
+         mode = "n",
          key = "<leader>uo",
          fn = function()
             require("utils").handleURL()

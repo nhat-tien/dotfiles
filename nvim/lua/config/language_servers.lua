@@ -10,7 +10,7 @@ return {
    "tailwindcss",
    "zls",
    "svelte",
-   "csharp_ls",
+   -- "csharp_ls",
    "bashls",
    "tinymist",
    "rnix",

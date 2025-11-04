@@ -11,7 +11,7 @@ return {
    },
 
    -- use a release tag to download pre-built binaries
-   version = "*",
+   version = "1.*",
    -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
    -- build = 'cargo build --release',
    -- If you use nix, you can build from source using latest nightly rust with:
@@ -78,23 +78,41 @@ return {
          -- Adjusts spacing to ensure icons are aligned
          nerd_font_variant = "normal",
       },
-   },
 
-   -- Default list of enabled providers defined so that you can extend it
-   -- elsewhere in your config, without redefining it, due to `opts_extend`
-   -- snippets = { preset = 'luasnip' },
-
-   sources = {
-      default = { "avante", "lsp", "path", "snippets", "buffer" },
-      providers = {
-         avante = {
-            module = 'blink-cmp-avante',
-            name = 'Avante',
-            opts = {
-               -- options for blink-cmp-avante
+      -- Default list of enabled providers defined so that you can extend it
+      -- elsewhere in your config, without redefining it, due to `opts_extend`
+      -- snippets = { preset = 'luasnip' },
+      sources = {
+         default = {
+            "lsp",
+            "path",
+            "snippets",
+            "buffer",
+            "html-css",
+            -- "avante",
+         },
+         providers = {
+            ["html-css"] = {
+               name = "html-css",
+               module = "blink.compat.source"
+            },
+            -- avante = {
+            --    module = 'blink-cmp-avante',
+            --    name = 'Avante',
+            --    opts = {
+            --       -- options for blink-cmp-avante
+            --    }
+            -- },
+            snippets = {
+               opts = {
+                  friendly_snippets = true, -- default
+                  extended_filetypes = {
+                     razor = { 'html' },
+                  }
+               }
             }
          }
-      }
+      },
+      -- opts_extend = { "sources.default" },
    },
-   opts_extend = { "sources.default" },
 }
