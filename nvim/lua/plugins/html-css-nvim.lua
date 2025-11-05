@@ -4,6 +4,8 @@ return {
   dependencies = { "saghen/blink.cmp", "nvim-treesitter/nvim-treesitter" }, -- Use this if you're using blink.cmp
   opts = {
     enable_on = { -- Example file types
+      "cshtml",
+      "razor",
       "html",
       "htmldjango",
       "tsx",
@@ -15,7 +17,6 @@ return {
       "php",
       "templ",
       "astro",
-      "razor"
     },
     handlers = {
       definition = {

@@ -14,6 +14,8 @@ return {
    "bashls",
    "tinymist",
    "rnix",
+   "sqls",
+   "postgres_lsp",
    -- "eslint",
    --	"phpactor",
    -- "pylsp",
