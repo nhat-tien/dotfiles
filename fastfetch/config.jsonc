@@ -306,19 +306,19 @@
     //   "keyIcon": ""
     // },
     "break",
-    // {
-    //   "type": "colors",
-    //   "key": " ",
-    //   "keyIcon": "",
-    //   "symbol": "block",
-    //   "paddingLeft": 0,
-    //   "block": {
-    //     "width": 3,
-    //     "range": [
-    //       0,
-    //       15
-    //     ]
-    //   }
-    // }
+    {
+      "type": "colors",
+      "key": " ",
+      "keyIcon": "",
+      "symbol": "block",
+      "paddingLeft": 0,
+      "block": {
+        "width": 3,
+        "range": [
+          0,
+          15
+        ]
+      }
+    }
   ]
 }

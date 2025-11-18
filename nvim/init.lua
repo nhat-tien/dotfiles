@@ -1,4 +1,5 @@
 require("config.options")
+require("config.autocmd")
 require("core.setup_keymap").init()
 require("core.setup_lazynvim")
 require("core.setup_ui")

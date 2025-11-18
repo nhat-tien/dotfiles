@@ -349,6 +349,18 @@ return {
          desc = "MACROS: ' -> `",
       },
       {
+         mode = "n",
+         key = "<leader>p",
+         fn = "<C-o>",
+         desc = "Go to previous position",
+      },
+      {
+         mode = "n",
+         key = "<leader>un",
+         fn = "<C-i>",
+         desc = "Go to next position",
+      },
+      {
          mode = "i",
          key = "<C-s>",
          fn = "<C-o>:w<CR>",

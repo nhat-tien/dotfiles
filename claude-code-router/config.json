@@ -12,13 +12,26 @@
       "transformer": {
         "use": ["gemini"]
       }
+    },
+    {
+      "name": "openrouter",
+      "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key": "$OPENROUTER_API_KEY",
+      "models": [
+        "qwen/qwen3-coder:free",
+        "openai/gpt-oss-20b:free",
+        "mistralai/mistral-7b-instruct:free"
+      ],
+      "transformer": {
+        "use": ["openrouter"]
+      }
     }
   ],
   "Router": {
-    "default": "gemini,gemini-2.5-flash",
+    "default": "openrouter,openai/gpt-oss-20b:free",
     "background": "gemini,gemini-2.5-flash",
     "think": "gemini,gemini-2.5-pro",
-    "longContext": "gemini,gemini-2.5-pro",
+    "longContext": "openrouter,qwen/qwen3-coder:free",
     "webSearch": "gemini,gemini-2.5-flash"
   }
 }
