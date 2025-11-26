@@ -15,7 +15,20 @@ return {
 
       require('neo-tree').setup({
          filesystem = {
+            window = {
+               mappings = {
+                  -- Make the mapping anything you want
+                  ["N"] = "easy",
+               },
+            },
             commands = {
+               ["easy"] = function(state)
+                  local node = state.tree:get_node()
+                  local path = node.type == "directory" and node.path or vim.fs.dirname(node.path)
+                  require("easy-dotnet").create_new_item(path, function()
+                     require("neo-tree.sources.manager").refresh(state.name)
+                  end)
+               end,
                delete = function(state)
                   local inputs = require "neo-tree.ui.inputs"
                   local path = state.tree:get_node().path
@@ -41,10 +54,10 @@ return {
                end,
             },
             filtered_items = {
-               visible = false,                    -- when true, they will just be displayed differently than normal items
+               visible = false,                       -- when true, they will just be displayed differently than normal items
                force_visible_in_empty_folder = false, -- when true, hidden files will be shown if the root folder is otherwise empty
-               children_inherit_highlights = true, -- whether children of filtered parents should inherit their parent's highlight group
-               show_hidden_count = true,           -- when true, the number of hidden items in each folder will be shown as the last entry
+               children_inherit_highlights = true,    -- whether children of filtered parents should inherit their parent's highlight group
+               show_hidden_count = true,              -- when true, the number of hidden items in each folder will be shown as the last entry
                hide_dotfiles = true,
                hide_gitignored = true,
                hide_hidden = true, -- only works on Windows for hidden files/directories

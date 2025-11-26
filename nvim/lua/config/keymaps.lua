@@ -361,6 +361,18 @@ return {
          desc = "Go to next position",
       },
       {
+         mode = "n",
+         key = "[t",
+         fn = "vit<Esc>`<",
+         desc = "Go to start of tag Html",
+      },
+      {
+         mode = "n",
+         key = "]t",
+         fn = "vit<Esc>`>",
+         desc = "Go to end of tag Html",
+      },
+      {
          mode = "i",
          key = "<C-s>",
          fn = "<C-o>:w<CR>",

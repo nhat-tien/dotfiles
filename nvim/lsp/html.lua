@@ -5,7 +5,8 @@ return {
       'templ',
       "rust",
       'htmldjango',
-      'cshtml'
+      'cshtml',
+      'razor'
    },
    root_markers = { 'package.json', '.git' },
    settings = {},
