@@ -172,6 +172,8 @@ config.warn_about_missing_glyphs = false
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.default_prog = { 'powershell.exe' }
+   config.font_size = 9
+   config.default_cwd = 'D:\\'
 end
 
 return config
