@@ -1,0 +1,16 @@
+return {}
+-- return {
+--     'jmbuhr/otter.nvim',
+--     dependencies = {
+--       'nvim-treesitter/nvim-treesitter',
+--     },
+--     opts = {},
+--    config = function ()
+--        require("otter").activate(
+--          nil,
+--           true,
+--           true,
+--          nil
+--        ) -- false: disable diagnostics
+--    end
+-- }

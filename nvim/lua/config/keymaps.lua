@@ -48,19 +48,19 @@ return {
                   },
                   {
                      mode = "n",
-                     key = { "<Right>", "l"},
+                     key = { "<Right>", "l" },
                      fn = ":vertical resize -2<CR>",
                      opts = { silent = true, buffer = false }
                   },
                   {
                      mode = "n",
-                     key = { "<Up>", "k"},
+                     key = { "<Up>", "k" },
                      fn = ":resize -2<CR>",
                      opts = { silent = true, buffer = false }
                   },
                   {
                      mode = "n",
-                     key = { "<Down>", "j"},
+                     key = { "<Down>", "j" },
                      fn = ":resize +2<CR>",
                      opts = { silent = true, buffer = false }
                   },
@@ -165,10 +165,10 @@ return {
          key = "D",
          fn = '"_d',
          desc = "Delete not cut",
-       },
-       -- [[ -------------------------------------
-       --             UTILS
-       -- ]] -------------------------------------
+      },
+      -- [[ -------------------------------------
+      --             UTILS
+      -- ]] -------------------------------------
       {
          mode = "n",
          key = "<leader>f",
@@ -197,7 +197,7 @@ return {
          mode = "n",
          key = "<leader>}",
          fn = function()
-            require("telescope.builtin").lsp_document_symbols({ symbols='function' })
+            require("telescope.builtin").lsp_document_symbols({ symbols = 'function' })
          end,
          desc = "Quickfix",
       },
@@ -410,9 +410,9 @@ return {
       {
          mode = "x",
          key = "<leader>j",
-         fn = function ()
-              local util = require("utils")
-              util.join_selected_lines()
+         fn = function()
+            local util = require("utils")
+            util.join_selected_lines()
          end,
          desc = "join line"
       }
@@ -420,7 +420,7 @@ return {
    user_command = {
       {
          command = "PrintInBuff",
-         fn = function (opts)
+         fn = function(opts)
             vim.cmd("set nomore")
             vim.cmd("redir @a")
             vim.cmd(opts.args)
@@ -430,7 +430,7 @@ return {
             vim.cmd("put a")
          end,
          desc = "Print the result of command to ne buffer",
-         opts ={
+         opts = {
             nargs = "?",
             complete = "command"
          }
@@ -475,16 +475,25 @@ return {
       },
       {
          command = "Breakline",
-         fn = function (opts)
-              local util = require("utils")
-              local bufnr = vim.api.nvim_get_current_buf()
-              local linenr = vim.api.nvim_win_get_cursor(0)[1] - 1 -- 0-based index
-              util.break_line_to_multiline(bufnr, linenr, tonumber(opts.args))
+         fn = function(opts)
+            local util = require("utils")
+            local bufnr = vim.api.nvim_get_current_buf()
+            local linenr = vim.api.nvim_win_get_cursor(0)[1] - 1   -- 0-based index
+            util.break_line_to_multiline(bufnr, linenr, tonumber(opts.args))
          end,
          opts = {
             nargs = "?"
          }
       },
+      {
+         command = "Extract",
+         fn = function(opts)
+            require('utils.extract-nvim').run({ opts.line1, opts.line2 })
+         end,
+         opts = {
+            range = true
+         }
+      }
    },
 }
 -- [[ -------------------------------------
