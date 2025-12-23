@@ -85,4 +85,8 @@ end
 
 M.toggle_checkbox = require("utils.toogle-checkbox").toggle
 
+M.is_windows = function()
+   return vim.loop.os_uname().sysname == "Windows"
+end
+
 return M

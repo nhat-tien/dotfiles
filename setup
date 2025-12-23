@@ -71,7 +71,7 @@ setup() {
                 *)
                     ;;
             esac
-        else 
+        else
           ln -s "${DOTFILES}/$1" "${HOME}/.config/$1"
         fi
     fi

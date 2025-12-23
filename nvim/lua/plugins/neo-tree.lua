@@ -33,9 +33,14 @@ return {
                   local inputs = require "neo-tree.ui.inputs"
                   local path = state.tree:get_node().path
                   local msg = "Are you sure you want to trash " .. path
+
                   inputs.confirm(msg, function(confirmed)
                      if not confirmed then return end
-                     vim.fn.system({ "gio", "trash", vim.fn.fnameescape(path) })
+                     if require("utils").is_windows then
+                        vim.fn.system({ "trash", vim.fn.fnameescape(path) })
+                     else
+                        vim.fn.system({ "gio", "trash", vim.fn.fnameescape(path) })
+                     end
                      require("neo-tree.sources.manager").refresh(state.name)
                   end)
                end,
@@ -47,8 +52,12 @@ return {
                   inputs.confirm(msg, function(confirmed)
                      if not confirmed then return end
                      for _, node in ipairs(selected_nodes) do
-                        vim.fn.system { "gio", "trash", vim.fn.fnameescape(node.path) }
-                     end
+                           if require("utils").is_windows then
+                              vim.fn.system({ "trash", vim.fn.fnameescape(node.path) })
+                           else
+                              vim.fn.system { "gio", "trash", vim.fn.fnameescape(node.path) }
+                           end
+                      end
                      require("neo-tree.sources.manager").refresh(state.name)
                   end)
                end,

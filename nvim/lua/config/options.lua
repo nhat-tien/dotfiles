@@ -54,6 +54,7 @@ vim.filetype.add({
       [".*%.blade%.php"] = "blade",
       [".*%.norg"] = "norg",
       [".*%.http"] = "http",
+      [".*%.todo.md"] = "mdtodo",
    },
    extension = {
       razor = "razor",

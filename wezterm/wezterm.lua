@@ -174,6 +174,17 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	config.default_prog = { 'powershell.exe' }
    config.font_size = 9
    config.default_cwd = 'D:\\'
+   config.background = {
+      {
+          source = {
+            File = 'D:\\04_image-for-terminal\\tokyonight.jpg',
+          },
+         hsb = {
+            saturation = 0.5,
+            brightness = 0.02,
+         },
+      }
+   }
 end
 
 return config

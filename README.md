@@ -1,4 +1,4 @@
-<h1 align="center">My dotfiles 📁</h1> 
+<h1 align="center">My dotfiles 📁</h1>
 
 ## Setup
 
@@ -10,14 +10,14 @@
 - Font: [CaskaydiaCove NF](https://www.nerdfonts.com/font-donloads)
 - Theme: `TokyoNight`
 - Brightness controller: [brightnessctl](https://github.com/Hummer12007/brightnessctl)
-- Audio: `pulseaudio`, `pavucontrol` 
+- Audio: `pulseaudio`, `pavucontrol`
 - System monitor: `htop`
 - Code editor: [NeoVim](https://github.com/neovim/neovim)
 <!-- - Terminal emulator: [Kitty terminal](https://github.com/kovidgoyal/kitty) -->
 - Terminal emulator: [Wezterm](https://github.com/wezterm/wezterm)
-- Shell: `zsh` 
+- Shell: `zsh`
 - TUI file manager: [yazi](https://github.com/sxyazi/yazi)
-- Prompt: [starship](https://github.com/starship/starship) 
+- Prompt: [starship](https://github.com/starship/starship)
 - Terminal multiplexer: [Zellij](https://github.com/zellij-org/zellij)
 
 ## Installing
@@ -40,9 +40,9 @@
 **Start-up Time**: ~100ms
 <img width="1351" height="729" alt="screenshot-from-2025-07-03-14-25-58" src="https://github.com/user-attachments/assets/7c4b02b1-099e-48ea-8dab-f7b2c3ed789c" />
 
-## Troubleshooting 
+## Troubleshooting
 
-### Neovim Clipboard 
+### Neovim Clipboard
 
 ```bash
 sudo apt install xclip
@@ -74,7 +74,7 @@ Choose mode `6.XTestFakeKeyEvent`
 
 ### Permission denied: no sudo privileges when using brightnessctl
 
-1. Run: 
+1. Run:
 ```bash
   sudo usermod -aG video ${USER}
 ```
@@ -85,4 +85,4 @@ Choose mode `6.XTestFakeKeyEvent`
 ```
 expect: `video:x:44:<username>`, example `video:x:44:nhattien`
 
-3. Reboot 
+3. Reboot
