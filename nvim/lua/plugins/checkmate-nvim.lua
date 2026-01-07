@@ -1,6 +1,8 @@
 return {
     "bngarren/checkmate.nvim",
-    ft = "mdtodo", -- Lazy loads for Markdown files matching patterns in 'files'
+    -- ft = "markdown", -- Lazy loads for Markdown files matching patterns in 'files'
+    ft = "markdown",
+    pattern = "*.todo.md",
     opts = {
         -- your configuration here
         -- or leave empty to use defaults

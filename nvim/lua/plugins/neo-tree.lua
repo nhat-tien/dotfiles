@@ -36,7 +36,7 @@ return {
 
                   inputs.confirm(msg, function(confirmed)
                      if not confirmed then return end
-                     if require("utils").is_windows then
+                     if require("utils").is_windows() then
                         vim.fn.system({ "trash", vim.fn.fnameescape(path) })
                      else
                         vim.fn.system({ "gio", "trash", vim.fn.fnameescape(path) })
@@ -52,7 +52,7 @@ return {
                   inputs.confirm(msg, function(confirmed)
                      if not confirmed then return end
                      for _, node in ipairs(selected_nodes) do
-                           if require("utils").is_windows then
+                           if require("utils").is_windows() then
                               vim.fn.system({ "trash", vim.fn.fnameescape(node.path) })
                            else
                               vim.fn.system { "gio", "trash", vim.fn.fnameescape(node.path) }

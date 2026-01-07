@@ -54,7 +54,6 @@ vim.filetype.add({
       [".*%.blade%.php"] = "blade",
       [".*%.norg"] = "norg",
       [".*%.http"] = "http",
-      [".*%.todo.md"] = "mdtodo",
    },
    extension = {
       razor = "razor",
@@ -72,3 +71,4 @@ vim.g.table_mode_disable_tableize_mappings = 1
 
 -- Disable zig auto format
 vim.g.zig_fmt_autosave = 0
+

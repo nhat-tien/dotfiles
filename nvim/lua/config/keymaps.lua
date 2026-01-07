@@ -272,6 +272,14 @@ return {
          end,
          desc = "Previous todo comment",
       },
+      {
+         mode = "n",
+         key = "<leader>o",
+         fn = function()
+            require("telescope.builtin").find_files()
+         end,
+         desc = "Find Files",
+      },
       -- *******************************
       -- *             DAP             *
       -- *******************************
@@ -415,6 +423,14 @@ return {
             util.join_selected_lines()
          end,
          desc = "join line"
+      },
+      {
+         mode = "x",
+         key = "<leader>f",
+         fn = function()
+            require("conform").format({ async = true})
+         end,
+         desc = "Format selection"
       }
    },
    user_command = {
@@ -438,7 +454,10 @@ return {
       {
          command = "Format",
          fn = function(args)
-            require("conform").format({ bufnr = args.buf })
+            require("conform").format({
+               async = true,
+               bufnr = args.buf,
+            })
          end,
          desc = "Format",
       },
