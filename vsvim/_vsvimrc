@@ -1,0 +1,5 @@
+let mapleader = " "
+
+nnoremap <Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprevious<CR>
+nnoremap <leader>f :vsc Edit.GoToAll<CR>
