@@ -40,10 +40,10 @@ exec --no-startup-id nm-applet
 # |----------------------------------------|
 
 # Auto-lock
-exec_always --no-startup-id $HOME/dotfiles/i3/autolock.sh 
+exec_always --no-startup-id $HOME/dotfiles/i3/autolock.sh
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill $HOME/dotfiles/wallpapers/wallpaper4.png
+exec_always --no-startup-id feh --bg-fill $HOME/dotfiles/wallpapers/wallpaper4.png
 
 # Ibus-daemon
 exec_always --no-startup-id $HOME/dotfiles/ibus/launch.sh
@@ -77,7 +77,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec wezterm 
+bindsym $mod+Return exec wezterm
 # bindsym $mod+Return exec rio
 
 # kill focused window
@@ -168,7 +168,7 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1 ; workspace number $ws1 
+bindsym $mod+Shift+1 move container to workspace number $ws1 ; workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2 ; workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3 ; workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4 ; workspace number $ws4
@@ -224,7 +224,7 @@ bindsym $mod+r mode "resize"
 # |  MY_CUSTOM_2/2                         |
 # |----------------------------------------|
 
-gaps inner 8 
+gaps inner 8
 gaps outer -4
 default_border pixel 3
 default_floating_border pixel 0
@@ -256,8 +256,8 @@ mode "$mode_system" {
         bindsym Shift+s exec --no-startup-id ~/dotfiles/i3/i3exit.sh shutdown, mode "default"
         bindsym u exec --no-startup-id systemctl poweroff, mode "default"
 
-        bindsym Escape mode "default" 
-        bindsym Return mode "default" 
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
 }
 
 bindsym $mod+Insert mode "$mode_system"
@@ -269,8 +269,8 @@ mode "$mode_volume" {
         bindsym Down exec --no-startup-id pactl set-sink-volume 0 -1%
         bindsym m exec --no-startup-id pactl set-sink-mute 0 toggle
 
-        bindsym Escape mode "default" 
-        bindsym Return mode "default" 
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
 }
 
 bindsym $mod+Shift+v mode "$mode_volume"
@@ -281,8 +281,8 @@ mode "$mode_screenbrightness" {
         bindsym Up exec brightnessctl set +5%
         bindsym Down exec brightnessctl -n set 5%-
 
-        bindsym Escape mode "default" 
-        bindsym Return mode "default" 
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
 }
 
 bindsym $mod+Shift+b mode "$mode_screenbrightness"

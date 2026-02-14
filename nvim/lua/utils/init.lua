@@ -83,6 +83,45 @@ M.join_selected_lines = function()
 end
 
 
+M.reflow_selected_lines = function(words_per_line)
+  words_per_line = words_per_line or 15
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos   = vim.fn.getpos("'>")
+
+  local start_line = start_pos[2] - 1
+  local end_line   = end_pos[2] - 1
+
+  local lines = vim.api.nvim_buf_get_lines(bufnr, start_line, end_line + 1, false)
+  if not lines or #lines == 0 then return end
+
+  local joined = table.concat(lines, " "):gsub("%s+", " "):gsub("^%s+", ""):gsub("%s+$", "")
+
+  local words = {}
+  for w in joined:gmatch("%S+") do
+    table.insert(words, w)
+  end
+
+  local new_lines = {}
+  local current = {}
+
+  for _, w in ipairs(words) do
+    table.insert(current, w)
+    if #current == words_per_line then
+      table.insert(new_lines, table.concat(current, " "))
+      current = {}
+    end
+  end
+
+  if #current > 0 then
+    table.insert(new_lines, table.concat(current, " "))
+  end
+
+  vim.api.nvim_buf_set_lines(bufnr, start_line, end_line + 1, false, new_lines)
+end
+
+
 M.toggle_checkbox = require("utils.toogle-checkbox").toggle
 
 M.is_windows = function()

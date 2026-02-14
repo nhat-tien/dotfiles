@@ -505,6 +505,17 @@ return {
          }
       },
       {
+         command = "AdjustLine",
+         fn = function(opts)
+            local util = require("utils")
+            util.reflow_selected_lines(tonumber(opts.args))
+         end,
+         opts = {
+            range = true,
+            nargs = "?"
+         }
+      },
+      {
          command = "Extract",
          fn = function(opts)
             require('utils.extract-nvim').run({ opts.line1, opts.line2 })

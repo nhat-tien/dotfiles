@@ -4,8 +4,8 @@
     "edit": "ask",
     "bash": "ask"
   },
-  "model": "openrouter/kwaipilot/kat-coder-pro:free",
-  "small_model": "google/gemini-2.0-flash",
+  "model": "openrouter/mistralai/mistral-small-3.1-24b-instruct:free",
+  "small_model": "openrouter/mistralai/mistral-small-3.1-24b-instruct:free",
   "provider": {
     "google": {
       "models": {
@@ -54,6 +54,15 @@
               }
             }
           }
+        },
+        "mistralai/mistral-small-3.1-24b-instruct:free": {
+          "options": {
+            "OpenRouter": {
+              "provider": {
+                "allow_fallbacks": false
+              }
+            }
+          }
         }
       }
     }
@@ -93,7 +102,6 @@
     "agent_cycle": "tab",
     "agent_cycle_reverse": "shift+tab",
     "input_clear": "ctrl+c",
-    "input_forward_delete": "ctrl+d",
     "input_paste": "ctrl+v",
     "input_submit": "enter",
     "input_newline": "shift+enter,ctrl+j",
