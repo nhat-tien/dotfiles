@@ -1,11 +1,17 @@
 local M = {}
 
 M.dark_theme_setup = function ()
+   local is_transparent = true
+
+   if vim.g.is_display_bg then
+      is_transparent = false
+   end
+
 	require("tokyonight").setup({
-		transparent = true,
+		transparent = is_transparent,
       terminal_color = true,
 		styles = {
-			sidebars = "transparent",
+			sidebars = is_transparent and "transparent" or nil,
 			-- floats = "transparent",
 		},
 		on_colors = function(colors)
@@ -22,6 +28,9 @@ M.dark_theme_setup = function ()
 			}
          hl.TabLineFill = {
             bg = c.none
+         }
+         hl.TelescopeSelection = {
+            bg = c.diff.add
          }
 		end,
 	})
@@ -50,6 +59,8 @@ M.light_theme_setup = function ()
 	vim.cmd.colorscheme("tokyonight-day")
 end
 
-M.colors = require("tokyonight.colors").setup({ style = "moon" })
+M.colors = function ()
+   return require("tokyonight.colors").setup({ style = "moon" })
+end
 
 return M

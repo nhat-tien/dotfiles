@@ -231,7 +231,7 @@ default_floating_border pixel 0
 
 # Printscreen
 bindsym Print exec --no-startup-id gnome-screenshot
-bindsym $mod+Shift+Print exec --no-startup-id gnome-screenshot -a
+bindsym $mod+Shift+s exec --no-startup-id gnome-screenshot -a
 
 # File Explorer
 bindsym $mod+m exec --no-startup-id ~/dotfiles/rofi/menu.sh
@@ -264,9 +264,13 @@ bindsym $mod+Insert mode "$mode_system"
 
 mode "$mode_volume" {
         bindsym k exec --no-startup-id pactl set-sink-volume 0 +1%
-        bindsym j exec --no-startup-id pactl set-sink-volume 0 -1%
         bindsym Up exec --no-startup-id pactl set-sink-volume 0 +1%
+        bindsym Shift+k exec --no-startup-id pactl set-sink-volume 0 +10%
+
+        bindsym j exec --no-startup-id pactl set-sink-volume 0 -1%
         bindsym Down exec --no-startup-id pactl set-sink-volume 0 -1%
+        bindsym Shift+j exec --no-startup-id pactl set-sink-volume 0 -10%
+
         bindsym m exec --no-startup-id pactl set-sink-mute 0 toggle
 
         bindsym Escape mode "default"

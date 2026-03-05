@@ -3,6 +3,7 @@ return {
    version = "*",
    lazy = true,  -- Automatically loads when required by blink.cmp
    opts = {
-      debug = true
+      debug = false,
+      impersonate_nvim_cmp = true
    }
 }

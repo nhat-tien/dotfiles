@@ -50,6 +50,7 @@ return {
          "%.env.*",
          "%.db",
          "%.zip",
+         "%.pdf",
          ".yarn/.*",
          "graphql%.schema%.json",
          "schema%.json",

@@ -3,7 +3,7 @@ return {
    event = "BufReadPre",
    dependencies = { "nvim-tree/nvim-web-devicons" },
    config = function()
-      local colors = require("config.theme").theme.colors
+      local colors = require("config.theme").theme.colors()
 
       local mode_color = {
          n = colors.blue,

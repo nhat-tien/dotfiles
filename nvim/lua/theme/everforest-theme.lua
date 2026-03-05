@@ -19,8 +19,10 @@ M.light_theme_setup = function()
    vim.cmd.colorscheme("everforest")
 end
 
-M.colors = require("everforest.colours").generate_palette({
-   colours_override = function(_) end,
-}, "dark")
+M.colors = function ()
+   return require("everforest.colours").generate_palette({
+      colours_override = function(_) end,
+   }, "dark")
+end
 
 return M

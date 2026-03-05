@@ -381,6 +381,12 @@ return {
          desc = "Go to end of tag Html",
       },
       {
+         mode = "n",
+         key = "<leader>j",
+         fn = "V:AdjustLine<CR>",
+         desc = "Adjust Line",
+      },
+      {
          mode = "i",
          key = "<C-s>",
          fn = "<C-o>:w<CR>",
@@ -431,7 +437,7 @@ return {
             require("conform").format({ async = true})
          end,
          desc = "Format selection"
-      }
+      },
    },
    user_command = {
       {

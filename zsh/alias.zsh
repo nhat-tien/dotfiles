@@ -3,6 +3,7 @@ alias c="clear"
 alias cf=". ${DOTFILES}/scripts/cdf.sh"
 alias dev="cf ~/DEV"
 alias td="nvim ${MYNOTES}/plan"
+alias life="nvim ${MYNOTES}/my-life"
 alias nt="cf ~/Documents/Notes"
 alias oo="nvim ${MYNOTES}/noteVault"
 alias on="${DOTFILES}/scripts/new-notes"
@@ -33,8 +34,8 @@ alias nginxstart="sudo systemctl start nginx"
 alias nginxrestart="sudo systemctl restart nginx"
 alias nginxstatus="sudo systemctl status nginx"
 alias nginxstop="sudo systemctl stop nginx"
- 
-# alias MySql 
+
+# alias MySql
 alias mysqlstart="sudo systemctl start mysql.service"
 alias mysqlstatus="sudo systemctl status mysql.service"
 alias mysqlstop="sudo systemctl stop mysql.service"

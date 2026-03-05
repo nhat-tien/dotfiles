@@ -24,7 +24,8 @@ return {
             markdown = { "prettierd" },
             cs = { "csharpier" },
             typst = { "prettypst" },
-            sql = { "poor_mans_tsql" }
+            sql = { "poor_mans_tsql" },
+            bib = { "bibtex-tidy" }
          },
          -- format_on_save = {
          -- 	lsp_format = "fallback",
