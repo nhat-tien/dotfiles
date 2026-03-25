@@ -1,7 +1,6 @@
--- [[ -------------------------------------
+-- -------------------------------------
 --              PRIMARY OPTIONS
--- ]] -------------------------------------
---
+-- -------------------------------------
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
@@ -12,24 +11,30 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 5
-vim.opt.foldenable = false
 vim.opt.clipboard = "unnamedplus"
 vim.wo.signcolumn = "yes"
 vim.opt.winborder = "rounded"
 
--- [[ -------------------------------------
+-- -------------------------------------
+--             FOLD
+-- -------------------------------------
+vim.opt.foldenable = false
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldcolumn = "0"
+
+
+-- -------------------------------------
 --             DIAGNOSTIC SIGN
--- ]] -------------------------------------
---
--- 
+-- -------------------------------------
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
--- [[ -------------------------------------
+-- -------------------------------------
 --            UTILS
--- ]] -------------------------------------
+-- -------------------------------------
 --
 -- highlight codeblock in markdown
 vim.g.markdown_fenced_languages = {
@@ -46,9 +51,9 @@ vim.g.markdown_fenced_languages = {
    "java",
 }
 
--- [[ -------------------------------------
+-- -------------------------------------
 --             FILETYPE
--- ]] -------------------------------------
+-- -------------------------------------
 vim.filetype.add({
    pattern = {
       [".*%.blade%.php"] = "blade",
@@ -61,9 +66,9 @@ vim.filetype.add({
    }
 })
 --
--- [[ -------------------------------------
+-- -------------------------------------
 --             TABLE-MODE
--- ]] -------------------------------------
+-- -------------------------------------
 vim.g.table_mode_disable_mappings = 1
 vim.g.table_mode_disable_tableize_mappings = 1
 

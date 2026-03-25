@@ -1,9 +1,6 @@
 local M = {}
 
 M.setup = function ()
-   local config = require("config.local")
-   print(config.mode)
-
    require("config.options")
    require("config.autocmd")
    require("core.setup_keymap").init()

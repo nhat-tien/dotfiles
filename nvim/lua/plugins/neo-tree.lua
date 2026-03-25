@@ -19,9 +19,40 @@ return {
                mappings = {
                   -- Make the mapping anything you want
                   ["N"] = "easy",
+                  ["U"] = "util",
                },
             },
             commands = {
+               ["util"] = function (state)
+                  local node = state.tree:get_node()
+                  local dir = node:get_id()
+                  local date = os.date("%Y-%m-%d")
+                  local filename = dir .. "/" .. date .. ".md"
+
+                  local match = require("utils").match
+                  local switch = require("utils").switch
+
+                  vim.ui.select(
+                     { 1 }
+                     , {
+                        prompt = 'Choose util',
+                        format_item = function(item)
+                           return match(item, {
+                              [1] = 'New daily file',
+                           });
+                        end
+
+                     }, function(choice)
+                        if choice ~= nil then
+                           switch(choice, {
+                              [1] = function ()
+                                 vim.cmd("edit " .. filename)
+                              end
+                           })
+                        end
+                     end
+                  )
+               end,
                ["easy"] = function(state)
                   local node = state.tree:get_node()
                   local path = node.type == "directory" and node.path or vim.fs.dirname(node.path)
