@@ -1,0 +1,43 @@
+return {
+   theme = require("theme.tokyonight-theme"),
+   mode = "dark",
+	plugins = {
+      "csharp",
+      "go",
+      "rust",
+		-- "java",
+		-- "flutter",
+		-- "laravel",
+	},
+   language_servers = {
+      "lua_ls",
+      "html",
+      "cssls",
+      "ts_ls",
+      "pyright",
+      "marksman",
+      "gopls",
+      "volar",
+      "tailwindcss",
+      "zls",
+      "svelte",
+      -- "csharp_ls",
+      "bashls",
+      "tinymist",
+      "rnix",
+      "sqls",
+      "postgres_lsp",
+      -- "eslint",
+      --	"phpactor",
+      -- "pylsp",
+      -- "basedpyright",
+      -- "rust_analyzer",
+      -- "jdtls",
+      -- "ltex",
+      -- "typst_lsp",
+      -- "dartls"
+   }
+}
+
+
+

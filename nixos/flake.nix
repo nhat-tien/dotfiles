@@ -11,7 +11,7 @@
     };
   };
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    # NOTE: 'nixos' is the default hostname
+
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

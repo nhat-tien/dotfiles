@@ -27,10 +27,24 @@ vim.opt.foldenable = false
 -- -------------------------------------
 --             DIAGNOSTIC SIGN
 -- -------------------------------------
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
+-- vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
+-- vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+-- vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+-- vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
+--
+local sev = vim.diagnostic.severity
+
+vim.diagnostic.config({
+  severity_sort = true,
+  signs = {
+    text = {
+      [sev.ERROR] = '',
+      [sev.WARN]  = ' ',
+      [sev.INFO]  = ' ',
+      [sev.HINT]  = '󰌵',
+    },
+  },
+})
 
 -- -------------------------------------
 --            UTILS
@@ -76,4 +90,4 @@ vim.g.table_mode_disable_tableize_mappings = 1
 
 -- Disable zig auto format
 vim.g.zig_fmt_autosave = 0
-
+require('vim._core.ui2').enable()

@@ -108,12 +108,12 @@ return {
       -- ]] -------------------------------------
       { mode = "n", key = "<leader>mm", fn = 'vi"ms`md"', remap = true, desc = 'MACROS: " -> `' },
       { mode = "n", key = "<leader>mn", fn = "vi'ms`md'", remap = true, desc = "MACROS: ' -> `" },
-      { mode = "n", key = "<leader>p", fn = "<C-o>", desc = "Go to previous position" },
-      { mode = "n", key = "<leader>un", fn = "<C-i>", desc = "Go to next position" },
-      { mode = "n", key = "[t", fn = "vit<Esc>`<", desc = "Go to start of tag Html" },
-      { mode = "n", key = "]t", fn = "vit<Esc>`>", desc = "Go to end of tag Html" },
-      { mode = "n", key = "<leader>j", fn = "V:AdjustLine<CR>", desc = "Adjust Line" },
-      { mode = "i", key = "<C-s>", fn = "<C-o>:w<CR>", desc = "Save shortcut in insert mode" },
+      { mode = "n", key = "<leader>p",  fn = "<C-o>",            desc = "Go to previous position" },
+      { mode = "n", key = "<leader>un", fn = "<C-i>",            desc = "Go to next position" },
+      { mode = "n", key = "[t",         fn = "vit<Esc>`<",       desc = "Go to start of tag Html" },
+      { mode = "n", key = "]t",         fn = "vit<Esc>`>",       desc = "Go to end of tag Html" },
+      { mode = "n", key = "<leader>j",  fn = "V:AdjustLine<CR>", desc = "Adjust Line" },
+      { mode = "i", key = "<C-s>",      fn = "<C-o>:w<CR>",      desc = "Save shortcut in insert mode" },
       -- {
       -- 	key = "qq",
       -- 	fn = "<Esc>",
@@ -226,6 +226,20 @@ return {
          opts = {
             range = true
          }
-      }
-   },
+      },
+       {
+          command = "OpenConfig",
+          fn = function()
+             vim.cmd("edit " .. vim.fn.stdpath("config"))
+          end,
+          desc = "Open the config folder",
+       },
+       {
+          command = "ReloadConfig",
+          fn = function()
+            vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+          end,
+          desc = "Reload the configuration",
+       }
+    },
 }

@@ -1,0 +1,29 @@
+{
+  "plugins": {
+    "mini.files": {
+      "rev": "e8db416c9f5dbce70f5501da28263d45c0a4df6b",
+      "src": "https://github.com/nvim-mini/mini.files"
+    },
+    "nanode.nvim": {
+      "rev": "cd85bbb5195b23adfb89a695b54e16daab259800",
+      "src": "https://github.com/KijitoraFinch/nanode.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    },
+    "telescope-ui-select.nvim": {
+      "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
+      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "d90956833d7c27e73c621a61f20b29fdb7122709",
+      "src": "https://github.com/nvim-telescope/telescope.nvim",
+      "version": "'0.1.5'"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+-- return {}
 return {
    "nvim-telescope/telescope.nvim",
    tag = "0.1.5",
@@ -124,9 +125,9 @@ return {
       })
       local os_name = vim.loop.os_uname().sysname
 
-      if os_name == "Linux" then
-         require('telescope').load_extension('fzf')
-      end
+      -- if os_name == "Linux" then
+      --    require('telescope').load_extension('fzf')
+      -- end
 
       require("telescope").load_extension("ui-select")
    end,

@@ -25,6 +25,18 @@ export STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
 
 export GHOSTTY_RESOURCES_DIR="$DOTFILES/ghostty"
 
+
+export FZF_DEFAULT_OPTS="--style=minimal
+  --layout=reverse
+  --color=dark
+  --color=fg:-1,fg+:#f9fbff,bg:-1,bg+:#252525
+  --color=hl:#f8e081,hl+:#f8e081
+  --color=info:#6e6f70,footer:#6e6f70
+  --color=marker:#c8a5ff
+  --color=pointer:#f16da6:regular
+  --color=prompt:#33b1ff,spinner:#08bdba
+  --color=border:#353535"
+
 # PATH
 path+=("$HOME/.npm-packages/bin")
 path+=("$HOME/.local/bin")

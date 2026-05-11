@@ -1,4 +1,5 @@
-return {
-  "KijitoraFinch/nanode.nvim",
-   enabled = false
-}
+return {}
+-- return {
+--   "KijitoraFinch/nanode.nvim",
+--    enabled = false
+-- }
