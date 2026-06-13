@@ -18,12 +18,19 @@ vim.opt.winborder = "rounded"
 -- -------------------------------------
 --             FOLD
 -- -------------------------------------
-vim.opt.foldenable = false
+-- vim.opt.foldenable = false
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- vim.opt.foldcolumn = "0"
-
-
+--
+-- vim.o.foldenable = true
+-- vim.o.foldlevel = 99
+-- vim.o.foldmethod = "expr"
+-- vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.o.foldtext = ""
+-- vim.opt.foldcolumn = "0"
+-- vim.opt.fillchars:append({fold = " "})
+--
 -- -------------------------------------
 --             DIAGNOSTIC SIGN
 -- -------------------------------------

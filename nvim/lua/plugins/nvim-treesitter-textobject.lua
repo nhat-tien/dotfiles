@@ -1,3 +1,4 @@
+-- return {}
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
    event = "BufReadPre",

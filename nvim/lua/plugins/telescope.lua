@@ -1,7 +1,8 @@
 -- return {}
 return {
    "nvim-telescope/telescope.nvim",
-   tag = "0.1.5",
+   -- tag = "0.1.5",
+   version = '*',
    -- keys = {
    --    "<leader>-f",
    --    "<leader>-/"
