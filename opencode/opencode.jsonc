@@ -6,77 +6,79 @@
   },
   // "model": "openrouter/mistralai/mistral-small-3.1-24b-instruct:free",
   // "small_model": "openrouter/mistralai/mistral-small-3.1-24b-instruct:free",
-  "model": "openrouter/stepfun/step-3.5-flash:free",
-  "small_model": "openrouter/stepfun/step-3.5-flash:free",
+  // "model": "openrouter/stepfun/step-3.5-flash:free",
+  // "small_model": "openrouter/stepfun/step-3.5-flash:free",
+  "model": "deepseek/deepseek-v4-flash",
+  "small_model": "deepseek/deepseek-v4-flash",
   "provider": {
-    "google": {
-      "models": {
-        "gemini-2.0-flash": {
-          "options": {}
-        },
-        "gemini-2.5-flash": {
-          "options": {}
-        }
-      }
-    },
-    "openrouter": {
-      "models": {
-        "qwen/qwen3-coder:free": {
-          "options": {
-            "OpenRouter": {
-              "provider": {
-                "allow_fallbacks": false
-              }
-            }
-          }
-        },
-        "meta-llama/llama-3.3-8b-instruct:free" : {
-          "options": {
-            "OpenRouter": {
-              "provider": {
-                "allow_fallbacks": false
-              }
-            }
-          }
-        },
-        "tngtech/deepseek-r1t2-chimera:free": {
-          "options": {
-            "OpenRouter": {
-              "provider": {
-                "allow_fallbacks": false
-              }
-            }
-          }
-        },
-        "kwaipilot/kat-coder-pro:free": {
-          "options": {
-            "OpenRouter": {
-              "provider": {
-                "allow_fallbacks": false
-              }
-            }
-          }
-        },
-        "mistralai/mistral-small-3.1-24b-instruct:free": {
-          "options": {
-            "OpenRouter": {
-              "provider": {
-                "allow_fallbacks": false
-              }
-            }
-          }
-        },
-        "stepfun/step-3.5-flash:free": {
-          "options": {
-            "OpenRouter": {
-              "provider": {
-                "allow_fallbacks": false
-              }
-            }
-          }
-        }
-      }
-    }
+    // "google": {
+    //   "models": {
+    //     "gemini-2.0-flash": {
+    //       "options": {}
+    //     },
+    //     "gemini-2.5-flash": {
+    //       "options": {}
+    //     }
+    //   }
+    // },
+    // "openrouter": {
+    //   "models": {
+    //     "qwen/qwen3-coder:free": {
+    //       "options": {
+    //         "OpenRouter": {
+    //           "provider": {
+    //             "allow_fallbacks": false
+    //           }
+    //         }
+    //       }
+    //     },
+    //     "meta-llama/llama-3.3-8b-instruct:free" : {
+    //       "options": {
+    //         "OpenRouter": {
+    //           "provider": {
+    //             "allow_fallbacks": false
+    //           }
+    //         }
+    //       }
+    //     },
+    //     "tngtech/deepseek-r1t2-chimera:free": {
+    //       "options": {
+    //         "OpenRouter": {
+    //           "provider": {
+    //             "allow_fallbacks": false
+    //           }
+    //         }
+    //       }
+    //     },
+    //     "kwaipilot/kat-coder-pro:free": {
+    //       "options": {
+    //         "OpenRouter": {
+    //           "provider": {
+    //             "allow_fallbacks": false
+    //           }
+    //         }
+    //       }
+    //     },
+    //     "mistralai/mistral-small-3.1-24b-instruct:free": {
+    //       "options": {
+    //         "OpenRouter": {
+    //           "provider": {
+    //             "allow_fallbacks": false
+    //           }
+    //         }
+    //       }
+    //     },
+    //     "stepfun/step-3.5-flash:free": {
+    //       "options": {
+    //         "OpenRouter": {
+    //           "provider": {
+    //             "allow_fallbacks": false
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 

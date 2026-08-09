@@ -18,10 +18,10 @@ vim.opt.winborder = "rounded"
 -- -------------------------------------
 --             FOLD
 -- -------------------------------------
--- vim.opt.foldenable = false
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
--- vim.opt.foldcolumn = "0"
+vim.opt.foldenable = false
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "0"
 --
 -- vim.o.foldenable = true
 -- vim.o.foldlevel = 99

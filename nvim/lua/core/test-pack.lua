@@ -7,5 +7,3 @@ require('mini.files').setup({
     use_as_default_explorer = false,
   },
 })
-
-

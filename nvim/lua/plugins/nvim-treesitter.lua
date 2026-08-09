@@ -5,12 +5,17 @@ return {
    event = "BufReadPre",
    branch = "main",
    config = function()
+      require('nvim-treesitter').setup {
+         highlight = {
+            enable = false,
+         },
+      }
       vim.api.nvim_create_autocmd("BufEnter", {
          callback = function(args)
             pcall(vim.treesitter.start, args.buf)
          end,
       })
-   end
+   end,
    -- opts = {
    --    ensure_installed = {
    --       -- "lua",

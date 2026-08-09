@@ -58,4 +58,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.api.nvim_win_set_cursor(0, pos)
     end,
 })
-require('config.autocmd.virtualtext_for_heading')
+-- require('config.autocmd.virtualtext_for_heading')

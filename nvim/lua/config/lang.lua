@@ -1,7 +1,7 @@
 return {
 	plugins = {
-      "csharp",
-      "go",
+      -- "csharp",
+      -- "go",
       "rust",
 		-- "java",
 		-- "flutter",

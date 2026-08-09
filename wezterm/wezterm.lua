@@ -3,9 +3,11 @@ local act = wezterm.action
 
 local config = {}
 
+local FONT_NAME = "CaskaydiaCove Nerd Font"
+
 config.font_size = 11
 config.font = wezterm.font_with_fallback({
-	{ family = "CaskaydiaCove Nerd Font", scale = 1, weight = "DemiBold" },
+	{ family = FONT_NAME, scale = 1, weight = "DemiBold" },
 })
 
 config.font_rules = {
@@ -13,21 +15,21 @@ config.font_rules = {
 		intensity = "Bold",
 		italic = false,
 		font = wezterm.font_with_fallback({
-			{ family = "CaskaydiaCove Nerd Font", weight = "Bold", scale = 1 },
+			{ family = FONT_NAME, weight = "Bold", scale = 1 },
 		}),
 	},
 	{
 		intensity = "Bold",
 		italic = true,
 		font = wezterm.font_with_fallback({
-			{ family = "CaskaydiaCove Nerd Font", weight = "Bold", style = "Italic", scale = 1 },
+			{ family = FONT_NAME, weight = "Bold", style = "Italic", scale = 1 },
 		}),
 	},
 	{
 		intensity = "Normal",
 		italic = true,
 		font = wezterm.font_with_fallback({
-			{ family = "CaskaydiaCove Nerd Font", weight = "Regular", style = "Italic", scale = 1 },
+			{ family = FONT_NAME, weight = "Regular", style = "Italic", scale = 1 },
 		}),
 	},
 }
