@@ -1,0 +1,61 @@
+{ pkgs, ... }:
+
+{
+
+  home.packages = with pkgs; [
+    nerd-fonts.caskaydia-cove
+    zip
+    xz
+    unzip
+    p7zip
+
+    ripgrep # recursively searches directories for a regex pattern
+    jq # A lightweight and flexible command-line JSON processor
+    fzf # A command-line fuzzy finder
+
+    mtr # A network diagnostic tool
+    iperf3
+    dnsutils  # `dig` + `nslookup`
+    ldns # replacement of `dig`, it provide the command `drill`
+    aria2 # A lightweight multi-protocol & multi-source command-line download utility
+
+    nix-output-monitor
+
+    hugo # static site generator
+
+    btop  # replacement of htop/nmon
+    iotop # io monitoring
+    iftop # network monitoring
+
+    strace # system call monitoring
+    ltrace # library call monitoring
+    lsof # list open files
+
+    sysstat
+    lm_sensors # for `sensors` command
+    ethtool
+    pciutils # lspci
+    usbutils # lsusb
+
+    neovim
+    git-credential-manager
+
+    google-chrome
+    wezterm
+    kitty
+    yazi
+    zellij
+    quickshell
+
+    lazygit
+    nautilus
+
+    rustdesk-flutter
+
+    hyprpaper
+    hyprlauncher
+    hyprlock
+    hypridle
+  ];
+
+}

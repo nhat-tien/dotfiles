@@ -11,7 +11,7 @@ source $HOME/dotfiles/zsh/scripts.zsh
 source $HOME/dotfiles/zsh/extensions.zsh
 
 # ------ Export Env Key -----
-source $HOME/env_key.zsh
+# source $HOME/env_key.zsh
 
 # ------ Starship.rs promt ------
 if command -v starship  &> /dev/null

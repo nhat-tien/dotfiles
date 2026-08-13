@@ -86,3 +86,62 @@ Choose mode `6.XTestFakeKeyEvent`
 expect: `video:x:44:<username>`, example `video:x:44:nhattien`
 
 3. Reboot
+
+
+Using ChatGPT 5.1 i was able to fix my issue. I had to change and add 2 enviroment flags to **Lie** to RustDesk to allow it to **work.**
+
+1) Add XDG env vars in custom/env.conf
+
+Open: ~/.config/hypr/custom/env.conf
+
+Add this at the bottom:
+
+# ----- RustDesk / portal identity (local) -----
+env = XDG_CURRENT_DESKTOP,Hyprland
+env = XDG_SESSION_TYPE,wayland
+env = XDG_SESSION_DESKTOP,Hyprland
+
+
+Why here? End4 sources custom/env.conf after hyprland/env.conf, so your values win without editing the base file.
+
+2) Add dbus + portal startup in custom/execs.conf
+
+Open:
+
+nano ~/.config/hypr/custom/execs.conf
+
+
+Add this at the bottom:
+
+# ----- RustDesk / portals (local) -----
+
+# Export Wayland + desktop vars into the systemd/dbus user environment
+exec-once = dbus-update-activation-environment --systemd \
+  WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP
+
+# Ensure Hyprland portal backend is running (safe if already started)
+exec-once = /usr/lib/xdg-desktop-portal-hyprland
+
+
+If End4 already starts the portal elsewhere, double-starting usually doesn’t hurt.
+If you want to be ultra-clean later, you can remove the second line once you confirm it’s already running.
+
+3) Reload Hyprland
+hyprctl reload
+
+
+If anything feels weird (rare), just log out/in once — no config “breakage” risk.
+
+4) Quick verify
+
+Run:
+
+echo $XDG_SESSION_TYPE $XDG_CURRENT_DESKTOP $XDG_SESSION_DESKTOP
+systemctl --user status xdg-desktop-portal xdg-desktop-portal-hyprland
+
+
+You want to see:
+
+wayland Hyprland Hyprland
+
+portal services “active (running)”

@@ -74,3 +74,5 @@ alias theme:dark="gsettings set org.gnome.desktop.interface color-scheme prefer-
 alias dj="uv run manage.py"
 
 alias bmv="~/DEV/BanhmiVim/banhmivim/bin/banhmivim"
+
+alias nixbuild="sudo nixos-rebuild switch --flake ~/dotfiles/nixos#laptop"

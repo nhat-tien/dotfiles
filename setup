@@ -42,6 +42,7 @@ print_help() {
     echo "-l     --list        show list of available config"
     echo "-f     --force       replace if config folder exist"
     echo "-a     --all         setup all available config"
+    echo "       --flake       setup nixos flake"
     echo ""
     echo "EXAMPLE:"
     echo "setup --setup nvim i3 kitty"
@@ -98,6 +99,10 @@ setup_all() {
     fi
 
     echo Setup Successful
+}
+
+
+setup_flake() {
 }
 
 
