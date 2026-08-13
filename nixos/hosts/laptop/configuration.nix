@@ -43,10 +43,10 @@
 
   programs.zsh.enable = true;
 
-  # environment.pathsToLink = [ "/share/zsh" ];
+  programs.ssh.startAgent = true;
+  services.gnome.gcr-ssh-agent.enable = false;
 
   environment.shells = [ pkgs.zsh ];
-
   users.defaultUserShell = pkgs.zsh;
 
   # Set your time zone.
