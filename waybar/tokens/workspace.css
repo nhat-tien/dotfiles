@@ -1,0 +1,55 @@
+@import "colors.css";
+
+#workspaces {
+  margin: 4px 5px;
+  padding: 6px 6px;
+  background-color: @surface_container;
+  border-radius: 20px;
+}
+
+#workspaces button {
+  min-width: 32px;
+  padding: 0 4px;
+  margin: 0 2px;
+  background: transparent;
+  border-radius: 16px;
+  color: @tertiary;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+}
+
+#workspaces button.active {
+  padding: 0 12px;
+  margin: 0 2px;
+  background-color: @primary;
+  color: @on_primary;
+}
+
+#workspaces button.special {
+  color: @tertiary_fixed;
+}
+
+#workspaces button:hover {
+  background-color: @surface_container_highest;
+  color: @primary;
+}
+
+#workspaces button.active:hover {
+  background-color: @primary;
+  color: @on_primary;
+}
+
+#workspaces button.empty {
+  color: @outline_variant;
+}
+
+#workspaces button.urgent {
+  color: @error_container;
+}
+
+#workspaces button label:first-child {
+  margin-right: 8px;
+}
+
+#workspaces button label:last-child {
+  margin-left: 2px;
+}

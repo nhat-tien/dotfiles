@@ -45,7 +45,6 @@
     kitty
     yazi
     zellij
-    quickshell
 
     lazygit
     nautilus
@@ -56,6 +55,20 @@
     hyprlauncher
     hyprlock
     hypridle
+    waybar
+
+    sunshine
+    obsidian
+
+    # quickshell
+    # qt6.qt5compat
+    # kdePackages.qt5compat
+    # kdePackages.qtpositioning
+
+    # qt6Packages.qt5compat
+    # libsForQt5.qt5.qtgraphicaleffects
+    # qt5.qtwayland
+
   ];
 
 }

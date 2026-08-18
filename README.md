@@ -22,8 +22,6 @@
 
 ## Installing
 
-***Be careful**: This script will remove your existing configurations, please ensure you have a backup stored in somewhere outside of ~/.config/...*
-
 ```bash
   cd ~
   git clone https://github.com/nhat-tien/dotfiles.git

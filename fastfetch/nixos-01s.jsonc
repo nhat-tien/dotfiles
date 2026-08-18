@@ -1,13 +1,13 @@
 {
     "logo": {
-        "type": "iterm",
-        "source": "~/.config/fastfetch/logo/nixos_logo_1.png",
-        // "height": 21,
-        "width": 30
-        // "padding": {
-        //     "top": 2,
-        //     "left": 3
-        // }
+        "type": "auto",
+        "source": "~/.config/fastfetch/logo/nixos_logo_1.webp",
+        "height": 21,
+        "width": 40,
+        "padding": {
+            "top": 2,
+            "left": 3
+        }
     },
     "display": {
         "separator": " ",
@@ -37,14 +37,14 @@
     },
     "modules": [
         "break",
-        // {
-        //     "type": "version",
-        //     "color": {
-        //     "keys": ""
-        //     },
-        //     "key": "{$4}                󱐋󱐋 Fastfetch ",
-        //     "format": "{$6}{2}",
-        // },
+        {
+            "type": "version",
+            "color": {
+            "keys": ""
+            },
+            "key": "{$4}                󱐋󱐋 Fastfetch ",
+            "format": "{$6}{2}",
+        },
         {
             "type": "custom",
             "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$12}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13} Hardware "
@@ -125,7 +125,7 @@
         {
             "type": "os",
             "key": "{$10}├   Distro    ",
-            "format": "{name} {build-id} ({codename}) {arch}"
+            //"format": "{name} {build-id} ({codename}) {arch}"
         },
         {
             "type": "kernel",
@@ -237,9 +237,13 @@
             "key": "{$3}└   Uptime    ",
         },
         {
+            "type": "command",
+            "key": " ",
+            "text": "bash ~/.config/fastfetch/scripts/nixos-01_fastfetch.sh"
+        },
+        {
             "type": "custom",
             "format": "                {$10}󱄅 {$9}󱄅 {$8}󱄅 {$7}󱄅 {$6}󱄅 {$5}󱄅 {$4}󱄅 {$3}󱄅 {$2}󱄅 {$1}󱄅"
         },
     ]
 }
-

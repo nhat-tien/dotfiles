@@ -1,7 +1,7 @@
 {
     "logo": {
         "type": "iterm",
-        "source": "~/.config/fastfetch/logo/nixos_logo_1.png",
+        "source": "~/.config/fastfetch/logo/nixos_logo_1.webp",
         // "height": 21,
         "width": 30
         // "padding": {
@@ -37,14 +37,14 @@
     },
     "modules": [
         "break",
-        // {
-        //     "type": "version",
-        //     "color": {
-        //     "keys": ""
-        //     },
-        //     "key": "{$4}                󱐋󱐋 Fastfetch ",
-        //     "format": "{$6}{2}",
-        // },
+        {
+            "type": "version",
+            "color": {
+            "keys": ""
+            },
+            "key": "{$4}                󱐋󱐋 Fastfetch ",
+            "format": "{$6}{2}",
+        },
         {
             "type": "custom",
             "format": "{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$12}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13} Hardware "
@@ -242,4 +242,3 @@
         },
     ]
 }
-
