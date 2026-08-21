@@ -1,5 +1,5 @@
 export APP_FOLDER="$HOME/App"
-export MYNOTES="$HOME/Documents/Notes" 
+export MYNOTES="$HOME/Documents/Notes"
 export DOTFILES="$(cd "$(dirname "${(%):-%N}")/.." && pwd)"
 export DOTFILES_ASSETS="$DOTFILES/assets"
 
@@ -25,6 +25,7 @@ export STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
 
 export GHOSTTY_RESOURCES_DIR="$DOTFILES/ghostty"
 
+export ND_CONFIGFILE="$DOTFILES/navidrome/navidrome.toml"
 
 export FZF_DEFAULT_OPTS="--style=minimal
   --layout=reverse

@@ -125,6 +125,8 @@
     upower
   ];
 
+  programs.noisetorch.enable = true;
+
   programs.appimage = {
     enable = true;
     binfmt = true;

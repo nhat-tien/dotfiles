@@ -1,18 +1,21 @@
-alias zshrc="nvim ~/.zshrc"
+alias bmv="~/DEV/BanhmiVim/banhmivim/bin/banhmivim"
 alias c="clear"
 alias cf=". ${DOTFILES}/scripts/cdf.sh"
 alias dev="cf ~/DEV"
-alias td="nvim ${MYNOTES}/plan"
-alias life="bmv ${MYNOTES}/my-life"
+alias lg="lazygit"
+
+# Notes Vaults
 alias nt="cf ~/Documents/Notes"
+alias misc="bmv ${MYNOTES}/misc"
+alias life="bmv ${MYNOTES}/my-life"
 alias oo="nvim ${MYNOTES}/noteVault"
 alias on="${DOTFILES}/scripts/new-notes"
+
 alias dot="bmv ${DOTFILES}"
 alias nv="bmv ~/DEV/BanhmiVim/banhmivim/config/banhmivim"
 alias z="zellij --layout ${DOTFILES}/zellij/layouts/default.kdl"
 alias zw="zellij -l welcome"
 alias blog="nvim ~/DEV/Hugo/blog"
-alias lg="lazygit"
 # alias v="nvim"
 alias v="bmv"
 alias dl="cd ~/Downloads/"
@@ -25,26 +28,6 @@ alias .....="cd ../../../.."
 # alias Xampp
 alias apachestop="sudo /etc/init.d/apache2 stop"
 
-# alias Mongodb
-alias mongostart="sudo systemctl start mongod"
-alias mongostatus="sudo systemctl status mongod"
-alias mongostop="sudo systemctl stop mongod"
-
-# alias Nginx
-alias nginxstart="sudo systemctl start nginx"
-alias nginxrestart="sudo systemctl restart nginx"
-alias nginxstatus="sudo systemctl status nginx"
-alias nginxstop="sudo systemctl stop nginx"
-
-# alias MySql
-alias mysqlstart="sudo systemctl start mysql.service"
-alias mysqlstatus="sudo systemctl status mysql.service"
-alias mysqlstop="sudo systemctl stop mysql.service"
-
-# alias Docker
-alias dockerstart="sudo systemctl start docker"
-alias dockerstatus="sudo systemctl status docker"
-alias dockerstop="sudo systemctl stop docker.socket"
 alias dk="docker"
 alias dkcp="docker compose"
 
@@ -56,7 +39,7 @@ alias sutrash="sudo gio trash"
 # screenfetch
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-uptime,pkgs,wmtheme' "
 # alias neofetch="screenfetch -c '04,15' -a '${HOME}/dotfiles/asciiart/asciiart.sh' -d '-wmtheme' "
-alias neofetch="screenfetch -c '04,15' -a '${DOTFILES}/asciiart/asciiart.sh' "
+# alias neofetch="screenfetch -c '04,15' -a '${DOTFILES}/asciiart/asciiart.sh' "
 
 #clock
 alias clock="tty-clock -c -f \"\" -C 3 "
@@ -72,7 +55,5 @@ alias theme:light="gsettings set org.gnome.desktop.interface color-scheme prefer
 alias theme:dark="gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 
 alias dj="uv run manage.py"
-
-alias bmv="~/DEV/BanhmiVim/banhmivim/bin/banhmivim"
 
 alias nixbuild="sudo nixos-rebuild switch --flake ~/dotfiles/nixos#laptop"

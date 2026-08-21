@@ -12,7 +12,8 @@
         ""
       ]
     },
-    "on-click": "pavucontrol",
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol",
     "tooltip-format": "Output: {volume}%"
   },
   "pulseaudio#microphone": {

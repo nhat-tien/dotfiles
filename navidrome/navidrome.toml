@@ -1,0 +1,3 @@
+LogLevel = 'ERROR'
+MusicFolder = '/home/nhattien/Music'
+DataFolder = '/home/nhattien/.navidrome'

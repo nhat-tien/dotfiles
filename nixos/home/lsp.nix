@@ -9,5 +9,6 @@
       nil
       zls
       markdown-oxide
+      tinymist
   ];
 }

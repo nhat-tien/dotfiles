@@ -1,7 +1,7 @@
 
 mkdircd()
 {
-  mkdir -p "$@" && eval "cd \"\$$#\""; 
+  mkdir -p "$@" && eval "cd \"\$$#\"";
 }
 
 y() {
@@ -17,8 +17,8 @@ restore() {
   gio trash --restore "trash:/$1"
 }
 
-s() {  
-  sudo systemctl "$2" "$1" 
+s() {
+  sudo systemctl "$2" "$1"
 }
 
 pyenv() {
@@ -34,10 +34,12 @@ pyenv() {
 }
 
 cw() {
-  file_path="$(yazi --chooser-file=/dev/stdout "$DOTFILES/wallpapers" | while read -r; do printf "%q" "$REPLY"; done)"
-  if [[ "$file_path" != "" ]]; then 
-    feh --bg-fill "$file_path"
-  fi
+  # file_path="$(yazi --chooser-file=/dev/stdout "$DOTFILES/wallpapers" | while read -r; do printf "%q" "$REPLY"; done)"
+  # if [[ "$file_path" != "" ]]; then
+  #   feh --bg-fill "$file_path"
+  # fi
+
+  $DOTFILES/wofi/wallpaper-picker/wofi-wallpaper-selector.sh
 }
 
 checksum() {

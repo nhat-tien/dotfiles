@@ -9,15 +9,23 @@ in
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
+    fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
       fcitx5-gtk
-      fcitx5-qt
     ] ++ [
       unstable.fcitx5-lotus
+      # unstable.fcitx5-qt
     ];
   };
 
-  systemd.packages = [ pkgs.fcitx5-lotus ];
+  users.users.uinput_proxy = {
+    isSystemUser = true;
+    group = "uinput_proxy";
+  };
+
+  users.groups.uinput_proxy = {};
+
+  systemd.packages = [ unstable.fcitx5-lotus ];
   systemd.services."fcitx5-lotus-server@nhattien" = {
     wantedBy = [ "multi-user.target" ];
     overrideStrategy = "asDropin";

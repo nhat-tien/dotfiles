@@ -49,13 +49,14 @@
     lazygit
     nautilus
 
-    rustdesk-flutter
+    # rustdesk-flutter
 
     hyprpaper
     hyprlauncher
     hyprlock
     hypridle
     waybar
+    wofi
 
     sunshine
     obsidian
@@ -69,6 +70,13 @@
     # libsForQt5.qt5.qtgraphicaleffects
     # qt5.qtwayland
 
+    # noisetorch # Mic Noise Reduce
+    imagemagick
+    navidrome # selfhost music server
+
+    ffmpeg
+    easytag # Edit tag metadata for mp3 file
+    # wrangler # Cloudflare CLI
   ];
 
 }

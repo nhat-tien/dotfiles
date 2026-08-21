@@ -7,6 +7,7 @@
     rustup
     uv
     zig
+    typst
 
     nodejs_26
   ];

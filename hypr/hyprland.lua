@@ -57,6 +57,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprlauncher -d")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("waybar")
+  hl.exec_cmd("fcitx5 -d")
 end)
 
 hl.on("hyprland.shutdown", function()
@@ -138,9 +139,12 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
+            -- size      = 3,
+            -- passes    = 1,
+            -- vibrancy  = 0.1696,
+            size      = 2,
+            passes    = 3,
+            vibrancy  = 0.2,
         },
     },
 
@@ -310,6 +314,12 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+-- hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + L", function ()
+    -- hl.notification.create({ text = "Hello", timeout = 3000})
+   hl.dsp.window.swap({ direction = "l" })
+end)
+
 -- Laptop multimedia keys for volume and LCD brightness
 -- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 -- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
@@ -325,22 +335,8 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("command -v hyprlauncher >/dev/null 2>&1 && hyprlauncher"))
-
-local ipc = "noctalia msg "
-
--- Core binds
-hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
-hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
-hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
-
--- Media keys
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
+-- hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("command -v hyprlauncher >/dev/null 2>&1 && hyprlauncher"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("command -v wofi >/dev/null 2>&1 && wofi --show=drun"))
 
 hl.bind(mainMod .. " + Delete", hl.dsp.submap("system"))
 
