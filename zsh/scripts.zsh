@@ -39,7 +39,7 @@ cw() {
   #   feh --bg-fill "$file_path"
   # fi
 
-  $DOTFILES/wofi/wallpaper-picker/wofi-wallpaper-selector.sh
+  $DOTFILES/wofi/wp-picker/wofi-wallpaper-selector.sh
 }
 
 checksum() {
