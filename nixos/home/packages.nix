@@ -48,6 +48,7 @@
 
     lazygit
     nautilus
+    blueman
 
     # rustdesk-flutter
 
@@ -72,11 +73,11 @@
 
     # noisetorch # Mic Noise Reduce
     imagemagick
-    navidrome # selfhost music server
 
     ffmpeg
     easytag # Edit tag metadata for mp3 file
     # wrangler # Cloudflare CLI
+    yt-dlp
   ];
 
 }

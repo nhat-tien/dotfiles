@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
-      helper = import ./lib/utils.nix { lib = nixpkgs.lib; };
+      helper = import ./nixos/lib/utils.nix { lib = nixpkgs.lib; };
     in
     {
 
@@ -24,13 +24,13 @@
         };
 
         modules = [
-          ./hosts/laptop
+          ./nixos/hosts/laptop
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit helper; inherit inputs; };
-            home-manager.users.nhattien = import ./home/home.nix;
+            home-manager.users.nhattien = import ./nixos/home/home.nix;
           }
         ];
       };

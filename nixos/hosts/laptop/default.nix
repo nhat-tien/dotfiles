@@ -7,5 +7,8 @@
        ../../modules/desktop/hyprland.nix
        ../../modules/development
        ../../modules/viet_key
+
+       # Services
+       ../../modules/services/navidrome.nix
    ];
 }

@@ -25,7 +25,7 @@ export STARSHIP_CONFIG="$DOTFILES/starship/starship.toml"
 
 export GHOSTTY_RESOURCES_DIR="$DOTFILES/ghostty"
 
-export ND_CONFIGFILE="$DOTFILES/navidrome/navidrome.toml"
+# export ND_CONFIGFILE="$DOTFILES/navidrome/navidrome.toml"
 
 export FZF_DEFAULT_OPTS="--style=minimal
   --layout=reverse
