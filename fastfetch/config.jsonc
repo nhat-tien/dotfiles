@@ -2,6 +2,7 @@
     "logo": {
         "type": "iterm",
         "source": "~/.config/fastfetch/logo/nixos_logo_1.png",
+        // "source": "~/.config/fastfetch/logo/NixOwO.png",
         // "height": 21,
         "width": 30
         // "padding": {

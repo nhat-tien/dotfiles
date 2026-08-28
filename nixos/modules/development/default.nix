@@ -10,5 +10,6 @@
     typst
 
     nodejs_26
+    bun
   ];
 }

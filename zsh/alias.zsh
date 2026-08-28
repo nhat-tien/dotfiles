@@ -8,7 +8,7 @@ alias lg="lazygit"
 alias nt="cf ~/Documents/Notes"
 alias misc="bmv ${MYNOTES}/misc"
 alias life="bmv ${MYNOTES}/my-life"
-alias oo="nvim ${MYNOTES}/noteVault"
+alias oo="bmv ${MYNOTES}/noteVault"
 alias on="${DOTFILES}/scripts/new-notes"
 
 alias dot="bmv ${DOTFILES}"

@@ -76,8 +76,13 @@
 
     ffmpeg
     easytag # Edit tag metadata for mp3 file
-    # wrangler # Cloudflare CLI
+    wrangler # Cloudflare CLI
     yt-dlp
+
+
+    obs-studio
+
+    woff2 #Compress font to web
   ];
 
 }

@@ -18,7 +18,8 @@
     "./modules/connections.jsonc",
     "./modules/battery.jsonc",
     "./modules/clock.jsonc",
-    "./modules/tray-notif.jsonc"
+    "./modules/tray-notif.jsonc",
+    "./modules/light.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
@@ -31,6 +32,7 @@
     "idle_inhibitor"
   ],
   "modules-right": [
+    "backlight/slider",
     "group/audio",
     "group/connections",
     "battery",

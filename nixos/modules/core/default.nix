@@ -66,7 +66,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Enable sound with pipewire
+  programs.dconf.enable = true;
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -125,6 +127,8 @@
     wireplumber
     upower
     nftables
+
+    easyeffects
   ];
 
   systemd.sleep.settings.Sleep = {
@@ -134,7 +138,7 @@
     AllowSuspendThenHibernate = "no";
   };
 
-  programs.noisetorch.enable = true;
+  # programs.noisetorch.enable = true;
 
   programs.appimage = {
     enable = true;
