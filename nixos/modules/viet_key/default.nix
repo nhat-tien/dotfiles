@@ -30,4 +30,12 @@ in
     wantedBy = [ "multi-user.target" ];
     overrideStrategy = "asDropin";
   };
+
+  #
+  # Note for Wezterm:
+  #  - Open fcitx5-lotus-settings
+  #  - Choose Application
+  #  - Choose wezterm
+  #  - Choose preedit
+  #
 }

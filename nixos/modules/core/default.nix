@@ -92,9 +92,9 @@
     isNormalUser = true;
     description = "nhattien";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    # packages = with pkgs; [
       #  thunderbird
-    ];
+    # ];
   };
 
   # Install firefox.

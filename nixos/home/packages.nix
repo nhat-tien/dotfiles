@@ -1,5 +1,10 @@
-{ pkgs, ... }:
-
+{ pkgs, nixpkgs-unstable, ... }:
+let
+  unstable = import nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 {
 
   home.packages = with pkgs; [
@@ -71,7 +76,7 @@
     # libsForQt5.qt5.qtgraphicaleffects
     # qt5.qtwayland
 
-    # noisetorch # Mic Noise Reduce
+    noisetorch # Mic Noise Reduce
     imagemagick
 
     ffmpeg
@@ -79,10 +84,11 @@
     wrangler # Cloudflare CLI
     yt-dlp
 
-
     obs-studio
 
     woff2 #Compress font to web
+    unstable.opencode
+
   ];
 
 }
