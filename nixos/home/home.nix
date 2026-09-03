@@ -1,13 +1,14 @@
 { helper, ... }:
-
 {
   imports = (helper.collectNixFiles ./programs) ++ [
-    ./packages.nix
+    ./home_packages.nix
     ./lsp.nix
   ];
 
   wayland.windowManager.hyprland.systemd.enable = false;
 
+
+  # Set darktheme
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

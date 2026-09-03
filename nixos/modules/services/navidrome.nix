@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
   environment.systemPackages = with pkgs; [
@@ -21,15 +21,17 @@
 
   services.navidrome = {
     enable = true;
-
     settings = {
       Address = "0.0.0.0";
       Port = 4533;
-      MusicFolder = "/srv/navidrome";
+      MusicFolder = "/srv/navidrome/SelfHostMusic/";
       DataFolder = "/var/lib/navidrome";
       LogLevel = "ERROR";
     };
   };
+
+  # This for inactive services, I will start when I need it
+  systemd.services.navidrome.wantedBy = lib.mkForce [];
 
   networking.firewall.allowedTCPPorts = [ 4533 ]; # Mở cổng 4533 cho Navidrome
 }

@@ -2,34 +2,31 @@
 
 {
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.consoleLogLevel = 0;
+  imports = [
+     ./boot.nix
+     ./network.nix
+     ./nixos.nix
+     ./system_packages.nix
+  ];
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+  };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  networking.firewall.enable = true;
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  hardware.bluetooth.enable = true;
   services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
 
+  services.upower.enable = true;
 
   programs.zsh.enable = true;
 
   programs.ssh.startAgent = true;
+
   services.gnome.gcr-ssh-agent.enable = false;
 
   environment.shells = [ pkgs.zsh ];
+
   users.defaultUserShell = pkgs.zsh;
 
   # Set your time zone.
@@ -97,39 +94,7 @@
     # ];
   };
 
-  # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  nix.gc.automatic = true;
-  nix.gc.dates = "20:00";
-  nix.gc.options = "--delete-older-than 3d";
-
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    gdb
-    file
-
-    # xdg-desktop-portal-hyprland
-    # xdg-desktop-portal
-    brightnessctl
-    # libva-utils
-    pulseaudio
-    pipewire
-    wireplumber
-    upower
-    nftables
-
-    easyeffects
-  ];
 
   systemd.sleep.settings.Sleep = {
     AllowSuspend = "no";
@@ -138,11 +103,17 @@
     AllowSuspendThenHibernate = "no";
   };
 
-  # programs.noisetorch.enable = true;
-
   programs.appimage = {
     enable = true;
     binfmt = true;
+  };
+
+  # Chắc để cải thiện tốc độ graphic
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+       intel-media-driver
+    ];
   };
 
   system.stateVersion = "26.05";

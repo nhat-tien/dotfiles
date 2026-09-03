@@ -76,19 +76,27 @@ in
     # libsForQt5.qt5.qtgraphicaleffects
     # qt5.qtwayland
 
-    noisetorch # Mic Noise Reduce
     imagemagick
 
     ffmpeg
     easytag # Edit tag metadata for mp3 file
-    wrangler # Cloudflare CLI
     yt-dlp
 
     obs-studio
 
-    woff2 #Compress font to web
+    woff2 # Compress font to web
     unstable.opencode
 
+    qalculate-gtk # Calculator
+
+    mpv
+    celluloid
+
+    # Cloudflare
+    wrangler # Cloudflare CLI
+    cloudflared
+
+    unstable.discord
   ];
 
 }

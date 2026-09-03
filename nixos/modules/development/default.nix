@@ -10,6 +10,7 @@
     typst
 
     nodejs_26
+    pnpm
     bun
   ];
 }

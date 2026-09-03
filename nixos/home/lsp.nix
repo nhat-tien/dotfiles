@@ -10,5 +10,6 @@
       zls
       markdown-oxide
       tinymist
+      harper
   ];
 }

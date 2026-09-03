@@ -8,16 +8,16 @@ source $HOME/dotfiles/zsh/alias.zsh
 source $HOME/dotfiles/zsh/scripts.zsh
 
 # ------ Extensions, tools -----
-source $HOME/dotfiles/zsh/extensions.zsh
+# source $HOME/dotfiles/zsh/extensions.zsh
 
 # ------ Export Env Key -----
 # source $HOME/env_key.zsh
 
 # ------ Starship.rs promt ------
-if command -v starship  &> /dev/null
-then
-  eval "$(starship init zsh)"
-fi
+# if command -v starship  &> /dev/null
+# then
+#   eval "$(starship init zsh)"
+# fi
 
 source $HOME/dotfiles/scripts/print_image.sh
 
